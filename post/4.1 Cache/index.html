@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>4.1 Cache | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、存储层次
+1、局部性原理
+
+时间局部性：如果某个存储单元被引用，那么不久它可能再次被引用
+空间局部性：如果某个存储单元被引用，那么它相临的存储单元可能很快会被引用
+局部性的原因：绝大多数指令是顺序执行的，在循环结构中指令会被重复访问 ，..." />
+        <meta name="keywords" content="计算机组成原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="4.1 Cache" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、存储层次
+1、局部性原理
+
+时间局部性：如果某个存储单元被引用，那么不久它可能再次被引用
+空间局部性：如果某个存储单元被引用，那么它相临的存储单元可能很快会被引用
+局部性的原因：绝大多数指令是顺序执行的，在循环结构中指令会被重复访问 ，...">
+        <meta property="og:url" content="https://github.pansis.site/post/4.1 Cache/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-05-24">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="4.1 Cache">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="4.1 Cache">
+        <meta name="twitter:description" content="一、存储层次
+1、局部性原理
+
+时间局部性：如果某个存储单元被引用，那么不久它可能再次被引用
+空间局部性：如果某个存储单元被引用，那么它相临的存储单元可能很快会被引用
+局部性的原因：绝大多数指令是顺序执行的，在循环结构中指令会被重复访问 ，...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    4.1 Cache
+                                </h2>
+                                <span class="article-info">
+                                    2024-05-24, 2913 words, 12 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-存储层次">一、存储层次</h2>
+<h4 id="1-局部性原理">1、局部性原理</h4>
+<ol>
+<li>时间局部性：如果某个存储单元被引用，那么不久它可能再次被引用</li>
+<li>空间局部性：如果某个存储单元被引用，那么它相临的存储单元可能很快会被引用</li>
+<li>局部性的原因：绝大多数指令是顺序执行的，在循环结构中指令会被重复访问 ，实际中的数据往往以数组等形式出现</li>
+</ol>
+<h4 id="2-高速缓冲存储器产生的前提">2、高速缓冲存储器产生的前提</h4>
+<ol>
+<li>单级存储系统中，主存储速度与CPU速度不匹配，造成CPU资源的浪费</li>
+<li>程序运行时访问内存存在明显的局部性特征</li>
+<li>存在比主存普遍采用的DRAM速度更快的存储单元电路</li>
+</ol>
+<h4 id="3-cache">3、Cache</h4>
+<p>1、定义：CPU和主存间的一容量较小的高速缓存，其中总是存放最活跃（被频繁访问）的程序块和数据</p>
+<p>2、大多数情况下，CPU能直接从这个高速缓存中取得指令和数据，而不必访问主存</p>
+<img src="http://cos.pansis.site/202405272109762.png/abc123" alt="image-20240527210940935" style="zoom:50%;" />
+<p>3、Cache要解决的问题</p>
+<ul>
+<li>提供快速访问的能力，与主存交换数据的能力</li>
+<li>由于CPU总是以主存地址访问存储器，所以Cache应具备判断CPU当前要访问的内容是否在Cache中的能力，并具有根据主存地址在Cache中访问相应单元的能力</li>
+<li>具备在Cache容量不够时及时替换Cache中内容的决策能力</li>
+</ul>
+<p>4、Cache基本结构</p>
+<ul>
+<li>
+<p>存储机构：保存数据，存取数据，一般采用SRAM构成，以Block（若干字）为单位</p>
+</li>
+<li>
+<p>地址机构：包含地址比较机制、地址转换机制和地址标记（Tag），一个Block具有一个Tag</p>
+</li>
+<li>
+<p>替换机构：记录Block的使用情况，替换策略，有效位（v）记录对应数据块中的数据是否有效</p>
+<img src="http://cos.pansis.site/202406041450409.png/abc123" alt="image-20240604145041112" style="zoom:50%;" />
+</li>
+</ul>
+<p>5、Cache基本术语</p>
+<ul>
+<li>数据块（block）
+<ul>
+<li>Cache与主存的基本划分单位，也是主存与Cache单次交换数据的最小单位</li>
+<li>由多个字节（字）组成，一个block大小取决与主存单次读写操作所能完成的数据字节数，也表明主存于Cache之间局部总线的宽度</li>
+</ul>
+</li>
+<li>标记（tag）：Cache每一数据块有一个标记字段，用来保存该数据块对应于主存的哪个数据块</li>
+<li>有效位（valid bit）：Cache中每一Block有一个有效位，用于指示相应数据块中是否包含有效数据</li>
+<li>行（line ）：Cache中 一个block及其 tag、valid bit构成1行</li>
+<li>组（set）：若干块（Block）构成一个组，地址比较一般能在组内各块间同时进行</li>
+<li>路（way）：Cache相关联的等级，每一路具有独立的地址比较机构，各路地址比较能同时进行（一般与组结合），路数即指一组内的块数</li>
+</ul>
+<p>6、映射方式</p>
+<ul>
+<li>全相联（Full Associate）：每个主存块映射到Cache的任意块中</li>
+<li>组相联（Set Associate）：每个主存块映射到Cache的固定组中的任意块中</li>
+<li>直接相连（Direct Associate）：每个主存块映射到Cache的固定块中</li>
+</ul>
+<h2 id="二-直接映射cache">二、直接映射Cache</h2>
+<h4 id="1-cache单元内容与主存单元映射关系">1、Cache单元内容与主存单元映射关系</h4>
+<img src="http://cos.pansis.site/202405201915683.png/abc123" alt="image-20240520191542542" style="zoom:40%;" />
+<p>主存地址={Tag，Index，Offset}</p>
+<h4 id="2-tio计算公式">2、TIO计算公式</h4>
+<p>假设主存地址为数为A</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>位数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Offset</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>=</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mo>(</mo><mi>b</mi><mi>l</mi><mi>o</mi><mi>c</mi><mi>k</mi><mi>s</mi><mi>i</mi><mi>z</mi><mi>e</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O=log_2(blocksize)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">s</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mord mathdefault">e</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>Index</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mo>=</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mo>(</mo><mi>b</mi><mi>l</mi><mi>o</mi><mi>c</mi><mi>k</mi><mi>n</mi><mi>u</mi><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">I=log_2(blocknum)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>Tag</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>=</mo><mi>A</mi><mo>−</mo><mi>I</mi><mo>−</mo><mi>O</mi></mrow><annotation encoding="application/x-tex">T=A-I-O</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>l</mi><mi>o</mi><mi>c</mi><mi>k</mi><mi>s</mi><mi>i</mi><mi>z</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">blocksize</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">s</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mord mathdefault">e</span></span></span></span> 代表块大小</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>l</mi><mi>o</mi><mi>c</mi><mi>k</mi><mi>n</mi><mi>u</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">blocknum</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span></span></span></span> 代表 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>a</mi><mi>c</mi><mi>h</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">Cache</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">a</span><span class="mord mathdefault">c</span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span></span></span></span> 中块的数量</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>l</mi><mi>o</mi><mi>c</mi><mi>k</mi><mi>n</mi><mi>u</mi><mi>m</mi><mo>=</mo><mi>C</mi><mi>a</mi><mi>c</mi><mi>h</mi><mi>e</mi><mi mathvariant="normal">容</mi><mi mathvariant="normal">量</mi><mo>(</mo><mi mathvariant="normal">仅</mi><mi mathvariant="normal">包</mi><mi mathvariant="normal">含</mi><mi mathvariant="normal">数</mi><mi mathvariant="normal">据</mi><mi mathvariant="normal">容</mi><mi mathvariant="normal">量</mi><mo>)</mo><mi mathvariant="normal">/</mi><mi>b</mi><mi>l</mi><mi>o</mi><mi>c</mi><mi>k</mi><mi>s</mi><mi>i</mi><mi>z</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">blocknum=Cache容量(仅包含数据容量)/blocksize</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">a</span><span class="mord mathdefault">c</span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord cjk_fallback">容</span><span class="mord cjk_fallback">量</span><span class="mopen">(</span><span class="mord cjk_fallback">仅</span><span class="mord cjk_fallback">包</span><span class="mord cjk_fallback">含</span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">据</span><span class="mord cjk_fallback">容</span><span class="mord cjk_fallback">量</span><span class="mclose">)</span><span class="mord">/</span><span class="mord mathdefault">b</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">s</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mord mathdefault">e</span></span></span></span></li>
+</ul>
+<img src="http://cos.pansis.site/202405201921292.png/abc123" alt="image-20240520192118232" style="zoom:30%;" />
+<h4 id="3-cache容量计算公式">3、Cache容量计算公式</h4>
+<ul>
+<li>
+<p>Cache总容量(单位bit) = cache块数×(数据位+ Tag位数+ Valid位数)</p>
+<p>​		                       =  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mrow><mi>i</mi><mi>n</mi><mi>d</mi><mi>e</mi><mi>x</mi></mrow></msup><mo>×</mo><mo>(</mo><mn>8</mn><mo>×</mo><msup><mn>2</mn><mrow><mi>O</mi><mi>f</mi><mi>f</mi><mi>s</mi><mi>e</mi><mi>t</mi></mrow></msup><mo>+</mo><mi>T</mi><mi>a</mi><mi>g</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">2^{index}×(8×2^{Offset}+Tag+1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.932438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight">d</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight">x</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">8</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.9324379999999999em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">O</span><span class="mord mathdefault mtight" style="margin-right:0.10764em;">f</span><span class="mord mathdefault mtight" style="margin-right:0.10764em;">f</span><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight">t</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></p>
+<ul>
+<li>Valid位：1位，指示cache块是否包含有效数据</li>
+</ul>
+</li>
+</ul>
+<p>示例：</p>
+<img src="http://cos.pansis.site/202405201936348.png/abc123" alt="image-20240520193629248" style="zoom:40%;" />
+<h4 id="4-直接映射cache举例">4、直接映射Cache举例</h4>
+<p>1、<img src="http://cos.pansis.site/202405201945864.png/abc123" alt="image-20240520194504759" loading="lazy"></p>
+<p>2、</p>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202405201945691.png/abc123" alt="image-20240520194520580" loading="lazy"></figure>
+<h2 id="三-cache性能分析">三、Cache性能分析</h2>
+<h4 id="1-命中hit-缺失miss">1、命中Hit、缺失Miss</h4>
+<ul>
+<li>命中： Tag比较成功，主存块在Cache中，可快速读取</li>
+<li>缺失：Tag比较失败 ，主存块不在Cache中，必须从主存中读取该块</li>
+</ul>
+<h4 id="2-命中率hr和缺失率mr效率参数">2、命中率HR和缺失率MR（效率参数）</h4>
+<ul>
+<li>命中率（Hit Rate，HR） ：对于一段程序，命中次数占总存储访问次数的比例</li>
+<li>缺失率（Miss Rate，MR） ：对于一段程序，缺失次数占总存储访问次数的比例</li>
+<li>HR+MR=1</li>
+<li>Cache性能的浴盆曲线
+<ul>
+<li>随着块尺寸的增加，缺失率下降：块尺寸增加，块上的命中得到提升</li>
+<li>若块尺寸不断增长，缺失率上升：冲突概率增加，导致频繁替换</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-cache延迟参数">3、Cache延迟参数</h4>
+<ul>
+<li>命中时间（Hit time，HT） ：访问cache的时间（包含了tag比较时间）</li>
+<li>缺失代价（Miss penalty，MP） ：从下一层存储器读入一个cache块的时间
+<ul>
+<li>block越大，缺失代价越大</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-cache发生缺失的原因3c-解决方法及代价">4、Cache发生缺失的原因3C、解决方法及代价</h4>
+<ul>
+<li>强制：无法避免首次访问cache块时的缺失 ，如果程序运行时间很长，则可以忽略
+<ul>
+<li>增加block大小（代价：增加MP，在Cache容量不变的情况下MR也可能增加）</li>
+</ul>
+</li>
+<li>容量Capacity ：Cache不可能包含程序要访问的所有主存块
+<ul>
+<li>增加Cache容量（代价：HT增加）</li>
+</ul>
+</li>
+<li>冲突Conflict：多个主存块映射到同一个cache块
+<ul>
+<li>增加Cache容量（代价：HT增加）</li>
+<li>增加相联度（代价：增加HT）</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-平均存储器访问时间amat">5、平均存储器访问时间AMAT</h4>
+<p>1、影响cache性能的两大主要因素 ：缺失率(MR)与缺失代价(MP)</p>
+<p>2、AMRT定义：综 合考虑命中和缺失后的存储器访问的平均延迟</p>
+<p>3、AMRT公式：AMAT = HT + MR ×MP（对于一级Cache）</p>
+<p>​                                          = L1 HT + L1 MR ×(L2 HT + L2 MR ×L2 MP)  （对于二级Cache）</p>
+<p>​                           平均存储器访问时间= 命中时间+ 缺失率×缺失代价</p>
+<p>4、示例：</p>
+<img src="http://cos.pansis.site/202405201958633.png/abc123" alt="image-20240520195823569" style="zoom:33%;" />
+<p>5、Cache容量增加，性能一定提升吗？</p>
+<p>不一定。Cache容量增加，会让HR增加，从而降低MR。但容量增加也会导致HT增加。有时对于大容量cache来说，HT增加会抵消掉HR带来的收益。因此 大容量cache不总是比小容量cache性能更好</p>
+<p>5、Cache对CPI的影响和存储访问延迟周期</p>
+<ul>
+<li>
+<p>CPI：CPU执行一个指令所需要的平均时钟周期数</p>
+</li>
+<li>
+<p>CPU时间：CPU时间=指令数×CPI×时钟周期时间</p>
+</li>
+<li>
+<p>考虑存储器访问延迟的CPI：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>P</mi><msub><mi>I</mi><mrow><mi>s</mi><mi>t</mi><mi>a</mi><mi>l</mi><mi>l</mi></mrow></msub><mo>=</mo><mi>C</mi><mi>P</mi><msub><mi>I</mi><mrow><mi>b</mi><mi>a</mi><mi>s</mi><mi>e</mi></mrow></msub><mo>+</mo><mi mathvariant="normal">平</mi><mi mathvariant="normal">均</mi><mi mathvariant="normal">存</mi><mi mathvariant="normal">储</mi><mi mathvariant="normal">延</mi><mi mathvariant="normal">迟</mi><mi mathvariant="normal">周</mi><mi mathvariant="normal">期</mi></mrow><annotation encoding="application/x-tex">CPI_{stall}=CPI_{base}+平均存储延迟周期</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">t</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">b</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">平</span><span class="mord cjk_fallback">均</span><span class="mord cjk_fallback">存</span><span class="mord cjk_fallback">储</span><span class="mord cjk_fallback">延</span><span class="mord cjk_fallback">迟</span><span class="mord cjk_fallback">周</span><span class="mord cjk_fallback">期</span></span></span></span></p>
+</li>
+<li>
+<p>平均存储延迟周期：存储延迟周期=访存次数/指令×MR×MP（对于一级Cache）</p>
+<p>​							  =访存次数/指令× L1 MR ×(L2 HT + L2 MR ×L2 MP)  （对于二级Cache）</p>
+</li>
+<li>
+<p>示例：</p>
+<img src="http://cos.pansis.site/202405202007456.png/abc123" alt="image-20240520200757352" style="zoom:40%;" />
+</li>
+</ul>
+<h2 id="四-cache读和写">四、Cache读和写</h2>
+<p>假定指令和数据存储在不同Cache中，指令Cache为(I$)、数据cache为(D$)</p>
+<p>I$ 只有读没有写，D$既有读也有写</p>
+<h4 id="1-读命中">1、读命中</h4>
+<p>性能最高；这是最理想的cache访问模式</p>
+<h4 id="2-读缺失">2、读缺失</h4>
+<ul>
+<li>流水线暂停</li>
+<li>从主存读入block</li>
+<li>写入cache</li>
+<li>发送word至流水线</li>
+<li>流水线恢复执行</li>
+</ul>
+<h4 id="3-写命中">3、写命中</h4>
+<p>两种方式：写通、写回</p>
+<p>1、写通</p>
+<ul>
+<li>总是同时写cache与主存，cache与主存总是一致的</li>
+<li>缺点：慢！写的性能就是主存的性能</li>
+<li>改善措施：可以与cache平行部署一个Write Buffe</li>
+</ul>
+<p>2、写回</p>
+<ul>
+<li>只写cache，当cache块需要被替换时再更新主存 （这意味着cache与主存之间是可以不一致的）</li>
+<li>好处：命中在同一cache块的多个写被收集起来了，提高了写的效率</li>
+<li>Dirty位：每个cache块需要增加一个dirty位，用于记录是否被写入过，即在替换时需要写回到主存</li>
+</ul>
+<h4 id="4-写缺失">4、写缺失</h4>
+<p>两种方式：写分配、非写分配</p>
+<p>1、写分配</p>
+<p>步骤：流水线暂停；从主存读入block；写入 cache；执行写命中</p>
+<p>特点：·无论写通还是写回，写分配均有效 ·可以确保在写缺失后，cache有最新数据</p>
+<p>2、非写分配</p>
+<p>特点：不写cache而直接写主存 ， cache不包含最新数据 ，但主存包含最新数据</p>
+<h2 id="五-多级cache">五、多级Cache</h2>
+<h4 id="1-结构">1、结构</h4>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/202405202021322.png/abc123" alt="image-20240520202136239" loading="lazy"></figure>
+<h4 id="2-解决问题">2、解决问题</h4>
+<p>解决存储器越快，单位成本越高的矛盾</p>
+<h4 id="3-多级cache的amat">3、多级Cache的AMAT</h4>
+<ul>
+<li>
+<p>AMAT = L1 HT + L1 MR ×L1 MP</p>
+</li>
+<li>
+<p>L1 MP = L2 HT + L2 MR ×L2 MP（L1 MP依赖于L2的性能）</p>
+</li>
+<li>
+<p>对于2级Cache：AMAT = L1 HT + L1 MR ×(L2 HT + L2 MR ×L2 MP)</p>
+<p>​					=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mn>1</mn><mi>H</mi><mi>T</mi><mo>+</mo><mi>L</mi><mn>1</mn><mi>M</mi><mi>R</mi><mo>×</mo><mi>L</mi><mn>2</mn><mi>H</mi><mi>T</mi><mo>+</mo><mi>M</mi><msub><mi>R</mi><mrow><mi>g</mi><mi>l</mi><mi>o</mi><mi>b</mi><mi>a</mi><mi>l</mi></mrow></msub><mo>×</mo><mi>L</mi><mn>2</mn><mi>M</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">L1 HT + L1 MR ×L2 HT + MR_{global} ×L2 MP</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">L</span><span class="mord">1</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">L</span><span class="mord">1</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">L</span><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">b</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span></p>
+</li>
+</ul>
+<p>示例：</p>
+<figure data-type="image" tabindex="3"><img src="http://cos.pansis.site/202405202031026.png/abc123" alt="image-20240520203153956" loading="lazy"></figure>
+<h4 id="4-局部缺失率和全局缺失率">4、局部缺失率和全局缺失率</h4>
+<p>1、局部缺失率：对于某层cache的访问而产生的 缺失比例</p>
+<p>​        例如：L2$局部缺失率= L2$缺失次数/L1$缺失次数</p>
+<p>2、全局缺失率：对于所有各级cache的访问而产 生的缺失比例</p>
+<ul>
+<li>
+<p>对于N级cache来说，全局缺失率有两种计算方法：</p>
+<ul>
+<li>
+<p>方法1： 全局缺失率=各级局部缺失率相乘</p>
+</li>
+<li>
+<p>方法2：全局缺失率= n级cache缺失次数(访问主存次数)/L1访问次数(load/store指令次数)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>全局MR ≤ 任意的局部MR</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="4"><img src="http://cos.pansis.site/202405202039518.png/abc123" alt="image-20240520203949451" loading="lazy"></figure>
+<h4 id="5-多级cache设计考虑">5、多级Cache设计考虑</h4>
+<ul>
+<li>L1$聚焦在缩短命中时间
+<ul>
+<li>通常容量都较小，以最小化HT来提升时钟频率</li>
+<li>L1 MP要依靠L2$。所以，即使L1 MR高一些，也要追求快！</li>
+</ul>
+</li>
+<li>L2$、L3$聚焦在降低缺失率
+<ul>
+<li>尽可能的避免访问主存</li>
+<li>通常容量较大，块尺寸也较大</li>
+</ul>
+</li>
+</ul>
+<h2 id="六-组相联cache">六、组相联Cache</h2>
+<h4 id="1-n路组相连">1、N路组相连</h4>
+<p>1、直接映射Cache本质是1路组相连，一组只有1个block</p>
+<p>2、N路组相连，一组有n个block</p>
+<img src="http://cos.pansis.site/202405202056229.png/abc123" alt="image-20240520205652102" style="zoom:40%;" />
+<h4 id="2-tio计算">2、TIO计算</h4>
+<p>假设主存地址为数为A</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>位数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Offset</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>=</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mo>(</mo><mi>b</mi><mi>l</mi><mi>o</mi><mi>c</mi><mi>k</mi><mi>s</mi><mi>i</mi><mi>z</mi><mi>e</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O=log_2(blocksize)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">s</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mord mathdefault">e</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>Index</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mo>=</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mo>(</mo><mi>z</mi><mi>u</mi><mi>n</mi><mi>u</mi><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">I=log_2(zunum)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mord mathdefault">u</span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span> (差异)</td>
+</tr>
+<tr>
+<td>Tag</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>=</mo><mi>A</mi><mo>−</mo><mi>I</mi><mo>−</mo><mi>O</mi></mrow><annotation encoding="application/x-tex">T=A-I-O</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>zunum代表Cache组数</li>
+<li>Cache组数=Cache容量/(blocksize×路数)</li>
+</ul>
+<p>示例：<img src="http://cos.pansis.site/202405202102809.png/abc123" alt="image-20240520210244736" loading="lazy"></p>
+<h4 id="3-组相连读示例">3、组相连读示例</h4>
+<img src="http://cos.pansis.site/202405202120396.png/abc123" alt="image-20240520212030173" style="zoom:50%;" />
+<h4 id="4-cache块替换策略">4、Cache块替换策略</h4>
+<p>1、问题：当cache缺失时，存在一个问题：需要挑选组内哪个cache块进行替换</p>
+<p>2、方案：随机替换，最近最少使用LRU</p>
+<ul>
+<li>
+<p>随机替换：硬件随机的从组内挑选一个cache块</p>
+</li>
+<li>
+<p>LRU：硬件记录cpu的访存历史，然后替换最长时间未被访问的cache块</p>
+</li>
+</ul>
+<p>3、LRU缺点</p>
+<ul>
+<li>算法过于消耗资源，会导致性能下降</li>
+<li>当4路以上时，通常会采用伪LRU算法</li>
+</ul>
+<h4 id="5-组相联cache的性能">5、组相联cache的性能</h4>
+<p>1、性能最大改善发生在从直接映射改为2路组相联</p>
+<h2 id="七-全相连映射">七、全相连映射</h2>
+<h4 id="1-数据格式">1、数据格式</h4>
+<img src="http://cos.pansis.site/202405272121706.png/abc123" alt="image-20240527212103655" style="zoom:50%;" />
+<h4 id="2-计算">2、计算</h4>
+<figure data-type="image" tabindex="5"><img src="http://cos.pansis.site/202405272122268.png/abc123" alt="image-20240527212222186" loading="lazy"></figure>
+<h4 id="3-直接映射-组相联-全相联对比">3、直接映射、组相联、全相联对比</h4>
+<p>1、直接映射是一路组相联，全相连是最多路的组相联（只有一组）</p>
+<p>2、组相联是两者的折中方案</p>
+<p>3、相联度增加，则组数减小，组内冲突减小，但实现代价增大。</p>
+<h2 id="八-cache设计">八、Cache设计</h2>
+<h4 id="1-改进cache性能">1、改进cache性能</h4>
+<ul>
+<li>减少cache的HT
+<ul>
+<li>更小的cache（查找/检查时间更短） （cache块只有1个字时甚至不需要MUX！）</li>
+</ul>
+</li>
+<li>减少MR
+<ul>
+<li>更大的cache（capacity）</li>
+<li>更大的块（有助于改善compulsory和空间局部性）</li>
+<li>增加相联度（降低块内conflict）</li>
+</ul>
+</li>
+<li>减少MP
+<ul>
+<li>更小的块（减少数据copy时间）</li>
+<li>使用多级cache</li>
+<li>使用write buffer
+<ul>
+<li>需要在cache读缺失时检查writebuffer</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-cache容量">2、Cache容量</h4>
+<p>1、不作特殊申明时，Cache的容量指Cache数据块的容量</p>
+<p>2、Cache实际总的存储容量实际上还包含Tag和Valid Bit的位数</p>
+<img src="http://cos.pansis.site/202405272124502.png/abc123" alt="image-20240527212400453" style="zoom:50%;" />
+<figure data-type="image" tabindex="6"><img src="http://cos.pansis.site/202405272124634.png/abc123" alt="image-20240527212414568" loading="lazy"></figure>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/jsjzcyl/" class="article-info">
+                                                        计算机组成原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

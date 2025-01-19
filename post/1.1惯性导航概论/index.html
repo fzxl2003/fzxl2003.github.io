@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>1.1惯性导航概论 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、导航
+1、定义
+引导运载体从出发点到达目的地的整个过程，包含导航、制导与控制三个过程。
+2、导航系统
+定义： 为了完成载体引导任务的设备称为导航系统。
+引导载体航行所需的基本参数： 即时位置、速度、航向
+（均由导航系统提供）
+3、制导系..." />
+        <meta name="keywords" content="惯性导航基础" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="1.1惯性导航概论" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、导航
+1、定义
+引导运载体从出发点到达目的地的整个过程，包含导航、制导与控制三个过程。
+2、导航系统
+定义： 为了完成载体引导任务的设备称为导航系统。
+引导载体航行所需的基本参数： 即时位置、速度、航向
+（均由导航系统提供）
+3、制导系...">
+        <meta property="og:url" content="https://github.pansis.site/post/1.1惯性导航概论/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-09-11">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="1.1惯性导航概论">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="1.1惯性导航概论">
+        <meta name="twitter:description" content="一、导航
+1、定义
+引导运载体从出发点到达目的地的整个过程，包含导航、制导与控制三个过程。
+2、导航系统
+定义： 为了完成载体引导任务的设备称为导航系统。
+引导载体航行所需的基本参数： 即时位置、速度、航向
+（均由导航系统提供）
+3、制导系...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    1.1惯性导航概论
+                                </h2>
+                                <span class="article-info">
+                                    2023-09-11, 1312 words, 5 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-导航">一、导航</h2>
+<h4 id="1-定义">1、定义</h4>
+<p>引导运载体从出发点到达目的地的整个过程，包含导航、制导与控制三个过程。</p>
+<h4 id="2-导航系统">2、导航系统</h4>
+<p><strong>定义：</strong> 为了完成载体引导任务的设备称为导航系统。</p>
+<p><strong>引导载体航行所需的基本参数：</strong> 即时位置、速度、航向</p>
+<p>（均由导航系统提供）</p>
+<h4 id="3-制导系统">3、制导系统</h4>
+<p><strong>定义：</strong> 按选定的规律对载体进行引导，调整其运动轨迹直至以允许的误差击中目标或到达目的地。</p>
+<p><strong>功能：</strong></p>
+<ul>
+<li>测量载体与目标的相对位置</li>
+<li>计算出实际飞行轨迹和理论轨迹的偏差</li>
+<li>给出消除偏差的指令</li>
+</ul>
+<h2 id="二-导航系统的分类">二、导航系统的分类</h2>
+<h4 id="1-分类">1、分类</h4>
+<p><strong>自主导航：</strong> 惯性导航、天文导航、物理场导航</p>
+<p><strong>非自主导航（无线电导航）：</strong> 卫星导航</p>
+<h4 id="2-惯性导航">2、惯性导航</h4>
+<p>见下</p>
+<h4 id="3-卫星导航">3、卫星导航</h4>
+<p><strong>优点：</strong> 全天候、高精度、误差不积累</p>
+<p><strong>缺点：</strong> 抗干扰性能较差</p>
+<h4 id="4-天文导航">4、天文导航</h4>
+<p><strong>优点：</strong> 完全自主，误差不积累</p>
+<p><strong>缺点：</strong> 导航精度受大气条件影响较大</p>
+<h4 id="5-物理场导航">5、物理场导航</h4>
+<p><strong>优点：</strong> 误差不积累、具有良好的隐蔽性和抗干扰性、提供绝对位置信息</p>
+<p><strong>缺点：</strong> 需存储大量地球物理场数据、导航信息不连续</p>
+<h2 id="三-无线电导航">三、无线电导航</h2>
+<h4 id="1-无线电导航的基本原理">1、无线电导航的基本原理</h4>
+<p>运载体上的导航设备通过接收地面台或空中卫星上的导航信号，根据电磁波的传播特性，测出信号传播时间、相位、频率与幅度后，即可测出运载体相对于号航台的方位、距离、距离的变化率等几何参数，建立起运载体与导航台的相对位置关系，从而获得运载体当前的位置。</p>
+<h4 id="2-电磁波传播的基本特性">2、电磁波传播的基本特性</h4>
+<p>(1) 电磁波在在均匀理想媒质中，沿<strong>直线传播</strong><br>
+(2) 电磁波在自由空间的<strong>传播速度是恒定的</strong> ;<br>
+(3) 电磁波在传播路线上遇到障碍物或在不连续介质的界面上时<strong>会发生反射</strong> 。</p>
+<h4 id="3-无线电导航优缺点">3、无线电导航优缺点</h4>
+<p><strong>优点：</strong> 不受时间、天气限制。精度高，作用距离远，定位时间短，设备简单可靠</p>
+<p><strong>缺点：</strong> 易被发现和干扰，需要载体外的导航台支持。</p>
+<h2 id="四-惯性导航">四、惯性导航</h2>
+<h4 id="1-定义-2">1、定义</h4>
+<p>利用惯性元件 (陀螺仪、加速度计) 测得的加速度和角速度经过积分和运算得到运动体的位置、速度和姿态等导航信息。</p>
+<h4 id="2-优点">2、优点</h4>
+<ul>
+<li>
+<p>完全自主，不依赖任何外界信息，只依靠陀螺仪与加速度计</p>
+</li>
+<li>
+<p>不受外界干扰，隐蔽性好，使用环境不受限制（海陆空、水下）</p>
+</li>
+<li>
+<p>运动参数完备，提供位置、速度、加速度、姿态信息</p>
+</li>
+<li>
+<p>实时性好，数据更新频率高</p>
+</li>
+<li>
+<p>短期精度、稳定性好</p>
+</li>
+</ul>
+<h4 id="3-缺点">3、缺点</h4>
+<p>误差随时间积累，需要其他导航方法进行定期校正</p>
+<h4 id="4-分类">4、分类</h4>
+<p><strong>按有无机电式实体平台：</strong> 平台式、捷联式</p>
+<p><strong>按选用的陀螺仪类型不同：</strong> 液浮陀螺、三浮陀螺、挠性陀螺、静电陀螺、激光陀螺慢导系统和光纤陀螺惯导系统等</p>
+<p><strong>按装备对象不同：</strong> 舰载、机载和车载惯导系统等。</p>
+<h4 id="5-特点">5、特点</h4>
+<ul>
+<li>自主性：无需任何导航台站，导航功能完全可由惯性导航系统自身来完成。</li>
+<li>隐蔽性：不向载体以外发出任何信号，敌方无法搜索或发现它的工作信息。</li>
+<li>抗干扰：不受外部电磁环境影响，敌方也无法实施电磁干扰和控制。</li>
+<li>全球性：不受地域限制，具有全球导航能力。</li>
+<li>连续性：能够连续、实时提供导航信息。</li>
+<li>完备性：既能提供载体的位置信息又能提供载体的姿态、速度和时间信息</li>
+</ul>
+<h4 id="6-影响惯性系统精度和稳定性的主要因素">6、影响惯性系统精度和稳定性的主要因素</h4>
+<p>陀螺仪和加速度计的性能</p>
+<h4 id="7-惯性导航系统的两大关键传感器">7、惯性导航系统的两大关键传感器</h4>
+<p>陀螺仪和加速度计</p>
+<p>加速度计：精度较高，对系统的误差影响较小</p>
+<p>陀螺仪：结构复杂、制造困难且其漂移误差对惯导系统精度影响很大（技术瓶颈）</p>
+<p>陀螺仪: 机械陀螺、光学陀螺、MEMS陀螺及</p>
+<p>加速度计: 挠性加速度计、摆式加速度计、XXXXXX</p>
+<h4 id="6-平台式与捷联式惯导系统的特点">6、平台式与捷联式惯导系统的特点</h4>
+<h5 id="平台式惯导系统">平台式惯导系统</h5>
+<ul>
+<li>惯性平台能够隔离载体的角振动，为惯性仪表提供了较好的工作条件;<br>
+平台能够直接建立导航坐标系，计算方便，容易补偿和修正测量仪表的输出;</li>
+<li>结构复杂，尺寸过大，价格昂贵。</li>
+</ul>
+<h5 id="捷联式惯导系统">捷联式惯导系统</h5>
+<ul>
+<li>省去了物理平台，结构简单，体积小，维护方便;</li>
+<li>陀螺仪和加速度机直接安装在载体上，工作条件不好,从而影响仪表的测量精度。</li>
+<li>捷联惯导可靠性高，初始对准快，应用更广泛。</li>
+</ul>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/gxdhjc/" class="article-info">
+                                                        惯性导航基础
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://github.pansis.site/post/pycharm-dai-ma-ti-shi/">
+                                                    <h3 class="post-title">
+                                                        Pycharm代码提示
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

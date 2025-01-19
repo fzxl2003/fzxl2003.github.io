@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>Pycharm调试 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="Pycharm调试
+**对于编程学习，可以说调试能力是最重要的技能，没有之一！**所谓调试程序，就是控制编译器一行一行地执行代码，过程中可以清楚看到每个变量值的变化情况、函数的调用过程等，进而发现程序中隐藏的错误或者低效的代码。
+添加断点
+..." />
+        <meta name="keywords" content="Python与OpenCV" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="Pycharm调试" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="Pycharm调试
+**对于编程学习，可以说调试能力是最重要的技能，没有之一！**所谓调试程序，就是控制编译器一行一行地执行代码，过程中可以清楚看到每个变量值的变化情况、函数的调用过程等，进而发现程序中隐藏的错误或者低效的代码。
+添加断点
+...">
+        <meta property="og:url" content="https://github.pansis.site/post/pycharm-diao-shi/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-09-04">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="Pycharm调试">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Pycharm调试">
+        <meta name="twitter:description" content="Pycharm调试
+**对于编程学习，可以说调试能力是最重要的技能，没有之一！**所谓调试程序，就是控制编译器一行一行地执行代码，过程中可以清楚看到每个变量值的变化情况、函数的调用过程等，进而发现程序中隐藏的错误或者低效的代码。
+添加断点
+...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    Pycharm调试
+                                </h2>
+                                <span class="article-info">
+                                    2023-09-04, 1572 words, 6 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h1 id="pycharm调试">Pycharm调试</h1>
+<p>**对于编程学习，可以说调试能力是最重要的技能，没有之一！**所谓调试程序，就是控制编译器一行一行地执行代码，过程中可以清楚看到每个变量值的变化情况、函数的调用过程等，进而发现程序中隐藏的错误或者低效的代码。</p>
+<h2 id="添加断点">添加断点</h2>
+<p><em><strong>*添加断点是调试功能的核心*</strong></em></p>
+<p>左键添加断点，主要是在比较容易出错，或者有怀疑点的位置。</p>
+<p>当代码运行到此处时，IDE将暂停程序，此时查看当前程序运行状态，包含变量值、线程等信息。<img src="http://cos.pansis.site/202309041656687.png" alt="image-20230904165640530" style="zoom:50%;" /></p>
+<h2 id="简单调试实例">简单调试实例</h2>
+<p>以下边的代码为例子:</p>
+<pre><code class="language-python">n=int(input())
+cnt=0
+for j in range(n):
+    cnt=cnt+1
+    print(cnt)
+</code></pre>
+<p>点击调试按钮，程序将会开始运行。</p>
+<img src="http://cos.pansis.site/202309041658092.png" alt="image-20230904165814816" style="zoom:80%;" />
+<p>根据上述代码要求，我们先在控制台输入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span> 并回车，将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 赋值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span> 。</p>
+<p>回车后断点行会变为蓝色，意味着此时代码运行到第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> 行并停止</p>
+<p>下方控制台显示变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 由于执存储了键盘的输入变为了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span> ， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>n</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">cnt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span></span></span></span> 由于还没有执行仍为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></p>
+<img src="http://cos.pansis.site/202309041700076.png" alt="image-20230904170051687" style="zoom:80%;" />
+<p>点击上图标记按钮，代码会继续执行，直至再次遇到断点，根据逻辑cnt由于执行了一次变为了1，而n由于没有操作所以还是5</p>
+<img src="http://cos.pansis.site/202309041701665.png" alt="image-20230904170141568" style="zoom:50%;" />
+<h2 id="调试实战">调试实战</h2>
+<p>以OpenCV的一个简单实例，展示调试过程中查看变量的作用以及如何暴露代码逻辑错误问题。</p>
+<p>下面这段代码使用OpenCV读取一组图片，利用现有函数检测图片中的圆，如果图片中有圆则显示，否则不显示。</p>
+<p>在<code>D:\下载\test</code>文件夹下存有两张图片用于检测圆。</p>
+<pre><code class="language-python">import cv2# 调用opencv库
+import os
+foldpath='D:\下载\test'
+filename=os.listdir(foldpath)#读取foldpath文件夹下的文件名
+for i in filename:
+    img=cv2.imread(foldpath+'\\'+i)#使用opencv读取图片
+    #转为灰度图
+    img1=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    #检测图片中的圆,参数分别为图片，检测方法，分辨率，最小距离，
+    # param1(param2)为边缘检测时使用的梯度值上下限，minRadius为最小半径，maxRadius为最大半径
+    circles = cv2.HoughCircles(img1, cv2.HOUGH_GRADIENT, 1, 100, param1=100, param2=30, minRadius=300, maxRadius=0)
+    #如果检测到圆，标记出圆的位置并显示
+    if circles is not None:
+        for circle in circles[0]:
+            #坐标行列
+            x=int(circle[0])
+            y=int(circle[1])
+            #半径
+            r=int(circle[2])
+            #在原图用指定颜色标记出圆的位置
+            img=cv2.circle(img,(x,y),r,(0,0,255),-1)
+        #显示新图像
+        cv2.imshow('res',img)
+        cv2.waitKey(0)#等待按键按下
+        cv2.destroyAllWindows()#清除所有窗口
+</code></pre>
+<p>我们运行上述代码，会出现下面的报错信息</p>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202309050016966.png" alt="image-20230905001624914" loading="lazy"></figure>
+<p>报错信息十分清楚的告诉我们路径名称出现问题。尽管我们文件夹路径写的是<code>D:\下载\test</code>，但Python中存在转义字符，<code>\</code>应当写成<code>\\</code>。</p>
+<p>我们将foldpath改为<code>D:\\下载\\test</code>，继续运行代码。</p>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/202309050028698.png" alt="image-20230905002802642" loading="lazy"></figure>
+<p>报错代码在转灰度图的函数上，那么我们将断点放在该函数上进行调试，观察代码运行情况。</p>
+<figure data-type="image" tabindex="3"><img src="http://cos.pansis.site/202309050029485.png" alt="image-20230905002907314" loading="lazy"></figure>
+<p>当代码运行到该函数时程序暂停，在调试界面我们会发现img变量竟然为None，也就是说<code>img=cv2.imread(foldpath+'\\'+i)</code>代码根本就没有读取照片。</p>
+<p>其实这个是新手在使用OpenCV时常常会遇到的问题。OpenCV不支持中文路径，但foldpath中出现了中文，导致图片读取失败。</p>
+<p>针对这个问题，我们将图片放置在<code>D:\123\test</code>路径下并修改foldpath变量，重新运行代码。</p>
+<p>此时代码不再报错，但发现并没有弹出图片，但在<code>D:\123\test</code>下我们的的确确放了一张有圆的图片和没有圆的图片。</p>
+<img src="http://cos.pansis.site/202309050033083.png" alt="image-20230905003355035" style="zoom:50%;" />
+<p>将断点放在<code>cv2.imshow('res',img)</code>上，调试代码。发现代码根本没有暂停，也就意味着代码中<code>if circles is not None:</code>条件始终为假，<code>cv2.HoughCircles</code>函数没有检测到圆。</p>
+<p>下面我们就要重新审视<code>cv2.HoughCircles</code>函数中设置的参数，我们发现minRadius被设置为300，可能最小半径设置过大导致将图片中的圆忽略。所以我们将该参数设置为0，重新运行代码。</p>
+<p>此时，成功弹出弹窗。在第一张图片中成功识别出圆。</p>
+<img src="http://cos.pansis.site/202309050038170.png" alt="image-20230905003854131" style="zoom:50%;" />
+<p>下面是调试后成功运行的代码</p>
+<pre><code class="language-py">import cv2# 调用opencv库
+import os
+foldpath='D:\\123\\test'
+filename=os.listdir(foldpath)#读取foldpath文件夹下的文件名
+for i in filename:
+    img=cv2.imread(foldpath+'\\'+i)#使用opencv读取图片
+    #转为灰度图
+    img1=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    #检测图片中的圆,参数分别为图片，检测方法，分辨率，最小距离，
+    # param1(param2)为边缘检测时使用的梯度值上下限，minRadius为最小半径，maxRadius为最大半径
+    circles = cv2.HoughCircles(img1, cv2.HOUGH_GRADIENT, 1, 100, param1=100, param2=30, minRadius=0, maxRadius=0)
+    #如果检测到圆，标记出圆的位置并显示
+    if circles is not None:
+        for circle in circles[0]:
+            #坐标行列
+            x=int(circle[0])
+            y=int(circle[1])
+            #半径
+            r=int(circle[2])
+            #在原图用指定颜色标记出圆的位置
+            img=cv2.circle(img,(x,y),r,(0,0,255),-1)
+        #显示新图像
+        cv2.imshow('res',img)
+        cv2.waitKey(0)#等待按键按下
+        cv2.destroyAllWindows()#清除所有窗口
+cv2.destroyAllWindows()#清除所有窗口
+</code></pre>
+<h2 id="调试功能介绍">调试功能介绍</h2>
+<p>上面两个实例初步介绍了断点、断点暂停、变量查看功能，掌握上述功能就基本上可以胜任绝大多数的程序调试。下面系统地介绍Pycharm调试功能和进阶功能。</p>
+<p>转载改编于<a href="https://blog.csdn.net/weixin_43755906/article/details/131132928">PyCharm代码调试_pycharm调试_TEST7780的博客-CSDN博客</a></p>
+<h3 id="调试界面">调试界面</h3>
+<ol>
+<li>变量查看窗口</li>
+</ol>
+<p>程序运行时的变量和值都会显示在此窗口，每执行一行代码，变量可能会改变。</p>
+<ol start="2">
+<li>调试控制窗口</li>
+</ol>
+<p>通过调试控制窗口，来控制代码运行路径。</p>
+<ol start="3">
+<li>线程控制窗口</li>
+</ol>
+<p>如果当前程序为多线程，可通过线程控制窗口下的下拉框来切换线程。</p>
+<ol start="4">
+<li>程序控制窗口</li>
+</ol>
+<p>通过程序控制窗口，来控制程序运行终止。<br>
+<img src="http://cos.pansis.site/202309041705453.jpeg" alt="img" loading="lazy"></p>
+<h3 id="程序控制功能">程序控制功能</h3>
+<figure data-type="image" tabindex="4"><img src="http://cos.pansis.site/202309041714025.png" alt="image-20230904171413950" loading="lazy"></figure>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/L7r9STb75/" class="article-info">
+                                                        Python与OpenCV
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://github.pansis.site/post/oj-zhi-nan/">
+                                                    <h3 class="post-title">
+                                                        OJ指南
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

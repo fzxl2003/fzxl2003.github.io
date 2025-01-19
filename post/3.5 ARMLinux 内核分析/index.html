@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>3.5 ARMLinux 内核分析 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、ARM系统结构简介
+1、ARM有7种运行状态
+
+用户状态（User）
+中断状态（IRQ, Imterrupt Request） (0x18)
+快中断状态（FIQ,Fast Imterrupt Request）(0x1c)
+监管状态（Su..." />
+        <meta name="keywords" content="嵌入式系统" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="3.5 ARMLinux 内核分析" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、ARM系统结构简介
+1、ARM有7种运行状态
+
+用户状态（User）
+中断状态（IRQ, Imterrupt Request） (0x18)
+快中断状态（FIQ,Fast Imterrupt Request）(0x1c)
+监管状态（Su...">
+        <meta property="og:url" content="https://github.pansis.site/post/3.5 ARMLinux 内核分析/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-11-15">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="3.5 ARMLinux 内核分析">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="3.5 ARMLinux 内核分析">
+        <meta name="twitter:description" content="一、ARM系统结构简介
+1、ARM有7种运行状态
+
+用户状态（User）
+中断状态（IRQ, Imterrupt Request） (0x18)
+快中断状态（FIQ,Fast Imterrupt Request）(0x1c)
+监管状态（Su...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    3.5 ARMLinux 内核分析
+                                </h2>
+                                <span class="article-info">
+                                    2024-11-15, 1262 words, 5 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-arm系统结构简介">一、ARM系统结构简介</h2>
+<h4 id="1-arm有7种运行状态">1、ARM有7种运行状态</h4>
+<ul>
+<li>用户状态（User）</li>
+<li>中断状态（IRQ, Imterrupt Request） (0x18)</li>
+<li>快中断状态（FIQ,Fast Imterrupt Request）(0x1c)</li>
+<li>监管状态（Supervisor）</li>
+<li>终止状态（Abort）</li>
+<li>无定义状态（Undefined）</li>
+<li>系统状态（System）</li>
+</ul>
+<h4 id="2-arm系统结构中各个寄存器的使用方式">2、 ARM系统结构中各个寄存器的使用方式</h4>
+<img src="http://cos.pansis.site/image-20241115194030513.png?abc123" alt="image-20241115194030513" style="zoom:70%;" />
+<h2 id="二-arm-linux内存管理">二、ARM-Linux内存管理</h2>
+<h4 id="1-主要内容">1、主要内容</h4>
+<p>地址映射、空间分配、保护机制</p>
+<h4 id="2-地址映射">2、地址映射</h4>
+<p>1、关键器件：MMU（内存管理单元）</p>
+<ul>
+<li>作用：地址映射、 对地址访问的保护和限制</li>
+</ul>
+<p>2、虚实地址转换</p>
+<img src="http://cos.pansis.site/image-20241115194523740.png?abc123" alt="image-20241115194523740" style="zoom:67%;" />
+<img src="http://cos.pansis.site/image-20241115194650009.png?abc123" alt="image-20241115194650009" style="zoom:67%;" />
+<p>3、单层的段映射</p>
+<p>当CPU访问内存的时候</p>
+<ul>
+<li>其32位虚地址的高12位用作访问段映射表的下标，从表中找到相 应的表项</li>
+<li>每个表项提供一个12位的物理段地址，以及对这个段的访问许可 标志，将这12位物理段地址和虚拟地址中的低20位拼接在一起， 就得到了32位的物理地址</li>
+</ul>
+<p>4、双层的页面映射</p>
+<p>当CPU访问内存的时候：(以页面大小＝4KB为例)</p>
+<ul>
+<li>以32位虚地址的高12位（bit20-bit31）作为访问首层映射表 的下标，从表中找到相应的表项，每个表项指向一个二层 映射表；</li>
+<li>以虚拟地址中的次8位（bit12-bit19）作为访问所得二层映 射表的下标，进一步从相应表项中取得20位的物理页面地 址；</li>
+<li>最后，将20位的物理页面地址和虚拟地址中的最低12位拼 接在一起，就得到了32位的物理地址</li>
+</ul>
+<h4 id="3-虚拟内存的实现所需机制">3、虚拟内存的实现所需机制</h4>
+<ul>
+<li>地址映射机制</li>
+<li>内存分配回收机制</li>
+<li>缓存和刷新机制</li>
+<li>请求页机制</li>
+<li>交换机制</li>
+<li>内存共享机制</li>
+</ul>
+<h4 id="4-虚存空间">4、虚存空间</h4>
+<ul>
+<li>系统中的每个进程都各有自己的首层映 射表，这就是它的空间</li>
+<li>没有独立空间的就只是线程而不是进程</li>
+</ul>
+<h2 id="三-arm-linux-的中断响应和处理">三、ARM-Linux 的中断响应和处理</h2>
+<h4 id="1-中断流程">1、中断流程</h4>
+<ul>
+<li>中断响应</li>
+<li>中断处理</li>
+<li>中断返回</li>
+</ul>
+<h4 id="2-中断响应">2、中断响应</h4>
+<p>1、中断控制器</p>
+<ul>
+<li>ARM是将中断控制器集成在CPU内部</li>
+<li>由 外设产生的中断请求都由芯片上的中断 控制器汇总成一个IRQ中断请求</li>
+<li>中断控制器还向CPU提供一个中断请求 寄存器和一个中断控制寄存器</li>
+</ul>
+<img src="http://cos.pansis.site/image-20241115200902696.png?abc123" alt="image-20241115200902696" style="zoom:50%;" />
+<img src="http://cos.pansis.site/image-20241115201053731.png?abc123" alt="image-20241115201053731" style="zoom:50%;" />
+<p>具体中断处理程序则在数据结构struct  irqaction</p>
+<img src="http://cos.pansis.site/image-20241115201122147.png?abc123" alt="image-20241115201122147" style="zoom:50%;" />
+<p>2、典型ARM中断向量表</p>
+<img src="http://cos.pansis.site/image-20241115201155914.png?abc123" alt="image-20241115201155914" style="zoom:50%;" />
+<h4 id="3-中断处理">3、中断处理</h4>
+<img src="http://cos.pansis.site/image-20241115202738832.png?abc123" alt="image-20241115202738832" style="zoom:70%;" />
+<h2 id="四-arm-linux系统调用">四、ARM-Linux系统调用</h2>
+<p>ARM处理器有自陷指令SWI</p>
+<ul>
+<li>CPU遇到自陷指令后，跳转到内核态</li>
+<li>操作系统首先保存当前运行的信息，然后根 据系统调用号查找相应的函数去执行</li>
+<li>执行完了恢复原先保存的运行信息返回</li>
+</ul>
+<h2 id="五-系统的启动和初始化">五、系统的启动和初始化</h2>
+<h4 id="1-步骤">1、步骤</h4>
+<p>1、使用bootloader将内核映像载入</p>
+<p>2、内核数据结构初始化（内核引导第一部分）：</p>
+<ul>
+<li>
+<p>start_kernel()中调用了一系列初始化函数， 以完成kernel本身的设置</p>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/image-20241115203853061.png?abc123" alt="image-20241115203853061" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/image-20241115203905112.png?abc123" alt="image-20241115203905112" loading="lazy"></figure>
+</li>
+<li>
+<p>调用init()过程，创建第一个内核线程</p>
+<ul>
+<li>
+<p>init()函数作为内核线程，首先锁定内核，然后调用do_basic_setup()完成外设及其驱动 程序的加载和初始化</p>
+</li>
+<li>
+<p>do_basic_setup()返回后，init()使用 execve()系统调用加载执行init程序</p>
+<img src="http://cos.pansis.site/image-20241115204047014.png?abc123" alt="image-20241115204047014" style="zoom:50%;" />
+</li>
+</ul>
+</li>
+</ul>
+<img src="http://cos.pansis.site/image-20241115204101998.png?abc123" alt="image-20241115204101998" style="zoom:40%;" />
+<h4 id="2-内核引导结束后的状态">2、内核引导结束后的状态</h4>
+<figure data-type="image" tabindex="3"><img src="http://cos.pansis.site/image-20241115204158094.png?abc123" alt="image-20241115204158094" loading="lazy"></figure>
+<h2 id="六-arm-linux进程管理">六、 ARM-Linux进程管理</h2>
+<h4 id="1-linux进程状态">1、Linux进程状态</h4>
+<ul>
+<li>TASK_RUNNING （就绪）</li>
+<li>TASK_INTERRUPTIBLE （浅度睡眠）</li>
+<li>TASK_UNINTERRUPTIBLE （深度睡眠）</li>
+<li>TASK_ZOMBIE  （僵死）</li>
+<li>TASK_STOPPED （暂停）</li>
+</ul>
+<h4 id="2-linux进程的创建">2、Linux进程的创建</h4>
+<ul>
+<li>系统的第一个真正的进程，init内核线程 （或进程）的标志符为1</li>
+<li>新进程通过克隆老进程或当前进程来创建 ,系统调用fork或clone可以创建新任务</li>
+<li>复制完成后，Linux允许两个进程共享资 源而不是复制各自的拷贝</li>
+</ul>
+<h4 id="3-linux进程的执行">3、Linux进程的执行</h4>
+<ul>
+<li>要让若干新进程按照需要处理不同的事 情，就必须通过系统调用exec</li>
+<li>函数sys_execve将可执行文件的名字从 用户空间取入内核空间以后就调用 do_execve( )执行具体的操作</li>
+</ul>
+<img src="http://cos.pansis.site/image-20241115204448157.png?abc123" alt="image-20241115204448157" style="zoom:67%;" />
+<h4 id="4-linux进程的消亡">4、 Linux进程的消亡</h4>
+<ul>
+<li>进程终止由可终止进程的系统调用通过 调用do_exit（）实现</li>
+<li>do_exit(long code)带一个参数code，用 于传递终止进程的原因</li>
+</ul>
+<h4 id="5-linux进程状态转换">5、Linux进程状态转换</h4>
+<figure data-type="image" tabindex="4"><img src="http://cos.pansis.site/image-20241115204538376.png?abc123" alt="image-20241115204538376" loading="lazy"></figure>
+<h2 id="七-arm-linux进程的调度">七、ARM-Linux进程的调度</h2>
+<h4 id="1-linux系统进程的切换三个层次">1、LINUX系统进程的切换三个层次</h4>
+<ul>
+<li>用户数据的保存：
+<ul>
+<li>正文段、数据段、栈段、共享内存段</li>
+</ul>
+</li>
+<li>寄存器数据的保存
+<ul>
+<li>PC、PSW、SP、PCBP、FP…</li>
+</ul>
+</li>
+<li>系统层次的保存
+<ul>
+<li>proc、u、虚拟存储空间管理表格、中断处理栈</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-函数schedule">2、函数schedule()</h4>
+<p>1、Linux进程调度由函数schedule()实现</p>
+<p>2、基本流程</p>
+<ul>
+<li>清理当前运行中的进程</li>
+<li>选择下一个投入运行的进程</li>
+<li>设置新进程的运行环境</li>
+<li>执行进程上下文切换</li>
+<li>后期处理</li>
+</ul>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/AVw14AAoK/" class="article-info">
+                                                        嵌入式系统
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

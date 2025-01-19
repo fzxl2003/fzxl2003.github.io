@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>C6讲解-23航C | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="A A^T+A
+#include&lt;stdio.h&gt;
+int a[105][105];
+int main()
+{
+    int m;
+    scanf(&quot;%d&quot;,&amp;m);
+    for (int ..." />
+        <meta name="keywords" content="23航C" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="C6讲解-23航C" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="A A^T+A
+#include&amp;lt;stdio.h&amp;gt;
+int a[105][105];
+int main()
+{
+    int m;
+    scanf(&amp;quot;%d&amp;quot;,&amp;amp;m);
+    for (int ...">
+        <meta property="og:url" content="https://github.pansis.site/post/c6-jiang-jie-23-hang-c/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-04-21">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="C6讲解-23航C">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="C6讲解-23航C">
+        <meta name="twitter:description" content="A A^T+A
+#include&amp;lt;stdio.h&amp;gt;
+int a[105][105];
+int main()
+{
+    int m;
+    scanf(&amp;quot;%d&amp;quot;,&amp;amp;m);
+    for (int ...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    C6讲解-23航C
+                                </h2>
+                                <span class="article-info">
+                                    2024-04-21, 996 words, 6 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h1 id="a-ata"><code>A</code> A^T+A</h1>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int a[105][105];
+int main()
+{
+    int m;
+    scanf(&quot;%d&quot;,&amp;m);
+    for (int i = 0; i &lt; m; ++i) {
+        for (int j = 0; j &lt; m; ++j) {
+            scanf(&quot;%d&quot;,&amp;a[i][j]);
+        }
+    }
+    for (int i = 0; i &lt; m; ++i) {
+        for (int j = 0; j &lt; m; ++j) {
+            printf(&quot;%lld &quot;,1ll*a[i][j]+a[j][i]);
+        }
+        printf(&quot;\n&quot;);
+    }
+
+}
+</code></pre>
+<h1 id="b-see-you-again"><code>B</code> See you again</h1>
+<h3 id="关于输入">关于输入</h3>
+<ul>
+<li>scanf(&quot;%s&quot;)和gets()</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>读入前</th>
+<th>中止条件</th>
+<th>读入后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scanf(&quot;%s&quot;)</td>
+<td>会忽略\n和空格</td>
+<td>遇到空格或\n</td>
+<td>空格或\n会留在缓冲区内</td>
+</tr>
+<tr>
+<td>gets()</td>
+<td>不会忽略\n</td>
+<td>遇到\n</td>
+<td>把\n读入并转换为0作为字符串结束符</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>scanf(&quot;%c&quot;)与getchar()</li>
+</ul>
+<p>在字符读入上完全等价，只是用法和返回值不同。</p>
+<pre><code>scanf(&quot;%c&quot;,&amp;a);
+a=getchar()
+</code></pre>
+<ul>
+<li>
+<p>%d等数字读入</p>
+<p>%d、%lld、%lf等数字读入</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>读入前</th>
+<th>中止条件</th>
+<th>读入后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%d、%lld、%lf</td>
+<td>忽略所有空白符</td>
+<td>遇到非数字字符</td>
+<td>不作处理</td>
+</tr>
+</tbody>
+</table>
+<p>如果在读入前遇到了非数字字符，直接读入失败，不进行读入和赋值</p>
+</li>
+<li>
+<p>何时需要使用getchar()</p>
+<ul>
+<li>
+<p>当先用%d读入一个数字，然后接着用gets()或getchar()、%c去读下一行的字符或字符串。</p>
+</li>
+<li>
+<p>此时%d只会读数字，而\n会留下来。</p>
+</li>
+<li>
+<p>因此需要getchar()去把\n吃掉，方便后续使用gets()或getchar()、%c去读下一行的字符或字符串。</p>
+</li>
+</ul>
+<p>实例</p>
+<pre><code> 123 123 123
+ abcd
+cdef
+</code></pre>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+    int a,b,c,d;
+    double e,f,g;
+    char str1[100];
+    char str2[100];
+    char str3[100];
+    scanf(&quot;%d%d %d&quot;,&amp;a,&amp;b,&amp;c);
+//    gets(str1);
+//    gets(str2);
+//    gets(str3);
+//    return 0;
+    scanf(&quot;%s&quot;,str1);
+    gets(str2);
+    gets(str3);
+    return 0;
+}
+</code></pre>
+</li>
+</ul>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+char s[1005];
+int main()
+{
+    int len;int a;
+    gets(s);
+    len=strlen(s);
+    while ((a=getchar())!=EOF)
+    {
+        getchar();
+        int flag=0;
+        for (int i = 0; i &lt;len ; ++i) {
+            if (s[i]==a)
+            {
+                flag=1;
+                printf(&quot;%d &quot;,i);
+            }
+        }
+        if (flag==0)
+            printf(&quot;-1&quot;);
+        printf(&quot;\n&quot;);
+    }
+}
+</code></pre>
+<h1 id="c-小宇的圆周率2"><code>C</code> 小宇的圆周率2</h1>
+<h3 id="示例代码1">示例代码1</h3>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int main() {
+    int n, m;
+    char prt[100];
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+    //计算数列前 n 项和
+    int sign = 1;
+    double sum = 0;
+    for (int i = 0; i &lt; n; ++i) {
+        sum += 4 * sign * 1.0 / (2 * i + 1);
+        sign = -sign;
+    }
+    //构造输出格式
+    sprintf(prt, &quot;f(%d,%d) = %%.%df&quot;, n, m, m);//prt=&quot;f(100,2) = %.2f&quot;假设n=100，m=2
+    //输出结果
+    printf(prt, sum);
+    return 0;
+}
+</code></pre>
+<h3 id="示例代码2">示例代码2</h3>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int main() {
+    int n, m;
+    char prt[100];
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+    //计算数列前 n 项和
+    int sign = 1;
+    double sum = 0;
+    for (int i = 0; i &lt; n; ++i) {
+        sum += 4 * sign * 1.0 / (2 * i + 1);
+        sign = -sign;
+    }
+    //构造输出格式
+    sprintf(prt, &quot;f(%%d,%%d) = %%.%df&quot;, m);// prt=&quot;f(%d,%d) = %.2f&quot;假设n=100，m=2
+    //输出结果
+    printf(prt, n, m, sum);
+    return 0;
+}
+</code></pre>
+<h1 id="d-使一颗心免于哀伤"><code>D</code> 使一颗心免于哀伤</h1>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+char str[1005];
+char s[1005];
+char nis[1005];
+int main()
+{
+    gets(str);
+    gets(s);
+    int s_len=strlen(s);
+    int str_len=strlen(str);
+    char *str_index=str;
+    for (int i = 0; i &lt; s_len; ++i) {
+        nis[i]=s[s_len-i-1];
+    }
+    nis[s_len]='\0';
+    char *index;
+    while ((index=strstr(str_index,s))!=NULL)
+    {
+        for (int i = 0; i &lt; s_len; ++i) {
+            *index=nis[i];
+            index++;
+        }
+        str_index+=s_len;
+    }
+    puts(str);
+}
+</code></pre>
+<h1 id="e-交换内存"><code>E</code> 交换内存</h1>
+<h3 id="malloc">malloc</h3>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202404172039710.png/abc123" alt="image-20240417203750366" loading="lazy"></figure>
+<h3 id="memcpy">memcpy</h3>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/202404172039701.png/abc123" alt="image-20240417203813080" loading="lazy"></figure>
+<h3 id="指针类型">指针类型</h3>
+<pre><code class="language-c">void Swap(void *p, void *q, size_t size){
+    void *temp= malloc(size);
+    memccpy(temp,p,size);
+    memccpy(p,q,size);
+    memccpy(q,temp,size);
+    free(temp);
+} // 请在下方补充Swap函数的定义。
+</code></pre>
+<h1 id="f-象棋马走日"><code>F</code> 象棋马走日</h1>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+int qipan[105][105];
+int main() {
+    int m,n,t;
+    scanf(&quot;%d%d%d&quot;,&amp;m,&amp;n,&amp;t);
+    int wz[8][2]={{-2,-1},{-2,1},{-1,-2},{-1,2},{1,-2},{1,2},{2,-1},{2,1}};
+    while (t--)
+    {
+        int x,y;
+        scanf(&quot;%d%d&quot;,&amp;x,&amp;y);
+        x--;y--;
+        qipan[x][y]=-1;
+        for (int i = 0; i &lt; 8; ++i) {
+            if (x+wz[i][0]&gt;=0&amp;&amp;x+wz[i][0]&lt;m&amp;&amp;y+wz[i][1]&gt;=0&amp;&amp;y+wz[i][1]&lt;n)
+            {
+                if (qipan[x+wz[i][0]][y+wz[i][1]]!=-1)
+                   qipan[x+wz[i][0]][y+wz[i][1]]=1;
+            }
+        }
+    }
+    for (int i = 0; i &lt; m; ++i) {
+        for (int j = 0; j &lt; n; ++j) {
+            if (qipan[i][j]==1 || qipan[i][j]==-1)
+                printf(&quot;0&quot;);
+            else
+                printf(&quot;1&quot;);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+</code></pre>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/24hc/" class="article-info">
+                                                        23航C
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://github.pansis.site/post/c6-solution-23-hang-c/">
+                                                    <h3 class="post-title">
+                                                        C6 - Solution-23航C
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

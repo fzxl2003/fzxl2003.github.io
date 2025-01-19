@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>1.1 ARM | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、CISC和RISC
+1、CISC：复杂指令集
+1、具有大量的指令和寻址方式，指令长度可变，指令功能和CPU设计复杂
+2、大多数程序只使用少量的指令就能够运行。
+2、RISC：精简指令集
+1、只包含最有用的指令，指令长度固定
+2、确保数据..." />
+        <meta name="keywords" content="嵌入式系统" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="1.1 ARM" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、CISC和RISC
+1、CISC：复杂指令集
+1、具有大量的指令和寻址方式，指令长度可变，指令功能和CPU设计复杂
+2、大多数程序只使用少量的指令就能够运行。
+2、RISC：精简指令集
+1、只包含最有用的指令，指令长度固定
+2、确保数据...">
+        <meta property="og:url" content="https://github.pansis.site/post/1.1 ARM/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-09-24">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="1.1 ARM">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="1.1 ARM">
+        <meta name="twitter:description" content="一、CISC和RISC
+1、CISC：复杂指令集
+1、具有大量的指令和寻址方式，指令长度可变，指令功能和CPU设计复杂
+2、大多数程序只使用少量的指令就能够运行。
+2、RISC：精简指令集
+1、只包含最有用的指令，指令长度固定
+2、确保数据...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    1.1 ARM
+                                </h2>
+                                <span class="article-info">
+                                    2024-09-24, 429 words, 2 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-cisc和risc">一、CISC和RISC</h2>
+<h4 id="1-cisc复杂指令集">1、CISC：复杂指令集</h4>
+<p>1、具有大量的指令和寻址方式，指令长度可变，指令功能和CPU设计复杂</p>
+<p>2、大多数程序只使用少量的指令就能够运行。</p>
+<h4 id="2-risc精简指令集">2、RISC：精简指令集</h4>
+<p>1、只包含最有用的指令，指令长度固定</p>
+<p>2、确保数据通道快速执行每一条指令，最好是每一条指令都能够在一个时钟周期内执行完</p>
+<p>3、使CPU硬件结构设计变得更为简单</p>
+<h4 id="3-两者数据通路">3、两者数据通路</h4>
+<img src="http://cos.pansis.site/image-20240923161414903.png?abc123" alt="image-20240923161414903" style="zoom:53%;" />
+<h2 id="二-arm体系">二、ARM体系</h2>
+<h4 id="1-特点">1、特点</h4>
+<ul>
+<li>
+<p>每条数据处理指令都对算术逻辑单元和移位器控制，实现了ALU和移位器的最大利用；</p>
+</li>
+<li>
+<p>地址自动增加和减少寻址模式，优化程序循环；</p>
+</li>
+<li>
+<p>多寄存器装载和存储指令实现最大数据吞吐量;</p>
+</li>
+<li>
+<p>所有指令的条件执行实现最快速的代码执行。</p>
+</li>
+</ul>
+<h4 id="2-arm-coxtex-a9特性">2、ARM Coxtex A9特性</h4>
+<p>1、四种指令集状态</p>
+<ul>
+<li>ARM状态</li>
+<li>Thumb状态</li>
+<li>Jazelle状态：指令层次对JAVA加速</li>
+<li>ThumbEE状态：使得指令集能特别适用于运行阶段的编码产生（例如实时编译）</li>
+</ul>
+<p>2、Thumb指令集</p>
+<ul>
+<li>32位体系结构上的16位指令集</li>
+<li>以ARM指令集65%的存储空间，换取接近ARM指令集的性能（约有15％左右的性能损失）</li>
+<li>16位指令集对应相同功能的32位指令，是ARM指令的子集，在32位的体系结构上实现16位指令集</li>
+<li>运行时，16位指令转换成32位，实时解压缩，全32位操作</li>
+<li>ARM/THUMB代码可快速切换(子程序调用的时间，3时钟周期)</li>
+</ul>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/AVw14AAoK/" class="article-info">
+                                                        嵌入式系统
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://github.pansis.site/post/C1讲解-24航C/">
+                                                    <h3 class="post-title">
+                                                        C1讲解-24航C
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

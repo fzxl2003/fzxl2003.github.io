@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>E3 - Solution-24航c | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="E3 - Solution
+A Firefly小姐的位运算大练习—基础版
+
+
+
+难度
+考点
+
+
+
+
+1
+位运算
+
+
+
+题目分析
+在题目给定的模版中填充计算的部分即可。
+示例代码
+#include &lt;stdio.h&gt;
+
+int m..." />
+        <meta name="keywords" content="24航C" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="E3 - Solution-24航c" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="E3 - Solution
+A Firefly小姐的位运算大练习—基础版
+
+
+
+难度
+考点
+
+
+
+
+1
+位运算
+
+
+
+题目分析
+在题目给定的模版中填充计算的部分即可。
+示例代码
+#include &amp;lt;stdio.h&amp;gt;
+
+int m...">
+        <meta property="og:url" content="https://github.pansis.site/post/E3 - Solution-24航c/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-10-24">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="E3 - Solution-24航c">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="E3 - Solution-24航c">
+        <meta name="twitter:description" content="E3 - Solution
+A Firefly小姐的位运算大练习—基础版
+
+
+
+难度
+考点
+
+
+
+
+1
+位运算
+
+
+
+题目分析
+在题目给定的模版中填充计算的部分即可。
+示例代码
+#include &amp;lt;stdio.h&amp;gt;
+
+int m...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    E3 - Solution-24航c
+                                </h2>
+                                <span class="article-info">
+                                    2024-10-24, 3861 words, 19 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h1 id="e3-solution">E3 - Solution</h1>
+<h2 id="a-firefly小姐的位运算大练习基础版"><code>A</code> Firefly小姐的位运算大练习—基础版</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>位运算</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析">题目分析</h3>
+<p>在题目给定的模版中填充计算的部分即可。</p>
+<h3 id="示例代码">示例代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main(){
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    for (int i = 0; i &lt; n; i++) {
+        int op;
+        scanf(&quot;%d&quot;, &amp;op);
+        if (op == 1) {
+            unsigned int a, b;
+            scanf(&quot;%u %u&quot;, &amp;a, &amp;b);
+            printf(&quot;%u\n&quot;, a &amp; b);
+        }else if (op == 2) {
+            unsigned int a, b;
+            scanf(&quot;%u %u&quot;, &amp;a, &amp;b);
+            printf(&quot;%u\n&quot;, a | b);
+        }else if (op == 3) {
+            unsigned int a, b;
+            scanf(&quot;%u %u&quot;, &amp;a, &amp;b);
+            printf(&quot;%u\n&quot;, a ^ b);
+        }
+    }
+}
+</code></pre>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathsize="1.728em"><mstyle mathcolor="yellowgreen"><mrow><mi mathvariant="script">A</mi><mi>u</mi><mi>t</mi><mi>h</mi><mi>o</mi><mi>r</mi><mo>:</mo><mi mathvariant="script">S</mi><mi>i</mi><mi mathvariant="script">S</mi><mi>i</mi></mrow></mstyle></mstyle></mrow><annotation encoding="application/x-tex">{\LARGE {\color{yellowgreen} \mathscr{Author:SiSi}}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2096em;vertical-align:0em;"></span><span class="mord"><span class="mord sizing reset-size6 size9"><span class="mord" style="color:yellowgreen;"><span class="mord mathscr" style="margin-right:0.22925em;color:yellowgreen;">A</span><span class="mord mathdefault" style="color:yellowgreen;">u</span><span class="mord mathdefault" style="color:yellowgreen;">t</span><span class="mord mathdefault" style="color:yellowgreen;">h</span><span class="mord mathdefault" style="color:yellowgreen;">o</span><span class="mord mathdefault" style="margin-right:0.02778em;color:yellowgreen;">r</span><span class="mspace" style="color:yellowgreen;margin-right:0.2777777777777778em;"></span><span class="mrel" style="color:yellowgreen;">:</span><span class="mspace" style="color:yellowgreen;margin-right:0.2777777777777778em;"></span><span class="mord mathscr" style="margin-right:0.19189em;color:yellowgreen;">S</span><span class="mord mathdefault" style="color:yellowgreen;">i</span><span class="mord mathscr" style="margin-right:0.19189em;color:yellowgreen;">S</span><span class="mord mathdefault" style="color:yellowgreen;">i</span></span></span></span></span></span></span></p>
+<h2 id="b-二进制表示"><code>B</code> 二进制表示！</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>~<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span></td>
+<td>二进制表示</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-2">题目分析</h3>
+<p>如题所示，我们需要输出原码，反码和补码。</p>
+<p>计算机中存储数字使用补码。</p>
+<p><strong>原码就是符号位加上真值的绝对值</strong>，即用第一位表示符号，其余位表示值。</p>
+<p>反码用于简化负数的表示。<strong>正数的反码与其原码相同，而负数的反码是其原码的非符号位取反。</strong></p>
+<p>补码是计算机存储数字的形式。<strong>正数的补码与其原码相同，而负数的补码是其反码加<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。</strong></p>
+<h3 id="示例代码-2">示例代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int main()
+{
+    int t,a,b;
+	int n;
+	scanf(&quot;%d&quot;,&amp;n);
+	int m = abs(n);
+	if(m==n){
+		for(int i=31;i&gt;=0;i--) printf(&quot;%d&quot;,(m&gt;&gt;i)&amp;1);
+		printf(&quot;\n&quot;);
+		for(int i=31;i&gt;=0;i--) printf(&quot;%d&quot;,(m&gt;&gt;i)&amp;1);
+		printf(&quot;\n&quot;);
+		for(int i=31;i&gt;=0;i--) printf(&quot;%d&quot;,(m&gt;&gt;i)&amp;1);
+		printf(&quot;\n&quot;);
+	}
+	else{
+		printf(&quot;%d&quot;,1);
+		for(int i=30;i&gt;=0;i--) printf(&quot;%d&quot;,(m&gt;&gt;i)&amp;1);
+		printf(&quot;\n&quot;);
+		printf(&quot;%d&quot;,1);
+		for(int i=30;i&gt;=0;i--) printf(&quot;%d&quot;,!((m&gt;&gt;i)&amp;1));
+		printf(&quot;\n&quot;);
+		for(int i=31;i&gt;=0;i--) printf(&quot;%d&quot;,((n&gt;&gt;i)&amp;1));
+		printf(&quot;\n&quot;);
+	}
+	return 0;
+}
+</code></pre>
+<h2 id="c-我要吃到最后一块糖果easy-version"><code>C</code> 我要吃到最后一块糖果！(Easy Version)</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>位运算</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-3">题目分析</h3>
+<p>由于每次只能拿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 的幂次个，所以可以把糖果总数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 考虑成二进制，因为需要尽可能得多拿，所以，可以理解成：每一次需要把总数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 的二进制最高位变成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，考虑一共可以变化几次即可。例如给出的第一个样例：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>31</mn><msub><mo>)</mo><mn>10</mn></msub><mo>=</mo><mo>(</mo><mn>11111</mn><msub><mo>)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(31)_{10}=(11111)_2
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">3</span><span class="mord">1</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p>每次拿走最高位的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> ，一共可以拿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span> 次。注意到，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span> 是奇数，所以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>Alice</mtext></mrow><annotation encoding="application/x-tex">\text{Alice}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">Alice</span></span></span></span></span> 拿走最后一块。</p>
+<p>所以本题只需判断 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 的二进制表示中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的数量的奇偶，进一步分析，只需判断出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 的二进制表示中各位数字之和的奇偶即可。</p>
+<h3 id="示例代码-3">示例代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main(){
+    int t;
+    scanf(&quot;%d&quot;,&amp;t);
+    while(t--){
+        unsigned int n;
+    	scanf(&quot;%u&quot;,&amp;n);
+    	int k=0;
+    	while(n){
+    	    k=k+(n&amp;1);
+   	    	n=n&gt;&gt;1;
+    	}
+    	if(k&amp;1){
+            printf(&quot;Alice\n&quot;);
+        }
+    	else{
+            printf(&quot;Bob\n&quot;);   //千万不要忘记输出换行！！！！！！
+        }
+    }
+    return 0;
+}
+</code></pre>
+<h2 id="d-蒙版工具"><code>D</code> 蒙版工具</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>位运算</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-4">题目分析</h3>
+<p>按照题意作答即可。</p>
+<h3 id="示例代码-1">示例代码 - 1</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    unsigned int x, y, mask;
+    while(scanf(&quot;%u%u%u&quot;, &amp;x, &amp;y, &amp;mask) != EOF) {
+        unsigned int res = 0;
+        for(int i = 0; i &lt; 32; ++i) {
+            int bit = (mask &gt;&gt; i) &amp; 1;
+            if(bit == 1) {
+                int bit_y = (y &gt;&gt; i) &amp; 1;
+                if(bit_y == 1) {
+                    res |= 1 &lt;&lt; i;
+                }
+            }
+            else {
+                int bit_x = (x &gt;&gt; i) &amp; 1;
+                if(bit_x == 1) {
+                    res |= 1 &lt;&lt; i;
+                }
+            }
+        }
+        printf(&quot;%u\n&quot;, res);
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="示例代码-2">示例代码 - 2</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    unsigned int x, y, mask;
+    while(scanf(&quot;%u%u%u&quot;, &amp;x, &amp;y, &amp;mask) != EOF) {
+        unsigned int res = (x&amp;(~mask)|(y&amp;(mask)));
+        printf(&quot;%u\n&quot;, res);
+    }
+    return 0;
+}
+</code></pre>
+<h2 id="e-firefly小姐的位运算大练习进阶版"><code>E</code> Firefly小姐的位运算大练习—进阶版</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>位运算</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-5">题目分析</h3>
+<p>在题目给定的模版中填充计算的部分即可。</p>
+<p>本题中的位运算操作都是考试常见操作，需要熟练掌握。</p>
+<h3 id="示例代码-4">示例代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main(){
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    for (int i = 0; i &lt; n; i++) {
+        int op;
+        scanf(&quot;%d&quot;, &amp;op);
+        if (op == 1) { // 二进制位1的个数
+            unsigned int a;
+            scanf(&quot;%u&quot;, &amp;a);
+            int res = 0; // 初始化
+            for (int i = 0; i &lt; 32; i++) {
+                if ((a &gt;&gt; i &amp; 1) == 1) { // 将a的第i位通过右移移至第一位，再&amp;1将其余部分置0
+                    res++; // 统计
+                }
+            }
+            printf(&quot;%d\n&quot;, res);
+        }else if (op == 2) {
+            unsigned int a;
+            int l;
+            scanf(&quot;%u %d&quot;, &amp;a, &amp;l);
+            printf(&quot;%u\n&quot;, a ^ (1 &lt;&lt; l)); // ^1翻转，^0不变，^(1 &lt;&lt; l)可以达到其余位不变，l位翻转的目的
+        }else if (op == 3) {
+            unsigned int a;
+            int l;
+            scanf(&quot;%u %d&quot;, &amp;a, &amp;l);
+            printf(&quot;%u\n&quot;, a &amp; ~(1 &lt;&lt; l)); // &amp;1不变，&amp;0置0，&amp;~(1 &lt;&lt; l)可以达到其余位不变，l位置0的目的
+        }else if (op == 4) {
+            unsigned int a;
+            int l;
+            scanf(&quot;%u %d&quot;, &amp;a, &amp;l);
+            printf(&quot;%u\n&quot;, a | (1 &lt;&lt; l)); // |1置1，|0不变，|(1 &lt;&lt; l)可以达到其余位不变，l位置1的目的
+        }else if (op == 5) {
+            unsigned int a;
+            int l;
+            scanf(&quot;%u %d&quot;, &amp;a, &amp;l);
+            printf(&quot;%u\n&quot;, a &gt;&gt; l &amp; 1); // 将a的第i位通过右移移至第一位，再&amp;1将其余部分置0
+        }
+    }
+}
+</code></pre>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathsize="1.728em"><mstyle mathcolor="yellowgreen"><mrow><mi mathvariant="script">A</mi><mi>u</mi><mi>t</mi><mi>h</mi><mi>o</mi><mi>r</mi><mo>:</mo><mi mathvariant="script">S</mi><mi>i</mi><mi mathvariant="script">S</mi><mi>i</mi></mrow></mstyle></mstyle></mrow><annotation encoding="application/x-tex">{\LARGE {\color{yellowgreen} \mathscr{Author:SiSi}}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2096em;vertical-align:0em;"></span><span class="mord"><span class="mord sizing reset-size6 size9"><span class="mord" style="color:yellowgreen;"><span class="mord mathscr" style="margin-right:0.22925em;color:yellowgreen;">A</span><span class="mord mathdefault" style="color:yellowgreen;">u</span><span class="mord mathdefault" style="color:yellowgreen;">t</span><span class="mord mathdefault" style="color:yellowgreen;">h</span><span class="mord mathdefault" style="color:yellowgreen;">o</span><span class="mord mathdefault" style="margin-right:0.02778em;color:yellowgreen;">r</span><span class="mspace" style="color:yellowgreen;margin-right:0.2777777777777778em;"></span><span class="mrel" style="color:yellowgreen;">:</span><span class="mspace" style="color:yellowgreen;margin-right:0.2777777777777778em;"></span><span class="mord mathscr" style="margin-right:0.19189em;color:yellowgreen;">S</span><span class="mord mathdefault" style="color:yellowgreen;">i</span><span class="mord mathscr" style="margin-right:0.19189em;color:yellowgreen;">S</span><span class="mord mathdefault" style="color:yellowgreen;">i</span></span></span></span></span></span></span></p>
+<h2 id="f-firefly小姐的位运算大练习最终版"><code>F</code> Firefly小姐的位运算大练习—最终版</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>位运算</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-6">题目分析</h3>
+<p>在题目给定的模版中填充计算的部分即可。</p>
+<p>本题中的位运算操作都是考试常见操作，需要熟练掌握。</p>
+<h3 id="示例代码-5">示例代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main(){
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    for (int i = 0; i &lt; n; i++) {
+        int op;
+        scanf(&quot;%d&quot;, &amp;op);
+        if (op == 1) { 
+            unsigned int a;
+            int l, r;
+            scanf(&quot;%u %d %d&quot;, &amp;a, &amp;l, &amp;r);
+            for (int i = l; i &lt;= r; i++) { // 循环l至r位的单位翻转操作（参考E），下同
+                a ^= 1 &lt;&lt; i;
+            }
+            printf(&quot;%u\n&quot;, a);
+        }else if (op == 2) {
+            unsigned int a;
+            int l, r;
+            scanf(&quot;%u %d %d&quot;, &amp;a, &amp;l, &amp;r);
+            for (int i = l; i &lt;= r; i++) {
+                a &amp;= ~(1 &lt;&lt; i);
+            }
+            printf(&quot;%u\n&quot;, a);
+        }else if (op == 3) {
+            unsigned int a;
+            int l, r;
+            scanf(&quot;%u %d %d&quot;, &amp;a, &amp;l, &amp;r);
+            for (int i = l; i &lt;= r; i++) {
+                a |= 1 &lt;&lt; i;
+            }
+            printf(&quot;%u\n&quot;, a);
+        }else if (op == 4) {
+            unsigned int a, b;
+            int l, r;
+            scanf(&quot;%u %u %d %d&quot;, &amp;a, &amp;b, &amp;l, &amp;r);
+            for (int i = l; i &lt;= r; i++) {
+                a &amp;= ~(1 &lt;&lt; i); // 将a的第i位空出来
+                a |= (b &amp; (1 &lt;&lt; i)); // 取出b的第i位，接到a上
+            }
+            printf(&quot;%u\n&quot;, a);
+        }else if (op == 5) {
+            unsigned int a;
+            int l, r;
+            scanf(&quot;%u %d %d&quot;, &amp;a, &amp;l, &amp;r);
+            unsigned x = a &gt;&gt; l &amp; 1, y = a &gt;&gt; r &amp; 1; // 取出a的l和r位
+            a &amp;= ~(1 &lt;&lt; l); // 空出a的第l位
+            a &amp;= ~(1 &lt;&lt; r);
+            a |= x &lt;&lt; r;
+            a |= y &lt;&lt; l;
+            printf(&quot;%u\n&quot;, a);
+        }
+    }
+}
+</code></pre>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathsize="1.728em"><mstyle mathcolor="yellowgreen"><mrow><mi mathvariant="script">A</mi><mi>u</mi><mi>t</mi><mi>h</mi><mi>o</mi><mi>r</mi><mo>:</mo><mi mathvariant="script">S</mi><mi>i</mi><mi mathvariant="script">S</mi><mi>i</mi></mrow></mstyle></mstyle></mrow><annotation encoding="application/x-tex">{\LARGE {\color{yellowgreen} \mathscr{Author:SiSi}}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2096em;vertical-align:0em;"></span><span class="mord"><span class="mord sizing reset-size6 size9"><span class="mord" style="color:yellowgreen;"><span class="mord mathscr" style="margin-right:0.22925em;color:yellowgreen;">A</span><span class="mord mathdefault" style="color:yellowgreen;">u</span><span class="mord mathdefault" style="color:yellowgreen;">t</span><span class="mord mathdefault" style="color:yellowgreen;">h</span><span class="mord mathdefault" style="color:yellowgreen;">o</span><span class="mord mathdefault" style="margin-right:0.02778em;color:yellowgreen;">r</span><span class="mspace" style="color:yellowgreen;margin-right:0.2777777777777778em;"></span><span class="mrel" style="color:yellowgreen;">:</span><span class="mspace" style="color:yellowgreen;margin-right:0.2777777777777778em;"></span><span class="mord mathscr" style="margin-right:0.19189em;color:yellowgreen;">S</span><span class="mord mathdefault" style="color:yellowgreen;">i</span><span class="mord mathscr" style="margin-right:0.19189em;color:yellowgreen;">S</span><span class="mord mathdefault" style="color:yellowgreen;">i</span></span></span></span></span></span></span></p>
+<h2 id="g-s7h的简单异或题"><code>G</code> s7h的简单异或题</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>位运算</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-7">题目分析</h3>
+<p>本题给定一个数列，多次询问求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 的异或和。</p>
+<p>首先根据异或的运算律可以推导出一个性质： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>a</mi><mn>1</mn></msub><mo>⊕</mo><msub><mi>a</mi><mn>2</mn></msub><mo>⊕</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>⊕</mo><msub><mi>a</mi><mi>r</mi></msub><mo>)</mo><mo>⊕</mo><mo>(</mo><msub><mi>a</mi><mn>1</mn></msub><mo>⊕</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>⊕</mo><msub><mi>a</mi><mrow><mi>l</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>)</mo><mo>=</mo><msub><mi>a</mi><mi>l</mi></msub><mo>⊕</mo><msub><mi>a</mi><mrow><mi>l</mi><mo>+</mo><mn>1</mn></mrow></msub><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>⊕</mo><msub><mi>a</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">(a_1\oplus a_2\oplus...\oplus a_r)\oplus(a_1\oplus...\oplus a_{l-1})=a_l\oplus a_{l+1} ... \oplus a_r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.791661em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>。</p>
+<p>然后类比 E2 J ，构建一种类似前缀和的 “前缀异或和” 算法即可。</p>
+<h3 id="代码">代码</h3>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int n,m,a[200050],l,r,sum[200050];
+int main(){
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
+    for(int i=1;i&lt;=n;++i){
+        scanf(&quot;%d&quot;,&amp;a[i]);
+        sum[i]=a[i]^sum[i-1];
+    }
+    for(int i=1;i&lt;=m;++i){
+        scanf(&quot;%d%d&quot;,&amp;l,&amp;r);
+        printf(&quot;%d\n&quot;,sum[r]^sum[l-1]);
+    }
+    return 0;
+}
+</code></pre>
+<h2 id="h-小霁的时间乱流plus"><code>H</code> 小霁的时间乱流plus+++</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>数组 循环</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-8">题目分析</h3>
+<p>本题在分钟进位小时，小时进位天数较为简单。</p>
+<p>但在天数进位月份时，需要考虑每月天数不同也需要考虑闰年的因素。</p>
+<p>闰年的规定是 <strong>“能被400整除，或者能被4整除但不能被100整除的是闰年”</strong>，转化为C语言就是<code>((y % 4 == 0 &amp;&amp; y % 100 != 0) || y % 400 == 0)</code>，如果该条件式成立，则y是闰年，反之不是闰年。<br>
+具体的乱流中的时间调整方式已在题目中详细给出，此处不再赘述。</p>
+<h3 id="示例代码-6">示例代码</h3>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int main()
+{
+
+    int months[13]={0,31,28,31,30,31,30,31,31,30,31,30,31};//定义每月天数
+    int n;//数据组数
+    int y,mon,d,h,min;//年、月、日、时、分
+    int tempday;
+    scanf(&quot;%d&quot;,&amp;n);
+    for (int i = 0; i &lt; n; ++i) {
+        scanf(&quot;%d.%d.%d %d:%d&quot;,&amp;y,&amp;mon,&amp;d,&amp;h,&amp;min);//输入乱流中的时间
+        h+=(min/60);
+        min%=60;
+        d+=(h/24);
+        h%=24;//计算正常的小时数、分钟数，并向天数进位
+        y += (mon - 1) / 12; mon = (mon - 1) % 12 + 1;//先将月份向年份进位
+        tempday=months[mon]+(((y % 4 == 0 &amp;&amp; y % 100 != 0) || y % 400 == 0)&amp;&amp;(mon==2));//计算当前的y和mon对应的当月天数
+            //(((y % 4 == 0 &amp;&amp; y % 100 != 0) || y % 400 == 0)&amp;&amp;(mon==2))用于判定当前的y和mon是否是闰年的2月，若条件式成立，则条件式的值为1，在28天的基础上加1天。
+        while (d&gt;tempday)//如果天数超过该月份的天数
+        {
+            d-=tempday;
+            mon++;//天数减去该月天数，月份加一
+            y += (mon - 1) / 12; mon = (mon - 1) % 12 + 1;//若月份大于12，则向年份进位
+            tempday=months[mon]+(((y % 4 == 0 &amp;&amp; y % 100 != 0) || y % 400 == 0)&amp;&amp;(mon==2));//计算当前的y和mon对应的当月天数
+        }
+        printf(&quot;%04d.%02d.%02d %02d:%02d\n&quot;,y,mon,d,h,min);
+    }
+    
+}
+</code></pre>
+<h2 id="i-m3rcury-的解方程组"><code>I</code>  -M3rcury-的解方程组</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>位运算</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-9">题目分析</h3>
+<p>我们观察异或运算对应的真值表：</p>
+<table>
+<thead>
+<tr>
+<th><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span></th>
+<th><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span></th>
+<th><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>⊕</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \oplus b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>可以发现，在二进制对应的位上，异或运算和加法运算的结果一样，只是忽略了进位。</p>
+<p>那么，对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x + y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>⊕</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x \oplus y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 来说，他们的差值就是中间产生进位的值。</p>
+<p>只有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 对应位都为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 时，才会在高一位的地方产生进位。</p>
+<p>因此我们可以得到</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>+</mo><mi>y</mi><mo>=</mo><mo>(</mo><mi>x</mi><mo>⊕</mo><mi>y</mi><mo>)</mo><mo>+</mo><mn>2</mn><mo>∗</mo><mo>(</mo><mi>x</mi><mi mathvariant="normal">&amp;</mi><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">x + y = (x \oplus y) + 2 * (x \&amp; y) 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mord">&amp;</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span></span></p>
+<p>所以</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mi mathvariant="normal">&amp;</mi><mi>y</mi><mo>=</mo><mfrac><mrow><mo>(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>)</mo><mo>−</mo><mo>(</mo><mi>x</mi><mo>⊕</mo><mi>y</mi><mo>)</mo></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">x \&amp; y = \frac{(x + y) - (x \oplus y)}{2} 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mord">&amp;</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.113em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>由于 $x \geq x &amp; y $ ，因此 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mi mathvariant="normal">&amp;</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">x \&amp; y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mord">&amp;</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 即为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 的最小值， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>−</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">a - x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 即为对应的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span></p>
+<p>最后考虑无解的情况。</p>
+<p>因为这样求出的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 不一定满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>⊕</mo><mi>y</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">x \oplus y = b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> ，因此需要代回去验证</p>
+<p>此外 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>&lt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a&lt;b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> 的情况也是无解的</p>
+<h3 id="示例代码-7">示例代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+	unsigned long long a,b;
+	scanf(&quot;%llu%llu&quot;,&amp;a,&amp;b);
+	if(a&lt;b)
+	{
+		printf(&quot;-1\n&quot;);
+	}
+	else
+	{
+		unsigned long long x=a-b&gt;&gt;1;
+		unsigned long long y=a-x;
+		if((x^y)!=b) printf(&quot;-1\n&quot;);
+		else printf(&quot;%llu %llu\n&quot;,x,y);
+	}
+	return 0;
+}
+</code></pre>
+<h2 id="j-ieee-754科学"><code>J</code> IEEE 754科学</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>数据类型</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-10">题目分析</h3>
+<p>本题分为两部分：构造浮点数和输出浮点数的二进制表示。</p>
+<p>对于构造最大的浮点数，我们直接令 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">S=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> ，构造最大的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 。易知最大的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span></span></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2046</mn></mrow><annotation encoding="application/x-tex">2046</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">4</span><span class="mord">6</span></span></span></span> ，其二进制表示为 <code>11111111110</code> ，最大的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 为 <code>1.11111...111</code> （小数点后 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>52</mn></mrow><annotation encoding="application/x-tex">52</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">2</span></span></span></span> 个 <code>1</code> ）。因此最大的浮点数的二进制表示为 <code>0111111111101111111111111111111111111111111111111111111111111111</code> 。我们创造这个二进制表示对应的 <code>unsigned long long</code> 类型变量，将这个变量逐位地拷贝到一个 <code>double</code> 型变量再输出浮点数即可。特别的，我们可以利用 <code>0x</code> 前缀表示这是一个16进制数。这个浮点数对应的十六进制表示是 <code>0x7fefffffffffffff</code> 。</p>
+<p>同理，对于构造最小的正浮点数，我们直接令 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">S=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> ，构造最小的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 。最小的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span></span></span></span> 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> ，此时 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mrow><mn>1</mn><mo>−</mo><mi>b</mi><mi>i</mi><mi>a</mi><mi>s</mi></mrow></msup></mrow><annotation encoding="application/x-tex">2^{1-bias}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mbin mtight">−</span><span class="mord mathdefault mtight">b</span><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight">s</span></span></span></span></span></span></span></span></span></span></span></span> 最小，构造 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 为 <code>0.000000...001</code> （小数点和 <code>1</code> 之间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>51</mn></mrow><annotation encoding="application/x-tex">51</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">1</span></span></span></span> 个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> ）。因此最大的浮点数的二进制表示为 <code>0000000000000000000000000000000000000000000000000000000000000001</code>。我们创造这个二进制表示对应的 <code>unsigned long long</code> 类型变量，将这个变量逐位地拷贝到一个 <code>double</code> 型变量再输出浮点数即可。这个 <code>unsigned long long</code> 类型变量显然是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 。</p>
+<p>拷贝方法如下：</p>
+<pre><code class="language-c">unsigned long long u = 0x7fefffffffffffff;//u = 1
+double a;
+memcpy(&amp;a,&amp;u,sizeof(double));//u拷贝到a
+</code></pre>
+<p>对于输出浮点数的二进制表示，读入后参考 Hint 拷贝，然后位运算逐位输出即可，不再赘述。</p>
+<h3 id="示例代码-1-2">示例代码 - 1</h3>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
+int main() {
+	unsigned long long d;
+	double a;
+	d = 0x7FEFFFFFFFFFFFFF;
+	memcpy(&amp;a, &amp;d, sizeof(double));
+	printf(&quot;%.2f\n&quot;, a);
+	d = 1;
+	memcpy(&amp;a, &amp;d, sizeof(double));
+	printf(&quot;%.1100f\n&quot;, a);
+	int m;
+	scanf(&quot;%d&quot;, &amp;m);
+	for (int i = 0; i &lt; m; i++) {
+		scanf(&quot;%lf&quot;, &amp;a);
+		memcpy(&amp;d, &amp;a, sizeof(double));
+		for (int j = 63; j &gt;= 0; j--) {
+			printf(&quot;%llu&quot;, (d &gt;&gt; j) &amp; 1);
+		}
+		printf(&quot;\n&quot;);
+	}
+	return 0;
+}
+</code></pre>
+<h3 id="示例代码-2-2">示例代码 - 2</h3>
+<p>推荐大家学了指针以后再来体会这份代码。</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+
+int main() {
+	unsigned long long d;
+	d = 0x7FEFFFFFFFFFFFFF;
+	printf(&quot;%.2f\n&quot;, *(double *)(&amp;d));
+	d = 1;
+	printf(&quot;%.1100f\n&quot;, *(double *)(&amp;d));
+	int m;
+	scanf(&quot;%d&quot;, &amp;m);
+	for (int i = 0; i &lt; m; i++) {
+		scanf(&quot;%lf&quot;, (double *)(&amp;d));
+		for (int j = 63; j &gt;= 0; j--) {
+			printf(&quot;%llu&quot;, (d &gt;&gt; j) &amp; 1);
+		}
+		printf(&quot;\n&quot;);
+	}
+	return 0;
+}
+</code></pre>
+<h3 id="示例代码-3">示例代码 - 3</h3>
+<p>推荐大家学了联合体（不是结构体）以后再来体会这份代码。</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+union{
+	double a;
+	unsigned long long d;
+}num;
+int main() {
+	num.d = 0x7FEFFFFFFFFFFFFF;
+	printf(&quot;%.2f\n&quot;, num.a);
+	num.d = 1;
+	printf(&quot;%.1100f\n&quot;, num.a);
+	int m;
+	scanf(&quot;%d&quot;, &amp;m);
+	for (int i = 0; i &lt; m; i++) {
+		scanf(&quot;%lf&quot;, &amp;num.a);
+		for (int j = 63; j &gt;= 0; j--) {
+			printf(&quot;%llu&quot;, ((num.d) &gt;&gt; j) &amp; 1);
+		}
+		printf(&quot;\n&quot;);
+	}
+	return 0;
+}
+</code></pre>
+<h2 id="k-firefly"><code>K</code> Firefly!!!</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>空白字符，字符串匹配</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-11">题目分析</h3>
+<p>本题的考点在于利用空白字符（<code>'\n'</code>，<code>EOF</code>）判断输入的字符画和标准字符画是否相同。</p>
+<p>我们可以先统计第一个空行出现前读入的 <code>f</code> 个数确定需要匹配的标准 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>F</mtext></mrow><annotation encoding="application/x-tex">\text{F}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord text"><span class="mord">F</span></span></span></span></span> 型字符画 尺寸，再一一进行匹配。</p>
+<h3 id="示例代码-8">示例代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int n = 0;
+    while (getchar() != '\n') { // F型字符画尺寸
+        n++;
+    }
+    for (int i = 0; i &lt; n - 2; i++) { // 判断接下来是否是连续n-2行每行一个字符f（即连续读入n-2个'f'和'\n'）
+        char a, b;
+        a = getchar();
+        b = getchar();
+        if (!(a == 'f' &amp;&amp; b == '\n')) { // 匹配失败，输出No并使用return 0直接终止程序
+            printf(&quot;No&quot;);
+            return 0;
+        }
+    }
+    for (int i = 0; i &lt; n; i++) { // 判断接下来是否是连续n个字符f
+        char a;
+        a = getchar();
+        if (a != 'f') {
+            printf(&quot;No&quot;);
+            return 0;
+        }
+    }
+    for (int i = 0; i &lt; n - 1; i++) { // 判断接下来是否是连续n-1行每行一个字符f（即连续读入n-1个'\n'和'f'）
+        char a, b;
+        a = getchar();
+        b = getchar();
+        if (!(a == '\n' &amp;&amp; b == 'f')) {
+            printf(&quot;No&quot;);
+            return 0;
+        }
+    }
+    char c;
+    c = getchar();
+    if (c == EOF) { // 判断是否已经读到字符画末尾，即后面没有更多字符
+        printf(&quot;Yes %d&quot;, n);
+    }else
+        printf(&quot;No&quot;);
+    
+}
+
+</code></pre>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathsize="1.728em"><mstyle mathcolor="yellowgreen"><mrow><mi mathvariant="script">A</mi><mi>u</mi><mi>t</mi><mi>h</mi><mi>o</mi><mi>r</mi><mo>:</mo><mi mathvariant="script">S</mi><mi>i</mi><mi mathvariant="script">S</mi><mi>i</mi></mrow></mstyle></mstyle></mrow><annotation encoding="application/x-tex">{\LARGE {\color{yellowgreen} \mathscr{Author:SiSi}}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2096em;vertical-align:0em;"></span><span class="mord"><span class="mord sizing reset-size6 size9"><span class="mord" style="color:yellowgreen;"><span class="mord mathscr" style="margin-right:0.22925em;color:yellowgreen;">A</span><span class="mord mathdefault" style="color:yellowgreen;">u</span><span class="mord mathdefault" style="color:yellowgreen;">t</span><span class="mord mathdefault" style="color:yellowgreen;">h</span><span class="mord mathdefault" style="color:yellowgreen;">o</span><span class="mord mathdefault" style="margin-right:0.02778em;color:yellowgreen;">r</span><span class="mspace" style="color:yellowgreen;margin-right:0.2777777777777778em;"></span><span class="mrel" style="color:yellowgreen;">:</span><span class="mspace" style="color:yellowgreen;margin-right:0.2777777777777778em;"></span><span class="mord mathscr" style="margin-right:0.19189em;color:yellowgreen;">S</span><span class="mord mathdefault" style="color:yellowgreen;">i</span><span class="mord mathscr" style="margin-right:0.19189em;color:yellowgreen;">S</span><span class="mord mathdefault" style="color:yellowgreen;">i</span></span></span></span></span></span></span></p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/24hangc/" class="article-info">
+                                                        24航C
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://github.pansis.site/post/位运算基本算式-24航c/">
+                                                    <h3 class="post-title">
+                                                        位运算基本算式-24航c
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

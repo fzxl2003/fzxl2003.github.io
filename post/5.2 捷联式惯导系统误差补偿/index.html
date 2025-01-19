@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>5.2 捷联式惯导系统误差补偿 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、陀螺仪与加速度计的数学模型
+1、加速度计数学模型
+
+静态数学模型：载体线运动环境下加速度计输出与加速度输入间的关系 
+动态数学模型：载体角运动环境中加速度计的性能（即加速度计输出与角速 度、角加速度输入间的关系）
+
+2、陀螺仪数学模型
+..." />
+        <meta name="keywords" content="惯性导航基础" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="5.2 捷联式惯导系统误差补偿" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、陀螺仪与加速度计的数学模型
+1、加速度计数学模型
+
+静态数学模型：载体线运动环境下加速度计输出与加速度输入间的关系 
+动态数学模型：载体角运动环境中加速度计的性能（即加速度计输出与角速 度、角加速度输入间的关系）
+
+2、陀螺仪数学模型
+...">
+        <meta property="og:url" content="https://github.pansis.site/post/5.2 捷联式惯导系统误差补偿/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-12-11">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="5.2 捷联式惯导系统误差补偿">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="5.2 捷联式惯导系统误差补偿">
+        <meta name="twitter:description" content="一、陀螺仪与加速度计的数学模型
+1、加速度计数学模型
+
+静态数学模型：载体线运动环境下加速度计输出与加速度输入间的关系 
+动态数学模型：载体角运动环境中加速度计的性能（即加速度计输出与角速 度、角加速度输入间的关系）
+
+2、陀螺仪数学模型
+...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    5.2 捷联式惯导系统误差补偿
+                                </h2>
+                                <span class="article-info">
+                                    2023-12-11, 518 words, 2 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-陀螺仪与加速度计的数学模型">一、陀螺仪与加速度计的数学模型</h2>
+<h4 id="1-加速度计数学模型">1、加速度计数学模型</h4>
+<ul>
+<li>静态数学模型：载体线运动环境下加速度计输出与加速度输入间的关系 <img src="http://cos.pansis.site/202312071955339.png/abc123" alt="image-20231207195504918" style="zoom:33%;" /></li>
+<li>动态数学模型：载体角运动环境中加速度计的性能（即加速度计输出与角速 度、角加速度输入间的关系）<img src="http://cos.pansis.site/202312071955349.png/abc123" alt="image-20231207195512317" style="zoom:33%;" /></li>
+</ul>
+<h4 id="2-陀螺仪数学模型">2、陀螺仪数学模型</h4>
+<ul>
+<li>静态数学模型：载体线运动环境下陀螺仪输出与加速度输入间的关系 <img src="http://cos.pansis.site/202312071956287.png/abc123" alt="image-20231207195624246" style="zoom:33%;" /></li>
+<li>动态数学模型：载体角运动环境中陀螺仪的性能（即加速度计输出与角速 度、角加速度输入间的关系）<img src="http://cos.pansis.site/202312071956841.png/abc123" alt="image-20231207195634783" style="zoom:33%;" /></li>
+</ul>
+<h2 id="二-惯性元器件的误差补偿原理">二、惯性元器件的误差补偿原理</h2>
+<img src="http://cos.pansis.site/202312071957490.png/abc123" alt="image-20231207195738432" style="zoom:35%;" />
+<h2 id="三-捷联式惯导系统的工作过程">三、捷联式惯导系统的工作过程</h2>
+<ol>
+<li>系统的启动和自检
+<ul>
+<li>系统启动之后，各部分的工作是否正常，要通过自检程序加以检测。</li>
+<li>通过自检，发现有不正常，则发出警告信息。</li>
+</ul>
+</li>
+<li>系统的初始化
+<ul>
+<li>给定载体的初始位置和初始速度等初始信息；</li>
+<li>进行初始对准（初始对准则是确定姿态矩阵的初始值）</li>
+</ul>
+</li>
+<li>惯性器件的误差补偿</li>
+<li>姿态矩阵的计算</li>
+<li>导航参数的计算</li>
+<li>制导和控制信息的提取</li>
+</ol>
+<img src="http://cos.pansis.site/202312072031235.png/abc123" alt="image-20231207203140186" style="zoom:43%;" />
+<h2 id="四-捷联式惯导系统力学编排">四、捷联式惯导系统力学编排</h2>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202312141420491.png/abc123" alt="image-20231214141952978" loading="lazy"></figure>
+<p>1、地速计算</p>
+<ul>
+<li>地速：将飞行器相对地球的运动速度在水平面的投影称为地速 。</li>
+<li>公式：<img src="http://cos.pansis.site/202312141423106.png/abc123" alt="image-20231214142347046" style="zoom: 33%;" /></li>
+</ul>
+<p>2、位置矩阵的即时修正</p>
+<ul>
+<li>
+<p>无需进行正交化处理的原因：</p>
+<p>由于位置矩阵的变化比姿态矩阵慢得多，所以它要求的即时修正的频率也要慢得多，而且不存在明显的非正交化误差</p>
+</li>
+<li>
+<p>采用方向余弦法的原因：</p>
+<p>用方向余弦法进行即时修正与用四元数法进行即时 修正所费的机时相差不多，而且又可直接求出位置矩阵C ， 免去了四元数法计算矩阵T 的麻烦。</p>
+</li>
+</ul>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/gxdhjc/" class="article-info">
+                                                        惯性导航基础
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

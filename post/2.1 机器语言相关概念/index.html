@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>2.1 机器语言相关概念 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、机器语言
+1、C代码转执行文件环节
+编译、汇编、存储、加载、运行
+
+
+编译：从C代码到汇编代码
+
+
+汇编：从汇编代码转成对应的二进制机器码
+CPU不能直接执行汇编代码，必须利用汇编器将汇编代码转换为对应的二进制机器码
+
+汇编程序：每行对..." />
+        <meta name="keywords" content="计算机组成原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="2.1 机器语言相关概念" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、机器语言
+1、C代码转执行文件环节
+编译、汇编、存储、加载、运行
+
+
+编译：从C代码到汇编代码
+
+
+汇编：从汇编代码转成对应的二进制机器码
+CPU不能直接执行汇编代码，必须利用汇编器将汇编代码转换为对应的二进制机器码
+
+汇编程序：每行对...">
+        <meta property="og:url" content="https://github.pansis.site/post/2.1 机器语言相关概念/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-04-05">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="2.1 机器语言相关概念">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="2.1 机器语言相关概念">
+        <meta name="twitter:description" content="一、机器语言
+1、C代码转执行文件环节
+编译、汇编、存储、加载、运行
+
+
+编译：从C代码到汇编代码
+
+
+汇编：从汇编代码转成对应的二进制机器码
+CPU不能直接执行汇编代码，必须利用汇编器将汇编代码转换为对应的二进制机器码
+
+汇编程序：每行对...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    2.1 机器语言相关概念
+                                </h2>
+                                <span class="article-info">
+                                    2024-04-05, 868 words, 4 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-机器语言">一、机器语言</h2>
+<h4 id="1-c代码转执行文件环节">1、C代码转执行文件环节</h4>
+<p>编译、汇编、存储、加载、运行</p>
+<ol>
+<li>
+<p>编译：从C代码到汇编代码</p>
+</li>
+<li>
+<p>汇编：从汇编代码转成对应的二进制机器码</p>
+<p>CPU不能直接执行汇编代码，必须利用汇编器将汇编代码转换为对应的二进制机器码</p>
+<ul>
+<li>汇编程序：每行对应一条机器指令</li>
+<li>机器指令：由一组二进制01串组成，是CPU可以理解与执行的</li>
+</ul>
+</li>
+<li>
+<p>加载：可执行文件要被加载到主存后才能被执行。</p>
+<p>指令部分和数据部分会被分别加载到主存中的不同区域</p>
+<ul>
+<li>
+<p>代码段：这部分主存区域存储的是CPU指令</p>
+</li>
+<li>
+<p>数据段：这部分主存区域存储的是数据</p>
+</li>
+</ul>
+</li>
+<li>
+<p>执行：包含三个重复步骤</p>
+<p>读取指令、分析指令、执行指令</p>
+</li>
+</ol>
+<h4 id="2-risc">2、RISC</h4>
+<p>1、设计目标：减少指令数量，去除复杂指令（等效于降低复杂度）</p>
+<p>2、基本策略：</p>
+<ul>
+<li>
+<p>指令定长：所有指令都占用32位（1个字）</p>
+<p>降低了从存储器中读取指令的复杂度</p>
+</li>
+<li>
+<p>简化指令寻址模式：以基地址+偏移为主</p>
+<p>降低了从主存中读取操作数的复杂度</p>
+</li>
+<li>
+<p>ISA的指令数量少且简单</p>
+<p>降低了指令执行的复杂度</p>
+</li>
+<li>
+<p>只有load与store两类指令能够访存</p>
+</li>
+<li>
+<p>把复杂功能留给编译</p>
+</li>
+</ul>
+<h4 id="3-寄存器数量的是设计均衡的体现">3、寄存器数量的是设计均衡的体现</h4>
+<ul>
+<li>均衡的要素：性能与可用性</li>
+<li>数量少：结构简单，速度快，能够存储在CPU内的数据少</li>
+<li>数量多：结构复杂，速度慢，能够存储在CPU内的数据多</li>
+</ul>
+<h4 id="4-大小头存储">4、大小头存储</h4>
+<p>大印第安：最高有效字节在字内的最低地址</p>
+<p>小印第安：最高有效字节在字内的最高地址</p>
+<img src="http://cos.pansis.site/202404011452557.png/abc123" alt="image-20240401145106547" style="zoom:50%;" />
+<h4 id="5-机器指令的要素">5、机器指令的要素</h4>
+<ul>
+<li>操作码(Operation Code)：指明进行的何种操作</li>
+<li>源操作数地址(Source Operand Reference)：参加操作的操作数的地址，可能有多个</li>
+<li>目的操作数地址(Destination Operand Reference)：保存操作结果的地址</li>
+<li>下条指令的地址(Next Instruction Reference)：指明下一条要运行的指令的位置，一般指令是按顺序依次执行的，所以绝大多数指令中并不显式的指明下一条指令的地址。只有少数指令需要显示指明下一条指令的地址。</li>
+</ul>
+<h2 id="二-程序存储">二、程序存储</h2>
+<h4 id="1-概念">1、概念</h4>
+<ul>
+<li>指令以二进制方式被编码</li>
+<li>存储器技术既可以存储数据，也可以存储程序 ，两者存储方式完全相同
+<ul>
+<li>作用：简化了计算机系统的软件/硬件设计</li>
+</ul>
+</li>
+<li>由于存储在存储器单元中，因此指令和数据都有地址</li>
+<li>指令的一般性语法格式：1个操作符、3个操作数</li>
+</ul>
+<pre><code>op dst,src1,src2
+</code></pre>
+<h4 id="2-二进制兼容">2、二进制兼容</h4>
+<p>向后兼容：新机器不仅能运行基于新指令编译产生的新程序，同样也最好能 运行老程序</p>
+<h4 id="3-mips指令特性">3、MIPS指令特性</h4>
+<ul>
+<li>
+<p>每条指令同样被编码为一个字（32bit）</p>
+</li>
+<li>
+<p>指令的32位被划分为若干域</p>
+<ul>
+<li>域：占据若干特定位，代表特定含义，同一个域在不同指令的含义大体是相同</li>
+</ul>
+</li>
+<li>
+<p>区分</p>
+<p>数据的32位是作为一个整体被解读</p>
+<p>指令的32位需要分成域去解读</p>
+</li>
+</ul>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/jsjzcyl/" class="article-info">
+                                                        计算机组成原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

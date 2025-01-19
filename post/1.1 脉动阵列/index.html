@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>1.1 脉动阵列 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、深度神经网络
+1、专用芯片设计流程
+
+2、DNN常见种类
+
+全连接神经网络，又称多层感知器 (MLP)
+卷积神经网络 (CNN) ，具有权重共享的稀疏连接
+循环神经网络 (RNN)
+长短期记忆 (LSTM) ，反馈+ 存储
+
+3、卷积层..." />
+        <meta name="keywords" content="飞行器智能处理器设计实验" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="1.1 脉动阵列" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、深度神经网络
+1、专用芯片设计流程
+
+2、DNN常见种类
+
+全连接神经网络，又称多层感知器 (MLP)
+卷积神经网络 (CNN) ，具有权重共享的稀疏连接
+循环神经网络 (RNN)
+长短期记忆 (LSTM) ，反馈+ 存储
+
+3、卷积层...">
+        <meta property="og:url" content="https://github.pansis.site/post/1.1 脉动阵列/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-03-11">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="1.1 脉动阵列">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="1.1 脉动阵列">
+        <meta name="twitter:description" content="一、深度神经网络
+1、专用芯片设计流程
+
+2、DNN常见种类
+
+全连接神经网络，又称多层感知器 (MLP)
+卷积神经网络 (CNN) ，具有权重共享的稀疏连接
+循环神经网络 (RNN)
+长短期记忆 (LSTM) ，反馈+ 存储
+
+3、卷积层...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    1.1 脉动阵列
+                                </h2>
+                                <span class="article-info">
+                                    2024-03-11, 169 words, 1 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-深度神经网络">一、深度神经网络</h2>
+<h4 id="1-专用芯片设计流程">1、专用芯片设计流程</h4>
+<img src="http://cos.pansis.site/202403111450422.png/abc123" alt="image-20240311144934274" style="zoom:40%;" />
+<h4 id="2-dnn常见种类">2、DNN常见种类</h4>
+<ul>
+<li>全连接神经网络，又称多层感知器 (MLP)</li>
+<li>卷积神经网络 (CNN) ，具有权重共享的稀疏连接</li>
+<li>循环神经网络 (RNN)</li>
+<li>长短期记忆 (LSTM) ，反馈+ 存储</li>
+</ul>
+<h4 id="3-卷积层计算公式">3、卷积层计算公式</h4>
+<img src="http://cos.pansis.site/202403111452455.png/abc123" alt="image-20240311145249296" style="zoom:40%;" />
+<h4 id="4-激活函数">4、激活函数</h4>
+<img src="http://cos.pansis.site/202403111453740.png/abc123" alt="image-20240311145317520" style="zoom:40%;" />
+<h4 id="5-矩阵乘法分块">5、矩阵乘法分块</h4>
+<p>优化缓存访问、提升数据复用</p>
+<img src="http://cos.pansis.site/202403111456322.png/abc123" alt="image-20240311145623154" style="zoom:43%;" />
+<h2 id="二-脉动阵列">二、脉动阵列</h2>
+<h4 id="1-第一种形式结果不动两个输入流动">1、第一种形式（结果不动，两个输入流动）</h4>
+<img src="http://cos.pansis.site/202403111503039.png/abc123" alt="image-20240311150300929" style="zoom:40%;" />
+<img src="http://cos.pansis.site/202403111501838.png/abc123" alt="image-20240311150133611" style="zoom:30%;" />
+<p>单元结构</p>
+<img src="http://cos.pansis.site/202403111503522.png/abc123" alt="image-20240311150325395" style="zoom:50%;" />
+<h4 id="2-第二种形式结果和一个输入流动其中一个输入不动">2、第二种形式（结果和一个输入流动，其中一个输入不动）</h4>
+<img src="http://cos.pansis.site/202403111505987.png/abc123" alt="image-20240311150557793" style="zoom:40%;" />
+<img src="http://cos.pansis.site/202403111504645.png/abc123" alt="image-20240311150413445" style="zoom:50%;" />
+<h4 id="3-代码">3、代码</h4>
+<p>第一种形式见work1_2</p>
+<p>第二种形式见work1</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/fxqznclqsjsy/" class="article-info">
+                                                        飞行器智能处理器设计实验
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://github.pansis.site/post/1.5 大气层内飞行程序设计/">
+                                                    <h3 class="post-title">
+                                                        1.5 大气层内飞行程序设计
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

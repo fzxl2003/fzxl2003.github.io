@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>C3讲解 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="录制: C3讲解
+日期: 2023-10-01 20:22:45
+录制文件：https://meeting.tencent.com/v2/cloud-record/share?id=37514df5-538f-40c2-818d-8849e..." />
+        <meta name="keywords" content="比赛" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="C3讲解" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="录制: C3讲解
+日期: 2023-10-01 20:22:45
+录制文件：https://meeting.tencent.com/v2/cloud-record/share?id=37514df5-538f-40c2-818d-8849e...">
+        <meta property="og:url" content="https://github.pansis.site/post/c3-jiang-jie/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-10-01">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="C3讲解">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="C3讲解">
+        <meta name="twitter:description" content="录制: C3讲解
+日期: 2023-10-01 20:22:45
+录制文件：https://meeting.tencent.com/v2/cloud-record/share?id=37514df5-538f-40c2-818d-8849e...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    C3讲解
+                                </h2>
+                                <span class="article-info">
+                                    2023-10-01, 1646 words, 9 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <p>录制: C3讲解<br>
+日期: 2023-10-01 20:22:45<br>
+录制文件：https://meeting.tencent.com/v2/cloud-record/share?id=37514df5-538f-40c2-818d-8849e9c8f405&amp;from=3</p>
+<h1 id="a-奇怪的位运算-2023">A 奇怪的位运算 2023</h1>
+<p>###位运算符</p>
+<p>&amp;  按位与</p>
+<p>|  按位或</p>
+<p>^   按位异或</p>
+<p>~   取反</p>
+<p>​          &lt;&lt;   左移</p>
+<p>/          &gt;&gt;右移</p>
+<h3 id="不定组输入">不定组输入</h3>
+<pre><code>while ((scanf(xxxx))!=EOF)
+{    }
+</code></pre>
+<pre><code>while ((a=getchar())!=EOF)
+{    }
+</code></pre>
+<h3 id="代码">代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+int main()
+{
+    int a,b;
+    while ((scanf(&quot;%d%d&quot;,&amp;a,&amp;b))!=EOF)
+    {
+        printf(&quot;%d\n&quot;,a&amp;(~b));
+    }
+}
+</code></pre>
+<h1 id="b-置0置1">B 置0置1</h1>
+<h3 id="特定位置0">特定位置0</h3>
+<p>按位与&amp;</p>
+<p>A&amp;0=0</p>
+<p>x&amp;=~(((1&lt;&lt;4)-1)&lt;&lt;2)                           //清零2-5位（从0位算起）</p>
+<p>n&amp;=(~(1&lt;&lt;k));                                   //清零k位  *********</p>
+<h3 id="特定位置1">特定位置1</h3>
+<p>按位或|</p>
+<p>A|1=1</p>
+<p>x|=(1&lt;&lt;5)    //第5位置1</p>
+<h3 id="位运算函数">位运算函数</h3>
+<pre><code class="language-c">//参数和返回值的类型取决于实际需求，不一定非得是long long
+long long mian123(long long a,int n,int x)  //替换二进制特定位的值  //a为要转化的数字，n为替换的值（0或1），x为位数
+{
+
+    if (n==0)
+        a &amp;= (~(1 &lt;&lt; x));   //将a的二进制第x位替换为0
+    else  a|=(1&lt;&lt;x);        //将a的二进制第x位替换为1
+    return a;
+}
+
+long long mian1234(long long x,int n)  //提取二进制的特定位  //x为要转化的数字，n为位数
+{
+    return x&amp;(1&lt;&lt;n);           //取出x的第m位，保存在a中（若为1，则a=2^m,否则a=0）
+}
+</code></pre>
+<p>提醒：</p>
+<p>1&lt;&lt;n     n不能大于等于32</p>
+<p>1ll&lt;&lt;n</p>
+<p>1u&lt;&lt;31  与1&lt;&lt;31</p>
+<p><code>1</code>与<code>1ll</code>的区别</p>
+<p>2的n次方 1&lt;&lt;n</p>
+<img src="http://cos.pansis.site/202309301724094.png/abc123" alt="image-20230930172429847" style="zoom:33%;" />
+<h3 id="代码-2">代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+    unsigned int n;
+    int t;int k,op;
+    scanf(&quot;%u&quot;,&amp;n);
+    scanf(&quot;%d&quot;,&amp;t);
+    while (t--)
+    {
+        scanf(&quot;%d%d&quot;,&amp;k,&amp;op);
+        if (op==1)
+        {
+            n|=(1u&lt;&lt;k);
+        }
+        else
+        {
+            n&amp;=(~(1u&lt;&lt;k));
+        }
+        printf(&quot;%u\n&quot;,n);
+    }
+    printf(&quot;%u\n&quot;,n);
+}
+</code></pre>
+<h1 id="c-高低位对调">C 高低位对调</h1>
+<h3 id="输入问题">输入问题</h3>
+<p>hint</p>
+<p>用 <code>scanf</code> 和<code>printf</code> 读入和输出 <code>unsigned int</code> 类型的整数时格式化字符串要用 <code>&quot;%u&quot; </code> 哦～</p>
+<p>printf</p>
+<p><strong>%d</strong>： － 以十进制方式输出带标记整数； int 十进制<br>
+<strong>%u</strong>： － 以十进制方式输出无标记整数；                   unsigned int 十进制<br>
+%x   — 以十六进制方式输出整数                        int 十六进制<br>
+%o： － 以八进制方式输出整数                         int 八进制<br>
+<strong>%f</strong>： － 以小数方式输出单、双精度实数；                 double 小数方式<br>
+%e： － 以指数方式输出单、双精度实数；                 double 科学计数法<br>
+%g： － 以%f，%e中较短的输出宽度输出单、双精度实数；     double<br>
+<strong>%c</strong>： － 输出单个字符；                              char<br>
+<strong>%s</strong>： － 输出字符串。                                char*</p>
+<p><strong>%lld</strong>  -以十进制方式输入长整型            long long</p>
+<p><strong>%llu</strong>  以十进制方式输出           unsigned long long</p>
+<p>scanf</p>
+<p><strong>%d</strong>： － 以十进制方式输入带标记整数                  int 十进制<br>
+<strong>%u</strong>： － 以十进制方式输入无符号整数                  int 十进制<br>
+%x   — 以十六进制方式输入整数                     int 十六进制<br>
+%o： － 以八进制方式输入整数                       int 八进制<br>
+%f： － 输入单精度实数；                              float<br>
+<strong>%lf</strong>：－ 输入双精度实数；                              double<br>
+<strong>%c</strong>： － 输入单个字符；                           char<br>
+<strong>%s</strong>： － 输入字符串。<br>
+<strong>%llu</strong>     以十进制方式输入unsigned long long        unsigned long long<br>
+<strong>%lld</strong>  -以十进制方式输入长整型 （linux系统）         long long<br>
+%hhd    获取signed char</p>
+<p>！！！！！printf不要用%lf</p>
+<p>double用%lf输入，用%f输出</p>
+<p>%d会忽略回车空格，但%c不会</p>
+<h3 id="高低位对调">高低位对调</h3>
+<p>实现高16位与低16位对调的表达式为 <code>m = (m &lt;&lt; 16) | (m &gt;&gt; 16)</code> ，下图可以帮助大家理解。</p>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202309260909390.jpg/abc123" alt="58b943c8bafb15f930f59701d0d1068" loading="lazy"></figure>
+<p>或的性质：S|0=S</p>
+<h3 id="代码-3">代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main() {
+    int n;
+    unsigned int m;
+    scanf(&quot;%d&quot;, &amp;n);
+    while (n--) {
+        scanf(&quot;%u&quot;, &amp;m);
+        m = (m &lt;&lt; 16) | (m &gt;&gt; 16);
+        printf(&quot;%u\n&quot;, m);
+    }
+}
+</code></pre>
+<h3 id="法2">法2</h3>
+<p>(a &amp; 0XFFFF0000)&gt;&gt;16)|((a&amp;0X0000FFFF)&lt;&lt;16</p>
+<h1 id="d-身份证号验证"><code>D</code> 身份证号验证</h1>
+<h3 id="getss与scanfss">gets(s)与scanf(&quot;%s&quot;,s)</h3>
+<p>scanf()%s会前面的忽略空白字符，停止在空白字符。（空白字符还会留在缓冲区）</p>
+<p>gets读取一整行，会吞掉换行符，但换行符不会被读入s</p>
+<p>gets(id+1);</p>
+<h3 id="代码-4">代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+    int w[30]={0,7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2};
+    int yu[30]={1,0,10,9,8,7,6,5,4,3,2};
+    int n;char id[30];
+    scanf(&quot;%d&quot;,&amp;n);
+    getchar();
+    while (n--)
+    {
+        gets(id+1);
+        int sum=0;
+        for (int i = 1; i &lt;=17 ; ++i) {
+            sum+=((id[i]-'0')*w[i]);
+        }
+        sum%=11;
+        sum=yu[sum];
+        if (sum==id[18]-'0' ||(sum==10 &amp;&amp;id[18]=='X' ))
+        {
+            printf(&quot;YES&quot;);
+        }
+        else
+        {
+            printf(&quot;NO&quot;);
+        }
+        printf(&quot;\n&quot;);
+
+    }
+}
+</code></pre>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main() 
+{
+	int w[17]={7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2};
+	char yu[11]={'1','0','X','9','8','7','6','5','4','3','2'};//////////
+	int n;
+	char id[20];
+	scanf(&quot;%d&quot;,&amp;n);
+	getchar();//////////////////////////
+	while(n--)
+	{
+	    int sum=0;
+	
+		for(int i=0;i&lt;17;++i){
+			scanf(&quot;%c&quot;,&amp;id[i]);
+		    sum += ((id[i] - '0') * w[i]);	
+		}
+		sum=sum%11;
+		scanf(&quot;%c&quot;,&amp;id[18]);
+		getchar();////////////////////////////
+		if(yu[sum]==id[18]){
+			printf(&quot;YES&quot;);
+		}
+		else{
+			printf(&quot;NO&quot;);
+		}
+		printf(&quot;\n&quot;);
+	}
+	return 0;
+}
+</code></pre>
+<h1 id="e-质数异或和一"><code>E</code> 质数，异或和一</h1>
+<p>序号                  质数                          二进制</p>
+<p>1                          2</p>
+<p>2                         3</p>
+<p>3                         5</p>
+<p>4                        7</p>
+<p>5                        11</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main(void) {
+    int m, n;
+    while (scanf(&quot;%d%d&quot;, &amp;m, &amp;n) != EOF) {
+        if (((m == 1) &amp;&amp; (n == 2)) || ((m == 2) &amp;&amp; (n == 1))) {
+            puts(&quot;YEEEEE!!!&quot;);
+        } else {
+            puts(&quot;W00000!!!&quot;);
+        }
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="f-式神们夜里不睡觉-mini"><code>F</code> 式神们夜里不睡觉 mini</h1>
+<h3 id="m进制转十进制">m进制转十进制</h3>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>01010</mn><msub><mn>1</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">010101_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.79444em;vertical-align:-0.15em;"></span><span class="mord">0</span><span class="mord">1</span><span class="mord">0</span><span class="mord">1</span><span class="mord">0</span><span class="mord"><span class="mord">1</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>32</mn><msub><mn>1</mn><mn>8</mn></msub></mrow><annotation encoding="application/x-tex">321_8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.79444em;vertical-align:-0.15em;"></span><span class="mord">3</span><span class="mord">2</span><span class="mord"><span class="mord">1</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+<p>不提倡使用pow，尤其是2的n次方</p>
+<h3 id="十进制转n进制">十进制转n进制</h3>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
+char c[100];
+int d[100];
+int main()
+{
+	int t,m,n;
+	scanf(&quot;%d&quot;,&amp;t);
+	while(t--)
+	{
+		scanf(&quot;%d %d %s&quot;,&amp;m,&amp;n,c);
+		int l = strlen(c),ans = 0,k = 0;
+		for(int i = 0;i &lt; l;i++)
+		        ans = ans * n + c[i] - '0';
+		if(ans == 0)
+		         printf(&quot;0&quot;);
+		while(ans)
+		{
+			d[k] = ans % n;
+			ans = ans / n;
+			k++;
+		}
+		for(int i = k - 1;i &gt;= 0;i--)
+		    printf(&quot;%d&quot;,d[i]);
+		printf(&quot;\n&quot;);
+	}
+	return 0;
+}
+</code></pre>
+<h1 id="g-te离间计"><code>G</code> Te：离间计</h1>
+<h3 id="代码-5">代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+int main()
+{
+    unsigned long long nn=0;//0是G
+    int n,m;int mingling;
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
+    while (m--)
+    {
+        scanf(&quot;%d&quot;,&amp;mingling);
+        if (mingling==1) {
+            nn = ~nn;
+        }
+        else
+        {
+            for (int i = 0; i &lt; n; ++i) {
+                if (((nn&gt;&gt;i)&amp;1)==0) {/////补码显示
+                    nn = nn | (1ull &lt;&lt; i);
+                    break;
+                }
+            }
+        }
+    }
+    int num=0;
+    for (int i = 0; i &lt; n; ++i) {
+        if (((nn&gt;&gt;i)&amp;1)==1) {
+            printf(&quot;%d &quot;,i+1);
+            num++;
+        }
+    }
+    printf(&quot;\n%d&quot;,num);
+}
+</code></pre>
+<h1 id="h-非标准进制"><code>H</code> 非标准进制</h1>
+<h3 id="代码-6">代码</h3>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
+long long b[10000007];
+int main()
+{
+   long long n;int m=1;
+    scanf(&quot;%lld&quot;,&amp;n);
+    b[0]=1;
+    while ((scanf(&quot;%lld&quot;,&amp;b[m]))!=EOF)
+    {
+        b[m]*=b[m-1];
+        //printf(&quot;%lld &quot;,b[m]);
+        m++;
+    }
+    long long int sum=0;
+    for (int i = m-1; i &gt;=0 ; --i) {
+        //printf(&quot;%lld &quot;,b[i]);
+        long long int a=n/b[i];
+        //printf(&quot;%lld &quot;,a);
+        sum+=a;
+        n%=b[i];
+    }
+
+    printf(&quot;%lld&quot;,sum);
+}
+</code></pre>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/0kvGbp_AE/" class="article-info">
+                                                        比赛
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

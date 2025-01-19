@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>2.2 ARM指令集 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、ARM指令集
+1、基本指令结构
+
+
+&lt;&gt;号内的项是必须的，{}号内的项是可选的。
+opcode：指令助记符；
+cond：执行条件；
+S：是否影响CPSR寄存器条件位的值；
+Rd：目标寄存器；
+Rn：第1个操作数的寄存器；
+o..." />
+        <meta name="keywords" content="嵌入式系统" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="2.2 ARM指令集" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、ARM指令集
+1、基本指令结构
+
+
+&amp;lt;&amp;gt;号内的项是必须的，{}号内的项是可选的。
+opcode：指令助记符；
+cond：执行条件；
+S：是否影响CPSR寄存器条件位的值；
+Rd：目标寄存器；
+Rn：第1个操作数的寄存器；
+o...">
+        <meta property="og:url" content="https://github.pansis.site/post/2.2 ARM指令集/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-10-26">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="2.2 ARM指令集">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="2.2 ARM指令集">
+        <meta name="twitter:description" content="一、ARM指令集
+1、基本指令结构
+
+
+&amp;lt;&amp;gt;号内的项是必须的，{}号内的项是可选的。
+opcode：指令助记符；
+cond：执行条件；
+S：是否影响CPSR寄存器条件位的值；
+Rd：目标寄存器；
+Rn：第1个操作数的寄存器；
+o...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    2.2 ARM指令集
+                                </h2>
+                                <span class="article-info">
+                                    2024-10-26, 3283 words, 14 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-arm指令集">一、ARM指令集</h2>
+<h4 id="1-基本指令结构">1、基本指令结构</h4>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/image-20241010161752618.png?abc123" alt="image-20241010161752618" loading="lazy"></figure>
+<ul>
+<li>&lt;&gt;号内的项是必须的，{}号内的项是可选的。</li>
+<li><strong>opcode</strong>：指令助记符；</li>
+<li><strong>cond</strong>：执行条件；</li>
+<li><strong>S</strong>：是否影响CPSR寄存器条件位的值；</li>
+<li><strong>Rd</strong>：目标寄存器；</li>
+<li><strong>Rn</strong>：第1个操作数的寄存器；</li>
+<li><strong>operand2</strong>：第2个操作数；</li>
+</ul>
+<h4 id="2-operand2-格式">2、operand2 格式</h4>
+<p>1、形式</p>
+<ul>
+<li>立即数：#immed_8r</li>
+<li>寄存器：Rm</li>
+<li>寄存器+移位：Rm,shift</li>
+</ul>
+<p>2、立即数：#immed_8r</p>
+<p>常数要求：一个8位的常数通过循环右移偶数位得到</p>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/image-20241010162634785.png?abc123" alt="image-20241010162634785" loading="lazy"></figure>
+<p>合法的常量举例：0xff, 0x104, 0xff00, 0xff000000</p>
+<p>非法的常量举例：0x101, 0x102, 0xff1, 0xffffffff</p>
+<p>3、寄存器+移位：Rm,shift</p>
+<p>将寄存器的移位结果作为操作数（移位操作不消耗额外的时间），但Rm值保持不变</p>
+<p>移位方式</p>
+<table>
+<thead>
+<tr>
+<th>助记符</th>
+<th>说明</th>
+<th>移位操作</th>
+<th>Y值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LSL</td>
+<td>逻辑左移</td>
+<td>x  LSL y</td>
+<td>#0-31  or Rs</td>
+</tr>
+<tr>
+<td>LSR</td>
+<td>逻辑右移</td>
+<td>x  LSR y</td>
+<td>#1-32  or Rs</td>
+</tr>
+<tr>
+<td>ASR</td>
+<td>算术右移</td>
+<td>x  ASR y</td>
+<td>#1-32  or Rs</td>
+</tr>
+<tr>
+<td>ROR</td>
+<td>循环右移</td>
+<td>x  ROR y</td>
+<td>#1-32  or Rs</td>
+</tr>
+<tr>
+<td>RRX</td>
+<td>扩展的循环右移</td>
+<td>x  RRX y</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p>RRX移位操作：</p>
+<img src="http://cos.pansis.site/image-20241010163044838.png?abc123" alt="image-20241010163044838" style="zoom:50%;" />
+<h4 id="3-条件码-cond">3、条件码 cond</h4>
+<ol>
+<li>所有的ARM指令都可以条件执行，而Thumb指令只有B（跳转）指令具有条件执行 功能。</li>
+<li>如果指令不标明条件代码，将默认为无条件（AL）执行</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>操作码</th>
+<th>助记符cond</th>
+<th>标志</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0000</td>
+<td>EQ</td>
+<td>Z=1</td>
+<td>相等</td>
+</tr>
+<tr>
+<td>0001</td>
+<td>NE</td>
+<td>Z=0</td>
+<td>不相等</td>
+</tr>
+<tr>
+<td>0010</td>
+<td>CS/HS</td>
+<td>C=1</td>
+<td>无符号数大于或等于</td>
+</tr>
+<tr>
+<td>0011</td>
+<td>CC/LO</td>
+<td>C=0</td>
+<td>无符号数小于</td>
+</tr>
+<tr>
+<td>0100</td>
+<td>MI</td>
+<td>N=1</td>
+<td>负数</td>
+</tr>
+<tr>
+<td>0101</td>
+<td>PL</td>
+<td>N=0</td>
+<td>正数或零</td>
+</tr>
+<tr>
+<td>0110</td>
+<td>VS</td>
+<td>V=1</td>
+<td>溢出</td>
+</tr>
+<tr>
+<td>0111</td>
+<td>VC</td>
+<td>V=0</td>
+<td>没有溢出</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>HI</td>
+<td>C=1,Z=0</td>
+<td>无符号数大于</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>LS</td>
+<td>C=0,Z=1</td>
+<td>无符号数小于或等于</td>
+</tr>
+<tr>
+<td>1010</td>
+<td>GE</td>
+<td>N=V</td>
+<td>有符号数大于或等于</td>
+</tr>
+<tr>
+<td>1011</td>
+<td>LT</td>
+<td>N!=V</td>
+<td>有符号数小于</td>
+</tr>
+<tr>
+<td>1100</td>
+<td>GT</td>
+<td>Z=0,N=V</td>
+<td>有符号数大于</td>
+</tr>
+<tr>
+<td>1101</td>
+<td>LE</td>
+<td>Z=1,N!=V</td>
+<td>有符号数小于或等于</td>
+</tr>
+<tr>
+<td>1110</td>
+<td>AL</td>
+<td>任何</td>
+<td>无条件执行  (指令默认条件)</td>
+</tr>
+<tr>
+<td>1111</td>
+<td>NV</td>
+<td>任何</td>
+<td>从不执行(不要使用)</td>
+</tr>
+</tbody>
+</table>
+<figure data-type="image" tabindex="3"><img src="http://cos.pansis.site/image-20241010163410336.png?abc123" alt="image-20241010163410336" loading="lazy"></figure>
+<h2 id="二-储存器访问指令">二、储存器访问指令</h2>
+<h4 id="1-单寄存器加载">1、单寄存器加载</h4>
+<table>
+<thead>
+<tr>
+<th>助记符</th>
+<th>说明</th>
+<th>操作</th>
+<th>条件码位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LDR  Rd,addressing</td>
+<td>加载字数据</td>
+<td>Rd←[addressing]，addressing索引</td>
+<td>LDR{cond}</td>
+</tr>
+<tr>
+<td>LDRB  Rd,addressing</td>
+<td>加载无符号字节数据</td>
+<td>Rd←[addressing]，addressing索引</td>
+<td>LDR{cond}B</td>
+</tr>
+<tr>
+<td>LDRT  Rd,addressing</td>
+<td>以用户模式加载字数据</td>
+<td>Rd←[addressing]，addressing索引</td>
+<td>LDR{cond}T</td>
+</tr>
+<tr>
+<td>LDRBT Rd, addressing</td>
+<td>以用户模式加载无符号字节数据</td>
+<td>Rd←[addressing]，addressing索引</td>
+<td>LDR{cond}BT</td>
+</tr>
+<tr>
+<td>LDRH  Rd, addressing</td>
+<td>加载无符号半字数据</td>
+<td>Rd←[addressing]，addressing索引</td>
+<td>LDR{cond}H</td>
+</tr>
+<tr>
+<td>LDRSB Rd, addressing</td>
+<td>加载有符号字节数据</td>
+<td>Rd←[addressing]，addressing索引</td>
+<td>LDR{cond}SB</td>
+</tr>
+<tr>
+<td>LDRSH Rd, addressing</td>
+<td>加载有符号半字数据</td>
+<td>Rd←[addressing]，addressing索引</td>
+<td>LDR{cond}SH</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-单寄存器存储">2、单寄存器存储</h4>
+<table>
+<thead>
+<tr>
+<th>助记符</th>
+<th>说明</th>
+<th>操作</th>
+<th>条件码位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STR   Rd, addressing</td>
+<td>存储字数据</td>
+<td>[addressing]←Rd，  addressing索引</td>
+<td>STR{cond}</td>
+</tr>
+<tr>
+<td>STRB  Rd,addressing</td>
+<td>存储字节数据</td>
+<td>[addressing]←Rd，  addressing索引</td>
+<td>STR{cond}B</td>
+</tr>
+<tr>
+<td>STRT  Rd,addressing</td>
+<td>以用户模式存储字数据</td>
+<td>[addressing]←Rd，   addressing索引</td>
+<td>STR{cond}T</td>
+</tr>
+<tr>
+<td>STRBT  Rd,addressing</td>
+<td>以用户模式存储字节数据</td>
+<td>[addressing]←Rd，  addressing索引</td>
+<td>STR{cond}BT</td>
+</tr>
+<tr>
+<td>STRH  Rd,addressing</td>
+<td>存储半字数据</td>
+<td>[addressing]  ←Rd，  addressing索引</td>
+<td>STR{cond}H</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-addressing">3、addressing</h4>
+<p>由两部分组成，其中一部分为一个基址寄存器，另一部分为一个地址偏移量。</p>
+<p>详见基址(变址)寻址</p>
+<p>地址偏移量</p>
+<ul>
+<li>
+<p>立即数。立即数可以是一个无符号的数值。这个数据可以加到基址寄存器，也可以从基址寄存器中减去这个数值。</p>
+<p>如：LDR R1,[R0,#0x12] ；R1&lt;-[R0+0x12]</p>
+</li>
+<li>
+<p>寄存器。寄存器中的数值可以加到基址寄存器，也可以从基址寄存器中减去这个数值。</p>
+<p>如：LDR R1,[R0,R2]  ; R1&lt;-[R0+R2]</p>
+<p>​         LDR R1,[R0,-R2] ; R1&lt;-[R0-R2]</p>
+</li>
+<li>
+<p>寄存器及移位常数。寄存器移位后的值可以加到基址寄存器，也可以从基址寄存器中减去这个数值。</p>
+<p>如：LDR R1,[R0,R2,LSL #2]</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="4"><img src="http://cos.pansis.site/image-20241013122256891.png?abc123" alt="image-20241013122256891" loading="lazy"></figure>
+<h4 id="4-多寄存器存取">4、多寄存器存取</h4>
+<p>1、格式</p>
+<figure data-type="image" tabindex="5"><img src="http://cos.pansis.site/image-20241013123727555.png?abc123" alt="image-20241013123727555" loading="lazy"></figure>
+<p>2、模式</p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>说明</th>
+<th>模式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IA</td>
+<td>每次传送后地址加4</td>
+<td>FD</td>
+<td>满递减栈</td>
+</tr>
+<tr>
+<td>IB</td>
+<td>每次传送前地址加4</td>
+<td>ED</td>
+<td>空递减栈</td>
+</tr>
+<tr>
+<td>DA</td>
+<td>每次传送后地址减4</td>
+<td>FA</td>
+<td>满递增栈</td>
+</tr>
+<tr>
+<td>DB</td>
+<td>每次传送前地址减4</td>
+<td>EA</td>
+<td>空递增栈</td>
+</tr>
+<tr>
+<td>数据块传送操作</td>
+<td></td>
+<td>栈操作</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<img src="http://cos.pansis.site/image-20241013123844490.png?abc123" alt="image-20241013123844490" style="zoom:50%;" />
+<p>数据块传送操作和栈操作存在等价关系</p>
+<figure data-type="image" tabindex="6"><img src="http://cos.pansis.site/image-20241013123942328.png?abc123" alt="image-20241013123942328" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="http://cos.pansis.site/image-20241013123957189.png?abc123" alt="image-20241013123957189" loading="lazy"></figure>
+<p>两段代码的执行结果是一样的，但是使用栈指令的压栈和出栈操作编程很简单（只要前后一致即可）</p>
+<h4 id="5-寄存器和存储器交换指令swp">5、寄存器和存储器交换指令SWP</h4>
+<table>
+<thead>
+<tr>
+<th>助记符</th>
+<th>说明</th>
+<th>操作</th>
+<th>条件码位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SWP   Rd,Rm,Rn</td>
+<td>寄存器和存储器字数据交换</td>
+<td>Rd←[Rn]，[Rn]←Rm  (Rn≠Rd或Rm)</td>
+<td>SWP{cond}</td>
+</tr>
+<tr>
+<td>SWPB  Rd,Rm,Rn</td>
+<td>寄存器和存储器字节数据交换</td>
+<td>Rd←[Rn]，[Rn]←Rm  (Rn≠Rd或Rm)</td>
+<td>SWP{cond}B</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Rd用于保存从存储器中读入的数据；</li>
+<li>Rm的数据用于存储到存储器中。</li>
+<li>若Rm与Rd相同，则为寄存器与存储器内容进行互换；</li>
+<li>Rn为要进行数据交换的存储器地址，Rn不能与Rd和Rm相同。</li>
+</ul>
+<figure data-type="image" tabindex="8"><img src="http://cos.pansis.site/image-20241013124906349.png?abc123" alt="image-20241013124906349" loading="lazy"></figure>
+<h2 id="三-数据处理指令">三、数据处理指令</h2>
+<h4 id="1-数据传送">1、数据传送</h4>
+<table>
+<thead>
+<tr>
+<th>助记符</th>
+<th>说明</th>
+<th>操作</th>
+<th>条件码位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MOV  Rd,operand2</td>
+<td>数据传送</td>
+<td>Rd←operand2</td>
+<td>MOV{cond}{S}</td>
+</tr>
+<tr>
+<td>MVN  Rd,operand2</td>
+<td>数据非传送</td>
+<td>Rd←(~operand2)</td>
+<td>MVN{cond}{S}</td>
+</tr>
+</tbody>
+</table>
+<p>当后缀S时，这些指令根据结果更新标志N和Z，在计算Operand2时更新标志C，不影响标志V。</p>
+<img src="http://cos.pansis.site/image-20241013130122100.png?abc123" alt="image-20241013130122100" style="zoom:50%;" />
+<h4 id="2-算术运算">2、算术运算</h4>
+<table>
+<thead>
+<tr>
+<th>助记符</th>
+<th>说明</th>
+<th>操作</th>
+<th>条件码位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADD  Rd, Rn, operand2</td>
+<td>加法运算指令</td>
+<td>Rd←Rn+operand2</td>
+<td>ADD{cond}{S}</td>
+</tr>
+<tr>
+<td>SUB  Rd, Rn, operand2</td>
+<td>减法运算指令</td>
+<td>Rd←Rn-operand2</td>
+<td>SUB{cond}{S}</td>
+</tr>
+<tr>
+<td>RSB  Rd, Rn, operand2</td>
+<td>逆向减法指令</td>
+<td>Rd←operand2-Rn</td>
+<td>RSB{cond}{S}</td>
+</tr>
+<tr>
+<td>ADC  Rd, Rn, operand2</td>
+<td>带进位加法</td>
+<td>Rd←Rn+operand2+Carry</td>
+<td>ADC{cond}{S}</td>
+</tr>
+<tr>
+<td>SBC  Rd, Rn, operand2</td>
+<td>带进位减法指令</td>
+<td>Rd←Rn-operand2-(NOT)Carry</td>
+<td>SBC{cond}{S}</td>
+</tr>
+<tr>
+<td>RSC  Rd, Rn, operand2</td>
+<td>带进位逆向减法指令</td>
+<td>Rd←operand2-Rn-(NOT)Carry</td>
+<td>RSC{cond}{S}</td>
+</tr>
+</tbody>
+</table>
+<p>注：当后缀S时，这些指令影响N，Z，C和V标志位</p>
+<img src="http://cos.pansis.site/image-20241013130300206.png?abc123" alt="image-20241013130300206" style="zoom:50%;" />
+<img src="http://cos.pansis.site/image-20241013130329672.png?abc123" alt="image-20241013130329672" style="zoom:50%;" />
+<img src="http://cos.pansis.site/image-20241013130319196.png?abc123" alt="image-20241013130319196" style="zoom:50%;" />
+<img src="http://cos.pansis.site/image-20241013130447814.png?abc123" alt="image-20241013130447814" style="zoom:50%;" />
+<img src="http://cos.pansis.site/image-20241013130501725.png?abc123" alt="image-20241013130501725" style="zoom:50%;" />
+<img src="http://cos.pansis.site/image-20241013130518720.png?abc123" alt="image-20241013130518720" style="zoom:50%;" />
+<h4 id="3-逻辑运算指令">3、逻辑运算指令</h4>
+<table>
+<thead>
+<tr>
+<th>助记符</th>
+<th>说明</th>
+<th>操作</th>
+<th>条件码位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AND  Rd, Rn, operand2</td>
+<td>逻辑与操作指令</td>
+<td>Rd←Rn  &amp; operand2</td>
+<td>AND{cond}{S}</td>
+</tr>
+<tr>
+<td>ORR  Rd, Rn, operand2</td>
+<td>逻辑或操作指令</td>
+<td>Rd←Rn  | operand2</td>
+<td>ORR{cond}{S}</td>
+</tr>
+<tr>
+<td>EOR  Rd, Rn, operand2</td>
+<td>逻辑异或操作指令</td>
+<td>Rd←Rn  ^ operand2</td>
+<td>EOR{cond}{S}</td>
+</tr>
+<tr>
+<td>BIC  Rd, Rn, operand2</td>
+<td>位清除指令</td>
+<td>Rd←Rn  &amp; (~operand2)</td>
+<td>BIC{cond}{S}</td>
+</tr>
+</tbody>
+</table>
+<p>注：当后缀S时，这些指令根据结果更新标志N和Z，在计算Operand2时更新标志C，不影响标志V。</p>
+<img src="http://cos.pansis.site/image-20241013130820659.png?abc123" alt="image-20241013130820659" style="zoom:50%;" />
+<h4 id="4-比较指令">4、比较指令</h4>
+<table>
+<thead>
+<tr>
+<th>助记符</th>
+<th>说明</th>
+<th>操作</th>
+<th>条件码位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CMP  Rn, operand2</td>
+<td>比较指令</td>
+<td>标志N、Z、C、V←Rn-operand2</td>
+<td>CMP{cond}</td>
+</tr>
+<tr>
+<td>CMN  Rn, operand2</td>
+<td>负数比较指令</td>
+<td>标志N、Z、C、V←Rn+operand2</td>
+<td>CMN{cond}</td>
+</tr>
+<tr>
+<td>TST  Rn, operand2</td>
+<td>位测试指令</td>
+<td>标志N、Z、C、V←Rn  &amp; operand2</td>
+<td>TST{cond}</td>
+</tr>
+<tr>
+<td>TEQ  Rn, operand2</td>
+<td>相等测试指令</td>
+<td>标志N、Z、C、V←Rn  ^ operand2</td>
+<td>TEQ{cond}</td>
+</tr>
+</tbody>
+</table>
+<p>注：这些指令影响N，Z，C和V标志位。</p>
+<p>1、CMP指令</p>
+<p>将寄存器Rn的值减去operand2的值，根据操作的结果更新CPSR中的相应条件标志位(N/Z/C/V)，</p>
+<p>CMP指令与SUBS指令的区别在于CMP指令不保存运算结果。</p>
+<figure data-type="image" tabindex="9"><img src="http://cos.pansis.site/image-20241013131035966.png?abc123" alt="image-20241013131035966" loading="lazy"></figure>
+<p>2、CMN指令</p>
+<p>使用寄存器Rn的值加上operand2的值，根据操作的结果更新CPSR中的相应条件标志位，以便后面的指令根据相应的条件标志来判断是否执行。</p>
+<p>CMN指令与ADDS指令的区别在于CMN指令不保存运算结果</p>
+<figure data-type="image" tabindex="10"><img src="http://cos.pansis.site/image-20241013131107228.png?abc123" alt="image-20241013131107228" loading="lazy"></figure>
+<p>3、TST指令</p>
+<p>将寄存器Rn的值与operand2的值按位作逻辑“与”操作，根据操作的结果更新CPSR中的相应条件标志位，以便后面的指令根据相应的条件标志来判断是否执行</p>
+<figure data-type="image" tabindex="11"><img src="http://cos.pansis.site/image-20241013131231804.png?abc123" alt="image-20241013131231804" loading="lazy"></figure>
+<p>4、TEQ指令</p>
+<p>将寄存器Rn的值与operand2的值按位作逻辑“异或”操作，根据操作的结果更新CPSR中的相应条件标志位，以便后面的指令根据相应的条件标志来判断是否执行</p>
+<figure data-type="image" tabindex="12"><img src="http://cos.pansis.site/image-20241013131826939.png?abc123" alt="image-20241013131826939" loading="lazy"></figure>
+<h4 id="5-乘法指令">5、乘法指令</h4>
+<table>
+<thead>
+<tr>
+<th>助记符</th>
+<th>说明</th>
+<th>操作</th>
+<th>条件码位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MUL  Rd,Rm,Rs</td>
+<td>32位乘法指令</td>
+<td>Rd←Rm*Rs (Rd≠Rm)</td>
+<td>MUL{cond}{S}</td>
+</tr>
+<tr>
+<td>MLA  Rd,Rm,Rs,Rn</td>
+<td>32位乘加指令</td>
+<td>Rd←Rm*Rs+Rn (Rd≠Rm)</td>
+<td>MLA{cond}{S}</td>
+</tr>
+<tr>
+<td>UMULL RdLo,RdHi,Rm,Rs</td>
+<td>64位无符号乘法指令</td>
+<td>(RdLo,RdHi)  ←Rm*Rs</td>
+<td>UMULL{cond}{S}</td>
+</tr>
+<tr>
+<td>UMLAL RdLo,RdHi,Rm,Rs</td>
+<td>64位无符号乘加指令</td>
+<td>(RdLo,RdHi)  ←Rm*Rs+(RdLo,RdHi)</td>
+<td>UMLAL{cond}{S}</td>
+</tr>
+<tr>
+<td>SMULL RdLo,RdHi,Rm,Rs</td>
+<td>64位有符号乘法指令</td>
+<td>(RdLo,RdHi)  ←Rm*Rs</td>
+<td>SMULL{cond}{S}</td>
+</tr>
+<tr>
+<td>SMLAL RdLo,RdHi,Rm,Rs</td>
+<td>64位有符号乘加指令</td>
+<td>(RdLo,RdHi)  ←Rm*Rs+(RdLo,RdHi)</td>
+<td>SMLAL{cond}{S}</td>
+</tr>
+</tbody>
+</table>
+<p>1、MUL指令</p>
+<ul>
+<li>将Rm和Rs中的值相乘，结果的低32位保存到Rd中。</li>
+<li>Rd,Rm,Rs不能为R15。</li>
+<li>只影响CPSR中的N位和Z位，不影响V，C不确定。</li>
+</ul>
+<p>2、MLA指令</p>
+<ul>
+<li>将Rm和Rs中的值相乘，再将乘积加上第3个操作数，结果的低32位保存到Rd中。</li>
+<li>Rd,Rm,Rs，Rn不能为R15。</li>
+<li>只影响CPSR中的N位和Z位，不影响V，C不确定。</li>
+</ul>
+<p>3、UMULL指令</p>
+<ul>
+<li>将Rm和Rs中的值作无符号数相乘，结果的低32位保存到RdLo中，而高32位保存到RdHi中。</li>
+<li>RdLo/Hi，Rm，Rs不能为R15。 RdLo/Hi，Rm必须是不同的寄存器。</li>
+<li>只影响CPSR中的N位和Z位，标志C和V不确定。</li>
+</ul>
+<p>4、UMLAL指令</p>
+<ul>
+<li>将Rm和Rs中的值作无符号数相乘，64位乘积与RdHi、RdLo相加，结果的低32位保存到RdLo中，而高32位保存到RdHi中。</li>
+<li>RdLo/Hi，Rm，Rs不能为R15。 RdLo/Hi，Rm必须是不同的寄存器。</li>
+<li>只影响CPSR中的N位和Z位，标志C和V不确定。</li>
+</ul>
+<p>5、SMULL指令</p>
+<ul>
+<li>将Rm和Rs中的值作有符号数相乘，结果的低32位保存到RdLo中，而高32位保存到RdHi中。</li>
+<li>RdLo/Hi，Rm，Rs不能为R15。 RdLo/Hi，Rm必须是不同的寄存器。</li>
+<li>只影响CPSR中的N位和Z位，标志C和V不确定。</li>
+</ul>
+<p>S、MLAL指令</p>
+<ul>
+<li>将Rm和Rs中的值作有符号数相乘，64位乘积与RdHi、RdLo相加，结果的低32位保存到RdLo中，而高32位保存到RdHi中。</li>
+<li>RdLo/Hi，Rm，Rs不能为R15。 RdLo/Hi，Rm必须是不同的寄存器。</li>
+<li>只影响CPSR中的N位和Z位，标志C和V不确定</li>
+</ul>
+<h4 id="6-分支指令">6、分支指令</h4>
+<p>1、程序的跳转方式</p>
+<ul>
+<li>使用分支指令直接跳转</li>
+<li>直接向PC寄存器赋值实现跳转</li>
+</ul>
+<p>2、分支指令</p>
+<ul>
+<li>分支指令B；</li>
+<li>带链接的分支指令BL；</li>
+<li>带状态切换的分支指令BX。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>助记符</th>
+<th>说明</th>
+<th>操作</th>
+<th>条件码位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B   label</td>
+<td>分支指令</td>
+<td>PC←label</td>
+<td>B{cond}</td>
+</tr>
+<tr>
+<td>BL   label</td>
+<td>带链接的分支指令</td>
+<td>LR←PC-4，PC←label</td>
+<td>BL{cond}</td>
+</tr>
+<tr>
+<td>BX   Rm</td>
+<td>带状态切换的分支指令</td>
+<td>PC←Rm，切换处理器状态</td>
+<td>BX{cond}</td>
+</tr>
+</tbody>
+</table>
+<p>BX指令</p>
+<p>该指令可以根据跳转地址（Rm）的最低位来切换处理器状态。</p>
+<img src="http://cos.pansis.site/image-20241013134336138.png?abc123" alt="image-20241013134336138" style="zoom:70%;" />
+<img src="http://cos.pansis.site/image-20241013134436877.png?abc123" alt="image-20241013134436877" style="zoom:70%;" />
+<h4 id="6-杂项指令">6、杂项指令</h4>
+<h5 id="1-swi-软中断">1、SWI 软中断</h5>
+<p>1、SWI指令格式</p>
+<p>SWI{cond} immed_24</p>
+<p>产生SWI异常，使得CPU模式变换到管理模式，并且将CPSR保存到管理模式的SPSR中，然后程序跳转到SWI异常入口位置。不影响条件码标志</p>
+<p>2、参数 immed_24</p>
+<ul>
+<li>指令中的24位立即数指定了用户请求的服务类型，参数通过通用寄存器传递。</li>
+</ul>
+<pre><code class="language-assembly">MOV  R0,#34 ;设置子功能号为34 
+SWI  12 ;调用12号软中断 
+</code></pre>
+<ul>
+<li>指令中的24位立即数被忽略，用户请求的服务类型由寄存器R0的值决定，参数通过其它的通用寄存器传递。</li>
+</ul>
+<pre><code class="language-assembly">MOV  R0,#12  ;调用12号软中断 
+MOV  R1,#34 ;设置子功能号为34 
+SWI  0 
+</code></pre>
+<h5 id="2-mrs-状态寄存器读指令">2、MRS 状态寄存器读指令</h5>
+<p>1、功能</p>
+<p>只有MRS指令可以对状态寄存器CPSR和SPSR进行读操作。通过读CPSR可以了解当前处理器的工作状态。读SPSR寄存器可以了解到进入异常前的处理器状态。该指令不影响条件码。</p>
+<p>2、应用示例</p>
+<pre><code class="language-assembly">  MRS  R1,CPSR ; 将CPSR状态寄存器读取，保存到R1中
+  MRS  R2,SPSR ; 将SPSR状态寄存器读取，保存到R2中
+</code></pre>
+<p>3、指令格式</p>
+<pre><code>MRS{cond}  Rd,psr
+</code></pre>
+<h5 id="3-msr-状态寄存器写指令">3、MSR 状态寄存器写指令</h5>
+<figure data-type="image" tabindex="13"><img src="http://cos.pansis.site/image-20241014202002499.png?abc123" alt="image-20241014202002499" loading="lazy"></figure>
+<h4 id="7-伪指令">7、伪指令</h4>
+<h5 id="1-adr指令">1、ADR指令</h5>
+<p>1、功能</p>
+<p>将基于PC相对偏移的地址值或基于寄存器相对偏移的地址值读取到寄存器中。</p>
+<p>2、ADR伪指令格式</p>
+<figure data-type="image" tabindex="14"><img src="http://cos.pansis.site/image-20241014202148662.png?abc123" alt="image-20241014202148662" loading="lazy"></figure>
+<p>3、示例：小范围的地址读取</p>
+<img src="http://cos.pansis.site/image-20241014202227505.png?abc123" alt="image-20241014202227505" style="zoom:67%;" />
+<p>4、常用功能</p>
+<p>小范围的地址读取</p>
+<img src="http://cos.pansis.site/image-20241014202405691.png?abc123" alt="image-20241014202405691" style="zoom:70%;" />
+<h5 id="2-adrl指令">2、ADRL指令</h5>
+<p>1、功能</p>
+<p>基于PC相对偏移的地址值或基于寄存器相对偏移的地址值读取到寄存器中，比ADR伪指令可以读取更大范围的地址</p>
+<p>2、指令格式</p>
+<figure data-type="image" tabindex="15"><img src="http://cos.pansis.site/image-20241014202857141.png?abc123" alt="image-20241014202857141" loading="lazy"></figure>
+<p>3、示例</p>
+<figure data-type="image" tabindex="16"><img src="http://cos.pansis.site/image-20241014202933362.png?abc123" alt="image-20241014202933362" loading="lazy"></figure>
+<h5 id="3-ldr">3、LDR</h5>
+<p>1、功能</p>
+<p>用于加载32位的立即数或一个地址值到指定寄存器</p>
+<p>2、指令格式</p>
+<figure data-type="image" tabindex="17"><img src="http://cos.pansis.site/image-20241014203025828.png?abc123" alt="image-20241014203025828" loading="lazy"></figure>
+<p>注意：</p>
+<ul>
+<li>与ARM指令的LDR相比，伪指令的LDR的参数有“=”号。</li>
+<li>expr可以是任意的32位立即数</li>
+<li>文字池到该指令的地址距离小于4KB字节</li>
+</ul>
+<h5 id="4-nop">4、NOP</h5>
+<p>1、功能：空操作，比如可能是“MOV R0,R0”指令等。NOP可用于延时操作，其逻辑意义更加清晰。</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/AVw14AAoK/" class="article-info">
+                                                        嵌入式系统
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

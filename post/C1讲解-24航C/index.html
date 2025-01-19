@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>C1讲解-24航C | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="A I l0VE Bu@@
+C语言基本结构
+#include &lt;stdio.h&gt;                      //引用头文件
+int main()                              //ma..." />
+        <meta name="keywords" content="24航C" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="C1讲解-24航C" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="A I l0VE Bu@@
+C语言基本结构
+#include &amp;lt;stdio.h&amp;gt;                      //引用头文件
+int main()                              //ma...">
+        <meta property="og:url" content="https://github.pansis.site/post/C1讲解-24航C/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-09-20">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="C1讲解-24航C">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="C1讲解-24航C">
+        <meta name="twitter:description" content="A I l0VE Bu@@
+C语言基本结构
+#include &amp;lt;stdio.h&amp;gt;                      //引用头文件
+int main()                              //ma...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    C1讲解-24航C
+                                </h2>
+                                <span class="article-info">
+                                    2024-09-20, 1810 words, 9 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h1 id="a-i-l0ve-bu"><code>A</code> I l0VE Bu@@</h1>
+<h3 id="c语言基本结构">C语言基本结构</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;                      //引用头文件
+int main()                              //main函数 程序的开始   int代表函数返回值为整形
+{   printf(&quot;Hello，world&quot;);      //printf()函数
+                               //返回值,函数结束位置，main返回值为0代表程序正常结束，否则为异常结束
+}
+</code></pre>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+	printf(&quot;hEll0,WOrlD!?\nWeLlC0Me To CH1n@\nI 10VE Bu@@&quot;);
+    return 0;
+}
+</code></pre>
+<p>错误写法</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+	printf(&quot;hEll0,WOrlD!?
+			WeLlC0Me To CH1n@
+			I 10VE Bu@@&quot;);
+    return 0;
+}
+</code></pre>
+<h1 id="b-ab2024"><code>B</code> a+b2024</h1>
+<h3 id="数据类型">数据类型</h3>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数值范围</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char</td>
+<td>-128~127</td>
+<td>表示字符</td>
+</tr>
+<tr>
+<td>int</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><msup><mn>2</mn><mn>31</mn></msup><mo>−</mo><mo>(</mo><msup><mn>2</mn><mn>31</mn></msup><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">-2^{31}-(2^{31}-1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>（十进制下大约是2*10^9）</td>
+<td>表示整数</td>
+</tr>
+<tr>
+<td>long long</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><msup><mn>2</mn><mn>63</mn></msup><mo>−</mo><mo>(</mo><msup><mn>2</mn><mn>63</mn></msup><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">-2^{63}-(2^{63}-1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td>表示大整数</td>
+</tr>
+<tr>
+<td>double</td>
+<td>略</td>
+<td>表示实数</td>
+</tr>
+<tr>
+<td>unsigned int</td>
+<td>0~(2^{32}-1)</td>
+<td>表示正整数</td>
+</tr>
+<tr>
+<td>unsigned long long</td>
+<td>0~(2^{63}-1)</td>
+<td>表示大正整数</td>
+</tr>
+</tbody>
+</table>
+<p>其他不常用类型：float（单精度浮点数，本课程禁用，一律用double）</p>
+<p>unsigned char ，short，unsigned short</p>
+<h4 id="变量定义方法">变量定义方法</h4>
+<pre><code class="language-c">&lt;变量类型&gt; &lt;变量名&gt;;
+int a;
+int b,c;//一次定义多个变量
+long long d;
+int d=1;//定义的同时赋初值
+</code></pre>
+<h3 id="printf">printf</h3>
+<p>1.库： #include &lt;stdio.h&gt;</p>
+<p>2、用法： printf(&quot;格式说明字符串&quot;,...,...,...);<br>
+....为参数表，与字符串中的%一一对应</p>
+<p>格式说明字符串</p>
+<ul>
+<li>“123123”</li>
+<li>“%d:123%d”</li>
+<li>&quot;123\n123&quot;</li>
+</ul>
+<p>3、转义字符</p>
+<ul>
+<li>\n   换行符   &amp;&amp;&amp;&amp;&amp;&amp;&amp;</li>
+<li>\\   反斜线   &amp;&amp;&amp;&amp;&amp;&amp;&amp;</li>
+<li>?   问号     &amp;&amp;&amp;&amp;&amp;&amp;</li>
+<li>\'   单引号    &amp;&amp;&amp;&amp;&amp;</li>
+<li>\&quot;   双引号    &amp;&amp;&amp;&amp;&amp;</li>
+<li>%%   %号  &amp;&amp;&amp;&amp;&amp; （仅限于scanf和printf中会转义）</li>
+</ul>
+<p>4.printf()常用字段类型说明符</p>
+<ul>
+<li>%d： － 以十进制方式输出带标记整数（正数默认不输出标记）； int 十进制  //////////////////////////////</li>
+<li>%u： － 以十进制方式输出无标记整数；                   unsigned int 十进制 /////////////////////</li>
+<li>%x   — 以十六进制方式输出整数                        int 十六进制</li>
+<li>%o： － 以八进制方式输出整数                         int 八进制</li>
+<li>%lf： － 以小数方式输出单、双精度实数；                 double 小数方式 /////////////////////</li>
+<li>%e： － 以指数方式输出单、双精度实数；                 double 科学计数法</li>
+<li>%g： － 以%f，%e中较短的输出宽度输出单、双精度实数；     double</li>
+<li>%c： － 输出单个字符；                              char  ////////////////////////////////////</li>
+<li>%s： － 输出字符串。                                char*  ///////////////////////</li>
+<li>%lld  -以十进制方式输入长整型 （linux系统）    long long ///////////////////////////</li>
+<li>%llu  以十进制方式输出unsigned long long        unsigned long long /////////////////////////</li>
+</ul>
+<h3 id="scanf">scanf</h3>
+<p>1.库： #include &lt;stdio.h&gt;</p>
+<p>2、用法： scanf(&quot;格式说明字符串&quot;,...,...,...);<br>
+....为参数表，与字符串中的%一一对应</p>
+<p>3、常用字段类型说明符  （与printf基本一致)</p>
+<p>4、示例</p>
+<pre><code>5 6
+</code></pre>
+<pre><code class="language-c">scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
+</code></pre>
+<p>题解</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main() {
+    int a, b,c;
+    scanf(&quot;%d%d&quot;, &amp;a, &amp;b);
+    c = a + b;
+    printf(&quot;%d + %d = %d&quot;, a, b, c);
+    return 0;
+}
+</code></pre>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main() {
+    int a, b;
+    scanf(&quot;%d%d&quot;, &amp;a, &amp;b);
+    printf(&quot;%d + %d = %d&quot;, a, b, a + b);
+    return 0;
+}
+</code></pre>
+<h1 id="c-ab-problem"><code>C</code> A%B Problem</h1>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int a,b;
+    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
+    printf(&quot;%d mod %d == %d&quot;,a,b,a%b);
+}
+</code></pre>
+<h1 id="d-简单的-a-b"><code>D</code> 简单的 a / b</h1>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int a,b;
+    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
+    printf(&quot;%d / %d = %d&quot;,a,b,a/b);
+}
+</code></pre>
+<h1 id="e-cirno的助教任务"><code>E</code> Cirno的助教任务</h1>
+<h3 id="if">if</h3>
+<p>1、语法</p>
+<pre><code class="language-c">if (&lt;表达式&gt;) &lt;语句&gt;
+else if (&lt;表达式&gt;) &lt;语句&gt;
+else if (&lt;表达式&gt;) &lt;语句&gt;
+else if (&lt;表达式&gt;) &lt;语句&gt;
+......
+else &lt;语句&gt;
+</code></pre>
+<p>1、&lt;表达式&gt;既可以是逻辑表达式也可以是数值</p>
+<pre><code class="language-c">if (a==1){}//a为1时执行{}内语句，反之不执行
+if (1){}//永远执行{}内语句
+if (0){}//永远不执行{}内语句
+if (a){}//a为0时不执行{}内语句，反之执行
+</code></pre>
+<p>2、&lt;语句&gt;含有多个代码时，必须加{}</p>
+<pre><code class="language-c">int a=0;
+if (a==1)
+	printf(&quot;1&quot;);
+	printf(&quot;0&quot;);
+</code></pre>
+<p>3、&lt;语句&gt;含有多个代码时，可以不加{}</p>
+<p>4、常见的逻辑运算符</p>
+<pre><code>&lt; 小于   &lt;= 小于等于  &gt; 大于  &gt;= 大于等于
+== 等于  != 不等于
+</code></pre>
+<pre><code>!     一元逻辑非运算，把0值变为1，非0值变成0
+&amp;&amp;    逻辑与，两端表达式都为非0值时产生1，否则产生0      and
+||    逻辑或，两端表达式中有1个为非0值时产生1，否则产生0  or
+</code></pre>
+<pre><code class="language-c">if (a==1)
+if (a&lt;1)
+if (a&gt;1&amp;&amp;b&lt;1)
+if (a&gt;1||b&lt;1)
+if (!(a&gt;1))
+</code></pre>
+<p>题解</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int s;
+    scanf(&quot;%d&quot;,&amp;s);
+    if (s==9)
+        printf(&quot;bakabaka!\n&quot;);
+    else if (s&gt;=60)
+        printf(&quot;Pass!\n&quot;);
+    else
+        printf(&quot;Fail...\n&quot;);
+}
+</code></pre>
+<h1 id="f-focalors吃通心粉"><code>F</code> Focalors吃通心粉</h1>
+<h3 id="while循环">while循环</h3>
+<p>1、语法</p>
+<pre><code class="language-c">while (&lt;表达式&gt;)  
+	&lt;语句&gt;
+</code></pre>
+<ul>
+<li>&lt;表达式&gt;为循环条件，条件成立时进入循环（方式与if完全一致）</li>
+<li>&lt;语句&gt;含有多个代码时，必须加{}</li>
+</ul>
+<pre><code class="language-c">int t, a, b;
+scanf(&quot;%d&quot;, &amp;t);
+int i=0;
+while(i &lt; t) // while循环t次，处理t组数
+{
+    // your code
+    i=i+1;
+}
+</code></pre>
+<h3 id="for循环">for循环</h3>
+<p>1、语法</p>
+<pre><code class="language-c">for(&lt;表达式1&gt;;&lt;表达式2&gt;;&lt;表达式3&gt;) 
+		&lt;语句&gt;
+   
+</code></pre>
+<ul>
+<li>&lt;表达式1&gt;在循环前执行一次，用于初始化变量</li>
+<li>&lt;表达式2&gt;为循环条件</li>
+<li>&lt;表达式3&gt;每次循环结束执行，一般用于i++</li>
+<li>&lt;表达式1&gt;&lt;表达式2&gt;&lt;表达式3&gt;均可省略，但分号不能省略.表达式中有多个语句的用逗号隔开</li>
+<li>省略&lt;表达式2&gt;则循环始终进行，除非遇到break</li>
+</ul>
+<pre><code class="language-c">int i, t, a, b;
+scanf(&quot;%d&quot;, &amp;t);
+for(i=0; i&lt;t; i=i+1) // for循环t次，处理t组数
+{
+    // your code
+}
+</code></pre>
+<p>题解</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int t;
+    scanf(&quot;%d&quot;,&amp;t);
+    while (t--) {
+        int n,m;
+        scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
+        if (m==0)
+            printf(&quot;QAQ\n&quot;);
+        else
+            printf(&quot;%d\n&quot;,n/m);
+    }
+}
+</code></pre>
+<h1 id="g-星月图"><code>G</code> 星月图</h1>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    while (n--) {
+        int op,a;
+        scanf(&quot;%d%d&quot;,&amp;op,&amp;a);
+        if (op==0) {
+            for (int i = 0; i &lt; a; ++i) {
+                printf(&quot;*&quot;);
+            }
+        }
+        else {
+            for (int i = 0; i &lt; a; ++i) {
+                printf(&quot;( )&quot;);
+            }
+        }
+        printf(&quot;\n&quot;);
+    }
+
+}
+</code></pre>
+<h1 id="h-firefly小姐的平均分统计"><code>H</code> Firefly小姐的平均分统计</h1>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int sum=0;
+    int sc;
+    int num=0;
+    while (1) {
+        scanf(&quot;%d&quot;,&amp;sc);
+        if (sc==-1)
+            break;
+        sum+=sc;
+        num++;
+
+    }
+    printf(&quot;%d&quot;,sum/num);
+
+
+}
+</code></pre>
+<h1 id="i-最大公因数"><code>I</code> 最大公因数</h1>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int main(){
+    int a,b;
+    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
+    for(int i=1000000;i&gt;=1;i--){
+        if(a%i==0 &amp;&amp;b%i==0) {
+            printf(&quot;%d\n&quot;,i);
+            return 0;
+        }
+    }
+}
+</code></pre>
+<h1 id="j-简单的一元三次方程"><code>J</code> 简单的一元三次方程</h1>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int a,b,c;
+    scanf(&quot;%d%d%d&quot;,&amp;a,&amp;b,&amp;c);
+    for (int i = -100; i &lt;=100; ++i) {
+        if (i*i*i+a*i*i+b*i+c==0) {  //不能写成i^3+a*i^2+b*i+c==0
+            printf(&quot;%d &quot;,i);
+            //return 0;
+        }
+    }
+}
+</code></pre>
+<h2 id="课程注意事项">课程注意事项</h2>
+<p>1、OJ练习分为C系列和E系列</p>
+<p>E系列时间在周末，一般周六早上开始，一般持续四到五天。</p>
+<p>2、课下练习可以借助GPT等AI功能进行辅助学习，但严禁直接将生成的代码提交，一经发现该次比赛记为0分。</p>
+<p>3、严禁使用代码生成插件（包括但不限于GitHub Copilot）</p>
+<p>4、有任何疑问，随时在课程群或私信助教。</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/24hangc/" class="article-info">
+                                                        24航C
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://github.pansis.site/post/C1 - Solution-24航C/">
+                                                    <h3 class="post-title">
+                                                        C1 - Solution-24航C
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

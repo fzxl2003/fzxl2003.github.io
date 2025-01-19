@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>2.1 搜索算法 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、搜索方法
+1、搜索问题的表示方法
+状态空间表示法、与或树表示法
+2、状态空间表示法
+1、状态：描述问题任意时刻状况的数据结构
+2、算符：使问题从一个状态转移到另一个状态的操作
+3、例子
+
+3、与或树表示法
+用“关系”和“节点”来表示问题..." />
+        <meta name="keywords" content="人工智能" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="2.1 搜索算法" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、搜索方法
+1、搜索问题的表示方法
+状态空间表示法、与或树表示法
+2、状态空间表示法
+1、状态：描述问题任意时刻状况的数据结构
+2、算符：使问题从一个状态转移到另一个状态的操作
+3、例子
+
+3、与或树表示法
+用“关系”和“节点”来表示问题...">
+        <meta property="og:url" content="https://github.pansis.site/post/2.1 搜索算法/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-09-26">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="2.1 搜索算法">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="2.1 搜索算法">
+        <meta name="twitter:description" content="一、搜索方法
+1、搜索问题的表示方法
+状态空间表示法、与或树表示法
+2、状态空间表示法
+1、状态：描述问题任意时刻状况的数据结构
+2、算符：使问题从一个状态转移到另一个状态的操作
+3、例子
+
+3、与或树表示法
+用“关系”和“节点”来表示问题...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    2.1 搜索算法
+                                </h2>
+                                <span class="article-info">
+                                    2023-09-26, 1768 words, 7 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-搜索方法">一、搜索方法</h2>
+<h4 id="1-搜索问题的表示方法">1、搜索问题的表示方法</h4>
+<p>状态空间表示法、与或树表示法</p>
+<h4 id="2-状态空间表示法">2、状态空间表示法</h4>
+<p>1、状态：描述问题任意时刻状况的数据结构</p>
+<p>2、算符：使问题从一个状态转移到另一个状态的操作</p>
+<p>3、例子</p>
+<img src="http://cos.pansis.site/202309261749581.png/abc123" alt="image-20230926174934477" style="zoom:50%;" />
+<h4 id="3-与或树表示法">3、与或树表示法</h4>
+<p>用“关系”和“节点”来表示问题</p>
+<p>1、或结点<img src="http://cos.pansis.site/202309261751934.png/abc123" alt="image-20230926175126899" style="zoom: 33%;" /></p>
+<p>2、与结点<img src="http://cos.pansis.site/202309261752745.png/abc123" alt="image-20230926175201715" style="zoom: 50%;" /></p>
+<p>3、与或树表示</p>
+<img src="http://cos.pansis.site/202309261754751.png/abc123" alt="image-20230926175421677" style="zoom:33%;" />
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mn>0</mn></msub><mo>=</mo><mi>A</mi><mo>+</mo><mi>D</mi><mo>=</mo><mi>B</mi><mi>C</mi><mo>+</mo><mi>E</mi><mi>F</mi></mrow><annotation encoding="application/x-tex">S_0=A+D=BC+EF</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span></span></span></span></p>
+<h4 id="4-搜索方法">4、搜索方法</h4>
+<p>盲目搜索、启发式搜索</p>
+<h4 id="5-盲目搜索">5、盲目搜索</h4>
+<p>1、种类：枚举搜索、深度优先搜索、广度优先搜索</p>
+<h4 id="6-启发式搜索">6、启发式搜索</h4>
+<p>1、类型：A*算法、蒙特卡洛树搜索</p>
+<h2 id="二-枚举搜索">二、枚举搜索</h2>
+<h4 id="1-核心思想">1、核心思想</h4>
+<p>枚举所有的可能</p>
+<h4 id="2-前提条件">2、前提条件</h4>
+<p>可预知候选答案的数量</p>
+<p>候选答案的范围在求解之前必须有一个确定的集合</p>
+<h4 id="3-枚举方法">3、枚举方法</h4>
+<p>循环枚举、子集枚举、排列枚举</p>
+<h4 id="4-优点">4、优点</h4>
+<p>实现方法简单、结果最优</p>
+<h4 id="5-缺点">5、缺点</h4>
+<p>速度慢</p>
+<h4 id="6-举例">6、举例</h4>
+<img src="http://cos.pansis.site/202309261850435.png/abc123" alt="image-20230926185011351" style="zoom:33%;" />
+<h2 id="三-深度优先搜索">三、深度优先搜索</h2>
+<h4 id="1-遍历规则">1、遍历规则</h4>
+<p>1）如果和 当前结点 相邻的结点已经访问过，则不能再访问；<br>
+2）每次从和 当前结点 相邻的结点中寻找一个编号最小的没有访问的结点进行访问；</p>
+<h4 id="2-例子">2、例子</h4>
+<img src="http://cos.pansis.site/202309261905834.png/abc123" alt="image-20230926190508740" style="zoom:33%;" />
+<img src="http://cos.pansis.site/202309261905365.png/abc123" alt="image-20230926190558300" style="zoom:33%;" />
+<h2 id="四-广度优先搜索">四、广度优先搜索</h2>
+<h4 id="1-基本流程">1、基本流程</h4>
+<ol>
+<li>从图中的某一顶点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">V_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>开始，先访问<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">V_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>；</li>
+<li>访问所有与V0相邻接的顶点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mi mathvariant="normal">，</mi><msub><mi>V</mi><mn>2</mn></msub><mi mathvariant="normal">，</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">，</mi><msub><mi>V</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">V_1，V_2，......，V_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">，</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">，</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord cjk_fallback">，</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>；</li>
+<li>依次访问与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mn>1</mn></msub><mi mathvariant="normal">，</mi><msub><mi>V</mi><mn>2</mn></msub><mi mathvariant="normal">，</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">，</mi><msub><mi>V</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">V_1，V_2，......，V_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">，</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">，</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord cjk_fallback">，</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>相邻接的所有未曾访问过的顶点；</li>
+<li>循此以往，直至所有的顶点都被访问过为止。</li>
+</ol>
+<img src="http://cos.pansis.site/202309261913927.png/abc123" alt="image-20230926191307882" style="zoom:50%;" />
+<h4 id="2-举例">2、举例</h4>
+<img src="http://cos.pansis.site/202309261914527.png/abc123" alt="image-20230926191430458" style="zoom:33%;" />
+<h4 id="3-寻找最短路径bfs">3、寻找最短路径（BFS）</h4>
+<p>从A到H，找出一条经过城市最少的一条路线。</p>
+<p>采用BFS方法遍历城市图，同时额外记录每个城市的上个城市。</p>
+<img src="http://cos.pansis.site/202309261918909.png/abc123" alt="image-20230926191809836" style="zoom:50%;" />
+<h2 id="五-a算法">五、A*算法</h2>
+<h4 id="1-地图栅格化">1、地图栅格化</h4>
+<p>•把要搜寻的区域划分成了正方形的<strong>格子</strong></p>
+<p>每个格子的状态就是可走 (walkable) 和不可走 (unwalkable)</p>
+<p>•方格的中心点称为<strong>节点</strong> (nodes) 。</p>
+<p>为什么不直接描述为方格呢？因为我们有可能把搜索区域划为为其他多边形而不是正方形，而节点可以放在任意多边形里面，可以放在多变形的中心，也可以放在多边形的边上。使用节点描述因为它最简单。</p>
+<h4 id="2-地图情景">2、地图情景</h4>
+<p>假设某人要从 A 点移动到 B 点，但是这两点之间被一堵墙隔开。绿色是 A ，红色是 B ，中间蓝色是墙。</p>
+<img src="http://cos.pansis.site/202309261938284.png/abc123" alt="image-20230926193810177" style="zoom:33%;" />
+<h4 id="3-移动代价">3、移动代价</h4>
+<img src="http://cos.pansis.site/202309261945014.png/abc123" alt="image-20230926194508962" style="zoom: 50%;" />
+<h4 id="4-算法流程">4、算法流程</h4>
+<p>详见<a href="https://zhuanlan.zhihu.com/p/225466669?utm_id=0">A星算法详解(个人认为最详细,最通俗易懂的一个版本) - 知乎 (zhihu.com)</a></p>
+<p>1、开始搜索</p>
+<ul>
+<li>从起点 A 开始，把它就加入到一个openlist（开放列表）中。</li>
+<li>查看与起点 A 相邻的方格，把其中可走的 (walkable) 或可到达的 (reachable) 方格也加入到openlist中。</li>
+<li>把起点 A 设置为这些方格的父亲 (parent node) 。</li>
+<li>把 A 从 openlist 中移除，加入到 closelist( 封闭列表 ) 中。</li>
+<li>
+<img src="http://cos.pansis.site/202309261950765.png/abc123" alt="image-20230926195024680" style="zoom:45%;" />
+</li>
+</ul>
+<p>2、继续搜索 此时找到F=40的方格</p>
+<img src="http://cos.pansis.site/202309261955747.png/abc123" alt="image-20230926195530626" style="zoom:33%;" />
+<p>•   从 openlist 中选择 <strong>F</strong> <strong>值最小</strong>的 ( 方格 ) 节点，放到 closelist 中，<strong>F=40</strong></p>
+<p>•   <strong>检查所有与它相邻的方格</strong>，忽略closelist 中或是不可走 (unwalkable) 的方格，对于某个相邻方格</p>
+<p>​        •若其不在openlist，把它加入到openlist。并把我们选定的方格设置为这些新加入的方格的父亲。</p>
+<p>​       •若在openlist，检查该路径是否更优。如果按照原本的路径（从父节点过来）的G1是否大于经由当前方格 <strong>G2</strong> 。如果G2小，则说明后者更优，更换该相邻方格的父亲，并重新计算G=G2.</p>
+<p><strong>·</strong>   检查结束后，返回第一步，重新选择F最小的方格。（此时找到F=54的方格）</p>
+<img src="http://cos.pansis.site/202309261955629.png/abc123" alt="image-20230926195521497" style="zoom:33%;" />
+<p>3、同理上述循环</p>
+<img src="http://cos.pansis.site/202309261957094.png/abc123" alt="image-20230926195702975" style="zoom:33%;" />
+<img src="http://cos.pansis.site/202309261957394.png/abc123" alt="image-20230926195711253" style="zoom:33%;" />
+<h2 id="六-蒙特卡洛树搜索">六、蒙特卡洛树搜索</h2>
+<h4 id="1-组合博弈问题">1、组合博弈问题</h4>
+<p><strong>特点：</strong></p>
+<ul>
+<li>零和：一方的收益必然意味着另一方的损失，收益和损失相加总和永远为零，故双方不存在合作的可能</li>
+<li>信息对称：游戏的所有信息、状态、规则都是所有玩家已知的；</li>
+<li>确定性：游戏终将结束，且有特定的判定规则判断输赢；</li>
+<li>离散：博弈状态是有限的集合（如棋盘大小和落子位置）；</li>
+<li>序列：博弈过程是序列进行的，双方轮流操作。</li>
+</ul>
+<h4 id="2-博弈树">2、博弈树</h4>
+<p>1、用来表征一个博弈</p>
+<p>2、顶部为树的根节点，表示井字棋博弈的初始状态，即空白棋盘</p>
+<p>3、任何从一个节点向另一个节点的转换被称为一个 action ；</p>
+<p>4、从一个根节点到一个端节点的树遍历表征了单个博弈过程。</p>
+<img src="http://cos.pansis.site/202309262019552.webp/abc123" alt="img" style="zoom:33%;" />
+<h4 id="2-蒙特卡洛树中的节点">2、蒙特卡洛树中的节点</h4>
+<p>完全未展开节点、展开节点、完全展开节点、</p>
+<ul>
+<li>
+<p><strong>完全未展开节点</strong>：其子节点都没有被访问<img src="http://cos.pansis.site/202309262021667.png/abc123" alt="image-20230926202158539" style="zoom:25%;" /></p>
+</li>
+<li>
+<p><strong>展开节点</strong>：其部分节点被访问<img src="http://cos.pansis.site/202309262022177.png/abc123" alt="image-20230926202211905" style="zoom:25%;" /></p>
+</li>
+<li>
+<p><strong>完全展开节点</strong>：其子节点都被访问</p>
+<p>还有种节点，其对应的局面代表游戏结束。</p>
+</li>
+</ul>
+<h4 id="3-蒙特卡洛树评估函数uct">3、蒙特卡洛树评估函数UCT</h4>
+<p>1、公式：<img src="http://cos.pansis.site/202309262024763.png/abc123" alt="image-20230926202441713" style="zoom:33%;" /></p>
+<p>​     <img src="http://cos.pansis.site/202309262024173.png/abc123" alt="image-20230926202453132" style="zoom:33%;" /></p>
+<p>2、探索率存在的意义</p>
+<p>不能每次都只选择“最有利的/最不利的”，因为这会意味着搜索树的广度不够，容易忽略实际更好的选择</p>
+<h4 id="4-算法流程-2">4、算法流程</h4>
+<p>节点选择 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> 拓展 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> 模拟 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> 回溯 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\to ...</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.10556em;vertical-align:0em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> 终止</p>
+<img src="http://cos.pansis.site/202309262033465.png/abc123" alt="image-20230926203321392" style="zoom:50%;" />
+<p>1、选择</p>
+<p>从根节点往下走，每次都选一个“最值得看的子节点”（UCT最大的节点），直到来到一个完全未展开或展开节点（指这个局面存在未走过的后续走法），如图中的 3/3 节点。</p>
+<p>2、拓展</p>
+<p>给这个节点加上一个 0/0 子节点，对应之前所说的“未扩展的子节点”，就是还没有试过的一个着法。</p>
+<p>3、模拟</p>
+<p>从没有试过的走法开始，用<strong>快速走子策略</strong>走到底，得到一个胜负结果。</p>
+<p>4、回溯</p>
+<p>把模拟的结果加到它的所有父节点上。例如第三步模拟的结果是 0/1（代表黑棋失败），那么就把这个节点的所有父节点加上 0/1。</p>
+<p>5、终止</p>
+<p>当选择过程中，一段时间内不会出现新的节点时，搜索算法收敛终止。</p>
+<h4 id="5-快速走棋策略">5、快速走棋策略</h4>
+<p>快速走子策略适合选择一个棋力很弱但走子很快的策略。因为如果这个策略走得慢，虽然棋力会更强，结果会更准确，但由于耗时多了，在单位时间内的模拟次数就少了，所以不一定会棋力更强，有可能会更弱。这也是为什么我们一般只模拟一次，因为如果模拟多次，虽然更准确，但更慢。</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/rgzn/" class="article-info">
+                                                        人工智能
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://github.pansis.site/post/1.1 组合导航概论/">
+                                                    <h3 class="post-title">
+                                                        1.1 组合导航概论
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

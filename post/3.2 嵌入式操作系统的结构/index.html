@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>3.2 嵌入式操作系统的结构 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、操作系统的基本概念
+1、前后台系统（无实时操作系统）
+
+2、代码的临界区
+1、代码的临界区也称为临界区，指处理时不可分割的 代码，运行这些代码不允许被打断
+2、一旦这部分代码开始执行，则不允许任何中断打扰 （这不是绝对的，如果中断不调用..." />
+        <meta name="keywords" content="嵌入式系统" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="3.2 嵌入式操作系统的结构" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、操作系统的基本概念
+1、前后台系统（无实时操作系统）
+
+2、代码的临界区
+1、代码的临界区也称为临界区，指处理时不可分割的 代码，运行这些代码不允许被打断
+2、一旦这部分代码开始执行，则不允许任何中断打扰 （这不是绝对的，如果中断不调用...">
+        <meta property="og:url" content="https://github.pansis.site/post/3.2 嵌入式操作系统的结构/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-11-03">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="3.2 嵌入式操作系统的结构">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="3.2 嵌入式操作系统的结构">
+        <meta name="twitter:description" content="一、操作系统的基本概念
+1、前后台系统（无实时操作系统）
+
+2、代码的临界区
+1、代码的临界区也称为临界区，指处理时不可分割的 代码，运行这些代码不允许被打断
+2、一旦这部分代码开始执行，则不允许任何中断打扰 （这不是绝对的，如果中断不调用...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    3.2 嵌入式操作系统的结构
+                                </h2>
+                                <span class="article-info">
+                                    2024-11-03, 3611 words, 13 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-操作系统的基本概念">一、操作系统的基本概念</h2>
+<h4 id="1-前后台系统无实时操作系统">1、前后台系统（无实时操作系统）</h4>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/image-20241031220812782.png?abc123" alt="image-20241031220812782" loading="lazy"></figure>
+<h4 id="2-代码的临界区">2、代码的临界区</h4>
+<p>1、代码的临界区也称为临界区，指处理时不可分割的 代码，运行这些代码不允许被打断</p>
+<p>2、一旦这部分代码开始执行，则不允许任何中断打扰 （这不是绝对的，如果中断不调用任何包含临界区的 代码，也不访问任何临界区使用的共享资源，这个 中断可能可以执行）</p>
+<p>3、为确保临界区代码的执行，在进入临界区之前要关中断，而临界区代码执行完成以后要立即开中断</p>
+<h4 id="3-共享资源">3、共享资源</h4>
+<ol>
+<li>资源：程序运行时可使用的软、硬件环境统称为资源</li>
+<li>共享资源：可以被一个以上任务使用的资源叫做共享资源。</li>
+<li>互斥：为了防止数据被破 坏，每个任务在与共享资源打交道时，必须独占该资源</li>
+</ol>
+<h4 id="4-内核">4、内核</h4>
+<p>1、多任务系统中，内核负责管理各个任务，或者说为每个任务分配 CPU时间，并负责任务之间的通信</p>
+<p>2、内核提供的基本服务是任务切换</p>
+<p>3、使用实时内核可以大大简化应用系统的设计，这是因为实时内核允许将应用分成若干个任务，由实时内核对它们进行管理</p>
+<p>4、内核需要消耗一定的系统资源，比如2％～5％的CPU运行时间、 RAM和ROM等</p>
+<p>5、内核提供必不可少的系统服务，如信号量、消息队列、定时等</p>
+<h4 id="5-中断">5、中断</h4>
+<ol>
+<li>中断是一种重要机制，用于通知CPU有异步事件发生</li>
+<li>中断一旦被识别和响应，CPU保存部分（或全部）上下文，即部分或全部寄存器的值，跳转到中断服务程序（ISR）执行</li>
+<li>中断服务程序做事件处理，处理完成后，程序返回：
+<ol>
+<li>在前后台系统中，程序回到后台程序</li>
+<li>对非占先式内核而言，程序回到被中断的任务</li>
+<li>对占先式内核而言，让进入就绪态的优先级最高的任务开始执行</li>
+</ol>
+</li>
+<li>中断响应时间＝关中断的最长时间+保护CPU 内部寄存器的时间 +进入中断服务函数的执行时间+开始执行中断服务例程(ISR)的 第一条指令时间</li>
+</ol>
+<p>注意：中断响应时间是系统在最坏情况下响应中断的时间</p>
+<h4 id="6-时钟节拍">6、时钟节拍</h4>
+<p>1、定义：时钟节拍是特定的周期性中断。这个中断可以看作是系统心脏的脉动。中断之间的时间间隔取决于不同应用，一般在10ms到200ms之间</p>
+<p>2、时钟的节拍式中断使得内核可以将任务延时若干个 整数时钟节拍，以及当任务等待事件发生时，提供 等待超时的依据</p>
+<p>3、时钟节拍率越快，系统的额外开销就越大</p>
+<h4 id="7-死锁">7、死锁</h4>
+<p>1、定义：死锁指两个任务无限期地互相等待对方控制着的资源。 设任务T1正独享资源R1，任务T2在独享资源T2，而此时 T1又要独享R2，T2也要独享R1，于是哪个任务都没法继 续执行，发生死锁。</p>
+<p>2、最简单的防止发生死锁的方法</p>
+<p>让每个任务都</p>
+<ul>
+<li>先得到全部需要的资源再做下一步的工作</li>
+<li>用同样的顺序去申请多个资源</li>
+<li>释放资源时使用相反的顺序</li>
+</ul>
+<h4 id="8-可重入函数">8、可重入函数</h4>
+<ol>
+<li>可以被一个以上的任务调用，而不必担心数据的破坏</li>
+<li>可重入型函数任何时候都可以被中断，一段时间以后又可以运 行，而相应数据不会丢失。</li>
+<li>可重入型函数或者只使用局部变量，即 变量保存在CPU寄存器中或堆栈中。</li>
+</ol>
+<h4 id="9-优先级反转">9、优先级反转</h4>
+<p>1、现象：有A、B两个应用程序，A的优先级比B高，但是A在睡眠， 而B在运行</p>
+<p>2、示例原因：</p>
+<ul>
+<li>有A、B两个应用程序，A的优先级比B高</li>
+<li>B需要进行文件操作，发请求给文件服务进程，自己进入 睡眠，等待文件操作完成</li>
+<li>本来在睡眠的文件服务进程接受到B的请求后开始为B服务</li>
+<li>此时A因某外部事件而变成就绪</li>
+<li>发生调度时，A与文件服务进程都是就绪状态。文件服务 进程由于优先级高而更为优先。可是文件服务进程代表的 是B，因此发生优先级倒置</li>
+</ul>
+<h4 id="10-使用嵌入式操作系统的优缺点">10、使用嵌入式操作系统的优缺点</h4>
+<ul>
+<li>优点
+<ul>
+<li>使程序的设计和扩展变得容易，大大提高了开 发效率</li>
+<li>充分发挥32位CPU多任务的潜力，实现多任务 设计，能够充分利用硬件资源和实现资源共享</li>
+<li>实时性和健壮性能够得到更好地保证</li>
+</ul>
+</li>
+<li>缺点
+<ul>
+<li>嵌入式操作系统增加ROM/RAM等额外开销， 5～10％的CPU额外负荷</li>
+</ul>
+</li>
+</ul>
+<h2 id="二-内核">二、内核</h2>
+<h4 id="1-内核">1、内核</h4>
+<p>内核（Kernel）是操作系统最基本最核心的部分，主要负责管理系统资源</p>
+<p><strong>分类：</strong></p>
+<ul>
+<li>
+<p><strong>单（宏）内核：它为潜在的硬件，提供了大量完善的硬件抽象操作(左下图所示)</strong></p>
+<p>单内核结构为基础的操作系统一直占据着主导地位</p>
+</li>
+<li>
+<p>微内核：只提供了很小一部分的硬件抽象，大部分功能由一种特殊的用户态 来完成。(下中图所示)</p>
+</li>
+<li>
+<p>混合内核：它很像微内核结构，只不过它的组件更多的在核心态 执行速度。(右下图所示)</p>
+</li>
+<li>
+<p>外内核：这种内核不提供任何硬件抽象操作，但是允许为内核增加额外的运行库 这些运行库应用程序可以直接地或者接近直接地对硬件进行操作</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/image-20241031144107346.png?abc123" alt="image-20241031144107346" loading="lazy"></figure>
+<h4 id="2-单宏内核">2、单（宏）内核</h4>
+<p>1、定义：单内核结构在硬件之上，定义了一个高 阶的抽象界面，应用一组原语 统调用 (或者叫 系 (System call))来实现操作系统的 功能，例如进程管理 ，文件系统 ，和 存 储管理 等等，这些功能由多个运行在核 心态的模块 来完成</p>
+<p>2、优缺点</p>
+<ul>
+<li>内核代码是高度集成的，而且难以确保正确</li>
+<li>因为所有的模块都在同一个内核空间上运 行，一个很小的bug都会使整个系统崩溃</li>
+<li>如果开发顺利，单内核结构就可以从运行 效率上得到好处</li>
+</ul>
+<p>3、 单内核结构的例子</p>
+<ul>
+<li>传统的UNIX 内核</li>
+<li>Linux 内核</li>
+<li>MS-DOS, Windows 9x (Windows 95, 98, Me)</li>
+</ul>
+<h4 id="3-微内核">3、微内核</h4>
+<p>1、组成</p>
+<p>微内核结构由一个非常简单的 层 硬件抽象 和一组比较关键的原语或系统调用组 成</p>
+<p>原语，仅仅包括了建立一个系统必 需的几个部分，如线程 管理，内存管理 和进程间通信 等</p>
+<p>2、核心思想</p>
+<p>将系统服务的实现和系统 的基本操作规则分离开来</p>
+<p>例如，进程 的输入/输出锁定服务可以由运 行在微核之外的一个服务组件来提供</p>
+<p>微内核将许多OS服务放入分离的进程 文件系统 ，如 设备驱动程序，而进程通过消息传递调用OS服务</p>
+<p>3、特点</p>
+<p>一个服务组件的失效并不会导致整个系统 的崩溃，内核需要做的，仅仅是重新启动 这个组件，而不会影响系统其它部分</p>
+<p>微内核结构必然是多线程的</p>
+<h4 id="4-混合内核">4、混合内核</h4>
+<p>1、混合内核实质上是微内核，只不过它让 一些微核结构运行在用户空间的代码运 行在内核空间，这样让内核的运行效率 更高些</p>
+<p>2、示例</p>
+<p>◼ Windows NT 丶Windows 2000 Windows Server 2003 Windows 7 丶Windows XP 以及Windows Vista</p>
+<p>3、混合意味着它从单核和微核系统中都吸取 了一定的设计模式，例如一些非关键的代 码在用户空间运行，另一些在内核空间运 行，单纯是为了效率的原因</p>
+<h2 id="三-操作系统的组成">三、操作系统的组成</h2>
+<h4 id="1-组成">1、组成</h4>
+<p>进程管理、内存管理、驱动程序、文件系统</p>
+<h4 id="2-相关概念">2、相关概念</h4>
+<p>1、进程：内存保护的单元。一个进程不能访问其他进程的内存空间。一个 进程有一个或多个线程</p>
+<p>2、线程：一个线程是执行的单元。同一个进程的线程共享地址空间。</p>
+<ul>
+<li>调度 程序（scheduler）负责对线程（而不是进程）进行调度</li>
+</ul>
+<p>3、任务：在嵌入式系统中，线程又称为任务。</p>
+<ul>
+<li>实时应用程序的设计过程， 包括如何把问题分割成多个任务，每个任务都是整个应用的某一 部分</li>
+<li>每个任务被赋予一定的优先级，有它自己的一套CPU寄存器和自己的栈空间</li>
+</ul>
+<h2 id="三-进程管理">三、进程管理</h2>
+<h4 id="1-线程的状态">1、线程的状态</h4>
+<img src="http://cos.pansis.site/image-20241031153359920.png?abc123" alt="image-20241031153359920" style="zoom:40%;" />
+<p>阻塞状态：又称等待状态、睡眠状态</p>
+<figure data-type="image" tabindex="3"><img src="http://cos.pansis.site/image-20241031225043447.png?abc123" alt="image-20241031225043447" loading="lazy"></figure>
+<h4 id="2-任务线程调度">2、任务（线程）调度</h4>
+<h5 id="1-上下文切换">1、上下文切换</h5>
+<p><strong>切换流程：</strong></p>
+<ul>
+<li>当多任务内核决定运行另外的任务时，它保存正在运行任务的当前状态，即CPU寄存器中的全部内容</li>
+<li>这些内容保存在任务的当前状态保存区，也就是任务自已的栈区之中</li>
+<li>入栈工作完成以后，就把下一个将要运行的任务的当前状态从 任务的栈中重新装入CPU的寄存器，并开始下一个任务的运行</li>
+</ul>
+<p>切换过程增加了应用程序的额外开销。CPU的内部寄存器越多， 额外开销就越大。</p>
+<p>做任务切换所需要的时间取决于CPU有多少 寄存器要入栈</p>
+<h5 id="2-调度方式">2、调度方式</h5>
+<p>1、非抢占式任务调度</p>
+<p>协作式任务调度</p>
+<p>2、抢占式任务调度</p>
+<ul>
+<li>
+<p>RMS调度策略（Rate-Monotonic Scheduling ，单调速率调度）</p>
+<ol>
+<li>任务的优先级按任务周期T来分配。</li>
+<li>它根据任务的执行周期的长短来决定 调度优先级，那些具有小的执行周期的任务具有较高的优先级，周期长的任务优先级低。</li>
+<li>静态最优调度算法, 开销小, 灵活性好</li>
+</ol>
+</li>
+<li>
+<p>EDF调度策略（Earliest Deadline First，最早截止时间优先算法）</p>
+<p>1、动态调度算法。</p>
+<p>2、EDF指在调度时， 任务的优先级根据任务的截止时间动态分配。截止时间越短，优先级越高</p>
+</li>
+<li>
+<p>LLF调度策略（Least Laxity First，最短空闲时间优先）</p>
+<p>1、动态调度算法。</p>
+<p>2、在调度时刻，任务的 优先级根据任务的空闲时间动态分配。空闲时间越短， 优先级越高</p>
+<p>（空闲时间=deadline- 任务剩余执行时间）</p>
+<p>3、理论上，EDF和LLF算法都是单处理器下的最优 调度算法，且能够实现100% 的处理器利用率</p>
+<p>4、由于EDF和LLF在每个调度时刻都要计算任务 的deadline或者空闲时间，并根据计算结果改 变任务优先级，因此开销大、不易实现，其应 用受到一定限制</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="4"><img src="http://cos.pansis.site/image-20241031225411586.png?abc123" alt="image-20241031225411586" loading="lazy"></figure>
+<h5 id="3-非抢占式调度">3、非抢占式调度</h5>
+<ol>
+<li>非占先式内核要求每个任务自我放弃CPU 的所有权</li>
+<li>非占先式调度也称作合作型多任务，各个任务彼此 合作共享一个CPU</li>
+<li>异步事件还是由中断服务来处理</li>
+<li>中断服务可以使一个高优先级的任务由挂起状态变为就绪状态。但中断服务以后控制权还是回到原来 被中断了的那个任务，直到该任务主动放弃CPU的 使用权时，高优先级的任务才能获得CPU的使用权</li>
+</ol>
+<img src="http://cos.pansis.site/image-20241031174247781.png?abc123" alt="image-20241031174247781" style="zoom:50%;" />
+<h5 id="4-抢占式调度">4、抢占式调度</h5>
+<ul>
+<li>最高优先级的任务一旦就绪，即能得到CPU的控制权</li>
+<li>一旦有优先级更高的任务进入就绪状态，当前任务的 CPU使用权即被剥夺（被挂起），高优先级的任务立刻 得到CPU的控制权</li>
+<li>如果是中断服务子程序使一个高优先级的任务进入 就绪态，中断完成时，被中断了的任务被挂起，优先 级高的那个任务开始运行</li>
+<li>当系统响应时间有严格要求时，要使用抢占式内核</li>
+<li>绝大多数商用嵌入式实时内核都是抢占式内核</li>
+</ul>
+<img src="http://cos.pansis.site/image-20241031174338577.png?abc123" alt="image-20241031174338577" style="zoom:50%;" />
+<h4 id="3-进程间通信">3、进程间通信</h4>
+<ul>
+<li>阻塞与非阻塞</li>
+<li>两种形式：共享内存 、消息传递</li>
+</ul>
+<figure data-type="image" tabindex="5"><img src="http://cos.pansis.site/image-20241031183035007.png?abc123" alt="image-20241031183035007" loading="lazy"></figure>
+<ul>
+<li>
+<p>共享内存</p>
+<ul>
+<li>
+<p>共享内存通过共享数据结构来实现</p>
+</li>
+<li>
+<p>数据结构的类型可以是全局变量、指针、缓冲区等</p>
+</li>
+<li>
+<p>在使用共享数据结构时，必须保证共享数据结构使用的排它性， 即保证每个任务或中断服务程序独享该数据结构</p>
+</li>
+<li>
+<p>实现对共享数据结构操作的互斥常常采用：开/关中断、禁止任务切换、信号量（semaphore）机制</p>
+</li>
+</ul>
+</li>
+<li>
+<p>消息传递</p>
+<ul>
+<li>
+<p>任务可以通过内核提供的系统服务向另一 任务发送消息</p>
+</li>
+<li>
+<p>消息机制包括消息邮箱和消息队列</p>
+</li>
+<li>
+<p>消息邮箱</p>
+<figure data-type="image" tabindex="6"><img src="http://cos.pansis.site/image-20241031215959052.png?abc123" alt="image-20241031215959052" loading="lazy"></figure>
+</li>
+<li>
+<p>消息队列</p>
+<figure data-type="image" tabindex="7"><img src="http://cos.pansis.site/image-20241031220051408.png?abc123" alt="image-20241031220051408" loading="lazy"></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="四-嵌入式系统的实时性">四、嵌入式系统的实时性</h2>
+<h4 id="1-实时性的本质">1、实时性的本质</h4>
+<p>任务处理所化费时间的可预测性，即 <strong>任务需要在规定的时限内完成</strong></p>
+<p>2、 嵌入式系统≠实时系统</p>
+<ul>
+<li>有些嵌入式系统没有实时性要求</li>
+</ul>
+<h4 id="2-硬实时和软实时">2、硬实时和软实时</h4>
+<p>区别：软实时任务的调度精度为毫秒级（以 上），而硬实时则为微秒级（以下）</p>
+<h4 id="3-实时操作系统应具-备的典型特征">3、实时操作系统应具 备的典型特征</h4>
+<ul>
+<li>异步的事件响应</li>
+<li>切换时间和中断时延时间确定</li>
+<li>优先级中断和调度</li>
+<li>抢占式调度</li>
+<li>内存锁定</li>
+<li>连续文件</li>
+<li>同步</li>
+</ul>
+<p>上下文切换时延： 时延大小取决于所选用的CPU和操作系统 ， 采用MMU &gt; 不采用MMU</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/AVw14AAoK/" class="article-info">
+                                                        嵌入式系统
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

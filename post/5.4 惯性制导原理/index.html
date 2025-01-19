@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>5.4 惯性制导原理 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、惯性制导
+1、惯性导航和惯性制导的区别
+
+惯性导航：将敏感元件（陀螺仪和加速度计）测量的数据经过导航系统的解算，得到飞行器的位置、速度和姿态角。
+惯性制导，直接使用敏感元件测量的数据计算关机方程和导引方程，不需要机载计算机进行位置、速度..." />
+        <meta name="keywords" content="制导与控制原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="5.4 惯性制导原理" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、惯性制导
+1、惯性导航和惯性制导的区别
+
+惯性导航：将敏感元件（陀螺仪和加速度计）测量的数据经过导航系统的解算，得到飞行器的位置、速度和姿态角。
+惯性制导，直接使用敏感元件测量的数据计算关机方程和导引方程，不需要机载计算机进行位置、速度...">
+        <meta property="og:url" content="https://github.pansis.site/post/5.4 惯性制导原理/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-05-17">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="5.4 惯性制导原理">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="5.4 惯性制导原理">
+        <meta name="twitter:description" content="一、惯性制导
+1、惯性导航和惯性制导的区别
+
+惯性导航：将敏感元件（陀螺仪和加速度计）测量的数据经过导航系统的解算，得到飞行器的位置、速度和姿态角。
+惯性制导，直接使用敏感元件测量的数据计算关机方程和导引方程，不需要机载计算机进行位置、速度...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    5.4 惯性制导原理
+                                </h2>
+                                <span class="article-info">
+                                    2024-05-17, 911 words, 4 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-惯性制导">一、惯性制导</h2>
+<h4 id="1-惯性导航和惯性制导的区别">1、惯性导航和惯性制导的区别</h4>
+<ul>
+<li>惯性导航：将敏感元件（陀螺仪和加速度计）测量的数据经过导航系统的解算，得到<strong>飞行器的位置、速度和姿态角</strong>。</li>
+<li>惯性制导，直接使用敏感元件测量的数据计算关机方程和导引方程，<strong>不需要机载计算机进行位置、速度和姿态角解算</strong>。</li>
+</ul>
+<h4 id="2-采用摄动制导策略的原因">2、采用摄动制导策略的原因</h4>
+<p>受到弹载计算机能力与数学工具的限制，只能在摄动假设下，采用基于标称轨迹的泰勒展开计算非线性函数</p>
+<h4 id="3-摄动制导设计">3、摄动制导设计</h4>
+<ol>
+<li>根据任务需求，离线设计一条<strong>标称弹道</strong></li>
+<li>在标称弹道附近对运动方程进行线性化，推导<strong>摄动方程</strong></li>
+<li>基于摄动方程，推导<strong>关机方程</strong>和<strong>导引方程</strong>，使飞行器在标称弹道附近飞行，以满足终端的航程、倾角和横向位移等条件</li>
+</ol>
+<h2 id="二-外干扰补偿原理">二、外干扰补偿原理</h2>
+<h2 id="三-捷联惯性制导的惯性方程">三、捷联惯性制导的惯性方程</h2>
+<h2 id="四-敏感元件的冗余配置">四、敏感元件的冗余配置</h2>
+<h4 id="1-提高敏感元件的精度和可靠性的方法">1、提高敏感元件的精度和可靠性的方法</h4>
+<p>1、提高陀螺仪或加速度计等单个惯性器件的可靠性，以降低故障的发生率；（制造工艺难度大）<br>
+2、增加一定数量的陀螺仪和加速度计（分为正交配置和非正交配置）</p>
+<h4 id="2-冗余配置方案">2、冗余配置方案</h4>
+<p>1、正交配置方案</p>
+<ul>
+<li>陀螺仪采用6表正交配置方案，每个方向2只陀螺仪。</li>
+<li>加速度计采用9表冗余配置方案
+<ul>
+<li>𝑋通道配置4只加速度计，充分保证𝑋向加速度测量通道的稳定性，提升测量精度；</li>
+<li>𝑌和𝑍通道分别配置2只加速度计；</li>
+<li>第9只加速度计配置在𝑌平面与𝑌轴成45°夹角，主要用于对Ｙ、Ｚ向加速度输出进行故障检测</li>
+</ul>
+</li>
+</ul>
+<p>优点：更有利于提高某特定方向的测量精度，计算误差小，制造难度低，实时性好</p>
+<p>2、非正交配置方案（十二表冗余惯导）</p>
+<p>由<strong>六个惯性器件</strong>组成的冗余系统，其测量轴分别沿十二面体的<strong>六个平面的法线方向配置</strong>，精度分配比较平均。</p>
+<ul>
+<li>优点：提高了导航性能和故障检测能力。</li>
+<li>缺点：需要对加速度计和陀螺仪的输出进行附加计算，增加了飞行控制计算机的计算量，且会引起新的计算误差</li>
+</ul>
+<h4 id="3-冗余配置方案评价">3、冗余配置方案评价</h4>
+<p>1、评价方式</p>
+<p>导航性能和可靠度</p>
+<p>2、导航性能</p>
+<ul>
+<li>
+<p>导航性能用来描述配置方案的测量误差</p>
+</li>
+<li>
+<p>𝑛个单自由度元器件的捷联惯导系统，元器件的量测输入公式为 $m=HX+\eta $</p>
+<ul>
+<li>𝒎为𝑛维测量矢量，𝑯为𝑛 × 3维配置矩阵，𝑿为3维待求矢量，𝜼为𝑛维噪声矢量</li>
+</ul>
+</li>
+<li>
+<p>性能指标公式：<span class='katex-error' title='ParseError: KaTeX parse error: Undefined control sequence: \abs at position 9: F=\sqrt{\̲a̲b̲s̲{G}}=\sqrt{\abs…'>F=\sqrt{\abs{G}}=\sqrt{\abs{(H^TH)^{-1}}}</span></p>
+<ul>
+<li>𝑭取值越小，噪声𝜼产生误差的椭球体积就越小，导航性能就越好</li>
+</ul>
+</li>
+<li>
+<p>性能指标公式推理：线性最小方差</p>
+<img src="http://cos.pansis.site/202405151608496.png/abc123" alt="image-20240515160811353" style="zoom:40%;" />
+</li>
+</ul>
+<p>3、可靠度</p>
+<ul>
+<li>可靠度用来描述配置方案对元器件故障的容错能力</li>
+<li>可靠度公式：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>λ</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">R(t)=e^{-\lambda t}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8491079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathdefault mtight">λ</span><span class="mord mathdefault mtight">t</span></span></span></span></span></span></span></span></span></span></span></span> （单个元器件发生故障的概率为𝜆）</li>
+<li>配置方案的平均无故障时间：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mi>T</mi><mi>B</mi><mi>F</mi><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mi>R</mi><mo>(</mo><mi>t</mi><mo>)</mo><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">MTBF=\int_{0 }^{\infty } R(t)dt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.215112em;vertical-align:-0.35582em;"></span><span class="mop"><span class="mop op-symbol small-op" style="margin-right:0.19445em;position:relative;top:-0.0005599999999999772em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8592920000000001em;"><span style="top:-2.34418em;margin-left:-0.19445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span><span style="top:-3.2579000000000002em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">∞</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.35582em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mord mathdefault">d</span><span class="mord mathdefault">t</span></span></span></span>
+<ul>
+<li>MTBF值越大，说明配置方案的可靠度越高。</li>
+</ul>
+</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202405151612143.png/abc123" alt="image-20240515161241059" loading="lazy"></figure>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/zdykzyl/" class="article-info">
+                                                        制导与控制原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

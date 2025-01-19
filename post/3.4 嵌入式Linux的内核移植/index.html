@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>3.4 嵌入式Linux的内核移植 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、嵌入式Linux操作系统
+1、Linux作为嵌入式操作系统的优势
+
+低成本开发系统
+可应用于多种硬件平台
+可定制的内核
+性能优异
+良好的网络支持
+
+二、移植的基本概念
+
+移植是指将软件从一个平台迁移到另外 一个平台的过程。
+平台：硬件平..." />
+        <meta name="keywords" content="嵌入式系统" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="3.4 嵌入式Linux的内核移植" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、嵌入式Linux操作系统
+1、Linux作为嵌入式操作系统的优势
+
+低成本开发系统
+可应用于多种硬件平台
+可定制的内核
+性能优异
+良好的网络支持
+
+二、移植的基本概念
+
+移植是指将软件从一个平台迁移到另外 一个平台的过程。
+平台：硬件平...">
+        <meta property="og:url" content="https://github.pansis.site/post/3.4 嵌入式Linux的内核移植/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-11-15">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="3.4 嵌入式Linux的内核移植">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="3.4 嵌入式Linux的内核移植">
+        <meta name="twitter:description" content="一、嵌入式Linux操作系统
+1、Linux作为嵌入式操作系统的优势
+
+低成本开发系统
+可应用于多种硬件平台
+可定制的内核
+性能优异
+良好的网络支持
+
+二、移植的基本概念
+
+移植是指将软件从一个平台迁移到另外 一个平台的过程。
+平台：硬件平...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    3.4 嵌入式Linux的内核移植
+                                </h2>
+                                <span class="article-info">
+                                    2024-11-15, 1239 words, 5 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-嵌入式linux操作系统">一、嵌入式Linux操作系统</h2>
+<h4 id="1-linux作为嵌入式操作系统的优势">1、Linux作为嵌入式操作系统的优势</h4>
+<ul>
+<li>低成本开发系统</li>
+<li>可应用于多种硬件平台</li>
+<li>可定制的内核</li>
+<li>性能优异</li>
+<li>良好的网络支持</li>
+</ul>
+<h2 id="二-移植的基本概念">二、移植的基本概念</h2>
+<ol>
+<li>移植是指将软件从一个平台迁移到另外 一个平台的过程。</li>
+<li>平台：硬件平台、操作系统、软件库环境</li>
+<li>可移植性：软件进行移植的难易程度</li>
+</ol>
+<h2 id="三-硬件平台">三、硬件平台</h2>
+<p>1、在Linux内核里，每一个处理器指令集对应一个独立的系统结构，如ARM，MIPS，i386, alpha等</p>
+<p>2、每种系统结构可以有若干变种,或不同配置的硬件 机器统称sub-architecture.</p>
+<ul>
+<li>以ARM为例: 变种包括:ARM7tdmi, ARM926ejs, StrongARM,  Xscale</li>
+</ul>
+<h4 id="3-硬件平台对c程序的影响">3、硬件平台对C程序的影响</h4>
+<ul>
+<li>处理器字长：为处理器一次能处理的数据位数</li>
+<li>字长等于处理器内部数据通路的宽度，一般可以 通过通用寄存器的宽度来判断</li>
+<li>处理器字长会影响int，long等c类型的长度</li>
+<li>需要使用确定大小的数据类型，可以 使用显式长度的类型 u32，s32，u64，s64</li>
+</ul>
+<h4 id="4-数据对齐">4、数据对齐</h4>
+<p>1、数据对齐是指数据块的地址是某个特定 大小的整数倍</p>
+<ul>
+<li>32位处理器字对齐 n*4</li>
+<li>页对齐  n*pagesize</li>
+<li>Cache line对齐  n*Clinesize</li>
+</ul>
+<p>2、数据访问要求<strong>至少是字对齐的</strong>，多数情 况下编译器会处理数据访问的对齐</p>
+<h4 id="5-字节顺序">5、字节顺序</h4>
+<p>1、字节顺序是指一个字中字节排列的顺序</p>
+<p>2、不同硬件可能采用不同的字节顺序</p>
+<ul>
+<li>X86   little-endian</li>
+<li>PPC   big-endian</li>
+</ul>
+<p>3、Linux内核将硬件的字节顺序放在 中定义， _BIG_ENDIAN或_LITTLE_ENDIAN 。在include/linux/byteorder/中有几个相关 的头文件</p>
+<h4 id="6-时间">6、时间</h4>
+<p>1、软件中的与时间相关的代码也会影响移植</p>
+<p>2、采用平台无关的时间表达方法可以提高代 码的可移植性</p>
+<p>3、Linux内核中采用HZ来表示每秒钟有多少个内部时钟周期。</p>
+<p>4、以下对时间的描述是平台无关的</p>
+<pre><code>（2*HZ）/*two second*/
+（2*HZ/100）/*20ms*/
+</code></pre>
+<h4 id="7-内存页面大小">7、内存页面大小</h4>
+<ol>
+<li>Linux使用虚拟内存机制来管理内存，内存的使用基于页面</li>
+<li>不同的系统结构有不同的页面大小</li>
+<li>常用的32位处理器使用4KB页面大小</li>
+<li>部分系统结构可以支持多种页面大小</li>
+<li>内核在里面定义 PAGE_SIZE，PAGE_SHIFT（页面号在地 址中的偏移量）</li>
+</ol>
+<h2 id="四-linux操作系统移植">四、Linux操作系统移植</h2>
+<h4 id="1-内容">1、内容</h4>
+<ul>
+<li>工具链移植
+<ul>
+<li>gcc（compiler，libgcc）</li>
+<li>Binutils（assembler,linker)</li>
+<li>glibc/uclibc</li>
+</ul>
+</li>
+<li>内核移植
+<ul>
+<li>Arch implementation</li>
+<li>Drivers porting</li>
+</ul>
+</li>
+<li>应用程序移植
+<ul>
+<li>C  program recompile</li>
+<li>Implement absent library</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-已有代码向linux内核移植">2、已有代码向Linux内核移植</h4>
+<p>将已有代码向内核移植有一些限制：</p>
+<ul>
+<li>内核中没有标准C库支持</li>
+<li>内核中没有类似用户程序的内存保护</li>
+<li>内核中不便使用浮点操作</li>
+<li>内核的堆栈是固定大小的，且有限</li>
+<li>内核中需要程序员考虑并发带来的竞争与冒 险及同步</li>
+</ul>
+<h4 id="3-linux内核移植">3、Linux内核移植</h4>
+<p>1、Linux内核代码可以分为平台相关与无关部分</p>
+<p>2、Linux内核绝大部分代码是平台无关的，可被各种平台所共享</p>
+<p>调度算法 存储器管理 I/O子系统 网络协议栈</p>
+<p>3、依赖于特定硬件的代码在Linux中采用条件编译的方 式区分</p>
+<ul>
+<li>ARCH=x86    打开x86特有的代码</li>
+<li>ARCH=arm   打开ARM特有的代码</li>
+</ul>
+<p>4、ARM的平台相关代码主要</p>
+<ul>
+<li>Arch/arm</li>
+<li>Include/asm-arm</li>
+</ul>
+<h4 id="4-linux内核的arch目录">4、Linux内核的arch目录</h4>
+<p>1、进入arch目录，每个系统结构代码都有 一个子目录，进入ARM目录，在ARM系统结构下可看 到很多sub-arch子目录</p>
+<p>2、sub-arch子目录</p>
+<img src="http://cos.pansis.site/image-20241115172455211.png?abc123" alt="image-20241115172455211" style="zoom:50%;" />
+<p>3、mach-smdk2410.c关键内容</p>
+<p>描述了所有保留的设备I/O地址. 该描述符是移植一个特定目标版非常重要的地方</p>
+<p>在此描述文件中还要定义</p>
+<ul>
+<li>.phys_ram</li>
+<li>.phys_io</li>
+<li>.io_pg_offst</li>
+<li>.boot_params</li>
+<li>.map_io</li>
+<li>.init_irq</li>
+<li>.time</li>
+</ul>
+<p><img src="http://cos.pansis.site/image-20241115184805335.png?abc123" alt="image-20241115184805335" style="zoom:50%;" /> <img src="http://cos.pansis.site/image-20241115184837177.png?abc123" alt="image-20241115184837177" style="zoom:50%;" /></p>
+<img src="http://cos.pansis.site/image-20241115184936188.png?abc123" alt="image-20241115184936188" style="zoom:50%;" />
+<h2 id="五-linux内核移植主要过程">五、Linux内核移植主要过程</h2>
+<p>对于板级移植，内核移植主要包括如下几个部分：</p>
+<ol>
+<li>内核配置，包括板级包配置，如S3C44B0X-MBA44</li>
+<li>体系结构相关代码修改，根据板级包的配置，修改相应 的体系结构相关代码，包括：
+<ul>
+<li>压缩核心启动代码：linux/arch/arm/boot/</li>
+<li>内核启动代码：linux/arch/arm/kernel/</li>
+<li>板级相关代码：linux/arch/arm/mach-s3c2410/</li>
+</ul>
+</li>
+<li>连接脚本
+<ul>
+<li>核心连接脚本：linux/arch/arm/vmlinux.lds</li>
+<li>压缩核心连接脚本：linux/arch/arm/boot/compressed/linux.lds</li>
+</ul>
+</li>
+<li>加载文件系统
+<ul>
+<li>ramdisk</li>
+</ul>
+</li>
+<li>编写驱动程序
+<ul>
+<li>驱动程序目录：linux/drivers/</li>
+<li>网卡驱动程序：linux/drivers/net/ne.c</li>
+<li>LCD驱动程序：linux/drivers/video/s3c2410fb.c</li>
+<li>触摸屏驱动程序：linux/drivers/char/s3c2410-ts.c</li>
+</ul>
+</li>
+</ol>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/AVw14AAoK/" class="article-info">
+                                                        嵌入式系统
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

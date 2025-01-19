@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>3.9 星图预处理和质心定位 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="恒星敏感器量测信息步骤：星图预处理、质心提取、星图匹配识别
+一、星图预处理
+1、分类
+空间域滤波器  均值滤波、中值滤波、维纳滤波
+变换域滤波器  基于傅里叶变换的低通滤波器、带通滤波器  金字塔算法  小波变化
+基于背景阈值的星像连通域确..." />
+        <meta name="keywords" content="组合导航原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="3.9 星图预处理和质心定位" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="恒星敏感器量测信息步骤：星图预处理、质心提取、星图匹配识别
+一、星图预处理
+1、分类
+空间域滤波器  均值滤波、中值滤波、维纳滤波
+变换域滤波器  基于傅里叶变换的低通滤波器、带通滤波器  金字塔算法  小波变化
+基于背景阈值的星像连通域确...">
+        <meta property="og:url" content="https://github.pansis.site/post/3.9 星图预处理和质心定位/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-11-12">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="3.9 星图预处理和质心定位">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="3.9 星图预处理和质心定位">
+        <meta name="twitter:description" content="恒星敏感器量测信息步骤：星图预处理、质心提取、星图匹配识别
+一、星图预处理
+1、分类
+空间域滤波器  均值滤波、中值滤波、维纳滤波
+变换域滤波器  基于傅里叶变换的低通滤波器、带通滤波器  金字塔算法  小波变化
+基于背景阈值的星像连通域确...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    3.9 星图预处理和质心定位
+                                </h2>
+                                <span class="article-info">
+                                    2023-11-12, 1182 words, 5 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <p>恒星敏感器量测信息步骤：星图预处理、质心提取、星图匹配识别</p>
+<h2 id="一-星图预处理">一、星图预处理</h2>
+<h4 id="1-分类">1、分类</h4>
+<p>空间域滤波器  均值滤波、中值滤波、维纳滤波</p>
+<p>变换域滤波器  基于傅里叶变换的低通滤波器、带通滤波器  金字塔算法  小波变化</p>
+<p>基于背景阈值的星像连通域确定法</p>
+<h4 id="2-空间域滤波器">2、空间域滤波器</h4>
+<p>1、中值滤波对孤立的噪声像素即椒盐噪声、脉冲噪声具有良好的滤波效果</p>
+<p>2、当图中包含彼此独立的目标图像信号和噪声信号时，可以使用维纳滤波进行去噪，但是维纳滤波在峰值信噪比较低时（即弱星）效果不好。</p>
+<p>3、空间域滤波器在滤除高频成份的同时，也会一定程度上破坏高斯星像点的边缘特性，造成质心定位误差的加大。</p>
+<p>4、很少应用</p>
+<h4 id="3-变换域滤波器">3、变换域滤波器</h4>
+<p>1、计算复杂度高，降低了实时性，业界很少应用变换域滤波器。</p>
+<h4 id="4-基于背景阈值的星像连通域确定法">4、基于背景阈值的星像连通域确定法</h4>
+<p>连通域标记：将属于同一星像点的像素做相同的标记值，从而方便后续的处理</p>
+<h2 id="二-质心定位">二、质心定位</h2>
+<h4 id="1-目标">1、目标</h4>
+<p>确定图像中星点位置</p>
+<h4 id="2-方法">2、方法</h4>
+<p>•一阶距灰度重心法</p>
+<p>•加权灰度重心法</p>
+<p>•基于星像高斯分布假设的高斯拟合质心法</p>
+<h4 id="2-一阶距灰度重心法和加权灰度重心法">2、一阶距灰度重心法和加权灰度重心法</h4>
+<p>•一阶距灰度重心法</p>
+<img src="http://cos.pansis.site/202311120325558.png/abc123" alt="image-20231112032500516" style="zoom:63%;" />
+<p>•加权灰度重心法</p>
+<img src="http://cos.pansis.site/202311120325591.png/abc123" alt="image-20231112032510560" style="zoom:67%;" />
+<h2 id="三-星图匹配识别">三、星图匹配识别</h2>
+<h4 id="1-目标-2">1、目标</h4>
+<p>对出现在星图中的恒星图像确定它对应于天球中的哪一颗恒星。</p>
+<h4 id="2-恒星识别结果">2、恒星识别结果</h4>
+<p>•正确识别</p>
+<p>•不能识别：找不到能与测得的星像对应匹配的星表星；</p>
+<p>•错误识别：对应匹配错误，需要开展错误识别的鉴别；</p>
+<p>•模糊识别：多于一个星表星同时与1个观测星像匹配。</p>
+<h4 id="3-方法">3、方法</h4>
+<ul>
+<li>直接匹配法–——最早星跟踪器的单星识别法</li>
+<li>角距匹配法</li>
+<li>三角形匹配法</li>
+</ul>
+<h4 id="4-直接匹配法">4、直接匹配法</h4>
+<ul>
+<li>根据星敏的安装矩阵和航天器的姿态角（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>φ</mi><mn>0</mn></msub><mo separator="true">,</mo><msub><mi>θ</mi><mn>0</mn></msub><mo separator="true">,</mo><msub><mi>ψ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">φ_0,θ_0,ψ_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">φ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ψ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>），算出成像恒星在春分点惯性系下的方位矢量 O；</li>
+<li>在星表星库中找到1颗，它的方位单位矢量S，与矢量 O的角距为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>(</mo><mi>O</mi><mo separator="true">,</mo><mi>S</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">d(O, S)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">d</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mclose">)</span></span></span></span>；</li>
+<li>根据选定容差范围ε，如果<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>(</mo><mi>O</mi><mo separator="true">,</mo><mi>S</mi><mo>)</mo><mi mathvariant="normal">＜</mi><mi>ε</mi></mrow><annotation encoding="application/x-tex">d(O, S)＜ ε</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">d</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mclose">)</span><span class="mord cjk_fallback">＜</span><span class="mord mathdefault">ε</span></span></span></span>，那么该星表星即是视场星像的匹配星。</li>
+</ul>
+<p>该方法因要求航天器的姿态角过高，正确识别率较低，已不再使用。</p>
+<h4 id="5-角距匹配法">5、角距匹配法</h4>
+<p>星图中2个星像已经完成了单星直接匹配，即： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>(</mo><msub><mi>O</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>S</mi><mi>i</mi></msub><mo>)</mo><mi mathvariant="normal">＜</mi><mi>ε</mi></mrow><annotation encoding="application/x-tex">d(O_i, S_i)＜ ε</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">d</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord cjk_fallback">＜</span><span class="mord mathdefault">ε</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>(</mo><msub><mi>O</mi><mi>j</mi></msub><mo separator="true">,</mo><msub><mi>S</mi><mi>j</mi></msub><mo>)</mo><mi mathvariant="normal">＜</mi><mi>ε</mi></mrow><annotation encoding="application/x-tex">d(O_j, S_j)＜ ε</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord cjk_fallback">＜</span><span class="mord mathdefault">ε</span></span></span></span>。</p>
+<p>这对星像解算的角距<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>(</mo><msub><mi>O</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>O</mi><mi>j</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">d(O_i, O_j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>与一对星表星的角距<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>(</mo><msub><mi>S</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>S</mi><mi>j</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">d(S_i, S_j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>继续进行匹配</p>
+<h4 id="6-三角形匹配法">6、三角形匹配法</h4>
+<p>“边-边-边”几何特征（即角距）的计算</p>
+<p>“二元树”搜索法：只需<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi></mrow><annotation encoding="application/x-tex">log_2n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">n</span></span></span></span>次比较，大大加快了模式匹配速度</p>
+<h4 id="7-栅格法">7、栅格法</h4>
+<img src="http://cos.pansis.site/202311120340017.png/abc123" alt="image-20231112034024966" style="zoom:50%;" />
+<h2 id="四-天文导航半物理仿真系统">四、天文导航半物理仿真系统</h2>
+<h4 id="1-仿真的原因">1、仿真的原因</h4>
+<p>真正的飞航实验难度大，成本高。</p>
+<h4 id="2-天文导航半物理仿真系统的组成结构">2、天文导航半物理仿真系统的组成结构</h4>
+<p>轨道发生器、星光模拟系统、星敏感器系统</p>
+<img src="http://cos.pansis.site/202311222115797.png/abc123" alt="image-20231122211511647" style="zoom:53%;" />
+<h4 id="3-轨道发生器">3、轨道发生器</h4>
+<p>1、设定航天器轨道。</p>
+<p>2、轨道生成软件 (STK等)生成惯性系下航天器的位置、速度、姿态信息</p>
+<p>3、航天器姿态信息结合星敏的安装矩阵，求解得星敏光轴在惯性系下矢量；</p>
+<p>4、光轴矢量、旋角及时间标签等数据，通过串口传递给星图模拟计算机。</p>
+<p>1、星图预处理的三种分类<br>
+2、中值滤波对孤立的噪声像素即——噪声、——噪声具有良好的滤波效果<br>
+3、当图中包含彼此独立的目标图像信号和噪声信号时，可以使用——进行去噪，但是维纳滤波在峰值信噪比较低时（即弱星）效果不好。<br>
+4、空间域滤波器在滤除——的同时，也会一定程度上破坏————，造成质心定位误差的加大。<br>
+5、质心定位的三种方法<br>
+6、星图匹配的三种方法和基本原理<br>
+7、天文导航半物理仿真系统的组成<br>
+8、轨道发生器工作流程</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/zhdhyl/" class="article-info">
+                                                        组合导航原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

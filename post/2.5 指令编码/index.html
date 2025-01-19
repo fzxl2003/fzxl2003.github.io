@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>2.5 指令编码 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、 指令编码
+1、长度：每条指令的机器码为4个字节（32bit）
+2、分类：R型指令、I型指令、J型指令
+
+
+I型指令：指令中包含立即数
+
+
+lw/sw的偏移是立即数；beq/bne同样包含有偏移
+
+
+srl等移位指令：也有5位立即数（移..." />
+        <meta name="keywords" content="计算机组成原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="2.5 指令编码" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、 指令编码
+1、长度：每条指令的机器码为4个字节（32bit）
+2、分类：R型指令、I型指令、J型指令
+
+
+I型指令：指令中包含立即数
+
+
+lw/sw的偏移是立即数；beq/bne同样包含有偏移
+
+
+srl等移位指令：也有5位立即数（移...">
+        <meta property="og:url" content="https://github.pansis.site/post/2.5 指令编码/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-04-05">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="2.5 指令编码">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="2.5 指令编码">
+        <meta name="twitter:description" content="一、 指令编码
+1、长度：每条指令的机器码为4个字节（32bit）
+2、分类：R型指令、I型指令、J型指令
+
+
+I型指令：指令中包含立即数
+
+
+lw/sw的偏移是立即数；beq/bne同样包含有偏移
+
+
+srl等移位指令：也有5位立即数（移...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    2.5 指令编码
+                                </h2>
+                                <span class="article-info">
+                                    2024-04-05, 479 words, 2 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-指令编码">一、 指令编码</h2>
+<p>1、长度：每条指令的机器码为4个字节（32bit）</p>
+<p>2、分类：R型指令、I型指令、J型指令</p>
+<ul>
+<li>
+<p>I型指令：指令中包含立即数</p>
+<ul>
+<li>
+<p>lw/sw的偏移是立即数；beq/bne同样包含有偏移</p>
+</li>
+<li>
+<p>srl等移位指令：也有5位立即数（移位位数），但不属于I型指令（原因太短，不认为是立即数）</p>
+</li>
+</ul>
+</li>
+<li>
+<p>J型指令：j和jal</p>
+<ul>
+<li>jr：不是J型指令</li>
+</ul>
+</li>
+<li>
+<p>R型指令：所有其他的指令</p>
+<ul>
+<li>srl 与 jr 都是 R 型指令！</li>
+</ul>
+</li>
+</ul>
+<h2 id="二-r型指令">二、R型指令</h2>
+<h4 id="1-指令特点">1、指令特点</h4>
+<p>主要用于表示包含3个寄存器操作数的指令,其中两个寄存器作为源操作数,寄存器存放运算结果。</p>
+<h4 id="2-编码格式">2、编码格式</h4>
+<img src="http://cos.pansis.site/202402280925612.png/abc123" alt="image-20240228092454525" style="zoom:50%;" />
+<h4 id="3-编码特点">3、编码特点</h4>
+<ul>
+<li>
+<p>op域为0b000000。凡是op域为0的指令,一定是R型指令</p>
+</li>
+<li>
+<p>shamt域只在移位指令中才有意义</p>
+<ul>
+<li>shamt域只能移动0~31位，原因：寄存器只有32位，移位位数大于31没有意义</li>
+<li>除了移位指令，该域固定为0</li>
+</ul>
+</li>
+<li>
+<p>依靠funct域来区分各条R型指令</p>
+</li>
+</ul>
+<h4 id="4-编码示例">4、编码示例</h4>
+<p>add和sub的二进制</p>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202402280931336.png/abc123" alt="image-20240228093125136" loading="lazy"></figure>
+<h4 id="5-其他">5、其他</h4>
+<ul>
+<li>funct的编码数决定了R型指令的最大条数：64</li>
+</ul>
+<h2 id="三-i型指令">三、I型指令</h2>
+<h4 id="1-指令特点-2">1、指令特点</h4>
+<p>主要用于编码包含立即数的指令</p>
+<h4 id="2-编码格式-2">2、编码格式</h4>
+<img src="http://cos.pansis.site/202402280932353.png/abc123" alt="image-20240228093227299" style="zoom:50%;" />
+<ul>
+<li>op(6)：代表指令操作
+<ul>
+<li>I型指令的opcode为非零编码：总共可以编码63条指令</li>
+</ul>
+</li>
+<li>rs(5)：指定1st操作数</li>
+<li>rt(5)：指定2nd操作数</li>
+<li>immediate(16)：16位立即数  无符号or有符号 （取决于指令）
+<ul>
+<li>无符号：位运算指令（如and/or/nor等）、小于置位指令（如slti等）</li>
+<li>有符号：分支指令（如beq/bne等）、访存指令（如lw/sw等）</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-示例1">3、示例1</h4>
+<p>addi $rt, $rs,immediate</p>
+<img src="http://cos.pansis.site/202403261316302.png/abc123" alt="image-20240326131601248" style="zoom:50%;" />
+<p>16进制：0x22D5FFCE</p>
+<h4 id="4-示例2-分支指令">4、示例2 分支指令</h4>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/202403261337151.png/abc123" alt="image-20240326133729081" loading="lazy"></figure>
+<img src="http://cos.pansis.site/202403261338212.png/abc123" alt="image-20240326133826168" style="zoom:50%;" />
+<h2 id="四-j型指令">四、J型指令</h2>
+<h4 id="1-编码格式">1、编码格式</h4>
+<figure data-type="image" tabindex="3"><img src="C:%5CUsers%5Cpansis%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240228131750785.png" alt="image-20240228131750785" loading="lazy"></figure>
+<h4 id="2-编码示例">2、编码示例</h4>
+<figure data-type="image" tabindex="4"><img src="http://cos.pansis.site/202403261339349.png/abc123" alt="image-20240326133931300" loading="lazy"></figure>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/jsjzcyl/" class="article-info">
+                                                        计算机组成原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

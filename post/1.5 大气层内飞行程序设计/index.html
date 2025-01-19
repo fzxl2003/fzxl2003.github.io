@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>1.5 大气层内飞行程序设计 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、飞行程序
+1、定义
+通过 设计攻角 的程序角，得到主动段飞行时 俯仰角 的变化规律。
+2、性能分析
+终端速度倾角相同 ，不同的飞行程序对应不同的技战术性能：
+
+二、飞行程序设计基本原则
+1、基本原则
+1、垂直起飞
+
+垂直起飞，可以使发射..." />
+        <meta name="keywords" content="制导与控制原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="1.5 大气层内飞行程序设计" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、飞行程序
+1、定义
+通过 设计攻角 的程序角，得到主动段飞行时 俯仰角 的变化规律。
+2、性能分析
+终端速度倾角相同 ，不同的飞行程序对应不同的技战术性能：
+
+二、飞行程序设计基本原则
+1、基本原则
+1、垂直起飞
+
+垂直起飞，可以使发射...">
+        <meta property="og:url" content="https://github.pansis.site/post/1.5 大气层内飞行程序设计/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-03-08">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="1.5 大气层内飞行程序设计">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="1.5 大气层内飞行程序设计">
+        <meta name="twitter:description" content="一、飞行程序
+1、定义
+通过 设计攻角 的程序角，得到主动段飞行时 俯仰角 的变化规律。
+2、性能分析
+终端速度倾角相同 ，不同的飞行程序对应不同的技战术性能：
+
+二、飞行程序设计基本原则
+1、基本原则
+1、垂直起飞
+
+垂直起飞，可以使发射...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    1.5 大气层内飞行程序设计
+                                </h2>
+                                <span class="article-info">
+                                    2024-03-08, 824 words, 3 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-飞行程序">一、飞行程序</h2>
+<h4 id="1-定义">1、定义</h4>
+<p>通过 <strong>设计攻角</strong> 的程序角，得到主动段飞行时 <strong>俯仰角</strong> 的变化规律。</p>
+<h4 id="2-性能分析">2、性能分析</h4>
+<p>终端速度倾角相同 ，不同的飞行程序对应不同的技战术性能：</p>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202403082118692.png/abc123" alt="image-20240308211845575" loading="lazy"></figure>
+<h2 id="二-飞行程序设计基本原则">二、飞行程序设计基本原则</h2>
+<h4 id="1-基本原则">1、基本原则</h4>
+<p>1、垂直起飞</p>
+<ul>
+<li>垂直起飞，可以使发射台设计的结构简单，同时也使火箭在起飞时保持稳定</li>
+<li>垂直起飞段的时间的长短一般至少保证延续到发动机进入额定工作状态的时刻，与此同时，控制机构也能正常地控制火箭姿态实现转弯（提供足够的控制力矩）。</li>
+</ul>
+<p>2、限制火箭转弯时的法向过载（重力转弯）</p>
+<p>过载公式：<img src="http://cos.pansis.site/202403082121968.png/abc123" alt="image-20240308212155913" style="zoom:50%;" /></p>
+<ul>
+<li>空气力矩以及由气动力造成的法向过载与qα成正比</li>
+<li>重力产生的法向过载成反比</li>
+<li>在跨音速及其整个具有大动压头的转弯段弹道上攻角为零或尽可能地小，使火箭 只在重力法向分量 − mgcos 作用下转弯（转弯角速度与重力分量平衡）</li>
+</ul>
+<p>法向运动学公式</p>
+<img src="http://cos.pansis.site/202403082124602.png/abc123" alt="image-20240308212423561" style="zoom:50%;" />
+<ul>
+<li>转弯段，不能一直靠攻角转弯，会降低燃料最优性</li>
+<li>重力转弯可以减小推力偏离速度方向的攻角速度损失</li>
+</ul>
+<p>3、程序俯仰角变化应连续，角速度与角加速度要有限制</p>
+<p>若程序俯仰角<span class='katex-error' title='Error: Font metrics not found for font: .'>𝜑_{𝑝𝑟}(𝑡)</span>间断，则角速度<span class='katex-error' title='Error: Font metrics not found for font: .'>\dot𝜑_{𝑝𝑟}(𝑡)</span>无穷大，从而会使法向过载过大</p>
+<img src="http://cos.pansis.site/202403082128934.png/abc123" alt="image-20240308212853889" style="zoom:50%;" />
+<p>同时，<span class='katex-error' title='Error: Font metrics not found for font: .'>\ddot𝜑_{𝑝𝑟(𝑡)}</span>过大，惯性力矩变大，有可能使控制机构提供不了所需的控制力矩。</p>
+<img src="http://cos.pansis.site/202403082129712.png/abc123" alt="image-20240308212936676" style="zoom:50%;" />
+<p>4、保证可靠的分离条件与合适的再入条件</p>
+<p>分离期间要保证姿态尽可能的稳定（常值姿态角分离），目标射程对弹道倾角 的约束等。</p>
+<h2 id="三-主动段弹道的三个阶段">三、主动段弹道的三个阶段</h2>
+<h4 id="1-三个阶段">1、三个阶段</h4>
+<p>根据飞行程序的基本原则，将主动段弹道分成三段：垂直上升段、转弯段、 瞄准段</p>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/202403082132418.png/abc123" alt="image-20240308213257348" loading="lazy"></figure>
+<h4 id="2-垂直上升段">2、垂直上升段</h4>
+<p>1、主要参数：垂直段结束的时间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">t_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+<p>​       过小：姿态控制能力不足      过大：转弯所需过载升高</p>
+<p>2、公式：<img src="http://cos.pansis.site/202403082135073.png/abc123" alt="image-20240308213518029" style="zoom:50%;" /></p>
+<img src="http://cos.pansis.site/202403082151248.png/abc123" alt="image-20240308215105202" style="zoom:50%;" />
+<p>3、计算垂直上升段高度</p>
+<img src="http://cos.pansis.site/202403082142199.png/abc123" alt="image-20240308214213155" style="zoom:43%;" />
+<h4 id="3-转弯段设计">3、转弯段设计</h4>
+<p>1、两个阶段（先增大后减小，然后保持在0左右）</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>𝑡</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">𝑡_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> −<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>𝑡</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">𝑡_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为有攻角的转弯，应在气动力急剧变化的跨音速之前结束，以  减少气动载荷和气动干扰 ，在马赫数为0.7-0.9时使攻角减小为零；</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>𝑡</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">𝑡_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> −<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>𝑡</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">𝑡_3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 为高动压区，只依靠重力的法向分量进行转弯，即重力转弯。</li>
+</ul>
+<img src="http://cos.pansis.site/202403082207286.png/abc123" alt="image-20240308220744192" style="zoom:50%;" />
+<p>2、经验公式1</p>
+<p>公式：</p>
+<figure data-type="image" tabindex="3"><img src="http://cos.pansis.site/202403082215199.png/abc123" alt="image-20240308221524033" loading="lazy"></figure>
+<p>参数： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">α_m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为音速段上攻角绝对值的最大值</p>
+<p>​	    <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">t_m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为攻角到达最大值的时间</p>
+<p>3、经验公式2</p>
+<p><img src="http://cos.pansis.site/202403082216801.png/abc123" alt="image-20240308221620709" style="zoom:40%;" /><img src="http://cos.pansis.site/202403082216924.png/abc123" alt="image-20240308221629850" style="zoom:30%;" /></p>
+<p>参数：k     <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">α_m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为音速段上攻角绝对值的最大值</p>
+<p>​                    对应的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mi>m</mi></msub><mo>=</mo><msub><mi>t</mi><mn>1</mn></msub><mo>+</mo><mi>l</mi><mi>n</mi><mn>2</mn><mi mathvariant="normal">/</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">t_m=t_1+ln2/k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">n</span><span class="mord">2</span><span class="mord">/</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>(求导可得)</p>
+<p>与【经验公式1】最大的区别在于𝑡2时刻的攻角不为0， 需要调整𝑡𝑚使𝑡2时刻攻角足够小。</p>
+<p>4、设计实例</p>
+<img src="http://cos.pansis.site/202403082220623.png/abc123" alt="image-20240308222026440" style="zoom:50%;" />
+<img src="http://cos.pansis.site/202403082220324.png/abc123" alt="image-20240308222040045" style="zoom:50%;" />
+<img src="http://cos.pansis.site/202403082220626.png/abc123" alt="image-20240308222051385" style="zoom:50%;" />
+<p>4、瞄准段飞行程序选择</p>
+<p>基本流程</p>
+<img src="http://cos.pansis.site/202403082221987.png/abc123" alt="image-20240308222142847" style="zoom:50%;" /><br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/zdykzyl/" class="article-info">
+                                                        制导与控制原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://github.pansis.site/post/c1-solution-23-hang-c/">
+                                                    <h3 class="post-title">
+                                                         C1 - Solution-23航c
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

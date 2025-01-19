@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>4.6 平台式惯导系统的初始对准 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、初始对准
+1、初始对准的目的
+
+要进行积分必须知道初始条件，如初始速度和初始位置等
+惯导平台是测量加速度的基准，开始测量加速度时惯导平台应处于预定的导航坐标系内，否则将产生由于平台误差而引起的加速度测量误差
+初始对准就是要将实际的平台系..." />
+        <meta name="keywords" content="惯性导航基础" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="4.6 平台式惯导系统的初始对准" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、初始对准
+1、初始对准的目的
+
+要进行积分必须知道初始条件，如初始速度和初始位置等
+惯导平台是测量加速度的基准，开始测量加速度时惯导平台应处于预定的导航坐标系内，否则将产生由于平台误差而引起的加速度测量误差
+初始对准就是要将实际的平台系...">
+        <meta property="og:url" content="https://github.pansis.site/post/4.6 平台式惯导系统的初始对准/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-12-03">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="4.6 平台式惯导系统的初始对准">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="4.6 平台式惯导系统的初始对准">
+        <meta name="twitter:description" content="一、初始对准
+1、初始对准的目的
+
+要进行积分必须知道初始条件，如初始速度和初始位置等
+惯导平台是测量加速度的基准，开始测量加速度时惯导平台应处于预定的导航坐标系内，否则将产生由于平台误差而引起的加速度测量误差
+初始对准就是要将实际的平台系...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    4.6 平台式惯导系统的初始对准
+                                </h2>
+                                <span class="article-info">
+                                    2023-12-03, 1039 words, 4 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-初始对准">一、初始对准</h2>
+<h4 id="1-初始对准的目的">1、初始对准的目的</h4>
+<ul>
+<li>要进行积分必须知道初始条件，如初始速度和初始位置等</li>
+<li>惯导平台是测量加速度的基准，开始测量加速度时惯导平台应处于预定的导航坐标系内，否则将产生由于平台误差而引起的加速度测量误差</li>
+<li>初始对准就是要将实际的平台系对准在理想平台系的状态下</li>
+</ul>
+<h4 id="2-初始对准解决的两个问题">2、初始对准解决的两个问题</h4>
+<p>积分运算的初始条件、惯导平台的初始调整问题（较为复杂，主要任务）</p>
+<ul>
+<li>积分运算的初始条件
+<ul>
+<li>在静基座情况下，初始条件为: 初始速度为零，初始位置为当地的经、纬度</li>
+<li>在动基座情况下，初始条件为：外界提供的速度和位置信息</li>
+</ul>
+</li>
+<li>初始调整
+<ul>
+<li>调整平台使它对准在所要求的理想平台坐标系内。如指北方位平台，则应对准在地理坐标系内。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-对准的设计指标">3、对准的设计指标</h4>
+<p>对准精度、快速性</p>
+<h4 id="4-平台对准的方法">4、平台对准的方法</h4>
+<p>1、通过光学或机电方法，将外部参考坐标系引入平台，使平台对准在外部提供的姿态基准方向</p>
+<p>2、自主式对准：利用惯导系统本身的敏感元件一陀螺仪与加速度计测得的信号，结合惯导系统作用原理进行自动对准</p>
+<h4 id="5-对准步骤">5、对准步骤</h4>
+<ul>
+<li>粗对准：对准精度没严格要求，但要求对准的速度要尽可能快。尽可能快的为下一步的精对准提供良好的条件</li>
+<li>精对准：对精度的要求是主要的。要求实际平台系与理想平台系之间的偏差在所要求的精度指标以内。</li>
+</ul>
+<p>​			精对准，一般先进行<strong>水平对准</strong>，然后进行<strong>方位对准</strong></p>
+<h4 id="6-精对准">6、精对准</h4>
+<p>1、误差方程的化简</p>
+<p>在进行初始对准时，设载体所在的地理位置已精确测得，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">\delta  L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03785em;">δ</span><span class="mord mathdefault">L</span></span></span></span> 忽略</p>
+<p>由于水平速度误差交叉耦合项的系数远小于同一等式中其他项的系数，因而可略去交叉耦合项<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><msub><mi>w</mi><mrow><mi>i</mi><mi>e</mi></mrow></msub><mi>s</mi><mi>i</mi><mi>n</mi><mi>L</mi><mi>δ</mi><msub><mi>v</mi><mi>y</mi></msub></mrow><annotation encoding="application/x-tex">2w_{ie}sinL\delta v_y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">s</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.03785em;">δ</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>2</mn><msub><mi>w</mi><mrow><mi>i</mi><mi>e</mi></mrow></msub><mi>s</mi><mi>i</mi><mi>n</mi><mi>L</mi><mi>δ</mi><msub><mi>v</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">-2w_{ie}sinL\delta v_x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord">−</span><span class="mord">2</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">s</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.03785em;">δ</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+<img src="http://cos.pansis.site/202312021641532.png/abc123" alt="image-20231202164103457" style="zoom:50%;" />
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202312021646083.png/abc123" alt="image-20231202164604962" loading="lazy"></figure>
+<p>2、水平粗对准</p>
+<p>使x，y轴的水平加速度计的输出接近于0，此时平台接近水平</p>
+<p>3、水平精对准</p>
+<ul>
+<li>经过水平粗对准之后， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">ϕ</span></span></span></span> 为小量，忽略水平通道之间交叉耦合的影响，得到两个独立的水平回路误差方程</li>
+</ul>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/202312021658155.png/abc123" alt="image-20231202165831081" loading="lazy"></figure>
+<p>另外加上方程<img src="http://cos.pansis.site/202312021659276.png/abc123" alt="image-20231202165912238" style="zoom:33%;" /></p>
+<img src="http://cos.pansis.site/202312021659519.png/abc123" alt="image-20231202165922465" style="zoom:50%;" />
+<p>下面以水平东向通道为例</p>
+<p>上面系统的特征方程为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mi>g</mi><mi mathvariant="normal">/</mi><mi>R</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s^2+g/R=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">/</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> ,临界稳定，该回路为二阶无阻尼振荡回路。</p>
+<p>·····改进方法：</p>
+<p>1、将加速度的积分环节变为惯性环节（使回路处于阻尼工作状态） 原本的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">1/s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">/</span><span class="mord mathdefault">s</span></span></span></span>变成<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mo>(</mo><mi>s</mi><mo>+</mo><msub><mi>k</mi><mn>1</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">1/(s+k_1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">/</span><span class="mopen">(</span><span class="mord mathdefault">s</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
+<img src="http://cos.pansis.site/202312021702489.png/abc123" alt="image-20231202170221431" style="zoom:50%;" />
+<p>存在的问题：回路的调节时间太长、振荡收敛过程太慢而影响对准速度</p>
+<p>原因：特征方程<img src="http://cos.pansis.site/202312021703209.png/abc123" alt="image-20231202170333168" style="zoom:50%;" />中固有频率<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>w</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">w_s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>的值太小</p>
+<p>2、添加二阶阻尼（二阶水平对准回路）</p>
+<img src="http://cos.pansis.site/202312021704940.png/abc123" alt="image-20231202170436877" style="zoom:40%;" />
+<ul>
+<li>等效图</li>
+</ul>
+<img src="http://cos.pansis.site/202312021705658.png/abc123" alt="image-20231202170503584" style="zoom:50%;" />
+<ul>
+<li>
+<p>特征方程：<img src="http://cos.pansis.site/202312021706171.png/abc123" alt="image-20231202170600135" style="zoom:50%;" /></p>
+<ul>
+<li>可以通过调节<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">k_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>来控制固有频率的高低</li>
+</ul>
+</li>
+<li>
+<p>二阶水平对准回路的误差来源</p>
+<ul>
+<li>
+<p>传递函数：<img src="http://cos.pansis.site/202312021711937.png/abc123" alt="image-20231202171135891" style="zoom:50%;" /></p>
+</li>
+<li>
+<p>根据终值定理可以得到平台绕东向轴的稳态误差：<img src="http://cos.pansis.site/202312021712911.png/abc123" alt="image-20231202171204863" style="zoom:33%;" /></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>3、三阶水平对准系统</p>
+<p>​         <img src="http://cos.pansis.site/202312021716463.png/abc123" alt="image-20231202171632394" style="zoom:50%;" /></p>
+<p>​</p>
+<p>等效图</p>
+<img src="http://cos.pansis.site/202312021716169.png/abc123" alt="image-20231202171658117" style="zoom:50%;" />
+<p>传递函数：<img src="http://cos.pansis.site/202312021717349.png/abc123" alt="image-20231202171729301" style="zoom:50%;" /></p>
+<p>稳态误差：<img src="http://cos.pansis.site/202312021719604.png/abc123" alt="image-20231202171929554" style="zoom:50%;" /></p>
+<p>4、东向、北向、方位通道稳态误差</p>
+<p>东向<img src="http://cos.pansis.site/202312021719604.png/abc123" alt="image-20231202171929554" style="zoom:50%;" /></p>
+<p>北向<img src="http://cos.pansis.site/202312021721396.png/abc123" alt="image-20231202172107358" style="zoom:50%;" /></p>
+<p>高度 <img src="http://cos.pansis.site/202312021721060.png/abc123" alt="image-20231202172126023" style="zoom:50%;" /></p>
+<ul>
+<li>水平对准的精度取决于水平加速度计的精度</li>
+<li>方位 对准的精度取决于东向陀螺仪的精度</li>
+</ul>
+<p>1、初始对准的目的、解决的两个问题、设计指标2<br>
+2、精对准，一般先进行——，然后进行——<br>
+3、水平对准的精度取决于——的精度<br>
+方位 对准的精度取决于——的精度<br>
+4、东向、北向、方位通道稳态误差</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/gxdhjc/" class="article-info">
+                                                        惯性导航基础
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

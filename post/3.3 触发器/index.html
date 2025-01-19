@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>3.3 触发器 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、触发器
+1、定义
+能够存储一位二值信号的基本单元电路
+2、特点
+
+有两个稳定的状态：0状态和1状态；
+根据不同输入信号，置成0状态或1状态；
+当输入信号消失后，所置成的状态能够保持不变
+
+3、分类
+
+
+按触发方式：电平触发、脉冲触发、边..." />
+        <meta name="keywords" content="vlsi" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="3.3 触发器" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、触发器
+1、定义
+能够存储一位二值信号的基本单元电路
+2、特点
+
+有两个稳定的状态：0状态和1状态；
+根据不同输入信号，置成0状态或1状态；
+当输入信号消失后，所置成的状态能够保持不变
+
+3、分类
+
+
+按触发方式：电平触发、脉冲触发、边...">
+        <meta property="og:url" content="https://github.pansis.site/post/3.3 触发器/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-11-12">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="3.3 触发器">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="3.3 触发器">
+        <meta name="twitter:description" content="一、触发器
+1、定义
+能够存储一位二值信号的基本单元电路
+2、特点
+
+有两个稳定的状态：0状态和1状态；
+根据不同输入信号，置成0状态或1状态；
+当输入信号消失后，所置成的状态能够保持不变
+
+3、分类
+
+
+按触发方式：电平触发、脉冲触发、边...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    3.3 触发器
+                                </h2>
+                                <span class="article-info">
+                                    2023-11-12, 1309 words, 6 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-触发器">一、触发器</h2>
+<h4 id="1-定义">1、定义</h4>
+<p>能够存储一位二值信号的基本单元电路</p>
+<h4 id="2-特点">2、特点</h4>
+<ul>
+<li>有两个稳定的状态：0状态和1状态；</li>
+<li>根据不同输入信号，置成0状态或1状态；</li>
+<li>当输入信号消失后，所置成的状态能够保持不变</li>
+</ul>
+<h4 id="3-分类">3、分类</h4>
+<ul>
+<li>
+<p>按触发方式：电平触发、脉冲触发、边沿触发</p>
+<p>区分方法：</p>
+<p>电平触发 <img src="http://cos.pansis.site/202311161929370.png/abc123" alt="image-20231116192929340" style="zoom:50%;" /></p>
+<p>脉冲触发 <img src="http://cos.pansis.site/202311161928232.png/abc123" alt="image-20231116192850191" style="zoom:50%;" /> 带有L符号</p>
+<p>边沿触发<img src="http://cos.pansis.site/202311161930346.png/abc123" alt="image-20231116193000295" style="zoom:50%;" /> clk带有三角，无圈为上升沿有效，有圈为下降沿有效</p>
+</li>
+<li>
+<p>按逻辑功能：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">SR</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi><mi>K</mi></mrow><annotation encoding="application/x-tex">JK</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.09618em;">J</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span></span>触发器</p>
+</li>
+</ul>
+<h4 id="4-触发器电路结构和逻辑功能-触发方式的关系">4、触发器电路结构和逻辑功能、触发方式的关系</h4>
+<ul>
+<li>
+<p>电路结构决定触发器的触发方式</p>
+</li>
+<li>
+<p>逻辑功能决定了稳态下的逻辑功能（输出逻辑）</p>
+<ul>
+<li>
+<p>同一种逻辑功能的的触发器可以有不同的电路结构 实现，从而有不同的的触发方式（如边沿触发JK触发 器、电平触发JK触发器）</p>
+</li>
+<li>
+<p>同一种电路结构形式可以构成各种不同功能的触发器（如主从JK触发器、主从D触发器）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="二-sr锁存器">二、SR锁存器</h2>
+<p>各种触发器构 成的基本部件，也是最简单的一种触发器</p>
+<h4 id="1-电路结构">1、电路结构</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mi>D</mi></msub></mrow><annotation encoding="application/x-tex">S_D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为set，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>R</mi><mi>D</mi></msub></mrow><annotation encoding="application/x-tex">R_D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为reset</p>
+<p>或非门</p>
+<img src="http://cos.pansis.site/202311091707338.png/abc123" alt="image-20231109170731220" style="zoom:33%;" />
+<p>与非门</p>
+<img src="http://cos.pansis.site/202311091717186.png/abc123" alt="image-20231109171751110" style="zoom:33%;" />
+<h4 id="2-真值表">2、真值表</h4>
+<img src="http://cos.pansis.site/202311091712415.png/abc123" alt="image-20231109171250274" style="zoom:33%;" />
+<h4 id="3-例子">3、例子</h4>
+<img src="http://cos.pansis.site/202311091722958.png/abc123" alt="image-20231109172252805" style="zoom:33%;" />
+<h4 id="4-特点">4、特点</h4>
+<p>优点：简单</p>
+<p>缺点：无法使用控制信号（时钟）</p>
+<h2 id="三-不同逻辑功能的触发器">三、不同逻辑功能的触发器</h2>
+<h4 id="1-分类">1、分类</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">SR</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi><mi>K</mi></mrow><annotation encoding="application/x-tex">JK</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.09618em;">J</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span></span>触发器</p>
+<h4 id="2-逻辑函数">2、逻辑函数</h4>
+<p>1、SR触发器：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Q</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><mi>S</mi><mo>+</mo><msup><mi>R</mi><mo mathvariant="normal">′</mo></msup><msup><mi>Q</mi><mi>n</mi></msup><mo>(</mo><mi>S</mi><mi>R</mi><mo>=</mo><mn>0</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">Q^{n+1}=S+R&#x27;Q^n (SR=0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span></p>
+<p>2、JK触发器：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Q</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><mi>J</mi><msup><mi>Q</mi><mrow><mo mathvariant="normal">′</mo><mi>n</mi></mrow></msup><mo>+</mo><msup><mi>K</mi><mo mathvariant="normal">′</mo></msup><msup><mi>Q</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">Q^{n+1}=JQ&#x27;^n+K&#x27;Q^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.946332em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.09618em;">J</span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.946332em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span></p>
+<p>3、T触发器：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Q</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><mi>T</mi><msup><mi>Q</mi><mo mathvariant="normal">′</mo></msup><mo>+</mo><msup><mi>T</mi><mo mathvariant="normal">′</mo></msup><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q^{n+1}=TQ&#x27;+T&#x27;Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.946332em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.946332em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord mathdefault">Q</span></span></span></span></p>
+<ul>
+<li>T=1时， 翻转</li>
+<li>T=0时， 保持原态</li>
+</ul>
+<p>4、D触发器：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Q</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">Q^{n+1}=D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span></span></p>
+<h4 id="3-触发器的代换">3、触发器的代换</h4>
+<ul>
+<li>J=S，R=K时， JK变成RS</li>
+<li>J=K时， JK变成T</li>
+</ul>
+<h2 id="四-电平触发的触发器">四、电平触发的触发器</h2>
+<p>以电平触发的RS触发器为例</p>
+<h4 id="1-电路结构-2">1、电路结构</h4>
+<p>不带异步复位功能的电路</p>
+<img src="http://cos.pansis.site/202311091725383.png/abc123" alt="image-20231109172533232" style="zoom:53%;" />
+<p>只有在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>L</mi><mi>K</mi><mi mathvariant="normal">＝</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">CLK＝1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mord cjk_fallback">＝</span><span class="mord">1</span></span></span></span>时， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">SR</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span>才能起作用</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Q</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><mi>S</mi><mo>+</mo><msup><mi>R</mi><mo mathvariant="normal">′</mo></msup><msup><mi>Q</mi><mi>n</mi></msup><mo>(</mo><mi>C</mi><mi>P</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">时</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">Q^{n+1}=S+R&#x27;Q^n (CP=1时)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord cjk_fallback">时</span><span class="mclose">)</span></span></span></span></p>
+<p>带异步复位功能的电路</p>
+<img src="http://cos.pansis.site/202311091732604.png/abc123" alt="image-20231109173247454" style="zoom:33%;" />
+<ul>
+<li>当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>L</mi><mi>K</mi><mi mathvariant="normal">＝</mi><mn>0</mn></mrow><annotation encoding="application/x-tex">CLK＝0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mord cjk_fallback">＝</span><span class="mord">0</span></span></span></span>情况下，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>S</mi><mi>D</mi><mo mathvariant="normal">′</mo></msubsup><mi mathvariant="normal">＝</mi><mn>0</mn></mrow><annotation encoding="application/x-tex">S_D&#x27;＝0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.027223em;vertical-align:-0.275331em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-2.424669em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.275331em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">＝</span><span class="mord">0</span></span></span></span>， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>R</mi><mi>D</mi><mo mathvariant="normal">′</mo></msubsup><mi mathvariant="normal">＝</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">R_D&#x27;＝1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.027223em;vertical-align:-0.275331em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-2.424669em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.275331em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">＝</span><span class="mord">1</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mi mathvariant="normal">＝</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">Q＝1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mord cjk_fallback">＝</span><span class="mord">1</span></span></span></span></li>
+<li>当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>L</mi><mi>K</mi><mi mathvariant="normal">＝</mi><mn>0</mn></mrow><annotation encoding="application/x-tex">CLK＝0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mord cjk_fallback">＝</span><span class="mord">0</span></span></span></span>情况下，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>S</mi><mi>D</mi><mo mathvariant="normal">′</mo></msubsup><mi mathvariant="normal">＝</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">S_D&#x27;＝1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.027223em;vertical-align:-0.275331em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-2.424669em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.275331em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">＝</span><span class="mord">1</span></span></span></span>， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>R</mi><mi>D</mi><mo mathvariant="normal">′</mo></msubsup><mi mathvariant="normal">＝</mi><mn>0</mn></mrow><annotation encoding="application/x-tex">R_D&#x27;＝0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.027223em;vertical-align:-0.275331em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-2.424669em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.275331em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">＝</span><span class="mord">0</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mi mathvariant="normal">＝</mi><mn>0</mn></mrow><annotation encoding="application/x-tex">Q＝0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mord cjk_fallback">＝</span><span class="mord">0</span></span></span></span></li>
+<li>不用设置初态时， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>S</mi><mi>D</mi><mo mathvariant="normal">′</mo></msubsup><mi mathvariant="normal">＝</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">S_D&#x27;＝1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.027223em;vertical-align:-0.275331em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-2.424669em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.275331em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">＝</span><span class="mord">1</span></span></span></span>， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>R</mi><mi>D</mi><mo mathvariant="normal">′</mo></msubsup><mi mathvariant="normal">＝</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">R_D&#x27;＝1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.027223em;vertical-align:-0.275331em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-2.424669em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.275331em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">＝</span><span class="mord">1</span></span></span></span></li>
+</ul>
+<h4 id="2-例子">2、例子</h4>
+<img src="http://cos.pansis.site/202311091737698.png/abc123" alt="image-20231109173727444" style="zoom:33%;" />
+<h4 id="3-特点">3、特点</h4>
+<p>①在CLK=1的时间里，输出多次变化。 （解决方法：脉冲触发器）</p>
+<p>②必须遵守SR=0的约束条件。（解决方法：JK触发器）</p>
+<h2 id="五-脉冲触发的触发器">五、脉冲触发的触发器</h2>
+<h4 id="1-脉冲触发的sr触发器主从sr触发器">1、脉冲触发的SR触发器（主从SR触发器）</h4>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202311091741954.png/abc123" alt="image-20231109174133383" loading="lazy"></figure>
+<p>①在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>L</mi><mi>K</mi><mi mathvariant="normal">＝</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">CLK＝1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mord cjk_fallback">＝</span><span class="mord">1</span></span></span></span>时，主触发器按S、R变化，而从触发器保持状态不 变；</p>
+<p>②在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>L</mi><mi>K</mi></mrow><annotation encoding="application/x-tex">CLK</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span></span></span></span>由1 →0（下降沿），主触发器保持，从触发器随主触发器的状态翻转.故在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>L</mi><mi>K</mi></mrow><annotation encoding="application/x-tex">CLK</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span></span></span></span>的一个周期内，触发器的输出状态 只可能改变一次</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Q</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><mi>S</mi><mo>+</mo><msup><mi>R</mi><mo mathvariant="normal">′</mo></msup><msup><mi>Q</mi><mi>n</mi></msup><mo>(</mo><mi>C</mi><mi>P</mi><mi mathvariant="normal">下</mi><mi mathvariant="normal">降</mi><mi mathvariant="normal">沿</mi><mi mathvariant="normal">时</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">Q^{n+1}=S+R&#x27;Q^n (CP下降沿时)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord cjk_fallback">下</span><span class="mord cjk_fallback">降</span><span class="mord cjk_fallback">沿</span><span class="mord cjk_fallback">时</span><span class="mclose">)</span></span></span></span></p>
+<h4 id="2-主从jk触发器电路结构">2、主从JK触发器电路结构</h4>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/202311091748582.png/abc123" alt="image-20231109174845483" loading="lazy"></figure>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Q</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><mi>J</mi><msup><mi>Q</mi><mrow><mo mathvariant="normal">′</mo><mi>n</mi></mrow></msup><mo>+</mo><msup><mi>K</mi><mo mathvariant="normal">′</mo></msup><msup><mi>Q</mi><mi>n</mi></msup><mo>(</mo><mi>C</mi><mi>P</mi><mi mathvariant="normal">下</mi><mi mathvariant="normal">降</mi><mi mathvariant="normal">时</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">Q^{n+1}=JQ&#x27;^n+K&#x27;Q^n (CP下降时)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.946332em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.09618em;">J</span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord cjk_fallback">下</span><span class="mord cjk_fallback">降</span><span class="mord cjk_fallback">时</span><span class="mclose">)</span></span></span></span></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>CP下降沿</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>J</td>
+<td>K</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Q</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">Q^{n+1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span></td>
+<td></td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Q</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">Q^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span></td>
+<td>保持</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>置0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>置1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Q</mi><mrow><mo mathvariant="normal">′</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">Q&#x27;^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.946332em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span></span></td>
+<td>翻转</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-特点-2">3、特点</h4>
+<ul>
+<li>在CLK＝1时，主触发器受输入信号控制，从触发器保持原态</li>
+<li>在CLK下降沿时，从触发器按主触发器状态翻转， 故触发器输出状态只能改变一次</li>
+<li>一次变化问题：在CLK=1期间，不论输入信号J、K变化多少次，主触发器能且仅能翻转一次，触发下降沿后，从触发器的输出只取决于最开始的那次翻转</li>
+</ul>
+<h4 id="4-例子">4、例子</h4>
+<img src="http://cos.pansis.site/202311091809881.png/abc123" alt="image-20231109180903737" style="zoom:33%;" />
+<h2 id="六-边沿触发的触发器">六、边沿触发的触发器</h2>
+<p>以边沿触发的D触发器为例</p>
+<h4 id="1-电路结构-3">1、电路结构</h4>
+<p>1、用两个电平触发D触发器组成的边沿D触发器</p>
+<img src="http://cos.pansis.site/202311161924532.png/abc123" alt="image-20231116192448435" style="zoom:53%;" />
+<p>FF1和FF2都 是电平触发的D 触发器，它们之间也是通过时钟相连</p>
+<p>2、利用CMOS传输门的边沿D触发器</p>
+<img src="http://cos.pansis.site/202311161927580.png/abc123" alt="image-20231116192732535" style="zoom:53%;" />
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Q</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">Q^{n+1}=D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span></span>    clk下降沿时或上升沿</p>
+<h4 id="2-特点-2">2、特点</h4>
+<p>输出状态仅仅取决于clk上升沿（下降沿）到达时刻输入信号的状态。</p>
+<h4 id="3-带异步的边沿d触发器">3、带异步的边沿D触发器</h4>
+<p>略</p>
+<p>1、触发器的三种触发方式和符号<br>
+2、四种逻辑功能的触发器的逻辑表达式和逻辑功能<br>
+3、SR锁存器的两种电路结构<br>
+4、电平触发的RS触发器的电路结构<br>
+5、脉冲触发的SR触发器电路结构<br>
+6、主从JK触发器电路结构和一次翻转问题<br>
+7、用两个电平触发D触发器组成的边沿D触发器的电路结构</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/vlsi/" class="article-info">
+                                                        vlsi
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

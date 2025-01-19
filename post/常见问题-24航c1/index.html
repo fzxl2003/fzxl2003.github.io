@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>常见问题-24航c | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="问题1：数据类型搞不清楚
+1、int+int爆int问题
+int a=1999999999;
+int b=1999999999;
+printf(&quot;%d\n&quot;,a+b);  //错
+printf(&quot;%lld\n&..." />
+        <meta name="keywords" content="24航C" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="常见问题-24航c" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="问题1：数据类型搞不清楚
+1、int+int爆int问题
+int a=1999999999;
+int b=1999999999;
+printf(&amp;quot;%d\n&amp;quot;,a+b);  //错
+printf(&amp;quot;%lld\n&amp;...">
+        <meta property="og:url" content="https://github.pansis.site/post/常见问题-24航c1/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-10-18">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="常见问题-24航c">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="常见问题-24航c">
+        <meta name="twitter:description" content="问题1：数据类型搞不清楚
+1、int+int爆int问题
+int a=1999999999;
+int b=1999999999;
+printf(&amp;quot;%d\n&amp;quot;,a+b);  //错
+printf(&amp;quot;%lld\n&amp;...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    常见问题-24航c
+                                </h2>
+                                <span class="article-info">
+                                    2024-10-18, 1106 words, 6 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h3 id="问题1数据类型搞不清楚">问题1：数据类型搞不清楚</h3>
+<p>1、int+int爆int问题</p>
+<pre><code class="language-c">int a=1999999999;
+int b=1999999999;
+printf(&quot;%d\n&quot;,a+b);  //错
+printf(&quot;%lld\n&quot;,a+b);  //错
+printf(&quot;%lld\n&quot;,1ll*a+b);  //对
+printf(&quot;%lld\n&quot;,(long long)a+b);  //对
+printf(&quot;%lld\n&quot;,(long long)(a+b);  //错
+</code></pre>
+<p>2、整除问题</p>
+<p>除的时候用整除</p>
+<pre><code class="language-c">int a=2;
+int b=3;
+double c=a/b;   //得到的是0
+double c2=1.0*a/b; //得到的是0.6666666
+double c3=(double)a/b; //得到的是0.6666666
+double c4=(double)(a/b); //得到的是0.00
+</code></pre>
+<p>2、printf、scanf类型对应错误</p>
+<pre><code>%d： － 以十进制方式输出带标记整数（正数默认不输出标记）；  int 十进制 
+%u： － 以十进制方式输出无标记整数；                    unsigned int 十进制 
+%lf/%f(输入/输出)                                    double 小数方式 
+%c： － 输出单个字符；                                 char  
+%lld  -以十进制方式输入长整型                           long long 
+
+%llu  以十进制方式输出unsigned long long             unsigned long long 
+</code></pre>
+<h3 id="问题2未赋值就计算">问题2：未赋值就计算</h3>
+<pre><code class="language-c">int main() {
+    int a,b,c;
+    c=a+b;
+    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
+    printf(&quot;%d\n&quot;,c);
+}
+</code></pre>
+<h3 id="问题3位运算优先级问题">问题3：位运算优先级问题</h3>
+<p>1、&amp;和==</p>
+<pre><code>if((n&gt;&gt;l)&amp;1==0) //错误
+if(((n&gt;&gt;l)&amp;1)==0) //正确
+</code></pre>
+<p>解决方法：该加括号加括号</p>
+<p>2、</p>
+<pre><code>p = (n &gt;&gt; h) &amp; 1 + p;
+p = (n &gt;&gt; h) &amp; 1 + p;
+</code></pre>
+<h3 id="问题4整数范围内滥用pow">问题4：整数范围内滥用pow</h3>
+<p>pow的输出值是double，且超过一定范围会导致误差超过1.从而导致计算错误。</p>
+<ul>
+<li>1&lt;&lt;i 的值是2的n次方</li>
+</ul>
+<h3 id="问题5把当做乘方">问题5：把^当做乘方</h3>
+<h3 id="问题6循环时的i搞不清范围">问题6：循环时的i搞不清范围</h3>
+<p>比如输出数的原码补码反码</p>
+<pre><code>for (int i = 31; i &gt;=0 ; --i)  //对，i从31到0
+for (int i = 32; i &gt;=0 ; --i)  //错，i从32到0，循环了33次
+</code></pre>
+<p>数组下标循环时，前后对应不上</p>
+<pre><code class="language-c">int main() {
+    int n;
+    int a[100];
+    int num=0;
+    scanf(&quot;%d&quot;, &amp;n);
+    for (int i = 0; i &lt; n; i++) {
+        scanf(&quot;%d&quot;, &amp;a[i]);
+    }
+    for (int i = 1; i &lt; n; i++) {
+        num+=a[i];
+    }
+}
+</code></pre>
+<h3 id="问题7每组数据之间的累加变量不重置或不初始化">问题7：每组数据之间的累加变量不重置或不初始化</h3>
+<p>E3-<code>C</code> 我要吃到最后一块糖果！(Easy Version)</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+ int main(void)
+ {
+  int i,t,m,count;
+  count=0;
+  scanf(&quot;%d&quot;,&amp;t);
+  unsigned int n;
+  for(i=1;i&lt;=t;i++)
+  { scanf(&quot;%u&quot;,&amp;n);
+    for(m=0;m&lt;=32;m++)
+    {if(n&amp;1==1)
+    {   n&gt;&gt;=1;
+        count++;//累加变量未重置为0
+
+    }
+    else if(n&amp;1==0)
+     n&gt;&gt;=1;
+  }
+  if(count%2==1)
+    printf(&quot;Alice\n&quot;);
+  if(count%2==0)
+   printf(&quot;Bob\n&quot;);
+ }
+ }
+</code></pre>
+<h3 id="问题8将或当成或用">问题8：将&gt;&gt;或&lt;&lt;当成&gt;&gt;=或&lt;&lt;=用</h3>
+<p>以倒序显示补码为例</p>
+<pre><code class="language-c">int main() {
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    for (int i = 0; i &lt; 32; ++i) {
+        printf(&quot;%d&quot;,n&amp;1);
+        n&gt;&gt;1;//错
+    }
+}
+
+</code></pre>
+<h3 id="问题9和~分不清">问题9：！和~分不清</h3>
+<pre><code>int main() {
+    printf(&quot;%d %d&quot;,~1,!1);
+}
+</code></pre>
+<p>运行结果</p>
+<pre><code>-2 0
+</code></pre>
+<p>错误示例</p>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/image-20241015164321171.png?abc123" alt="image-20241015164321171" loading="lazy"></figure>
+<h3 id="问题10滥开不定长数组">问题10：滥开不定长数组</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    int a[n];//错
+    //定义数组时，[]只能填常数
+}
+
+</code></pre>
+<p>错误原因：本身C99标准支持不定长数组，因此在本地运行时，使用不定长数组可以正常运行，是因为本地测试n的数值通常很小。但OJ测试时，n的值可能很大，直接造成爆栈，从而错误。</p>
+<h3 id="问题11位运算使用极其复杂的构造企图一个式子出结果">问题11：位运算使用极其复杂的构造，企图一个式子出结果</h3>
+<p>不好的示例</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+	int n, op;
+	scanf(&quot;%d&quot;, &amp;n);
+	unsigned int a, l, x;
+	for (int i = 0; i &lt; n; i++) {
+		scanf(&quot;%d&quot;, &amp;op);
+		if (op == 1) {
+			scanf(&quot;%u&quot;, &amp;a);
+			x = 0;
+			for (int m = 31; m &gt;= 0; m--) {
+				if (((a &gt;&gt; m) &amp; 1) == 1) {
+					x += 1;
+				}
+			}
+			printf(&quot;%u\n&quot;, x);
+		}
+		if (op == 2) {
+			scanf(&quot;%u%u&quot;, &amp;a, &amp;l);
+			x = (((a &gt;&gt; (32 - l)) ^ 1) &lt;&lt; (32 - l)) + ((a &lt;&lt; l) &gt;&gt; l);
+			printf(&quot;%u\n&quot;, x);
+		}
+		if (op == 3) {
+			scanf(&quot;%u%u&quot;, &amp;a, &amp;l);
+			x = (((a &gt;&gt; (32 - l)) &amp; 0) &lt;&lt; (32 - l)) + ((a &lt;&lt; l) &gt;&gt; l) + ((a &gt;&gt; (33 - l)) &lt;&lt; (33 - l));
+			printf(&quot;%u\n&quot;, x);
+		}
+		if (op == 4) {
+			scanf(&quot;%u%u&quot;, &amp;a, &amp;l);
+			x = (((a &gt;&gt; (32 - l)) | 1) &lt;&lt; (32 - l)) + ((a &lt;&lt; l) &gt;&gt; l);
+			printf(&quot;%u\n&quot;, x);
+		}
+		if (op == 5) {
+			scanf(&quot;%u%u&quot;, &amp;a, &amp;l);
+			x = (a &gt;&gt; (32 - l)) &amp; 1;
+			printf(&quot;%u\n&quot;, x);
+		}
+	}
+
+	return 0;
+}
+</code></pre>
+<p>建议只用取值、置1、置0三种简单的位运算再加各种循环和条件实现复杂的位运算</p>
+<h3 id="问题12scanf里面滥加n">问题12：scanf里面滥加\n</h3>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/24hangc/" class="article-info">
+                                                        24航C
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://github.pansis.site/post/C4 - Solution-24航c/">
+                                                    <h3 class="post-title">
+                                                        C4 - Solution-24航c
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

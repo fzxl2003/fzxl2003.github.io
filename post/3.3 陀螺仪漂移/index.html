@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>3.3 陀螺仪漂移 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、陀螺仪精度指标
+1、漂移率定义
+陀螺仪的精度指标通常用漂移率来表征
+
+MdM_dMd​ 干扰力矩
+wdw_dwd​ 单位 (°)/h(°)/h(°)/h
+2、干扰力矩
+1、定义：引起陀螺仪漂移误差的有害力矩。
+2、来源
+
+框架轴承内的摩..." />
+        <meta name="keywords" content="惯性导航基础" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="3.3 陀螺仪漂移" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、陀螺仪精度指标
+1、漂移率定义
+陀螺仪的精度指标通常用漂移率来表征
+
+MdM_dMd​ 干扰力矩
+wdw_dwd​ 单位 (°)/h(°)/h(°)/h
+2、干扰力矩
+1、定义：引起陀螺仪漂移误差的有害力矩。
+2、来源
+
+框架轴承内的摩...">
+        <meta property="og:url" content="https://github.pansis.site/post/3.3 陀螺仪漂移/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-10-20">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="3.3 陀螺仪漂移">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="3.3 陀螺仪漂移">
+        <meta name="twitter:description" content="一、陀螺仪精度指标
+1、漂移率定义
+陀螺仪的精度指标通常用漂移率来表征
+
+MdM_dMd​ 干扰力矩
+wdw_dwd​ 单位 (°)/h(°)/h(°)/h
+2、干扰力矩
+1、定义：引起陀螺仪漂移误差的有害力矩。
+2、来源
+
+框架轴承内的摩...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    3.3 陀螺仪漂移
+                                </h2>
+                                <span class="article-info">
+                                    2023-10-20, 1251 words, 5 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-陀螺仪精度指标">一、陀螺仪精度指标</h2>
+<h4 id="1-漂移率定义">1、漂移率定义</h4>
+<p>陀螺仪的精度指标通常用漂移率来表征</p>
+<img src="http://cos.pansis.site/202310201936360.png/abc123" alt="image-20231020193608306" style="zoom: 50%;" />
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>M</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">M_d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 干扰力矩</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>w</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">w_d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 单位 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi mathvariant="normal">°</mi><mo>)</mo><mi mathvariant="normal">/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">(°)/h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">°</span><span class="mclose">)</span><span class="mord">/</span><span class="mord mathdefault">h</span></span></span></span></p>
+<h4 id="2-干扰力矩">2、干扰力矩</h4>
+<p>1、定义：引起陀螺仪漂移误差的有害力矩。</p>
+<p>2、来源</p>
+<ul>
+<li>框架轴承内的摩擦力矩</li>
+<li>陀螺仪重心与框架中心不重合</li>
+<li>陀螺马达的动不平衡。。。。</li>
+</ul>
+<h4 id="3-精度指标要求">3、精度指标要求</h4>
+<p>陀螺仪允许的漂移率与其应用的场合有关</p>
+<h2 id="二-漂移率">二、漂移率</h2>
+<h4 id="1-组成">1、组成</h4>
+<p>系统性漂移率、随机漂移率</p>
+<h4 id="2-系统漂移率">2、系统漂移率</h4>
+<p>1、定义：指与规定的工作条件和系统有关的漂移率分量。</p>
+<p>2、表示方法：一般用单位时间内的角位移表示</p>
+<p>系统漂移率可以用<strong>确定性的函数</strong>来进行描述；</p>
+<p>3、引起因素：系统性干扰力矩</p>
+<p>（由于它具有一定的 规律性，故在惯性系统的应用中可以设法加以补偿。）</p>
+<h4 id="3-随机漂移率">3、随机漂移率</h4>
+<p>1、定义：在规定的工作条件下漂移率中非系统性的随时间变化的分量</p>
+<p>2、表示方法：单位时间内角位移均方根值或标准偏差</p>
+<p>随机漂移率无法使用确定性的函数来描述，可以借助数理统计的方法找出统计规律，使用<strong>统计函数</strong>来描述</p>
+<p>3、引起因素：随机干扰力矩</p>
+<p>4、随机漂移率不能用一般的方法补偿， 因此它成为衡量陀螺仪精度的<strong>最重要指标</strong></p>
+<p>5、非刚体转子陀螺仪采用<strong>漂移率</strong>作为衡量其精度的主要指标</p>
+<p>​      刚体转子陀螺仪采用<strong>随机漂移率</strong>作为衡量其精度的主要指标</p>
+<p>6、常把随机漂移率达到 <strong>0.01(°)/h</strong> 的陀螺仪称为 <strong>惯性级陀螺仪</strong></p>
+<h4 id="4-逐次漂移率">4、逐次漂移率</h4>
+<p>1、定义：表征陀螺漂移长期稳定性的一种<strong>随机漂移率</strong></p>
+<p>用规定若干次测试，按每次测试规定的时间，求得各次<strong>漂移平均值的标准偏差</strong>来表示</p>
+<p>2、根据测试时间间隔的不同，又分为<strong>逐日漂移率</strong>、<strong>逐月漂移率</strong>和<strong>逐年漂移率</strong>。</p>
+<p>3、</p>
+<img src="http://cos.pansis.site/202310201944557.png/abc123" alt="image-20231020194424508" style="zoom:33%;" />
+<h2 id="三-陀螺漂移的数学模型">三、陀螺漂移的数学模型</h2>
+<h4 id="1-定义">1、定义</h4>
+<p>描述陀螺漂移规律的数学表达式，称为陀螺漂移数学模型</p>
+<h4 id="2-分类">2、分类</h4>
+<p>（1）静态漂移数学模型</p>
+<p>在线运动条件下陀螺漂移与<strong>加速度或比力</strong>之间关系的数学表达式。</p>
+<p>（2）动态漂移数学模型</p>
+<p>在角运动条件下陀螺漂移与<strong>角速度、角加速度</strong>之间关系的数学表达式。</p>
+<p>（3）随机漂移数学模型：</p>
+<p>描述该<strong>随机时序列统计相关性</strong>的数学表达式，即为陀螺随机漂移数学模型</p>
+<h4 id="3-建立方法">3、建立方法</h4>
+<p>**1、解析法：**根据陀螺仪的工作原理、具体结构和引起漂移的物理机制，用解析的方法导出它的漂移数学 模型；</p>
+<ul>
+<li>物理概念清晰，所有漂移系数可由陀螺仪的结构参数来表示。</li>
+<li>推导过程会有假设条件，因此具有一定程度的近似性。</li>
+</ul>
+<p>**2、实验法：**设计一种试验方案能够激励各种 因素引起的陀螺漂移，以试验取得的数据为依据，通过数学处理来导出它的漂移数学模型。</p>
+<ul>
+<li>受人们主观认识的影响较小</li>
+<li>在工程实践 中常被应用</li>
+</ul>
+<p>1、陀螺仪的精度指标通常用——来表征，公式<br>
+2、干扰力矩定义、来源<br>
+3、漂移率组成<br>
+4、系统漂移率定义、<strong>表示方法</strong>、引起因素<br>
+5、系统漂移率可以用————来进行描述<br>
+6、随机漂移率定义、<strong>表示方法</strong>、引起因素、可以用————来进行描述<br>
+7、衡量陀螺仪精度的最重要指标是——<br>
+8、非刚体转子陀螺仪采用——作为衡量其精度的主要指标<br>
+刚体转子陀螺仪采用——作为衡量其精度的主要指标<br>
+9、<strong>逐次漂移率定义</strong>。根据测试时间间隔的不同，又分为————<br>
+10、陀螺漂移的数学模型定义、分类<br>
+11、静态漂移数学模型：在——条件下陀螺漂移与————之间关系的数学表达式。<br>
+动态漂移数学模型：在——条件下陀螺漂移与————之间关系的数学表达式。<br>
+<strong>随机漂移数学模型：描述该————的数学表达式，即为陀螺随机漂移数学模型</strong><br>
+12、陀螺漂移的数学模型建立方法和各自优点<br>
+13、解析法:根据陀螺仪的_____、_____和_____的物理机制，用_____的方法导出它的漂移数学 模型.<br>
+14、实验法：设计一种试验方案能够————，以试验取得的数据为依据，通过————来导出它的漂移数学模型。</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/gxdhjc/" class="article-info">
+                                                        惯性导航基础
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

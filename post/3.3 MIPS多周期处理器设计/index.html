@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>3.3 MIPS多周期处理器设计 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、单周期数据通路性能分析和其他方案
+1、指令的操作时间
+1、各部件操作时间
+
+存储器访问：tmemt_{mem}tmem​
+ALU运算：tALUt_{ALU}tALU​
+寄存器堆读写：tRFRt_{RFR}tRFR​、tRFWt_{RFW..." />
+        <meta name="keywords" content="计算机组成原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="3.3 MIPS多周期处理器设计" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、单周期数据通路性能分析和其他方案
+1、指令的操作时间
+1、各部件操作时间
+
+存储器访问：tmemt_{mem}tmem​
+ALU运算：tALUt_{ALU}tALU​
+寄存器堆读写：tRFRt_{RFR}tRFR​、tRFWt_{RFW...">
+        <meta property="og:url" content="https://github.pansis.site/post/3.3 MIPS多周期处理器设计/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-04-24">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="3.3 MIPS多周期处理器设计">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="3.3 MIPS多周期处理器设计">
+        <meta name="twitter:description" content="一、单周期数据通路性能分析和其他方案
+1、指令的操作时间
+1、各部件操作时间
+
+存储器访问：tmemt_{mem}tmem​
+ALU运算：tALUt_{ALU}tALU​
+寄存器堆读写：tRFRt_{RFR}tRFR​、tRFWt_{RFW...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    3.3 MIPS多周期处理器设计
+                                </h2>
+                                <span class="article-info">
+                                    2024-04-24, 976 words, 5 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-单周期数据通路性能分析和其他方案">一、单周期数据通路性能分析和其他方案</h2>
+<h4 id="1-指令的操作时间">1、指令的操作时间</h4>
+<p>1、各部件操作时间</p>
+<ul>
+<li>存储器访问：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mi>m</mi><mi>e</mi><mi>m</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{mem}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">m</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+<li>ALU运算：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mi>A</mi><mi>L</mi><mi>U</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{ALU}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">A</span><span class="mord mathdefault mtight">L</span><span class="mord mathdefault mtight" style="margin-right:0.10903em;">U</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+<li>寄存器堆读写：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mi>R</mi><mi>F</mi><mi>R</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{RFR}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.00773em;">R</span><span class="mord mathdefault mtight" style="margin-right:0.13889em;">F</span><span class="mord mathdefault mtight" style="margin-right:0.00773em;">R</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mi>R</mi><mi>F</mi><mi>W</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{RFW}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.00773em;">R</span><span class="mord mathdefault mtight" style="margin-right:0.13889em;">F</span><span class="mord mathdefault mtight" style="margin-right:0.13889em;">W</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+<li>多路开关、符号扩展、移位延迟：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mi>m</mi><mi>u</mi><mi>x</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{mux}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">m</span><span class="mord mathdefault mtight">u</span><span class="mord mathdefault mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mi>s</mi><mi>e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{se}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mi>s</mi><mi>h</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{sh}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">h</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+<li>寄存器性能指标：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mi>C</mi><mi>T</mi><mi>Q</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{CTQ}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9011879999999999em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328331em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">C</span><span class="mord mathdefault mtight" style="margin-right:0.13889em;">T</span><span class="mord mathdefault mtight">Q</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mi>s</mi><mi>e</mi><mi>t</mi><mi>u</mi><mi>p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t_{setup}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9011879999999999em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.28055599999999997em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight">t</span><span class="mord mathdefault mtight">u</span><span class="mord mathdefault mtight">p</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></li>
+</ul>
+<p>2、R指令</p>
+<p>4个步骤：取指令→读寄存器→ALU→写寄存器</p>
+<p>操作时间：<img src="http://cos.pansis.site/202404221626314.png/abc123" alt="image-20240422162626215" style="zoom:40%;" /></p>
+<p>3、lw指令</p>
+<p>5个步骤：取指令→读寄存器→ALU→读数据→写寄存器</p>
+<p>操作时间：<img src="http://cos.pansis.site/202404241516259.png/abc123" alt="image-20240424151612529" style="zoom:50%;" /></p>
+<h4 id="2-单周期数据通路的执行周期">2、单周期数据通路的执行周期</h4>
+<p>1、时钟周期取决于最长的指令（lw指令）600ps</p>
+<p>2、各指令执行时间</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>读指令</th>
+<th>读寄存器</th>
+<th>ALU计算</th>
+<th>读/写主存</th>
+<th>写寄存器</th>
+<th>总共</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R型指令</td>
+<td>200</td>
+<td>50</td>
+<td>100</td>
+<td>0</td>
+<td>50</td>
+<td>400ps</td>
+</tr>
+<tr>
+<td>lw</td>
+<td>200</td>
+<td>50</td>
+<td>100</td>
+<td>200</td>
+<td>50</td>
+<td>600</td>
+</tr>
+<tr>
+<td>sw</td>
+<td>200</td>
+<td>50</td>
+<td>100</td>
+<td>200</td>
+<td></td>
+<td>550</td>
+</tr>
+<tr>
+<td>branch:beq bne...</td>
+<td>200</td>
+<td>50</td>
+<td>100</td>
+<td>0</td>
+<td></td>
+<td>350</td>
+</tr>
+<tr>
+<td>j</td>
+<td>200</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>200</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-可变时钟周期">3、可变时钟周期</h4>
+<p>1、每个指令的执行周期不同，从而降低整体指令执行时间</p>
+<p>2、缺点：控制比单周期要复杂、 困难，得不偿失。</p>
+<h4 id="4-多周期数据通路">4、多周期数据通路</h4>
+<p>1、方案：指令执行分解为多个步骤，<strong>每一步一个时钟周期</strong>，则指<strong>令执行周期为多个时钟 周期</strong>，<strong>不同指令执行的时钟周期数不一样</strong>。</p>
+<p>2、若每一步骤时钟周期为200ps。</p>
+<p>R类型指令4个时钟周期，lw指令5个时钟周期，J指令1 个时钟周期</p>
+<p>xxxxxxxxxxxxxxxxxxx</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>读指令</th>
+<th>读寄存器</th>
+<th>ALU计算</th>
+<th>读/写主存</th>
+<th>写寄存器</th>
+<th>总共</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R型指令</td>
+<td>200</td>
+<td>200</td>
+<td>100</td>
+<td>0</td>
+<td>50</td>
+<td>400ps</td>
+</tr>
+<tr>
+<td>lw</td>
+<td>200</td>
+<td>200</td>
+<td>100</td>
+<td>200</td>
+<td>50</td>
+<td>600</td>
+</tr>
+<tr>
+<td>sw</td>
+<td>200</td>
+<td>200</td>
+<td>100</td>
+<td>200</td>
+<td></td>
+<td>550</td>
+</tr>
+<tr>
+<td>branch:beq bne...</td>
+<td>200</td>
+<td>50</td>
+<td>100</td>
+<td>0</td>
+<td></td>
+<td>350</td>
+</tr>
+<tr>
+<td>j</td>
+<td>200</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>200</td>
+</tr>
+</tbody>
+</table>
+<h2 id="二-mips多周期数据通路设计">二、MIPS多周期数据通路设计</h2>
+<h4 id="1-设计原则">1、设计原则</h4>
+<ul>
+<li>普林斯顿结构
+<ul>
+<li>指令和数据使用同一个存储器</li>
+</ul>
+</li>
+<li>一个ALU
+<ul>
+<li>R型指令算术逻辑运算</li>
+<li>取指令后形成PC+4新值</li>
+<li>Beq 指令转向地址计算（PC+Signext(imm16)&lt;&lt;2）</li>
+</ul>
+</li>
+<li>多周期同步
+<ul>
+<li>指令每一周期的通路总是从前一 个状态单元输出，经过功能单元处理，在下一个时钟周期触发沿将结 果写入下一个状态单元</li>
+<li>数据通路中需要增加一个或多个寄存器以保存指令各周期执行的结果，以便在后续时钟周期内继续使用。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-各指令的数据通路">2、各指令的数据通路</h4>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202404241607687.png/abc123" alt="image-20240424160737571" loading="lazy"></figure>
+<p>1、p0</p>
+<p>IR=M[PC]          PC=PC+4</p>
+<img src="http://cos.pansis.site/202404241608145.png/abc123" alt="image-20240424160813078" style="zoom:50%;" />
+<p>2、p1</p>
+<p>A = R[IR[25:21]]     B = R[IR[20:16]]<br>
+ALUOut = PC + Signext[IR[15:0]]&lt;&lt;2</p>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/202404241609079.png/abc123" alt="image-20240424160951904" loading="lazy"></figure>
+<p>3、p2</p>
+<p>ALUOut = A +  Signext(IR[15:0])</p>
+<img src="http://cos.pansis.site/202404241612572.png/abc123" alt="image-20240424161204497" style="zoom:50%;" />
+<p>4、p3</p>
+<p>DR =M[ALUOut]</p>
+<img src="http://cos.pansis.site/202404241612986.png/abc123" alt="image-20240424161223822" style="zoom:50%;" />
+<p>5、p4</p>
+<p>R[IR[20:16]] =DR</p>
+<img src="http://cos.pansis.site/202404241613233.png/abc123" alt="image-20240424161333138" style="zoom:50%;" />
+<p>6、p5</p>
+<p>M[ALUOut] = B</p>
+<figure data-type="image" tabindex="3"><img src="http://cos.pansis.site/202404241614729.png/abc123" alt="image-20240424161421634" loading="lazy"></figure>
+<p>7、p6</p>
+<p>ALUOut = A op B</p>
+<figure data-type="image" tabindex="4"><img src="http://cos.pansis.site/202404241614111.png/abc123" alt="image-20240424161437027" loading="lazy"></figure>
+<p>8、p7</p>
+<p>R[IR[15:11]] =ALUOut</p>
+<figure data-type="image" tabindex="5"><img src="http://cos.pansis.site/202404241615826.png/abc123" alt="image-20240424161500636" loading="lazy"></figure>
+<p>9、p8</p>
+<p>If (A-B==0) then   PC = ALUout</p>
+<figure data-type="image" tabindex="6"><img src="http://cos.pansis.site/202404241615234.png/abc123" alt="image-20240424161512142" loading="lazy"></figure>
+<p>10、数据选择器</p>
+<figure data-type="image" tabindex="7"><img src="http://cos.pansis.site/202404241615678.png/abc123" alt="image-20240424161554451" loading="lazy"></figure>
+<p>11、p9</p>
+<p>PC =PC[31:28] || IR[25:0]&lt;&lt;2</p>
+<figure data-type="image" tabindex="8"><img src="http://cos.pansis.site/202404241616716.png/abc123" alt="image-20240424161610578" loading="lazy"></figure>
+<h2 id="三-多周期控制器设计">三、多周期控制器设计</h2>
+<h4 id="1-控制信号">1、控制信号</h4>
+<figure data-type="image" tabindex="9"><img src="http://cos.pansis.site/202404241617626.png/abc123" alt="image-20240424161717525" loading="lazy"></figure>
+<figure data-type="image" tabindex="10"><img src="http://cos.pansis.site/202404241618299.png/abc123" alt="image-20240424161822200" loading="lazy"></figure>
+<img src="http://cos.pansis.site/202404241618207.png/abc123" alt="image-20240424161837997" style="zoom:70%;" />
+<h4 id="2-控制器接口">2、控制器接口</h4>
+<img src="http://cos.pansis.site/202404241620189.png/abc123" alt="image-20240424162021125" style="zoom:50%;" />
+<p>1、主控单元</p>
+<p>输入：指令操作码字段 Op（指令31:26位）</p>
+<p>输出：</p>
+<ul>
+<li>– MemRead，MemWrite：存储器读写控制；</li>
+<li>– ALUSrcA，ALUSrcB：ALU输入端多路选择；</li>
+<li>– ALUOp：指明ALU的运算类型；</li>
+<li>– PCSrc：PC输入端多路选择；</li>
+<li>– IorD：存储器地址输入端多路选择；</li>
+<li>– RegDst，MemtoReg：寄存器堆写入端多路选择；</li>
+<li>– IRWrite：指令寄存器写入控制</li>
+<li>– RegWrite：寄存器堆写入控制</li>
+<li>– PCWrite，PCwriteCond：PC写入控制</li>
+</ul>
+<p>2、ALU控制单元</p>
+<p>输入：</p>
+<ul>
+<li>– 主控单元生成的ALUop</li>
+<li>– 功能码字段Func（指令5:0位）</li>
+</ul>
+<p>输出：ALU运算控制信号 ALUCtrl（4位）</p>
+<h4 id="3-主控单元状态机">3、主控单元状态机</h4>
+<p>1、主控单元下一周期的状态取决于当前状态和输入指令</p>
+<p>2、在数据通路中共9种数据通路，因此共9个状态</p>
+<img src="http://cos.pansis.site/202404241631611.png/abc123" alt="image-20240424163103347" style="zoom:70%;" />
+<h4 id="4-alu控制单元">4、ALU控制单元</h4>
+<figure data-type="image" tabindex="11"><img src="http://cos.pansis.site/202404241632115.png/abc123" alt="image-20240424163217910" loading="lazy"></figure>
+<h2 id="四-多周期数据通路性能分析">四、多周期数据通路性能分析</h2>
+<h4 id="1-各步骤耗时">1、各步骤耗时</h4>
+<img src="http://cos.pansis.site/202404241636601.png/abc123" alt="image-20240424163603510" style="zoom:50%;" />
+<figure data-type="image" tabindex="12"><img src="http://cos.pansis.site/202404241636427.png/abc123" alt="image-20240424163617357" loading="lazy"></figure>
+<p>因此，单步骤的周期为275ps</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/jsjzcyl/" class="article-info">
+                                                        计算机组成原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

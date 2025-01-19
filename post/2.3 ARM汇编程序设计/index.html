@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>2.3 ARM汇编程序设计 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、基本程序框架
+1、段
+ARM的汇编语言程序一般由几个段组成。
+1、段的声明语句：
+  AREA &lt;段名称&gt;,&lt;段类型&gt;,&lt;段属性&gt;    
+.....代码.....
+  END
+
+2、段类型：
+
+代码..." />
+        <meta name="keywords" content="嵌入式系统" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="2.3 ARM汇编程序设计" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、基本程序框架
+1、段
+ARM的汇编语言程序一般由几个段组成。
+1、段的声明语句：
+  AREA &amp;lt;段名称&amp;gt;,&amp;lt;段类型&amp;gt;,&amp;lt;段属性&amp;gt;    
+.....代码.....
+  END
+
+2、段类型：
+
+代码...">
+        <meta property="og:url" content="https://github.pansis.site/post/2.3 ARM汇编程序设计/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-10-26">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="2.3 ARM汇编程序设计">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="2.3 ARM汇编程序设计">
+        <meta name="twitter:description" content="一、基本程序框架
+1、段
+ARM的汇编语言程序一般由几个段组成。
+1、段的声明语句：
+  AREA &amp;lt;段名称&amp;gt;,&amp;lt;段类型&amp;gt;,&amp;lt;段属性&amp;gt;    
+.....代码.....
+  END
+
+2、段类型：
+
+代码...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    2.3 ARM汇编程序设计
+                                </h2>
+                                <span class="article-info">
+                                    2024-10-26, 1950 words, 9 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-基本程序框架">一、基本程序框架</h2>
+<h4 id="1-段">1、段</h4>
+<p>ARM的汇编语言程序一般由几个段组成。</p>
+<p>1、段的声明语句：</p>
+<pre><code>  AREA &lt;段名称&gt;,&lt;段类型&gt;,&lt;段属性&gt;    
+.....代码.....
+  END
+</code></pre>
+<p>2、段类型：</p>
+<ul>
+<li>代码段：CODE（默认属性为READONLY只读）</li>
+<li>数据段：DATA（默认属性为READWRITE读写）</li>
+<li>通用段</li>
+</ul>
+<h4 id="2-指令代码">2、指令代码</h4>
+<p>1、通用格式</p>
+<p>{label} {指令|指示符|伪指令} {；注解}</p>
+<ul>
+<li>有{label}的必须定格写。无{label}的必须不能顶格写</li>
+<li>{label}代表一个地址，段内标号的地址值在汇编时确定，段外标号的地址值在链接时确定。在程序段中，标号代表其所在位置与段首地址的偏移量。</li>
+</ul>
+<h2 id="二-数据段">二、数据段</h2>
+<h4 id="1-段声明">1、段声明</h4>
+<pre><code class="language-assembly">  AREA BlockData, DATA, READWRITE
+src  DCD  1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8,1,2,3,4
+dst  DCD  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+  END
+</code></pre>
+<h4 id="2-数据声明">2、数据声明</h4>
+<p>数据段中的数据存放全局变量</p>
+<pre><code>&lt;label&gt; &lt;数据定义指示符&gt; &lt;data&gt;
+</code></pre>
+<ul>
+<li><label>必须顶格写</li>
+</ul>
+<h4 id="3-数据定义指示符">3、数据定义指示符</h4>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>功能</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>= 或DBC</td>
+<td>分配一个或多个字节</td>
+<td>src   DCD   1,2,3,4,5,6</td>
+</tr>
+<tr>
+<td>&amp; 或DCD</td>
+<td>分配一个或多个字，从4字节边界开始</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="4-调用方法">4、调用方法</h4>
+<ul>
+<li>第一步：加载地址  LDR     &lt;寄存器编号&gt;, =<label></li>
+<li>第二步：取数 /写入(以取字为例)         LDR/STR   &lt;存数寄存器编号&gt;，[存地址的寄存器+{偏移量等}]</li>
+</ul>
+<p>示例</p>
+<pre><code class="language-assembly"> AREA Word, CODE, READONLY       ;代码段
+num     EQU     20              ; 给常量20给一个标签num
+        ENTRY                   ; 指向程序的入口，一个源文件中只能有一个ENTRY
+start
+        LDR     r0, =src        ; 取标签地址src####
+        LDR     r1, =dst        ; 取标签地址dst#####
+        MOV     r2, #num        ; r2 = number of words to copy
+wordcopy
+        LDR     r3, [r0], #4    ; a word from the source
+        STR     r3, [r1], #4    ; store a word to the destination
+        SUBS    r2, r2, #1      ; decrement the counter
+        BNE     wordcopy        ; ... copy more
+  AREA BlockData, DATA, READWRITE
+src     DCD     1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8,1,2,3,4
+dst     DCD     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+
+        END
+
+</code></pre>
+<h5 id="5-常量">5、常量</h5>
+<ul>
+<li><strong>十进制</strong>，如：123，1，0</li>
+<li><strong>十六进制</strong>，如：0x123,0xab,0x7b</li>
+<li>n_XXX，n表示n进制，从2～9：XXX是具体的数</li>
+<li><strong>字符常量</strong>：由单引号及中间的字符组成，包括C语言中的转义字符，如’a’,’\n’</li>
+<li><strong>字符串</strong>：由一对双引号及双引号之间字符串组成，并包含C中的转义字符。如“abcdef\0xa\r\n”</li>
+<li>逻辑常量为{TRUE}和{FALSE}。</li>
+</ul>
+<h2 id="三-指示符与预定义变量">三、指示符与预定义变量</h2>
+<p>1、杂项指示符</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ALIGN</td>
+<td>从一个字边界开始</td>
+</tr>
+<tr>
+<td>AREA</td>
+<td>指示汇编器汇编一段新的代码或数据部分</td>
+</tr>
+<tr>
+<td>CODE16</td>
+<td>指示汇编器将随后的指令作为16位Thumb指令</td>
+</tr>
+<tr>
+<td>CODE32</td>
+<td>指示汇编器将随后的指令作为32位ARM指令</td>
+</tr>
+<tr>
+<td>END</td>
+<td>表示源程序的结束</td>
+</tr>
+<tr>
+<td>ENTRY</td>
+<td>指向程序的入口，一个源文件中只能有一个ENTRY</td>
+</tr>
+<tr>
+<td>*或EQU</td>
+<td>对一个常量赋予一个符号名</td>
+</tr>
+<tr>
+<td>EXPORT或GLOBAL</td>
+<td>说明了由链接器在目标和库文件中使用的符号</td>
+</tr>
+<tr>
+<td>IMPORT或EXTERN</td>
+<td>提供汇编器在当前汇编中未曾定义的符号名</td>
+</tr>
+<tr>
+<td>GET或INCLUDE</td>
+<td>包含一个文件，在GET处汇编包含的文件</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-寄存器的预定义变量">2、寄存器的预定义变量</h4>
+<ul>
+<li>
+<p>R0-R15和r0-r15；</p>
+</li>
+<li>
+<p>a1-a4（参数、结果或临时寄存器，与r0-r3同义）；</p>
+</li>
+<li>
+<p>v1-v8（变量寄存器，与r4-r11同义）；</p>
+</li>
+<li>
+<p>sb和SB（静态基址寄存器，与r9同义）；</p>
+</li>
+<li>
+<p>sl和SL（栈限制寄存器，与r10同义）；</p>
+</li>
+<li>
+<p>fp和FP（帧指针，与r11同义）；</p>
+</li>
+<li>
+<p>ip和IP（过程调用中间临时寄存器，与r12同义）；</p>
+</li>
+<li>
+<p>sp和SP（栈指针，与r13同义）；</p>
+</li>
+<li>
+<p>lr和LR（链接寄存器，与r14同义）；</p>
+</li>
+<li>
+<p>pc和PC（程序计数器，与r15同义）；</p>
+</li>
+<li>
+<p>cpsr和CPSR（程序状态寄存器）；</p>
+</li>
+<li>
+<p>spsr和SPSR（程序状态寄存器）</p>
+</li>
+</ul>
+<h2 id="四-arm汇编与c混合编程">四、ARM汇编与C混合编程</h2>
+<h4 id="1-内嵌汇编">1、内嵌汇编</h4>
+<p>在C和C＋＋语言中嵌入汇编语言</p>
+<p>（C语言中）</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+void  my_strcpy(char* src, const char* dst){
+   int ch;
+    __asm{
+            loop:
+                LDRB  ch, [src], #1
+                STRB   ch, [dst], #1
+                CMP ch, #0
+                BNE  loop
+        };
+    
+}
+
+int main(){
+    const char* a = &quot;Hello World!&quot;;
+    char   b[20];
+    __asm{
+	MOV R0, a
+	MOV R1, b
+	BL     my_strcpy, {R0, R1}
+    };
+    printf(&quot;Original String: %s\n&quot;,a);
+    printf(&quot;Copied String: %s\n&quot;,b);
+    return 0;
+}
+
+</code></pre>
+<ul>
+<li>一般不要直接指定物理寄存器，而让编译器进行分配（直接用示例当中的int变量即可）（注意C语言中的C语言变量不要和物理寄存器同名，否则可能出现混乱）</li>
+<li>对于内嵌的汇编代码用到的寄存器，编译器在编译时会自动加入保存和恢复这些寄存器的代码而不用用户去管理，除了寄存器CPSR和SPSR，其他寄存器都必须先赋值然后再读取，否则编译时将出现错误。</li>
+<li>内嵌的汇编代码不能使用PC寄存器返回当前指令的地址，也不能用ADR、ADRL</li>
+<li>不能使用“；”作为注释行的开头，而应该使用C语言中的“/**/”或者“//”进行注释;</li>
+<li>STM和LDM指令中不能使用C语言表达式；</li>
+<li>不能直接向PC寄存器赋值，程序跳转要使用B或者BL指令</li>
+<li>不支持BX和BLX；</li>
+<li>用户可以改变处理器的模式，但仍然需要自己把处理器模式恢复过来，编译器不会自动做处理</li>
+<li>嵌汇编指令不支持内存分配的伪操作。；</li>
+</ul>
+<h4 id="2-c调用汇编函数">2、C调用汇编函数</h4>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+extern void strcopy(char *d, const char *s);//先声明外部调用汇编函数
+
+int main()
+{       const char *srcstr = &quot;First string - source&quot;;
+        char dststr[] = &quot;Second string - destination&quot;;
+
+        printf(&quot;Before copying:\n&quot;);
+        printf(&quot;  '%s'\n  '%s'\n&quot;,srcstr,dststr);
+        strcopy(dststr,srcstr);
+        printf(&quot;After copying:\n&quot;);
+        printf(&quot;  '%s'\n  '%s'\n&quot;,srcstr,dststr);
+        return 0;
+}
+
+</code></pre>
+<pre><code class="language-asm">      AREA    SCopy, CODE, READONLY
+
+        EXPORT strcopy ;将C与汇编使用的相同标签关联声明，此处指strcopy函数指针
+strcopy                 
+        ; r0 points to destination string
+        ; r1 points to source string
+        LDRB    r2, [r1],#1     ; load byte and update address
+        STRB    r2, [r0],#1     ; store byte and update address;
+        CMP     r2, #0          ; check for zero terminator
+        BNE     strcopy         ; keep going if not
+        MOV     pc,lr           ; Return
+
+      END
+
+</code></pre>
+<p>根据ATPCS标准，函数前4个参数通过，R0－R3来传递，其它参数通过栈(FD，满递减栈)传递。LDR R4,[SP],#4</p>
+<h4 id="3-汇编调用c函数">3、汇编调用C函数</h4>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+extern void f(int i);//先声明外部调用汇编函数
+int g（int a, int b, int c, int d, int e）
+{
+	return a + b + c + d + e;
+}
+
+int main()
+{       int i=1;
+    	f(i);
+        return 0;
+}
+
+</code></pre>
+<pre><code class="language-assembly">
+  AREA  ff, CODE, READONLY
+     EXPORT f
+     IMPORT  g                 ；使用伪操作数IMPORT声明c程序g（）
+f
+    STR  lr, [sp,#-4]!        ；保存返回地址
+    ADD  r1, r0, r0	         ；假设进入程序f时，r0中的值为i，r1值设为2*i
+	ADD  r2, r1, r0	         ；r2的值设为3*i
+	ADD  r3, r1, r1	       ；r3的值设为4*i
+	ADD  r4, r1, r2	       ；r4值设为5*i
+	STR  r4, [sp, # -4]!     ；第五个参数5*i通过数据栈传递
+	BL   g	       			；调用c程序g（）
+	ADD  sp, sp, #4	       ；调整数据栈指针，准备返回
+	LDR  pc, [sp], #4       ；返回
+   END
+
+</code></pre>
+<h4 id="3-关联调用">3、关联调用</h4>
+<p>1、汇编使用C全局变量</p>
+<ul>
+<li>使用IMPORT伪操作声明该全局变量</li>
+<li>使用LDR伪指令读取该全局变量的内存地址</li>
+<li>根据该数据的类型，使用相应的LDR伪指令读取该全局变量的值；</li>
+<li>使用相应的STR指令，修改该全局变量的值</li>
+</ul>
+<p>示例</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int  globvl;
+int main(){
+ globvl = 0;
+    asmsub();
+   printf(“globvl = %d”, globvl);
+     return 0;
+}
+</code></pre>
+<pre><code class="language-assembly">  AREA  globals, CODE, READONLY
+	EXPORT asmsub
+	IMPORT globvl ;使用IMPORT伪操作声明该全局变量
+asmsub
+	LDR  r1,  =globvl ;使用LDR伪指令读取该全局变量的内存地址
+	LDR  r0, [r1] ;使用相应的LDR伪指令读取该全局变量的值
+	ADD  r0, r0, #2
+	STR  r0, [r1] ;使用相应的STR指令，修改该全局变量的值
+	MOV  pc, lr ; Return
+  END 
+
+</code></pre>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/AVw14AAoK/" class="article-info">
+                                                        嵌入式系统
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

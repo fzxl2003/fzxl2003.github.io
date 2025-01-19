@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>1.2 ARM处理器状态、模式 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、ARM支持的数据类型
+
+字节：8位
+半字：16位（必须分配为占用两个字节）
+字 ：32位（必须分配为占用4各字节）
+
+Tips：
+
+所有数据操作，例如ADD，都以字为单位；
+装载和保存指令可以对字节、半字和字进行操作，当装载字节或半字时..." />
+        <meta name="keywords" content="嵌入式系统" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="1.2 ARM处理器状态、模式" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、ARM支持的数据类型
+
+字节：8位
+半字：16位（必须分配为占用两个字节）
+字 ：32位（必须分配为占用4各字节）
+
+Tips：
+
+所有数据操作，例如ADD，都以字为单位；
+装载和保存指令可以对字节、半字和字进行操作，当装载字节或半字时...">
+        <meta property="og:url" content="https://github.pansis.site/post/1.2 ARM处理器状态、模式/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-09-24">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="1.2 ARM处理器状态、模式">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="1.2 ARM处理器状态、模式">
+        <meta name="twitter:description" content="一、ARM支持的数据类型
+
+字节：8位
+半字：16位（必须分配为占用两个字节）
+字 ：32位（必须分配为占用4各字节）
+
+Tips：
+
+所有数据操作，例如ADD，都以字为单位；
+装载和保存指令可以对字节、半字和字进行操作，当装载字节或半字时...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    1.2 ARM处理器状态、模式
+                                </h2>
+                                <span class="article-info">
+                                    2024-09-24, 681 words, 3 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-arm支持的数据类型">一、ARM支持的数据类型</h2>
+<ul>
+<li>字节：8位</li>
+<li>半字：16位（必须分配为占用两个字节）</li>
+<li>字 ：32位（必须分配为占用4各字节）</li>
+</ul>
+<p>Tips：</p>
+<ul>
+<li>所有数据操作，例如ADD，都以字为单位；</li>
+<li>装载和保存指令可以对字节、半字和字进行操作，当装载字节或半字时自动实现零扩展或符号扩展；</li>
+<li>ARM指令的长度刚好是1个字（分配为占用4个字节）</li>
+<li>Thumb指令的长度刚好是半字（占用2个字节）。</li>
+</ul>
+<h2 id="二-处理器状态">二、处理器状态</h2>
+<h4 id="1-状态类型">1、状态类型</h4>
+<ul>
+<li>ARM状态：32位，这种状态下执行的是字方式的ARM指令（地址[1:0]为0）；</li>
+<li>Thumb状态：16位，这种状态下执行半字方式的ARM指令（地址[0]为0） 。</li>
+</ul>
+<h4 id="2-异常处理">2、异常处理</h4>
+<ul>
+<li>如果处理器在Thumb状态进入异常，自动切换到ARM状态。</li>
+<li>当异常处理返回时，自动切换到Thumb状态。</li>
+<li>两个状态之间的切换并不影响处理器模式或寄存器内容</li>
+</ul>
+<h2 id="三-处理器模式">三、处理器模式</h2>
+<h4 id="1-模式类型">1、模式类型</h4>
+<p>7种模式</p>
+<table>
+<thead>
+<tr>
+<th>处理器模式</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>用户(usr)</td>
+<td>正常程序执行模式</td>
+<td>不能直接切换到其它模式</td>
+</tr>
+<tr>
+<td>系统(sys)</td>
+<td>运行操作系统的特权任务</td>
+<td>与用户模式类似，但具有可以直接切换到其它模式等特权</td>
+</tr>
+<tr>
+<td>快中断(fiq)</td>
+<td>支持高速数据传输及通道处理</td>
+<td>FIQ异常响应时进入此模式</td>
+</tr>
+<tr>
+<td>中断(irq)</td>
+<td>用于通用中断处理</td>
+<td>IRQ异常响应时进入此模式</td>
+</tr>
+<tr>
+<td>管理 (svc)</td>
+<td>操作系统保护模式</td>
+<td>系统复位和软件中断响应时进入此模式</td>
+</tr>
+<tr>
+<td>中止 (abt)</td>
+<td>用于支持虚拟内存和/或存储器保护</td>
+<td></td>
+</tr>
+<tr>
+<td>未定义(und)</td>
+<td>支持硬件协处理器的软件仿真</td>
+<td>未定义指令异常响应时进入此模式</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>特权模式</p>
+<ul>
+<li>除用户模式外，其它模式均为特权模式。</li>
+<li>ARM内部寄存器和一些片内资源在硬件设计上只允许（或者可选为只允许）特权模式下访问</li>
+<li>特权模式可以自由的切换处理器模式，而用户模式不能直接切换到别的模式</li>
+</ul>
+</li>
+<li>
+<p>异常模式</p>
+<ul>
+<li>除了用户模式、系统模式外，其它模式均为异常模式</li>
+<li>除了可以通过程序切换进入外，也可以由特定的异常进入</li>
+<li>每种异常模式都有一些独立的寄存器，以避免异常退出时用户模式的状态不可靠。</li>
+</ul>
+</li>
+<li>
+<p>用户、系统模式</p>
+<ul>
+<li>这两种模式都不能由异常进入，它们使用完全相同的寄存器组</li>
+</ul>
+</li>
+</ul>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/AVw14AAoK/" class="article-info">
+                                                        嵌入式系统
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

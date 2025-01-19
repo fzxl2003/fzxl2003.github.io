@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>C4讲解-24航c | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="A Firefly小姐的另一道水题
+
+浮点数判断相等
+
+eps=0.000001
+fabs(a-b)&lt;eps
+
+
+题解
+
+
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int m..." />
+        <meta name="keywords" content="24航C" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="C4讲解-24航c" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="A Firefly小姐的另一道水题
+
+浮点数判断相等
+
+eps=0.000001
+fabs(a-b)&amp;lt;eps
+
+
+题解
+
+
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;math.h&amp;gt;
+
+int m...">
+        <meta property="og:url" content="https://github.pansis.site/post/C4讲解-24航c/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-10-18">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="C4讲解-24航c">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="C4讲解-24航c">
+        <meta name="twitter:description" content="A Firefly小姐的另一道水题
+
+浮点数判断相等
+
+eps=0.000001
+fabs(a-b)&amp;lt;eps
+
+
+题解
+
+
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;math.h&amp;gt;
+
+int m...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    C4讲解-24航c
+                                </h2>
+                                <span class="article-info">
+                                    2024-10-18, 704 words, 4 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h1 id="a-firefly小姐的另一道水题"><code>A</code> Firefly小姐的另一道水题</h1>
+<ul>
+<li>浮点数判断相等</li>
+</ul>
+<pre><code>eps=0.000001
+fabs(a-b)&lt;eps
+</code></pre>
+<ul>
+<li>题解</li>
+</ul>
+<pre><code class="language-c">
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main()
+{
+    double a,b,c;
+    while ((scanf(&quot;%lf%lf%lf&quot;,&amp;a,&amp;b,&amp;c))!=EOF)
+    {
+        if (fabs(a+b-c)&lt;0.000001)
+            printf(&quot;Yes\n&quot;);
+        else
+            printf(&quot;No\n&quot;);
+    }
+
+}
+</code></pre>
+<h1 id="b-算个乘方水题速来"><code>B</code> 算个乘方（水题速来）</h1>
+<p>此题禁用pow函数</p>
+<ul>
+<li>
+<p>pow函数的输出类型是double</p>
+</li>
+<li>
+<p>当pow函数输出值过大时，误差会超过1。因此整数范围内禁用pow</p>
+</li>
+<li>
+<p>整数范围的乘方</p>
+<pre><code class="language-c">long long res=1;
+for (int i = 0; i &lt; k; ++i) {
+    res*=n;
+}
+printf(&quot;%lld\n&quot;,res);
+</code></pre>
+<p>特别的，2的n次方=1&lt;&lt;n  （注意n的范围，当n大于等于32时1改成1ll）</p>
+</li>
+</ul>
+<p>题解</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+
+int main()
+{
+   long long n,k;
+
+    while (scanf(&quot;%lld%lld&quot;,&amp;n,&amp;k)!=EOF)
+    {
+        long long res=1;
+        for (int i = 0; i &lt; k; ++i) {
+            res*=n;
+        }
+        printf(&quot;%lld\n&quot;,res);
+    }
+
+}
+</code></pre>
+<h1 id="c-山"><code>C</code> 山</h1>
+<p>字符画题搞清楚每一行输出字符数量与行数的关系即可</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+
+int main()
+{
+   int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    for (int i = 1; i &lt;= n; ++i) {
+        for (int j = 0; j &lt; n-i; ++j) {
+            printf(&quot; &quot;);
+        }
+        for (int j = 0; j &lt; 2*i-1; ++j) {
+            printf(&quot;A&quot;);
+        }
+        printf(&quot;\n&quot;);
+
+    }
+
+}
+</code></pre>
+<h1 id="d-deadline-的艺术复活版"><code>D</code> Deadline 的艺术（复活版）</h1>
+<p>%2d %3d</p>
+<pre><code class="language-c">scanf(&quot;%2d%2d%2d%2d&quot;,&amp;a,&amp;b,&amp;c,&amp;d);
+
+//输入：20020829
+//则a=20 b=2 c=8 d=29
+</code></pre>
+<p>本题易错点</p>
+<p>20000130</p>
+<p>题解</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+
+int main()
+{
+    int c,y,m,d;
+    int num;
+    while (scanf(&quot;%2d%2d%2d%2d&quot;,&amp;c,&amp;y,&amp;m,&amp;d)!=EOF)
+    {
+        if (m==1||m==2)
+        {
+            m+=12;
+            y--;
+            if (y==-1)
+            {
+                y=99;
+                c--;
+            }
+        }
+        int dd=c/4-2*c+y+y/4+(13*(m+1)/5)+d-1;
+        dd=(dd%7+7)%7;
+        switch (dd) {
+            case 0:
+                printf(&quot;Sunday&quot;);
+                break;
+            case 1:
+                printf(&quot;Monday&quot;);
+                break;
+            case 2:
+                printf(&quot;Tuesday&quot;);
+                break;
+            case 3:
+                printf(&quot;Wednesday&quot;);
+                break;
+            case 4:
+                printf(&quot;Thursday&quot;);
+                break;
+            case 5:
+                printf(&quot;Friday&quot;);
+                break;
+            case 6:
+                printf(&quot;Saturday&quot;);
+                break;
+
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+</code></pre>
+<pre><code class="language-c">while (scanf(&quot;%d&quot;, &amp;a) == 1)//另一种输入
+    {
+        c = a / 1000000;
+        y = a / 10000 % 100;
+        m = a / 100 % 100;
+        d = a % 100;
+</code></pre>
+<h1 id="e-开幕式"><code>E</code> 开幕式</h1>
+<p>题解</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n;
+    int a;
+    int b;
+    int num=0;
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;a);
+    num+=a;
+    for (int i = 0; i &lt; n-1; ++i) {
+        scanf(&quot;%d&quot;,&amp;b);
+        num+=b;
+
+        while(b!=0)
+        {
+            int temp=a%b; //因为a和b的值都要更新，所以用temp来保存！
+            a=b;
+            b=temp;
+        }
+
+    }
+    printf(&quot;%d&quot;,num/a);
+}
+</code></pre>
+<h1 id="f-ma5线"><code>F</code> Ma5线</h1>
+<p>题解</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+
+int main()
+{
+    int t;
+    scanf(&quot;%d&quot;,&amp;t);
+    for (int i = 0; i &lt; t; ++i) {
+        int n;
+        scanf(&quot;%d&quot;,&amp;n);
+        int a[105];
+        for (int j = 1; j &lt;= n; ++j) {
+            scanf(&quot;%d&quot;,&amp;a[j]);
+        }
+        int sum[105]={0};
+        int flag=0;
+        for (int j = 5; j &lt;=n ; ++j) {
+            sum[j]=a[j]+a[j-1]+a[j-2]+a[j-3]+a[j-4];
+            if (sum[j]&lt;sum[j-1]&amp;&amp;sum[j-1]&lt;sum[j-2]&amp;&amp;a[j]&gt;a[1])
+            {
+                printf(&quot;%d\n&quot;,j);
+                flag=1;
+                break;
+            }
+
+        }
+        if (flag==0)
+            printf(&quot;0\n&quot;);
+        
+    }
+
+
+
+}
+</code></pre>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/24hangc/" class="article-info">
+                                                        24航C
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://github.pansis.site/post/C3讲解-24航C/">
+                                                    <h3 class="post-title">
+                                                        C3讲解-24航C
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>2.7 汇编函数 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、函数
+1、函数实现的六个步骤
+
+调用者把参数放置在某个地方以便函数能访问 $a0~$a3
+调用者转移控制给被调用的函数 jal
+函数获取局部变量对应的空间 栈
+函数执行具体功能
+函数把返回值放置在某个地方，然后恢复使用的资源 $v0~$..." />
+        <meta name="keywords" content="计算机组成原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="2.7 汇编函数" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、函数
+1、函数实现的六个步骤
+
+调用者把参数放置在某个地方以便函数能访问 $a0~$a3
+调用者转移控制给被调用的函数 jal
+函数获取局部变量对应的空间 栈
+函数执行具体功能
+函数把返回值放置在某个地方，然后恢复使用的资源 $v0~$...">
+        <meta property="og:url" content="https://github.pansis.site/post/2.7 汇编函数/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-04-05">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="2.7 汇编函数">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="2.7 汇编函数">
+        <meta name="twitter:description" content="一、函数
+1、函数实现的六个步骤
+
+调用者把参数放置在某个地方以便函数能访问 $a0~$a3
+调用者转移控制给被调用的函数 jal
+函数获取局部变量对应的空间 栈
+函数执行具体功能
+函数把返回值放置在某个地方，然后恢复使用的资源 $v0~$...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    2.7 汇编函数
+                                </h2>
+                                <span class="article-info">
+                                    2024-04-05, 478 words, 2 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-函数">一、函数</h2>
+<h4 id="1-函数实现的六个步骤">1、函数实现的六个步骤</h4>
+<ol>
+<li>调用者把参数放置在某个地方以便函数能访问 $a0~$a3</li>
+<li>调用者转移控制给被调用的函数 jal</li>
+<li>函数获取局部变量对应的空间 栈</li>
+<li>函数执行具体功能</li>
+<li>函数把返回值放置在某个地方，然后恢复使用的资源 $v0~$v1</li>
+<li>返回控制给调用者</li>
+</ol>
+<h4 id="2-涉及到函数的寄存器">2、涉及到函数的寄存器</h4>
+<ul>
+<li>$a0–$a3：4个传递参数的寄存器</li>
+<li>$v0–$v1：2个传递返回值的寄存器</li>
+<li>$ra：返回地址寄存器，保存着调用者的地址</li>
+</ul>
+<h4 id="3-涉及到函数调用的指令">3、涉及到函数调用的指令</h4>
+<p>jal、jr</p>
+<h4 id="4-寄存器保护">4、寄存器保护</h4>
+<p>1、为什么需要保存寄存器？</p>
+<ul>
+<li>寄存器数量太少，不可能只用寄存器就能编写实用程序</li>
+<li>如果被调用函数继续调用函数，会$ra 会被覆盖</li>
+</ul>
+<p>2、寄存器保存位置：栈</p>
+<ul>
+<li>$sp：栈指针寄存器，指针指向栈底</li>
+</ul>
+<p>3、栈帧：函数为获得保存寄存器而将$sp向0方向调整的空间</p>
+<ul>
+<li>栈帧容量 = 要保存的寄存器数量 X 4</li>
+</ul>
+<p>4、保护对象和保护条件</p>
+<p>$ra：如果继续调用子函数，那么就必须保护（建议全保护）</p>
+<p>程序员寄存器：函数中用哪些，保护哪些（建议全保护）</p>
+<p>临时寄存器：当表达式中调用子函数时，需要保护</p>
+<p>$at:汇编器所用，无需保护</p>
+<h2 id="二-函数框架">二、函数框架</h2>
+<pre><code class="language-assembly">函数_lable:
+   addiu $sp,$sp,-framesize  #分配栈帧，栈的大小为framesize字节（可存framesize/4个寄存器）
+   sw $ra,[framesize-4]($sp)
+   sw $s0,[framesize-8]($sp)
+   sw $s1,[framesize-12]($sp)
+   ...
+   sw $s7,0($sp)   #保护$s0-$s7寄存器
+   
+   #函数代码
+   
+   lw $s7,0($sp)   #恢复函数保护的寄存器
+   ...
+   lw $s1,[framesize-12]($sp)
+   lw $s0,[framesize-8]($sp)
+   lw $ra,[framesize-4]($sp)
+   addiu $sp,$sp,framesize  #释放栈帧
+   jr $ra
+ 
+ 
+ main:
+ jal 函数_lable
+</code></pre>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/jsjzcyl/" class="article-info">
+                                                        计算机组成原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

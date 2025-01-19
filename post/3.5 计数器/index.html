@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>3.5 计数器 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、任意进制计数器
+1、构造方法
+利用已有的N进制计数器，来实现M进制计数器
+分类：
+
+
+M&lt;N  方法：置零法、置数法
+
+
+M&gt;N 方法：当M=N1N2M=N_1 N_2M=N1​N2​，可采用串行进位方式/并行进位方式。
+​..." />
+        <meta name="keywords" content="vlsi" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="3.5 计数器" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、任意进制计数器
+1、构造方法
+利用已有的N进制计数器，来实现M进制计数器
+分类：
+
+
+M&amp;lt;N  方法：置零法、置数法
+
+
+M&amp;gt;N 方法：当M=N1N2M=N_1 N_2M=N1​N2​，可采用串行进位方式/并行进位方式。
+​...">
+        <meta property="og:url" content="https://github.pansis.site/post/3.5 计数器/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-11-25">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="3.5 计数器">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="3.5 计数器">
+        <meta name="twitter:description" content="一、任意进制计数器
+1、构造方法
+利用已有的N进制计数器，来实现M进制计数器
+分类：
+
+
+M&amp;lt;N  方法：置零法、置数法
+
+
+M&amp;gt;N 方法：当M=N1N2M=N_1 N_2M=N1​N2​，可采用串行进位方式/并行进位方式。
+​...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    3.5 计数器
+                                </h2>
+                                <span class="article-info">
+                                    2023-11-25, 365 words, 2 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-任意进制计数器">一、任意进制计数器</h2>
+<h4 id="1-构造方法">1、构造方法</h4>
+<p>利用已有的N进制计数器，来实现M进制计数器</p>
+<p>分类：</p>
+<ul>
+<li>
+<p>M&lt;N  方法：置零法、置数法</p>
+</li>
+<li>
+<p>M&gt;N 方法：当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mo>=</mo><msub><mi>N</mi><mn>1</mn></msub><msub><mi>N</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">M=N_1 N_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，可采用串行进位方式/并行进位方式。</p>
+<p>​                    当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span>为素数时，不能分解为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">N_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">N_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，采用整体清0/整体置数方式</p>
+</li>
+</ul>
+<h4 id="2-置零法">2、置零法</h4>
+<p>同步置零                                              异步置零</p>
+<p><img src="http://cos.pansis.site/202311231921843.png/abc123" alt="image-20231123192048250" style="zoom:33%;" />      <img src="http://cos.pansis.site/202311231922412.png/abc123" alt="image-20231123192211352" style="zoom:30%;" /></p>
+<ul>
+<li>异步置零，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mi>M</mi></msub></mrow><annotation encoding="application/x-tex">S_M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">M</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>出现瞬间进行置零，会有一段暂态</li>
+<li>同步置零，在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">S_{M-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.891661em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328331em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">M</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span></span>状态后，待时钟信号到来后，直接置零</li>
+</ul>
+<p>例题：</p>
+<ul>
+<li>异步</li>
+</ul>
+<p><img src="http://cos.pansis.site/202311231933158.png/abc123" alt="image-20231123193317111" style="zoom:50%;" /><img src="http://cos.pansis.site/202311231934913.png/abc123" alt="image-20231123193426857" style="zoom:40%;" /></p>
+<p><img src="http://cos.pansis.site/202311231933444.png/abc123" alt="image-20231123193333401" style="zoom:50%;" /><img src="http://cos.pansis.site/202311231933695.png/abc123" alt="image-20231123193354638" style="zoom:50%;" /></p>
+<h4 id="3-置数法">3、置数法</h4>
+<img src="http://cos.pansis.site/202311231935183.png/abc123" alt="image-20231123193556150" style="zoom:70%;" />
+<p>例题</p>
+<p>注意进位输出的构造。无论是同步还是异步，当计数器达到最大值时（不包含暂态）就要输出1</p>
+<img src="http://cos.pansis.site/202311231942644.png/abc123" alt="image-20231123194225556" style="zoom:57%;" />
+<img src="http://cos.pansis.site/202311231944184.png/abc123" alt="image-20231123194424147" style="zoom:50%;" />
+<img src="http://cos.pansis.site/202311231947171.png/abc123" alt="image-20231123194708126" style="zoom:70%;" />
+<h4 id="4-串行进位与并行进位">4、串行进位与并行进位</h4>
+<p>1、串行进位方式 : 以低位片的进位输出信号作为<strong>高位片的时钟输入信号</strong>。</p>
+<p>2、并行CP方式 : 以低位片的进位输出信号作为<strong>高位片的控制信号（使能）</strong>， 两片的CP同时接计数输入。</p>
+<p>3、例题：</p>
+<img src="http://cos.pansis.site/202311231951071.png/abc123" alt="image-20231123195155030" style="zoom:50%;" />
+<h4 id="5-整体清0整体置数方式">5、整体清0/整体置数方式</h4>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202311231953103.png/abc123" alt="image-20231123195349055" loading="lazy"></figure>
+<p>注：160是十进制计数器。进位输出接的是28</p>
+<h2 id="二-移位寄存器型计数器">二、移位寄存器型计数器</h2>
+<h4 id="1-环形计数器">1、环形计数器</h4>
+<img src="http://cos.pansis.site/202311231958391.png/abc123" alt="image-20231123195806347" style="zoom:67%;" />
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>D</mi><mn>0</mn></msub><mo>=</mo><msub><mi>Q</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">D_0=Q_3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+<h4 id="2-扭环形计数器">2、扭环形计数器</h4>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/202311231958474.png/abc123" alt="image-20231123195859438" loading="lazy"></figure>
+<img src="http://cos.pansis.site/202311231959689.png/abc123" alt="image-20231123195909643" style="zoom:67%;" />
+<p>相比于环形计数器，有效循环增加一倍</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>D</mi><mn>0</mn></msub><mo>=</mo><msubsup><mi>Q</mi><mn>3</mn><mo mathvariant="normal">′</mo></msubsup></mrow><annotation encoding="application/x-tex">D_0=Q_3&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.24810799999999997em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-2.4518920000000004em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24810799999999997em;"><span></span></span></span></span></span></span></span></span></span></p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/vlsi/" class="article-info">
+                                                        vlsi
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

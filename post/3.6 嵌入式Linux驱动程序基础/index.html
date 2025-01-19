@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>3.6 嵌入式Linux驱动程序基础 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、驱动程序
+1、概念
+驱动程序即添加到操作系统中的一小块 设备代码，其中包含有关硬件设备的信 息。有了此信息，计算机就可以与设备 进行通信。
+二、BSP
+1、概念
+板级支持包（BSP）是嵌入式系统中常用的硬件抽 象形式，是介于操作系统和硬..." />
+        <meta name="keywords" content="嵌入式系统" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="3.6 嵌入式Linux驱动程序基础" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、驱动程序
+1、概念
+驱动程序即添加到操作系统中的一小块 设备代码，其中包含有关硬件设备的信 息。有了此信息，计算机就可以与设备 进行通信。
+二、BSP
+1、概念
+板级支持包（BSP）是嵌入式系统中常用的硬件抽 象形式，是介于操作系统和硬...">
+        <meta property="og:url" content="https://github.pansis.site/post/3.6 嵌入式Linux驱动程序基础/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-11-15">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="3.6 嵌入式Linux驱动程序基础">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="3.6 嵌入式Linux驱动程序基础">
+        <meta name="twitter:description" content="一、驱动程序
+1、概念
+驱动程序即添加到操作系统中的一小块 设备代码，其中包含有关硬件设备的信 息。有了此信息，计算机就可以与设备 进行通信。
+二、BSP
+1、概念
+板级支持包（BSP）是嵌入式系统中常用的硬件抽 象形式，是介于操作系统和硬...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    3.6 嵌入式Linux驱动程序基础
+                                </h2>
+                                <span class="article-info">
+                                    2024-11-15, 2293 words, 9 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-驱动程序">一、驱动程序</h2>
+<h4 id="1-概念">1、概念</h4>
+<p>驱动程序即添加到操作系统中的一小块 设备代码，其中包含有关硬件设备的信 息。有了此信息，计算机就可以与设备 进行通信。</p>
+<h2 id="二-bsp">二、BSP</h2>
+<h4 id="1-概念-2">1、概念</h4>
+<p>板级支持包（BSP）是嵌入式系统中常用的硬件抽 象形式，是介于操作系统和硬件之间的软件层次 （HAL）</p>
+<h4 id="2-包含内容">2、包含内容</h4>
+<p>和系统有关的驱动 和程序，如网络驱动和系统中网络协议有关，串 口驱动和系统下载调试有关等。</p>
+<h4 id="3-特点">3、特点</h4>
+<p>（1）硬件相关性 因为嵌入式实时系统的硬件环境具有应用相关性，所以，作为高层 软件与硬件之间的接口，BSP必须为操作系统提供操作和控制具体 硬件的方法</p>
+<p>（2）操作系统相关性 不同的操作系统具有各自的软件层次结构，因此，不同的操作系 统具有特定的硬件接口形式</p>
+<h4 id="4-功能">4、功能</h4>
+<p>（1）设计初始化过程，完成嵌入式系统的初始化</p>
+<p>（2）设计硬件相关的设备驱动，完成操作系统及 应用程序对具体硬件的操作</p>
+<h2 id="三-linux驱动程序">三、Linux驱动程序</h2>
+<h4 id="1-概念-3">1、概念</h4>
+<p>设备驱动程序是操作系统内核和机器硬件之间的 接口.驱动程序为硬件提供了一个定义良好的内部 接口</p>
+<ul>
+<li>设备驱动程序为应用程序屏蔽了硬件的细节，这 样在应用程序看来，硬件设备只是一个设备文件， 应用程序可以象操作普通文件一样对硬件设备进 行操作</li>
+<li>设备驱动程序为应用程序提供了访问设备的机制</li>
+</ul>
+<img src="http://cos.pansis.site/image-20241115210831464.png?abc123" alt="image-20241115210831464" style="zoom:50%;" />
+<h4 id="2-linux-驱动程序与内核的关系">2、Linux 驱动程序与内核的关系</h4>
+<ul>
+<li>字符设备驱动与块设备驱动由内核中的 文件系统来管理</li>
+<li>网络设备驱动由内核中的协议栈来管理</li>
+</ul>
+<h4 id="3-设备驱动程序完成的功能">3、设备驱动程序完成的功能</h4>
+<ul>
+<li>对设备初始化和释放</li>
+<li>把数据从内核传送到硬件和从硬件读取数据</li>
+<li>读取应用程序传送给设备文件的数据和回送 应用程序请求的数据</li>
+<li>检测和处理设备出现的错误</li>
+</ul>
+<h4 id="4-驱动程序非抢占式调度">4、驱动程序非抢占式调度</h4>
+<ol>
+<li>在用户进程调用驱动程序时，系统进入 核心态，这时不再是抢占式调度，即：系统必须在驱动程序的子函数返回 后才能进行其他的工作</li>
+<li>如果驱动程序陷入死循环，只有重新启动机器</li>
+</ol>
+<h4 id="5-驱动程序分类">5、驱动程序分类</h4>
+<ul>
+<li>字符设备</li>
+<li>块设备</li>
+<li>网络接口</li>
+<li>特殊设备驱动（提供公共服务的特定类型设备）
+<ul>
+<li>Ip forwarding accelerator</li>
+<li>Cypher coprocessor</li>
+<li>Realtime extend hardware</li>
+<li>DMA驱动</li>
+<li>系统时钟驱动</li>
+<li>终端控制器驱动</li>
+<li>GPU，如AMD Radeon驱动程序，36.6万行C代码</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-驱动程序的位置">6、驱动程序的位置</h4>
+<ul>
+<li>驱动程序位于内核源代码的drivers目录下， 按层次结构分门别类放置</li>
+<li>驱动程序占内核源代码50%以上</li>
+<li>开发完毕的驱动程序放在 /lib/modules/kernel-version中</li>
+</ul>
+<h4 id="7-驱动程序与应用程序的对比">7、驱动程序与应用程序的对比</h4>
+<ol>
+<li>
+<p>应用程序是个进程</p>
+<ul>
+<li>
+<p>编程从main（）开始</p>
+</li>
+<li>
+<p>主函数main（）返回即是进程结束</p>
+</li>
+<li>
+<p>Linux屏蔽了应用层对外设的直接访问，不能在用户态直 接进行如下操作</p>
+<img src="http://cos.pansis.site/image-20241115224717383.png?abc123" alt="image-20241115224717383" style="zoom:50%;" />
+</li>
+<li>
+<p>Linux下用户态无法处理中断</p>
+</li>
+</ul>
+</li>
+<li>
+<p>驱动程序是一系列内核函数</p>
+<ul>
+<li>驱动程序向内核添加了一些函数Open() Release() Read() Write() ，是内核的一部分</li>
+<li>这些函数由内核在适当的时候进行调用</li>
+<li>这些函数可以用来完成硬件访问等操作</li>
+<li>驱动程序是内核的一部分，可以使用中断、DMA等操作</li>
+<li>驱动程序需要在用户态和内核态之间传递数据</li>
+</ul>
+</li>
+</ol>
+<h4 id="8-linux驱动程序编译方式">8、Linux驱动程序编译方式</h4>
+<p>1、Linux中驱动程序的使用可以按照两种方式编译：</p>
+<ul>
+<li>静态编译进内核</li>
+<li>编译成模块以供动态加载</li>
+</ul>
+<p>2、通常在Linux中将设备驱动程序静态编译进内核</p>
+<h4 id="9-驱动程序的函数">9、驱动程序的函数</h4>
+<ul>
+<li>open：打开设备准备I/O操作。对字符特别设备文件进 行打开操作，都会调用设备的open入口点。open子程序必 须对将要进行的I/O操作做好必要的准备工作，如清除缓冲区 等。如果设备是独占的，即同一时刻只能有一个程序访问此 设备，则open子程序必须设置一些标志以表示设备处于忙状 态</li>
+<li>close：关闭一个设备。当最后一次使用设备终结后，调 用close子程序。独占设备必须标记设备可再次使用</li>
+<li>Read：从设备上读数据。对于有缓冲区的I/O操作，一 般是从缓冲区里读数据。对字符特别设备文件进行读操作将 调用read子程序</li>
+<li>write：往设备上写数据。对于有缓冲区的I/O操作，一 般是把数据写入缓冲区里。对字符特别设备文件进行写操作 将调用write子程序</li>
+<li>ioctl：执行读、写之外的操作</li>
+<li>select：检查设备，看数据是否可读或设备是否可用于写 数据。select系统调用在检查与设备特别文件相关的文件描述 符时使用select入口点。如果设备驱动程序没有提供上述入口 点中的某一个，系统会用缺省的子程序来代替。对于不同的 系统，也还有一些其它的入口点</li>
+</ul>
+<h4 id="10-linux下设备注册">10、Linux下设备注册</h4>
+<p>1、在设备驱动程序初始化 的时候向系统进行登记，以便系统在适当的时候调用</p>
+<p>2、Linux 系统里，通过调用register_chrdev向系统注册字符型设备驱 动程序。</p>
+<p>register_chrdev定义为</p>
+<img src="http://cos.pansis.site/image-20241115225800280.png?abc123" alt="image-20241115225800280" style="zoom:50%;" />
+<ul>
+<li>此函数返回0表示成功</li>
+<li>返回-EINVAL表示申请的主设备号非法，一般来说是主设备 号大于系统所允许的最大设备号</li>
+<li>返回-EBUSY表示所申请的主设备号正在被其它设备驱动 程序使用</li>
+<li>如果是动态分配主设备号成功，此函数将返回所分配的 主设备号</li>
+<li>如果register_chrdev操作成功，设备名就会出现在 /proc/devices文件里</li>
+</ul>
+<h4 id="11-linux下中断处理">11、Linux下中断处理</h4>
+<ul>
+<li>在Linux系统里，对中断的处理是属于系统核心的 部分，因此如果设备与系统之间以中断方式进行数据 交换的话，就必须把该设备的驱动程序作为系统核心 的一部分</li>
+<li>设备驱动程序通过调用request_irq函数来申请 中断</li>
+<li>设备驱动程序通过调用free_irq函数来释放中断</li>
+</ul>
+<h4 id="12-linux下内存分配-释放">12、Linux下内存分配、释放</h4>
+<ul>
+<li>
+<p>作为系统核心的一部分，设备驱动程序在申请和释放内 存时不是调用malloc和free，而代之以调用kmalloc和kfree</p>
+<img src="http://cos.pansis.site/image-20241115230216268.png?abc123" alt="image-20241115230216268" style="zoom:50%;" />
+</li>
+</ul>
+<h4 id="13-linux下开关中断函数">13、Linux下开关中断函数</h4>
+<p>在设备驱动程序里，通过如下函数实现打开和关闭中断 功能：</p>
+<img src="http://cos.pansis.site/image-20241115230503215.png?abc123" alt="image-20241115230503215" style="zoom:50%;" />
+<h4 id="14-linux下用户态和核心态数据访问">14、Linux下用户态和核心态数据访问</h4>
+<ul>
+<li>在用户程序调用read 、write时，因为进程的运行状态由 用户态变为核心态，地址空间也变为核心地址空间。而read、 write中参数buf是指向用户程序的私有地址空间的，所以不能 直接访问，必须通过memcpy_fromfs和memcpy_tofs系统函数来访问用户程序的私有 地址空间。</li>
+<li>memcpy_fromfs由用户程序地址空间到核心地址 空间复制</li>
+<li>memcpy_tofs由核心地址空间到用户程序地址空间复制。</li>
+<li>参数to为复制的目的指针， from为源指针，n为要复制的字节数</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/image-20241115230650118.png?abc123" alt="image-20241115230650118" loading="lazy"></figure>
+<h2 id="四-linux设备分类">四、Linux设备分类</h2>
+<h4 id="1-主要的设备文件类型">1、主要的设备文件类型</h4>
+<ul>
+<li>字符设备：是指存取时没有缓存的设备。典型的字符设 备包括鼠标、键盘、串口等</li>
+<li>块设备：块设备的读写都有缓存来支持，并且块设备必 须能够随机访问(random access) 。典型的块设备主要包 括硬盘、软盘设备、CD-ROM等</li>
+<li>网络设备：Linux的网络系统主要是基于BSD Unix的 socket机制。在系统和驱动程序之间定义有专门的数据结构 (sk_buff)进行数据的传输。系统支持对发送数据和接收数据 的缓存，提供流量控制机制，提供对多协议的支持</li>
+</ul>
+<h4 id="2-字符设备和块设备的主要区别">2、字符设备和块设备的主要区别</h4>
+<p>在对字符设备发出读/写请求时，实际的硬件I/O一般就紧接 着发生 。</p>
+<p>块设备则不然，它利用一块系统内存作缓冲区，当用户进程 对设备请求能满足用户的要求，就返回请求的数据，如果不能，就调用请求函数来进行实际的I/O操作</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/AVw14AAoK/" class="article-info">
+                                                        嵌入式系统
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

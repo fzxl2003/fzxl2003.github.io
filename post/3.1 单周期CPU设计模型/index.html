@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>3.1 单周期CPU设计模型 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、CPU开发过程概述
+1、步骤
+
+分析每条指令的RTL，梳理和总结出数据通路的设计需求
+选择恰当的数据通路功能部件
+组装数据通路根据指令RLT，分析并建立功能部件间的正确连接关系
+根据指令RTL，分析功能部件应执行的功能，反推相应的控制信..." />
+        <meta name="keywords" content="计算机组成原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="3.1 单周期CPU设计模型" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、CPU开发过程概述
+1、步骤
+
+分析每条指令的RTL，梳理和总结出数据通路的设计需求
+选择恰当的数据通路功能部件
+组装数据通路根据指令RLT，分析并建立功能部件间的正确连接关系
+根据指令RTL，分析功能部件应执行的功能，反推相应的控制信...">
+        <meta property="og:url" content="https://github.pansis.site/post/3.1 单周期CPU设计模型/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-04-05">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="3.1 单周期CPU设计模型">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="3.1 单周期CPU设计模型">
+        <meta name="twitter:description" content="一、CPU开发过程概述
+1、步骤
+
+分析每条指令的RTL，梳理和总结出数据通路的设计需求
+选择恰当的数据通路功能部件
+组装数据通路根据指令RLT，分析并建立功能部件间的正确连接关系
+根据指令RTL，分析功能部件应执行的功能，反推相应的控制信...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    3.1 单周期CPU设计模型
+                                </h2>
+                                <span class="article-info">
+                                    2024-04-05, 490 words, 2 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-cpu开发过程概述">一、CPU开发过程概述</h2>
+<h4 id="1-步骤">1、步骤</h4>
+<ol>
+<li>分析每条指令的RTL，梳理和总结出数据通路的设计需求</li>
+<li>选择恰当的数据通路功能部件</li>
+<li>组装数据通路根据指令RLT，分析并建立功能部件间的正确连接关系</li>
+<li>根据指令RTL，分析功能部件应执行的功能，反推相应的控制信号取值</li>
+<li>生成控制器
+<ul>
+<li>构造控制信号真值表，然后推导出控制信号的最简表达式</li>
+<li>根据最简表达式构造门电路</li>
+</ul>
+</li>
+</ol>
+<h2 id="二-单周期cpu设计模型">二、单周期CPU设计模型</h2>
+<h4 id="1-指令集功能需求">1、指令集功能需求</h4>
+<img src="http://cos.pansis.site/202404012121637.png/abc123" alt="image-20240401212119728" style="zoom:50%;" />
+<ul>
+<li>存储器(MEM)
+<ul>
+<li>指令存储器只有读取数据（取指令）</li>
+<li>数据存储器既有读取数据又有写入数据</li>
+</ul>
+</li>
+<li>寄存器堆(32个32位寄存器)
+<ul>
+<li>能同时读出rs和rt两个寄存器</li>
+<li>可以写数据至rt或rd寄存器</li>
+</ul>
+</li>
+<li>PC</li>
+<li>下一条指令地址的计算单元 NPC</li>
+<li>扩展立即数：符号/零扩展</li>
+<li>执行运算的计算单元
+<ul>
+<li>Add/Sub/OR</li>
+<li>如何执行beq的比较操作？</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-数据通路的抽象模型">2、数据通路的抽象模型</h4>
+<img src="http://cos.pansis.site/202404012122934.png/abc123" alt="image-20240401212224871" style="zoom:50%;" />
+<h2 id="三-数据通路">三、数据通路</h2>
+<h4 id="1-取指令">1、取指令</h4>
+<p>功能1：PC驱动IM输出指令</p>
+<p>功能2：PC驱动NPC计算下一个PC值</p>
+<h4 id="2-译码读操作数">2、译码/读操作数</h4>
+<p>功能1：IM驱动控制器（图中未画）分析指令的opcode和funct域</p>
+<p>功能2：IM驱动RF读出2个寄存器值</p>
+<h4 id="3-执行">3、执行</h4>
+<p>RF输出的寄存器值驱动ALU完成相应的计算</p>
+<ul>
+<li>算数运算(+，-，*，/)，移位，逻辑(&amp;,|)，比较(slt,==)</li>
+<li>承担计算lw和sw的地址</li>
+</ul>
+<h4 id="4-访存">4、访存</h4>
+<ul>
+<li>lw：DM输入地址后，就输出数据</li>
+<li>sw：DM有2个输入，地址&amp;要写入的数据</li>
+<li>只有lw和sw指令在该环节有实际操作，其他指令不涉及该环节</li>
+</ul>
+<h4 id="5-回写">5、回写</h4>
+<ul>
+<li>操作：写ALU计算结果或数据存储器读出的数据至寄存器堆</li>
+<li>beq、jal、jr、sw不涉及该环节</li>
+</ul>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/jsjzcyl/" class="article-info">
+                                                        计算机组成原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

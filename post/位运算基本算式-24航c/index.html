@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>位运算基本算式-24航c | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="位运算基本算式
+如果同学们难以理解或实现位运算的各种复杂构造，建议大家先掌握下面三个位运算，然后结合条件和循环实现更复杂的位运算操作。
+1、取值
+(n&gt;&gt;i)&amp;1 //提取n的第i位
+
+示例
+打印n的补码（int 类型）..." />
+        <meta name="keywords" content="24航C" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="位运算基本算式-24航c" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="位运算基本算式
+如果同学们难以理解或实现位运算的各种复杂构造，建议大家先掌握下面三个位运算，然后结合条件和循环实现更复杂的位运算操作。
+1、取值
+(n&amp;gt;&amp;gt;i)&amp;amp;1 //提取n的第i位
+
+示例
+打印n的补码（int 类型）...">
+        <meta property="og:url" content="https://github.pansis.site/post/位运算基本算式-24航c/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-10-18">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="位运算基本算式-24航c">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="位运算基本算式-24航c">
+        <meta name="twitter:description" content="位运算基本算式
+如果同学们难以理解或实现位运算的各种复杂构造，建议大家先掌握下面三个位运算，然后结合条件和循环实现更复杂的位运算操作。
+1、取值
+(n&amp;gt;&amp;gt;i)&amp;amp;1 //提取n的第i位
+
+示例
+打印n的补码（int 类型）...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    位运算基本算式-24航c
+                                </h2>
+                                <span class="article-info">
+                                    2024-10-18, 562 words, 3 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="位运算基本算式">位运算基本算式</h2>
+<p>如果同学们难以理解或实现位运算的各种复杂构造，建议大家先掌握下面三个位运算，然后结合条件和循环实现更复杂的位运算操作。</p>
+<h4 id="1-取值">1、取值</h4>
+<pre><code>(n&gt;&gt;i)&amp;1 //提取n的第i位
+</code></pre>
+<p>示例</p>
+<p>打印n的补码（int 类型）</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int main(){
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    for (int i = 31; i &gt;=0; --i) {
+        printf(&quot;%d&quot;,(n&gt;&gt;i)&amp;1);//提取n的第i位
+    }
+}
+</code></pre>
+<p>打印n的补码（long long 类型）</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int main(){
+    long long n;
+    scanf(&quot;%lld&quot;,&amp;n);
+    for (int i = 63; i &gt;=0; --i) {
+        printf(&quot;%lld&quot;,(n&gt;&gt;i)&amp;1);//提取n的第i位
+    }
+}
+</code></pre>
+<h4 id="2-置1">2、置1</h4>
+<pre><code class="language-c">n=n|(1&lt;&lt;i); //对n的第i位置1
+</code></pre>
+<p>示例</p>
+<p>对n的第l到r位置1</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+
+int main(){
+    int n;
+    int l,r;
+    scanf(&quot;%d&quot;,&amp;n);
+    scanf(&quot;%d%d&quot;,&amp;l,&amp;r);
+    //对n的第l到r位置1
+    for (int i = l; i &lt;=r; ++i) {
+        n|=(1&lt;&lt;i);
+    }
+    printf(&quot;%d\n&quot;,n);
+}
+</code></pre>
+<h4 id="3-置0">3、置0</h4>
+<pre><code class="language-c">n=n&amp;(~(1&lt;&lt;i)); //对n的第i位置0
+</code></pre>
+<p>示例</p>
+<p>对n的第l到r位置0</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+
+
+int main(){
+    int n;
+    int l,r;
+    scanf(&quot;%d&quot;,&amp;n);
+    scanf(&quot;%d%d&quot;,&amp;l,&amp;r);
+    //对n的第l到r位置0
+    for (int i = l; i &lt;=r; ++i) {
+        n&amp;=~(1&lt;&lt;i);
+    }
+    printf(&quot;%d\n&quot;,n);
+}
+</code></pre>
+<h4 id="4-打包的函数">4、打包的函数</h4>
+<pre><code class="language-c">int inplace01(int a,int n,int x)  //替换二进制特定位的值,将a的第n位替换成x  //a为要转化的数字，x为替换的值（0或1），n为位数
+{//注意返回值和参数类型，要改成相应的类型，而且1ll也要改成相应的类型（unsigned int是1u，long long 是1ll，int是1）
+
+    if (x==0)
+        a &amp;= (~(1 &lt;&lt; n));   //将a的二进制第n位替换为0
+    else  a|=(1&lt;&lt;n);        //将a的二进制第n位替换为1
+    return a;
+}
+
+int get01(int a,int n)  //提取二进制的特定位，提取a的第n位  //a为提取的数字，n为位数
+{//注意返回值和参数类型，要改成相应的类型，而且1ll也要改成相应的类型（unsigned int是1u，long long 是1ll，int是1）
+    return    a&amp;(1&lt;&lt;n);     
+    //取出a的第n位，返回（若为1，则返回2^n,否则a=0）
+}
+</code></pre>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/24hangc/" class="article-info">
+                                                        24航C
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://github.pansis.site/post/常见问题-24航c1/">
+                                                    <h3 class="post-title">
+                                                        常见问题-24航c
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

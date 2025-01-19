@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>2.1 坐标系 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、力学基础
+1、万有引力定律
+1、定义：两个物体间的引力大 小，与它们的质量乘积成正比，与它们距离的平方成反比
+2、公式：$ F=G \frac{m_1m_2}{r^{2} } $
+二、惯性导航常用的坐标系
+1、引入多个坐标系的原因
+
+通..." />
+        <meta name="keywords" content="惯性导航基础" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="2.1 坐标系" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、力学基础
+1、万有引力定律
+1、定义：两个物体间的引力大 小，与它们的质量乘积成正比，与它们距离的平方成反比
+2、公式：$ F=G \frac{m_1m_2}{r^{2} } $
+二、惯性导航常用的坐标系
+1、引入多个坐标系的原因
+
+通...">
+        <meta property="og:url" content="https://github.pansis.site/post/2.1 坐标系/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-09-14">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="2.1 坐标系">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="2.1 坐标系">
+        <meta name="twitter:description" content="一、力学基础
+1、万有引力定律
+1、定义：两个物体间的引力大 小，与它们的质量乘积成正比，与它们距离的平方成反比
+2、公式：$ F=G \frac{m_1m_2}{r^{2} } $
+二、惯性导航常用的坐标系
+1、引入多个坐标系的原因
+
+通...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    2.1 坐标系
+                                </h2>
+                                <span class="article-info">
+                                    2023-09-14, 1154 words, 5 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-力学基础">一、力学基础</h2>
+<h4 id="1-万有引力定律">1、万有引力定律</h4>
+<p>1、定义：两个物体间的引力大 小，与它们的质量乘积成正比，与它们距离的平方成反比</p>
+<p>2、公式：$ F=G \frac{m_1m_2}{r^{2} } $</p>
+<h2 id="二-惯性导航常用的坐标系">二、惯性导航常用的坐标系</h2>
+<h4 id="1-引入多个坐标系的原因">1、引入多个坐标系的原因</h4>
+<ul>
+<li>通常将一个物体抽象为一个坐标系来表示。一个物体相对于另一个物体的运动，就相当于一个坐标系在空间相对于另一个坐标系的运动。</li>
+<li>在惯导系统中，研究惯性元器件（陀螺仪、 加速度计）、惯性导航系统或运载体的运动时，也是通过两套适当的坐标系之间的关系来实现。</li>
+</ul>
+<h4 id="2-惯性坐标系">2、惯性坐标系</h4>
+<p>1、参考坐标系：一套坐标系与被研究对象相连结，另一套坐标系与选定的参考空间相连结，后者构成了前者运动时的参考坐标系</p>
+<p>2、参考坐标系要求：惯性坐标系（在惯性空间中保持静止或匀速直线运动为参照物构成的参照系。此时，牛二才成立）。</p>
+<p>2、真正的惯性系不存在</p>
+<h4 id="2-太阳中心惯性坐标系s">2、太阳中心惯性坐标系S</h4>
+<p>1、定义：以太阳中心作为坐标系的原点，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">Z_s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>轴垂直于地球公转轨道平面，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">X_s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">Y_s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>轴在地球公转轨道平面，构成右手坐标系</p>
+<p>2、适用性：星际间运载体的导航定位</p>
+<img src="http://cos.pansis.site/202309142236217.png" alt="image-20230914223634132" style="zoom:33%;" />
+<h4 id="3-地心惯性坐标系i">3、地心惯性坐标系i</h4>
+<p>1、定义：以地球地心作为坐标系原点，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">Z_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>轴沿地球自转轴，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mi mathvariant="normal">、</mi><msub><mi>Y</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">X_i、Y_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">、</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>轴在赤道平面，构成右手直角坐标系。</p>
+<p>2、适用性：当研究地球表面附近的载体导航定位问题时，多采用该惯性坐标系。</p>
+<img src="http://cos.pansis.site/202309142239390.png" alt="image-20230914223902334" style="zoom:33%;" />
+<h4 id="4-地球坐标系e">4、地球坐标系e</h4>
+<p>1、定义：以地球地心作为坐标系原点，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">Z_e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>轴沿极轴方向，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">X_e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>轴在赤道平面与本初子午面的交线上，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">Y_e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>轴也在赤道平面上，并构成右手直角坐标系。（随着地球转）</p>
+<img src="http://cos.pansis.site/202309142239150.png" style="zoom: 50%;" />
+<p>2、一年中，地球相对于太阳自转了365+0.25周。转一周（太阳日）是24小时。</p>
+<p>​      一年中，地球相对于恒星自转了366+0.25周。转一周（恒星日）少于24小时。（约为23 小时56分4.09秒）</p>
+<p>​</p>
+<h4 id="5-地理坐标系t">5、地理坐标系t</h4>
+<p>1、定义：以运载体所在的点为原点，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">X_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>轴沿当地纬线指东，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">Y_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>轴沿当地子午线指北，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">Z_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>沿当地地理垂线指上，构成右手直角坐标系。</p>
+<img src="http://cos.pansis.site/202309142243003.png" alt="image-20230914224356949" style="zoom:33%;" />
+<p>2、当地水平面：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">X_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>轴和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">Y_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>轴构成当地水平面</p>
+<p>​       当地子午面：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">Y_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>轴和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">Z_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>轴构成当地子午面</p>
+<p>3、运载体相对地球运动 将相当于地理坐标系相对地 球坐标系运动（转动）。</p>
+<p>4、地理坐标系相对于惯性参考系的转动角速度可分为两部分</p>
+<p>地理坐标系相对于地球坐标系的转动角速度（主要研究）</p>
+<p>地球坐标系相对于惯性参考系的转动角速度</p>
+<h4 id="6-载体坐标系b">6、载体坐标系b</h4>
+<p>1、定义：以运载体所在的点为原点，</p>
+<p>（对于飞机、舰船等巡航式运载体）<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">X_b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>轴沿运载体横轴指右，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">Y_b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>沿运载体纵轴指前，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">Z_b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>沿运载体竖轴，构成右手直角坐标系。</p>
+<img src="http://cos.pansis.site/202309142326750.png" alt="image-20230914232641701" style="zoom:33%;" />
+<h2 id="三-地理坐标系相对于惯性参考系的转动角速度计算">三、地理坐标系相对于惯性参考系的转动角速度计算</h2>
+<h4 id="1-角速度分解">1、角速度分解</h4>
+<p>地理坐标系相对于惯性参考系的转动角速度可分为两部分</p>
+<ul>
+<li>地理坐标系相对于地球坐标系的转动角速度（主要研究）</li>
+<li>地球坐标系相对于惯性参考系的转动角速度</li>
+</ul>
+<h4 id="2-地理坐标系相对于地球坐标系的转动角速度">2、地理坐标系相对于地球坐标系的转动角速度</h4>
+<p>设运载体所在地的纬度为$\varphi $， 航行高度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span></span></span></span>，速度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span> ，航向角为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ψ</mi></mrow><annotation encoding="application/x-tex">\psi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">ψ</span></span></span></span> 。</p>
+<img src="http://cos.pansis.site/202309142255218.png" alt="image-20230914225548181" style="zoom:33%;" />
+<ul>
+<li>将<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span>沿沿地理北向和东向进行分解</li>
+</ul>
+<img src="http://cos.pansis.site/202309142253896.png" alt="image-20230914225348862" style="zoom:33%;" />
+<ul>
+<li>航行速度北向分量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">v_N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+</ul>
+<p>引起地理坐标 系绕平行于地理东-西方向的地心轴相对地球坐标系转动，角速度为<img src="http://cos.pansis.site/202309142254186.png" alt="image-20230914225451146" style="zoom:33%;" /></p>
+<img src="http://cos.pansis.site/202309142255525.png" alt="image-20230914225506495" style="zoom: 50%;" />
+<ul>
+<li>航行速度东向分量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>E</mi></msub></mrow><annotation encoding="application/x-tex">v_E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+</ul>
+<p>引起地理坐标系绕地球坐标系的极轴转动，其角速度</p>
+<img src="http://cos.pansis.site/202309142323208.png" alt="image-20230914232330159" style="zoom:33%;" />
+<p>投影到地理坐标系上</p>
+<img src="http://cos.pansis.site/202309142315399.png" alt="image-20230914231520354" style="zoom: 50%;" />
+<img src="http://cos.pansis.site/202309142324281.png" alt="image-20230914232450237" style="zoom:33%;" />
+<h4 id="3-地球坐标系相对惯性坐标系的运动角速度">3、地球坐标系相对惯性坐标系的运动角速度</h4>
+<p>地球坐标系相对惯性坐标系的转动 是由地球自转（角速度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>w</mi><mrow><mi>i</mi><mi>e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">w_{ie}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>）引起的</p>
+<img src="http://cos.pansis.site/202309142307497.png" alt="image-20230914230737455" style="zoom:33%;" />
+<h4 id="4-总角速度">4、总角速度</h4>
+<img src="http://cos.pansis.site/202309142325110.png" alt="image-20230914232520050" style="zoom: 43%;" />
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/gxdhjc/" class="article-info">
+                                                        惯性导航基础
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

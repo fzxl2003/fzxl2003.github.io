@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>R1 - Solution-23航C | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="R1 - Solution
+A 坐标排序去重输出2024
+
+
+
+难度
+考点
+
+
+
+
+2
+qsort
+
+
+
+题目分析
+这道题第一步读取输入，将输入存入数组中。第二步对数组升序排序。第三步输出数组，输出的同时注意重复项不要输出。
+在数组排序中，..." />
+        <meta name="keywords" content="23航C" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="R1 - Solution-23航C" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="R1 - Solution
+A 坐标排序去重输出2024
+
+
+
+难度
+考点
+
+
+
+
+2
+qsort
+
+
+
+题目分析
+这道题第一步读取输入，将输入存入数组中。第二步对数组升序排序。第三步输出数组，输出的同时注意重复项不要输出。
+在数组排序中，...">
+        <meta property="og:url" content="https://github.pansis.site/post/R1 - Solution-23航C/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-05-10">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="R1 - Solution-23航C">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="R1 - Solution-23航C">
+        <meta name="twitter:description" content="R1 - Solution
+A 坐标排序去重输出2024
+
+
+
+难度
+考点
+
+
+
+
+2
+qsort
+
+
+
+题目分析
+这道题第一步读取输入，将输入存入数组中。第二步对数组升序排序。第三步输出数组，输出的同时注意重复项不要输出。
+在数组排序中，...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    R1 - Solution-23航C
+                                </h2>
+                                <span class="article-info">
+                                    2024-05-10, 4182 words, 21 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h1 id="r1-solution">R1 - Solution</h1>
+<h2 id="a-坐标排序去重输出2024"><code>A</code> 坐标排序去重输出2024</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>qsort</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析">题目分析</h3>
+<p>这道题第一步读取输入，将输入存入数组中。第二步对数组升序排序。第三步输出数组，输出的同时注意重复项不要输出。</p>
+<p>在数组排序中，大家可能会遇到以下两个问题：</p>
+<ul>
+<li>
+<p>使用冒泡排序，结果<code>TLE</code></p>
+<p>当前大家已经学过冒泡排序和 <code>qsort</code>。冒泡排序的时间复杂度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>，而 <code>qsort</code> 的时间复杂度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mo>(</mo><mi>n</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n\log(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span>，显然后者的排序速度更快。因此大家在常规的排序中优先使用 <code>qsort</code>。</p>
+</li>
+<li>
+<p>使用了 <code>qsort</code> ，但<code>cmp</code> 函数是错误的。</p>
+<p>部分 <code>WA</code>  的同学使用下面这种 <code>cmp</code> 函数</p>
+<pre><code class="language-c">int cmp(const void* p1, const void* p2)
+{
+    return *(int *)p1-*(int *)p2;
+}
+</code></pre>
+<p>这个函数看似是可行的，但在某些情况下，这种实现可能会导致错误的结果。</p>
+<p>当两个整数的差值超出了整型变量的范围，就会发生溢出，这可能会导致比较结果不正确。</p>
+<p>因此在编写<code>cmp</code> 函数时，一定不要两个数直接相减，而是采用下面这种比较的方式</p>
+<pre><code class="language-c">int cmp(const void* p1, const void* p2) {  //升序排列
+    int* a = (int*)p1, * b = (int*)p2;
+    if (*a &lt; *b)return -1;
+    else if (*a &gt; *b) return 1;
+    else return 0;
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="示例代码">示例代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int cmp(const void *p1, const void *p2) {  //升序排列
+    int *a = (int *) p1, *b = (int *) p2;
+    if (*a &lt; *b)return -1;
+    else if (*a &gt; *b) return 1;
+    else return 0;
+}
+
+int a[3000000];
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    for (int i = 0; i &lt; n; ++i) {
+        scanf(&quot;%d&quot;, &amp;a[i]);
+
+    }
+    qsort(a, n, sizeof(int), cmp);
+    int old = a[0];
+    printf(&quot;%d &quot;, a[0]);
+    for (int i = 1; i &lt; n; ++i) {
+        if (old == a[i]) continue; //如果当前数和上一个数相同，就不输出
+        printf(&quot;%d &quot;, a[i]);
+        old = a[i];
+    }
+}
+</code></pre>
+<h2 id="b-理论力学解方程"><code>B</code> 理论力学解方程</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>知识点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>二分，函数，循环</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-2">题目分析</h3>
+<p>Hint中已给出提示，要求解零点的函数为单调函数。我们使用二分法求零点即可。</p>
+<p>注意 <code>l</code> ， <code>r</code> 的初始值以及精度要求。题干中要求的是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 的精度要小于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>6</mn></mrow></msup></mrow><annotation encoding="application/x-tex">10^{-6}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></span> ，并非 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span> 的精度。故二分结束的条件为  <code>r - l &gt;= eps</code> 并非  <code>fabs(f(n,mid))&lt;eps</code> 。</p>
+<p>将二分和级数方程封装成函数，会使代码逻辑更清晰。</p>
+<h3 id="示例代码-2">示例代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+#define eps 1e-9//二分速度很快，精度稍高也无不妥
+double f(int n, double x){//函数值
+    double sum = 0.0;
+    for (int k=0; k&lt;=n; k++)
+        sum += 2/sqrt(1+(k/x)*(k/x));
+    sum -= (n+1.5);
+    return sum;
+}
+double binFind(double l, double r, int n){//二分
+    double mid = (l + r) / 2;
+    while (r - l &gt;= eps) {//注意精度是x的精度不是f(x)的精度
+        double y = f(n, mid);
+        if (y&gt;0)
+            r = mid;
+        else
+            l = mid;
+        mid = (l + r) / 2;
+    }
+    return mid;
+}
+int main(){
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    printf(&quot;%.6lf&quot;, binFind(0, 1000000, n));
+}
+</code></pre>
+<h2 id="c-最小的k个数"><code>C</code> 最小的K个数</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-3">题目分析</h3>
+<p>• https://visualgo.net/zh/sorting 可以前往这个网站观看各类排序的过程。</p>
+<p>在进行从大到小的冒泡排序的第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 轮，会把最小的数放在位置 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 轮，会把第二小的数放在位置 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n - 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，因此进行 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span></span></span></span> 轮冒泡排序即可得到前 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span></span></span></span> 小的数。具体见示例代码 1。</p>
+<p>也可使用选择排序的思路，进行从小到大的选择排序，第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 轮，会把最小的数放在位置 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 轮，会把第二小的数放在位置 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>，进行 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span></span></span></span> 轮，同样可以得到前 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span></span></span></span>​ 小的数。</p>
+<p>还可以使用插入排序的思路，维护一个最大大小为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">K+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的升序数组 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><msub><mi>a</mi><mn>0</mn></msub><mo separator="true">,</mo><msub><mi>a</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><msub><mi>a</mi><mi>K</mi></msub><mo>]</mo></mrow><annotation encoding="application/x-tex">[a_0,a_1,\cdots,a_K]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span>，每次读入一个数直接替换掉其中最大的数，然后再将其插入到前面正确的位置，具体见示例代码 2。</p>
+<p>本题使用 <code>qsort</code> 函数进行排序会超时，因为无需排序整个数组。但是也可以使用快速排序的思想实现本题（但有些大材小用），具体见示例代码 3。</p>
+<h3 id="示例代码-1-冒泡排序">示例代码 1 冒泡排序</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#define N 1000005
+int a[N];
+int main() {
+    int n, K;
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;K);
+    for(int i = 1; i &lt;= n; i ++)
+        scanf(&quot;%d&quot;, &amp;a[i]);
+    for(int i = 1; i &lt;= K; i ++)
+        for(int j = 1; j &lt;= n - i; j ++)
+            if(a[j] &lt; a[j + 1]) {
+                int t = a[j];
+                a[j] = a[j + 1]; 
+                a[j + 1] = t;
+            }
+    for(int i = 0; i &lt; K; i ++)
+        printf(&quot;%d &quot;, a[n - i]);
+    return 0;
+}
+</code></pre>
+<h3 id="示例代码-2-插入排序">示例代码 2 插入排序</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+	int n, K;
+	int a[6], num = 0; // num记录当前有效数据的个数
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;K);
+	for(int i = 0; i &lt; n; i++)
+	{
+		scanf(&quot;%d&quot;, &amp;a[num]);
+		for(int j = num - 1; j &gt;= 0; j--)
+			if(a[j] &gt; a[j + 1])
+			{
+				int temp = a[j];
+				a[j] = a[j + 1];
+				a[j + 1] = temp;
+			}
+		if(num &lt; K) num++;
+	}
+	for(int i = 0; i &lt; K; i++)
+		printf(&quot;%d &quot;, a[i]);
+	return 0;
+}
+</code></pre>
+<h3 id="示例代码-3-快速排序">示例代码 3 快速排序</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int a[1000005], n, k;
+//仅供参考，快速排序选择轴值的时候没有随机选择，因此在某些极端数据的情况下可能会退化造成超时
+void f(int l, int r)
+{
+	int x = l, y = r;
+	while(l &lt; r)
+	{
+		while(l &lt; r &amp;&amp; a[r] &gt;= a[l]) r--;
+		int t = a[l];
+		a[l] = a[r];
+		a[r] = t;
+		while(l &lt; r &amp;&amp; a[l] &lt; a[r]) l++;
+		t = a[l];
+		a[l] = a[r];
+		a[r] = t;
+	}
+	if(l &gt; x) f(x, l - 1);
+	if(l &lt; k) f(l + 1, y);
+}
+int main()
+{
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;k);
+	for(int i = 1; i &lt;= n; ++i)
+		scanf(&quot;%d&quot;, &amp;a[i]);
+	f(1, n);
+	for(int i = 1; i &lt;= k; ++i)
+		printf(&quot;%d &quot;, a[i]);
+	return 0;
+}
+</code></pre>
+<h2 id="d-排序-int"><code>D</code> 排序 int</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td><code>qsort</code> 多关键字排序一维数组</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目描述">题目描述</h3>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mi>o</mi><mi>p</mi><mi>c</mi><mi>o</mi><mi>u</mi><mi>n</mi><mi>t</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">popcount(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">p</span><span class="mord mathdefault">o</span><span class="mord mathdefault">p</span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span> 表示 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 的32位补码中数码 1 的个数，排序规则为：</p>
+<ol>
+<li>以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mi>o</mi><mi>p</mi><mi>c</mi><mi>o</mi><mi>u</mi><mi>n</mi><mi>t</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">popcount(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">p</span><span class="mord mathdefault">o</span><span class="mord mathdefault">p</span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span> 为第一关键字升序排列；</li>
+<li>以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 为第二关键字降序排列。</li>
+</ol>
+<p>实现 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mi>o</mi><mi>p</mi><mi>c</mi><mi>o</mi><mi>u</mi><mi>n</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">popcount</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80952em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mord mathdefault">o</span><span class="mord mathdefault">p</span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span></span></span></span> 函数，利用其实现自定义比较函数 <code>cmp</code>，调用 <code>qsort</code> 排序即可。</p>
+<h3 id="示例代码-3">示例代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int popcount(int x)
+{
+	int sum = 0;
+	for(int i = 0; i &lt; 32; ++i)
+		sum += x &gt;&gt; i &amp; 1;
+	return sum;
+}
+int cmp(const void *p, const void *q)
+{
+	int x = *(int *)p, y = *(int *)q;
+	int cntx = popcount(x), cnty = popcount(y);
+	if(cntx &gt; cnty) return 1;
+	if(cntx &lt; cnty) return -1;
+	if(y &gt; x) return 1;
+	if(y &lt; x) return -1;
+	return 0;
+}
+int a[100000];
+int main()
+{
+	int n;
+	scanf(&quot;%d&quot;, &amp;n);
+	for(int i = 0; i &lt; n; ++i)
+		scanf(&quot;%d&quot;, &amp;a[i]);
+	qsort(a, n, sizeof(int), cmp);
+	for(int i = 0; i &lt; n; ++i)
+		printf(&quot;%d %d\n&quot;, a[i], popcount(a[i]));
+	return 0;
+}
+</code></pre>
+<h2 id="e-第一次最后一次"><code>E</code> 第一次，最后一次</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>二分查找</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-4">题目分析</h3>
+<p>完成上下界的二分查找即可，详见示例代码，如果不会写也可以学习示例代码，以后直接视情况复制粘贴即可。</p>
+<h3 id="示例代码-1">示例代码 1</h3>
+<p>手写二分，直接根据ppt上的代码模板修改即可。</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+int a[1000005];
+int binFind1(int b[], int key,
+             int low, int high) {//寻找下界
+	int mid;
+	while ( low &lt;= high ) { //还有要查找的元素
+		mid = (low + high) / 2; //中间位置
+		if ( key == b[mid] &amp;&amp; key != b[mid - 1]) //找到了，退出
+			return mid;
+		else if (key == b[mid] &amp;&amp; key == b[mid - 1])
+		//找到相同值的了，但不是下界
+			high = mid - 1;
+		else if (key &lt; b[mid])//前半部分查找
+			high = mid - 1;
+		else //后半部分查找
+			low = mid + 1;
+	}
+	return -1;//没找到
+}
+int binFind2(int b[], int key,
+             int low, int high) {//寻找上界
+	int mid;
+	while ( low &lt;= high ) { //还有要查找的元素
+		mid = (low + high) / 2; //中间位置
+		if ( key == b[mid] &amp;&amp; key != b[mid + 1]) //找到了，退出
+			return mid;
+		else if (key == b[mid] &amp;&amp; key == b[mid + 1])
+		//找到相同值的了，但不是上界
+			low = mid + 1;
+		else if (key &lt; b[mid])//前半部分查找
+			high = mid - 1;
+		else //后半部分查找
+			low = mid + 1;
+	}
+	return -1;//没找到
+}
+int main() {
+	int m, n;
+	scanf(&quot;%d%d&quot;, &amp;m, &amp;n);
+	a[0]=-2147483648;//下界规定，防止越界
+	for (int i = 1; i &lt;= m; i++) {
+		scanf(&quot;%d&quot;, &amp;a[i]);
+	}
+	a[m+1]=2147483647;//上界规定，防止越界
+	for (int i = 1; i &lt;= n; i++) {
+		int x, y;
+		scanf(&quot;%d%d&quot;, &amp;x, &amp;y);
+		if (y == 1) {
+			int ans = binFind1(a, x, 1, m);
+			printf(&quot;%d\n&quot;, ans);
+		} else {
+			int ans = binFind2(a, x, 1, m);
+			printf(&quot;%d\n&quot;, ans);
+		}
+	}
+}
+</code></pre>
+<h3 id="示例代码-2">示例代码 2</h3>
+<p>利用库函数 <code>bsearch</code> 完成操作，该方法较难，不要求掌握，也不如自己写方便。</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int a[1000000];
+int m, n;
+int lower(const void *p, const void *q)
+{
+	if(*(int *)p &gt; *(int *)q) return 1;
+	else if(q == a || *(int *)p &gt; *((int *)q - 1)) return 0;
+	else return -1;
+}
+int upper(const void *p, const void *q)
+{
+	if(*(int *)p &lt; * (int *)q) return -1;
+	else if((int *)q - a == m - 1 || *(int *)p &lt; * ((int *)q + 1)) return 0;
+	else return 1;
+}
+int (*cmp[2]) (const void *, const void *) = {&amp;lower, &amp;upper};
+int main()
+{
+	scanf(&quot;%d%d&quot;, &amp;m, &amp;n);
+	for(int i = 0; i &lt; m; ++i)
+		scanf(&quot;%d&quot;, &amp;a[i]);
+	while(n--)
+	{
+		int x, y;
+		scanf(&quot;%d%d&quot;, &amp;x, &amp;y);
+		int *p = (int *)bsearch(&amp;x, a, m, sizeof(int), cmp[y -  1]);
+		printf(&quot;%d\n&quot;, p &amp;&amp; *p == x ? p - a + 1 : -1);
+	}
+	return 0;
+}
+</code></pre>
+<h2 id="f-无序查找-10"><code>F</code> 无序查找 1.0</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td><code>qsort</code> 和上下界二分</td>
+</tr>
+</tbody>
+</table>
+<h3 id="问题分析">问题分析</h3>
+<p>题目给定了一个无序序列，若使用顺序查找，时间复杂度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nt)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mclose">)</span></span></span></span>，不能通过本题。</p>
+<p>考虑排序后使用二分查找，其中 <code>qsort</code> 平均时间复杂度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>，二分查找的时间复杂度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>t</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(t\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>，可以通过本题。</p>
+<p>注意二分查找需使用 E 题中的上下界二分查找方法，计算上下界的差值即可得到答案。</p>
+<h3 id="参考代码">参考代码</h3>
+<pre><code class="language-C">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int n, t, k, a[100005];
+
+int mycomp(const void *p1, const void *p2)
+{
+	const int *a1 = (const int *)p1;
+	const int *a2 = (const int *)p2;
+	if (*a1 &lt; *a2)
+		return -1;
+	if (*a1 == *a2)
+		return 0;
+	return 1;
+}
+
+int left_bound(int nums[], int n, int target)
+{
+	int left = 0, right = n - 1;
+	while (left &lt;= right)
+	{
+		int mid = left + (right - left) / 2;
+		if (nums[mid] &lt; target)
+			left = mid + 1;
+		else if (nums[mid] &gt; target)
+			right = mid - 1;
+		else if (nums[mid] == target)
+			right = mid - 1;
+	}
+	if (left &gt;= n || nums[left] != target)
+		return -1;
+	return left;
+}
+
+int right_bound(int nums[], int n, int target)
+{
+	int left = 0, right = n - 1;
+	while (left &lt;= right)
+	{
+		int mid = left + (right - left) / 2;
+		if (nums[mid] &lt; target)
+			left = mid + 1;
+		else if (nums[mid] &gt; target)
+			right = mid - 1;
+		else if (nums[mid] == target)
+			left = mid + 1;
+	}
+	if (right &lt; 0 || nums[right] != target)
+		return -2;
+	return right;
+}
+
+int main()
+{
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;t);
+	for (int i = 0; i &lt; n; ++i)
+		scanf(&quot;%d&quot;, &amp;a[i]);
+	qsort(a, n, sizeof(int), mycomp);
+	while (t--)
+	{
+		scanf(&quot;%d&quot;, &amp;k);
+		printf(&quot;%d\n&quot;, right_bound(a, n, k) - left_bound(a, n, k) + 1);
+	}
+	return 0;
+}
+</code></pre>
+<h2 id="g-无序查找-20"><code>G</code> 无序查找 2.0</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>桶排序</td>
+</tr>
+</tbody>
+</table>
+<h3 id="问题分析-2">问题分析</h3>
+<p>由 F 题和本题数据范围可知，排序和二分查找的总体时间复杂度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>，空间复杂度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>，对于本题的时空限制，已无法通过。</p>
+<p>注意到本题 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 的范围很小，考虑使用数组下标表示 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，数组元素表示值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 的个数。因为下标可能为负数，所以将下标整体加上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 的下界即可。</p>
+<h3 id="参考代码-2">参考代码</h3>
+<pre><code class="language-C">#include &lt;stdio.h&gt;
+
+int n, t, a[2005], k;
+
+int main()
+{
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;t);
+	while (n--)
+	{
+		scanf(&quot;%d&quot;, &amp;k);
+		a[k + 1000]++;
+	}
+	while (t--)
+	{
+		scanf(&quot;%d&quot;, &amp;k);
+		printf(&quot;%d\n&quot;, a[k + 1000]);
+	}
+	return 0;
+}
+</code></pre>
+<h2 id="h-小宇的字符串排序"><code>H</code> 小宇的字符串排序</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>二维数组 循环</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-5">题目分析</h3>
+<p>在数组中，实现二维数组的交换是十分耗时的，因此建议在本题中 <code>qsort</code> 排序只排序字符串的索引，而非字符串本身，这样就可以实现排序的每一次字符串交换只交换两个 <code>int</code> 变量。</p>
+<p>对于字符串升序排列，在 <code>cmp</code> 函数中直接 <code>return strcmp(str[*a],str[*b])</code> 即可（此处变量 <code>a</code> 和 <code>b</code> 均为索引数组 <code>index1</code> 对应的元素指针，需要根据代码情况灵活更改）。</p>
+<p>Tips：每次使用 <code>qsort</code> 函数，会调用很多次 <code>cmp</code> 函数，强烈不建议在 <code>cmp</code> 函数中引入 <code>strlen</code> 函数。为了减少排序时间，防止 <code>TLE</code> ，建议提前将字符串长度计算好，直接用于排序。此题并没有卡大家这个问题，但大家最好多加注意。</p>
+<h3 id="示例代码-4">示例代码</h3>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+char str[100000][105];
+int len[100000];
+int index1[100000];
+
+int cmp(const void *p1, const void *p2) {
+    int *a = (int *) p1, *b = (int *) p2;
+    if (len[*a] &lt; len[*b])return 1;//字符串长度降序
+    else if (len[*a] &gt; len[*b]) return -1;
+    return strcmp(str[*a], str[*b]);//字典序升序
+}
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    getchar();
+    for (int i = 0; i &lt; n; ++i) {
+        gets(str[i]);//读取字符串
+        len[i] = strlen(str[i]);//计算字符串长度，避免在cmp函数中重复计算长度
+        index1[i] = i;//创建字符串索引
+    }
+    qsort(index1, n, sizeof(int), cmp);//根据要求，排列字符串索引
+    for (int i = 0; i &lt; n; ++i) {//根据索引顺序，输出字符串
+        printf(&quot;%s\n&quot;, str[index1[i]]);
+    }
+    return 0;
+}
+</code></pre>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>u</mi><mi>t</mi><mi>h</mi><mi>o</mi><mi>r</mi><mi mathvariant="normal">：</mi><mi>p</mi><mi>y</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">Author：pyh</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord cjk_fallback">：</span><span class="mord mathdefault">p</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord mathdefault">h</span></span></span></span></p>
+<h2 id="i-oj排行榜"><code>I</code> OJ排行榜</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>多关键字排序</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-6">题目分析</h3>
+<p>排序规则很简单，难点在于每个参赛者信息有字符串、浮点数和整数三种类型，无法用二维数组存储然后对二维数组排序。</p>
+<h4 id="思路一排序下标数组">思路一：排序下标数组</h4>
+<p>那我们可以用一个数组记录每个参赛者的下标，相当于人为给他们进行了编号，排序时不排序参赛者本身，而是对他们的编号排序，最后按照排序过后的编号顺序输出。</p>
+<h4 id="思路二排序结构体数组">思路二：排序结构体数组</h4>
+<p>使用结构体数组进行排序。具体见示例代码 2。</p>
+<h3 id="示例代码-1-2">示例代码 1</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#define eps 1e-6
+
+char name[100005][16];
+double score[100005];
+int time[100005];
+int id[100005];
+
+int cmp(const void *p, const void *q)
+{
+	int a = *(int*)p;
+	int b = *(int*)q;
+	if(score[a] - score[b] &gt; eps) return -1;
+	else if(score[a] - score[b] &lt; -eps) return 1;
+	else if(time[a] &gt; time[b]) return 1;
+	else if(time[a] &lt; time[b]) return -1;
+	else return 0;
+}
+
+int main()
+{
+	int n = 0;
+	while(~scanf(&quot;%s%lf%d&quot;, name[n], &amp;score[n], &amp;time[n]))
+	{
+		id[n] = n;
+		++n;
+	}
+	qsort(id, n, sizeof(int), cmp);
+	for(int i = 0; i &lt; n; ++i)
+		printf(&quot;%10s %8.2f %10d\n&quot;, name[id[i]], score[id[i]], time[id[i]]);
+	return 0;
+}
+</code></pre>
+<h3 id="示例代码-2-2">示例代码 2</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#define eps 1e-6
+typedef struct _Student
+{
+	char name[16];
+	double score;
+	int time;
+} Student;
+int cmp(const void *p, const void *q)
+{
+	Student a = *(Student*)p;
+	Student b = *(Student*)q;
+	if(a.score - b.score &gt; eps) return -1;
+	else if(a.score - b.score &lt; -eps) return 1;
+	else if(a.time &gt; b.time) return 1;
+	else if(a.time &lt; b.time) return -1;
+	else return 0;
+}
+Student a[100005];
+int main()
+{
+	int n = 0;
+	while(~scanf(&quot;%s%lf%d&quot;, a[n].name, &amp;a[n].score, &amp;a[n].time))
+		n++;
+	qsort(a, n, sizeof(Student), cmp);
+	for(int i = 0; i &lt; n; ++i)
+		printf(&quot;%10s %8.2f %10d\n&quot;, a[i].name, a[i].score, a[i].time);
+	return 0;
+}
+</code></pre>
+<h2 id="j-simon数星星"><code>J</code> Simon数星星</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>结构体，快速排序，<code>strcmp</code>函数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-7">题目分析</h3>
+<p>自定义结构体的排序规则，通过 <code>qsort</code> 函数进行排序即可。</p>
+<p>注意字典序比较的时候需要使用 <code>strcmp</code> 函数，该函数会在前一个字符串字典序靠前时返回负值，在后一个字符串字典序靠前时返回正值，正好可以作为 <code>qsort</code> 所需要的 <code>cmp</code> 函数的返回值使用。</p>
+<p><strong>特别注意要优先进行浮点数判等的过程，避免两个距离相等的情况被错误识别为了大于或者小于</strong>。</p>
+<h3 id="ac代码">AC代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+#include &lt;string.h&gt;
+#define eps 1e-9
+typedef struct starnode{
+    double x, y, z;
+    char name[30];
+} star;
+double calDis(double x, double y, double z){//距离计算函数
+    return sqrt(x*x+y*y+z*z);
+}
+int cmp(const void *aa, const void *bb){//qsort自定义比较函数
+    star *a=(star*)aa, *b=(star*)bb;
+    double disA=calDis(a-&gt;x, a-&gt;y, a-&gt;z), disB=calDis(b-&gt;x, b-&gt;y, b-&gt;z);
+    if (fabs(disA-disB)&lt;eps)//优先判等
+        return strcmp(a-&gt;name, b-&gt;name);//距离相等时比较字典序
+    else if (disA&lt;disB)
+        return -1;
+    else
+        return 1;
+}
+star s[100005];
+int main(){
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    for (int i=0; i&lt;n; i++)
+        scanf(&quot;%s %lf %lf %lf&quot;, s[i].name, &amp;s[i].x, &amp;s[i].y, &amp;s[i].z);
+    qsort(s, n, sizeof(star), cmp);
+    for (int i=0; i&lt;n; i++)
+        printf(&quot;%s\n&quot;, s[i].name);
+}
+</code></pre>
+<p><em>Author: Simon</em></p>
+<h1 id="-end-">- End -</h1>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/24hc/" class="article-info">
+                                                        23航C
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

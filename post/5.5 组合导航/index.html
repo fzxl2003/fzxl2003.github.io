@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>5.5 组合导航 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、组合导航
+1、组合导航的优势
+
+互补、超越
+冗余、可靠
+低成本
+
+2、组合导航方法
+信息融合
+
+加权最小二乘信息融合方法
+卡尔曼滤波信息融合方法
+模糊逻辑法
+神经网络方法
+
+二、惯性/卫星组合
+1、组合模式分类
+根据组合结构、信息交换及..." />
+        <meta name="keywords" content="惯性导航基础" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="5.5 组合导航" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、组合导航
+1、组合导航的优势
+
+互补、超越
+冗余、可靠
+低成本
+
+2、组合导航方法
+信息融合
+
+加权最小二乘信息融合方法
+卡尔曼滤波信息融合方法
+模糊逻辑法
+神经网络方法
+
+二、惯性/卫星组合
+1、组合模式分类
+根据组合结构、信息交换及...">
+        <meta property="og:url" content="https://github.pansis.site/post/5.5 组合导航/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-12-24">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="5.5 组合导航">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="5.5 组合导航">
+        <meta name="twitter:description" content="一、组合导航
+1、组合导航的优势
+
+互补、超越
+冗余、可靠
+低成本
+
+2、组合导航方法
+信息融合
+
+加权最小二乘信息融合方法
+卡尔曼滤波信息融合方法
+模糊逻辑法
+神经网络方法
+
+二、惯性/卫星组合
+1、组合模式分类
+根据组合结构、信息交换及...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    5.5 组合导航
+                                </h2>
+                                <span class="article-info">
+                                    2023-12-24, 576 words, 3 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-组合导航">一、组合导航</h2>
+<h4 id="1-组合导航的优势">1、组合导航的优势</h4>
+<ul>
+<li>互补、超越</li>
+<li>冗余、可靠</li>
+<li>低成本</li>
+</ul>
+<h4 id="2-组合导航方法">2、组合导航方法</h4>
+<p>信息融合</p>
+<ul>
+<li>加权最小二乘信息融合方法</li>
+<li>卡尔曼滤波信息融合方法</li>
+<li>模糊逻辑法</li>
+<li>神经网络方法</li>
+</ul>
+<h2 id="二-惯性卫星组合">二、惯性/卫星组合</h2>
+<h4 id="1-组合模式分类">1、组合模式分类</h4>
+<p>根据<strong>组合结构、信息交换及组合程度</strong>的不同</p>
+<ul>
+<li>松组合</li>
+<li>紧组合</li>
+<li>超紧组合</li>
+<li>深组合</li>
+</ul>
+<img src="http://cos.pansis.site/202312241307437.png/abc123" alt="image-20231224130718293" style="zoom:40%;" />
+<h4 id="2-松组合">2、松组合</h4>
+<p>1、基本原理</p>
+<ul>
+<li>SINS与 GNSS独立工作。</li>
+<li>当GNSS正常工作时，利用GNSS输出的<strong>位置、速度信息</strong>通过 <strong>Kalman滤波</strong> <strong>估计并校正</strong>SINS误差。</li>
+<li>当GNSS不可用时，SINS单独工作。</li>
+</ul>
+<p>2、存在的问题</p>
+<ul>
+<li>存在级联滤波问题，降低组合导航精度。</li>
+<li>当卫星数量少于4颗时退化为纯SINS解算模式，导航系统性能恶化</li>
+</ul>
+<h4 id="3-紧组合">3、紧组合</h4>
+<p>1、紧组合模式相较于松组合模式的优点</p>
+<ul>
+<li>避免了级联滤波问题，组合导航精度显著提高</li>
+<li>当导航卫星数量不足四颗时，也可进行组合导航</li>
+</ul>
+<p>2、紧组合将GNSS原始的<strong>伪距、伪距率</strong>送入Kalman滤波器中信息融合。</p>
+<p>作用：克服了松组合中量测噪声的时间相关性问题，提高了导航精度；当可用星数不足四颗时，也可进行组合导航。</p>
+<h4 id="4-超紧组合">4、超紧组合</h4>
+<p>1、除了采用<strong>伪距、伪距率</strong>组合外，超紧组合系统还利用<strong>SINS输出的速度</strong>等信息来<strong>辅助GNSS的跟踪环路</strong>。</p>
+<h2 id="三-惯性天文组合导航">三、惯性/天文组合导航</h2>
+<h4 id="1-组合模式分类-2">1、组合模式分类</h4>
+<ul>
+<li>SINS/CNS简单组合导航模式</li>
+<li>基于陀螺仪漂移校正的SINS/CNS组合导航模式</li>
+<li>SINS/CNS深组合导航模式</li>
+<li>基于全面最优校正的SINS/CNS组合导航模式</li>
+</ul>
+<h2 id="四-信息融合">四、信息融合</h2>
+<h4 id="1-分类">1、分类</h4>
+<p>① 随机类融合</p>
+<p>这类融合方法是以<strong>数理统计</strong>为基础，通过某种<strong>最优化准则</strong>进行传感器数据处理，获得信息融合结果。</p>
+<ul>
+<li>最小二乘估计</li>
+<li>卡尔曼滤波</li>
+<li>贝叶斯估计</li>
+<li>统计决策理论</li>
+</ul>
+<p>② 智能型融合</p>
+<p>神经网络辅助组合导航系统的工作方式可分为<strong>训练模式</strong>与<strong>预测模式</strong></p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/gxdhjc/" class="article-info">
+                                                        惯性导航基础
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

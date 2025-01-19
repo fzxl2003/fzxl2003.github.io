@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>C1讲解-23航c | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="A 愿此行，终抵群星！
+c语言程序基本结构
+#include &lt;stdio.h&gt;                      //引用头文件
+int main()         //main函数 程序的开始   int代表函数返..." />
+        <meta name="keywords" content="23航C" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="C1讲解-23航c" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="A 愿此行，终抵群星！
+c语言程序基本结构
+#include &amp;lt;stdio.h&amp;gt;                      //引用头文件
+int main()         //main函数 程序的开始   int代表函数返...">
+        <meta property="og:url" content="https://github.pansis.site/post/c1-jiang-jie-23-hang-c/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-03-07">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="C1讲解-23航c">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="C1讲解-23航c">
+        <meta name="twitter:description" content="A 愿此行，终抵群星！
+c语言程序基本结构
+#include &amp;lt;stdio.h&amp;gt;                      //引用头文件
+int main()         //main函数 程序的开始   int代表函数返...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    C1讲解-23航c
+                                </h2>
+                                <span class="article-info">
+                                    2024-03-07, 1839 words, 9 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h1 id="a-愿此行终抵群星"><code>A</code> 愿此行，终抵群星！</h1>
+<h3 id="c语言程序基本结构">c语言程序基本结构</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;                      //引用头文件
+int main()         //main函数 程序的开始   int代表函数返回值为整形
+{   
+    printf(&quot;Hello，world&quot;);      //printf()函数
+    return 0;//返回值,函数结束位置，main返回值为0代表程序正常结束，否则为异常结束
+}
+
+</code></pre>
+<h3 id="题解">题解</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main()
+{
+	printf(&quot;May this journey lead us starward.&quot;);
+	return 0;
+}
+</code></pre>
+<h1 id="b-求矩形面积123456"><code>B</code> 求矩形面积123456</h1>
+<h3 id="scanf函数">scanf函数</h3>
+<p>1.库： #include &lt;stdio.h&gt;<br>
+2.常见用法：scanf(&quot;格式说明字符串&quot;,&amp;&lt;变量&gt;,&lt;字符数组&gt;.....)</p>
+<pre><code class="language-c">scanf(&quot;%d%lld&quot;,&amp;n,&amp;m);
+</code></pre>
+<p>​         &amp;&lt;变量&gt;  代表该变量的地址   格式说明字符串中只能含有%d等说明符，其他的不要加，可能出现意想不到的问题<br>
+​         &lt;字符数组&gt; 不需要加&amp;，本身就代表数组的地址    返回读取变量的个数</p>
+<p>3.scanf()常用字段类型说明符  例2-8<br>
+<strong>%d： － 以十进制方式输入带标记整数                  int 十进制</strong><br>
+<strong>%u： － 以十进制方式输入无符号整数                  int 十进制</strong><br>
+%x   — 以十六进制方式输入整数                     int 十六进制<br>
+%o： － 以八进制方式输入整数                       int 八进制<br>
+%f： － 单精度实数；                              float<br>
+<strong>%lf：－ 双精度实数；                              double</strong><br>
+<strong>%c： － 输出单个字符；                           char</strong><br>
+<strong>%s： － 输出字符串。</strong><br>
+<strong>%llu  以十进制方式输入unsigned long long        unsigned long long</strong><br>
+<strong>%lld  -以十进制方式输入长整型          long long</strong><br>
+%hhd   获取signed char</p>
+<p><strong>空格  -读取接下来的空格，并作废（用于在读入字符前清除空格）（格式化字符串末尾不能用空格和\n）</strong></p>
+<img src="http://cos.pansis.site/202403071233559.png/abc123" alt="image-20240307123307454" style="zoom:50%;" />
+<p>输入</p>
+<pre><code class="language-c">2 3 4
+5
+</code></pre>
+<pre><code class="language-c">scanf(&quot;%d%d%d%d&quot;,&amp;a,&amp;b,&amp;c,&amp;d)
+//a=2 b=3 c=4 d=5
+</code></pre>
+<h3 id="printf函数">printf函数</h3>
+<p>1.库： #include &lt;stdio.h&gt;</p>
+<p>2.常见用法： printf(&quot;格式说明字符串&quot;,...,...,...);<br>
+....为参数表，与字符串中的%一一对应<br>
+3.printf()常用字段类型说明符  例2-8<br>
+<strong>%d： － 以十进制方式输出带标记整数（正数默认不输出标记）； int 十进制</strong><br>
+<strong>%u： － 以十进制方式输出无标记整数；                   unsigned int 十进制</strong><br>
+%x   — 以十六进制方式输出整数                        int 十六进制<br>
+%o： － 以八进制方式输出整数                         int 八进制<br>
+<strong>%f： － 以小数方式输出单、双精度实数；                 double 小数方式</strong><br>
+%e： － 以指数方式输出单、双精度实数；                 double 科学计数法<br>
+%g： － 以%f，%e中较短的输出宽度输出单、双精度实数；     double<br>
+<strong>%c： － 输出单个字符；                              char</strong><br>
+<strong>%s： － 输出字符串。                                char</strong>*<br>
+//%s对应的参数实质上是字符串第一个字符对应的指针，当printf输出到'\0'时停止输出该字符串<br>
+<strong>%lld  -以十进制方式输入长整型    long long</strong></p>
+<p><strong>%llu  以十进制方式输出unsigned long long        unsigned long long</strong></p>
+<p>4.完整的字段说明序列<br>
+%+d<br>
+%[flags] [width] [.precision] type<br>
+flags 格式标志 width字段宽度 .precision精度 type类型(必填)<br>
+5.flags 格式标志<br>
+标志                  意义                                                                 缺省</p>
+<p>-                   结果左对齐，右边填空格                                 结果右对齐<br>
++                   在有符号的数据前输出标记(正号或负号)        只对负数加符号<br>
+0                   数据在字段宽度内加前导0                              不加前导0<br>
+#                   对八进制和十六进制数（o,x,X）显现前缀O,Ox   不加前缀<br>
+6.width字段宽度<br>
+在%与字母之间  插入  整数  代表该字段的最小宽度</p>
+<p>7.precision精度<br>
+在%与字母之间  插入  小数  代表要保留的小数位数</p>
+<p><strong>%.1f  //输出保留一位小数</strong></p>
+<p><strong>%.2f  //输出保留二位小数   (位数不足以零补位)</strong></p>
+<h3 id="题解-2">题解</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+    double xa, ya, xb, yb, area;
+    scanf(&quot;%lf %lf %lf %lf&quot;, &amp;xa, &amp;ya, &amp;xb, &amp;yb);
+    area=(xa-xb)*(ya-yb);
+    printf(&quot;%.2lf&quot;, area);
+}
+</code></pre>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+    double xa, ya, xb, yb;
+    scanf(&quot;%lf %lf %lf %lf&quot;, &amp;xa, &amp;ya, &amp;xb, &amp;yb);
+    printf(&quot;%.2lf&quot;, (xa-xb)*(ya-yb));
+}
+</code></pre>
+<h1 id="c-整除div"><code>C</code> 整除div</h1>
+<h3 id="不定组输入">不定组输入</h3>
+<h4 id="scanf返回值说明">scanf返回值说明</h4>
+<p>scanf()函数返回成功赋值的数据项数，读到文件末尾而没有数据时返回 EOF(-1)。</p>
+<p>输入</p>
+<pre><code class="language-c">2 3 4
+5
+</code></pre>
+<pre><code class="language-c">e=scanf(&quot;%d%d%d%d&quot;,&amp;a,&amp;b,&amp;c,&amp;d)
+//a=2 b=3 c=4 d=5
+//e=4
+</code></pre>
+<p>输入</p>
+<pre><code class="language-c">2 3 4&lt;文件尾&gt;
+</code></pre>
+<pre><code class="language-c">e=scanf(&quot;%d%d%d&quot;,&amp;a,&amp;b,&amp;c)
+//a=2 b=3 c=4 d=5 
+//e=3
+e=scanf(&quot;%d%d%d&quot;,&amp;a,&amp;b,&amp;c)
+//e=-1       (EOF)
+</code></pre>
+<h4 id="不定组输入-2">不定组输入</h4>
+<pre><code class="language-c">while (scanf(&quot;%d%d&quot;, &amp;a, &amp;b) != EOF)
+{
+    //读取了两个int整数，分别存入变量a，b中
+    //下面填写相应的处理代码
+}
+</code></pre>
+<h3 id="整除问题">整除问题</h3>
+<p>在C语言中，如果变量 <code>a</code>、<code>b</code> 都是整数类型（<code>int</code>、<code>long long</code>等），则<code>a/b</code>得到的结果就是 <code>a</code> 整除 <code>b</code>。</p>
+<pre><code>int a = 9, b = 4;
+int c = a / b;       //赋值后的c=2，而不是2.25
+</code></pre>
+<p>但如果 <code>/</code> 两侧有一个或两个 <code>double</code> 类型，则<code>a/b</code>得到的结果就是<code>a</code>除以<code>b</code>。</p>
+<pre><code>double a = 9;
+int b = 4;
+double c = a / b;    //赋值后的c=2.25
+</code></pre>
+<h3 id="题解-3">题解</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+    int a,b;
+    while ((scanf(&quot;%d%d&quot;,&amp;a,&amp;b))!=EOF)
+    {
+        if (b==0)
+            printf(&quot;Cann0t divide by 0\n&quot;);
+        else
+            printf(&quot;%d\n&quot;,a/b);
+    }
+}
+</code></pre>
+<p>常见错误</p>
+<ul>
+<li>忘记\n，导致PE      ys</li>
+<li>0打成o</li>
+</ul>
+<h1 id="d-loong"><code>D</code> Loong</h1>
+<h3 id="putchar">putchar()</h3>
+<pre><code class="language-c">char a='1';
+putchar(a);
+scanf(&quot;%c&quot;,a);
+</code></pre>
+<h3 id="题解-4">题解</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+	int n;
+	scanf(&quot;%d&quot;,&amp;n);
+	putchar('L');
+	while (n--)
+	{
+		putchar('o');
+	}
+	printf(&quot;ng&quot;);
+
+}
+</code></pre>
+<h1 id="e-de太想进步了"><code>E</code> De太想进步了！</h1>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    int old;
+    scanf(&quot;%d&quot;,&amp;old);
+    for (int i = 1; i &lt; n; ++i) {
+        int now;
+        scanf(&quot;%d&quot;,&amp;now);
+        printf(&quot;%d\n&quot;,now-old);
+        old=now;
+    }
+}
+</code></pre>
+<h1 id="f-这里是-buaa-2024"><code>F</code> 这里是 BUAA 2024</h1>
+<h3 id="字符本质就是数字">字符本质就是数字</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+    char a='a';
+    printf(&quot;%d %c\n&quot;,a,a);//字符a的ACill码为97
+    char aa=97;
+    printf(&quot;%d %c&quot;,aa,aa);
+}
+</code></pre>
+<img src="http://cos.pansis.site/202403071312994.png/abc123" alt="image-20240307131221888" style="zoom:50%;" />
+<p>'a'  等价于 数字97</p>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202403071313421.png/abc123" alt="image-20240307131358311" loading="lazy"></figure>
+<p>字符间的计算</p>
+<p>大小写转换</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+//小写转大写
+    char a='a';
+    printf(&quot;%c&quot;,a-32);
+}
+</code></pre>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+//小写转大写
+    char a='a';
+    printf(&quot;%c&quot;,a-'a'+'A');
+}
+</code></pre>
+<h3 id="题解-5">题解</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+    char c;
+    while ((c=getchar())!=EOF)
+    {
+        if (c&gt;='B'&amp;&amp;c&lt;='Z')
+            c--;
+        printf(&quot;%c&quot;,c);
+    }
+}
+</code></pre>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int main() {
+	char c;
+	while(scanf(&quot;%c&quot;, &amp;c) != EOF) {
+		if(c &gt;= 'B' &amp;&amp; c &lt;= 'Z') {
+			c--;
+        printf(&quot;%c&quot;,c);
+	}
+	return 0;
+}
+</code></pre>
+<h3 id="getchar">getchar</h3>
+<pre><code class="language-c">char aa=getchar();
+//等价
+char aa;
+scanf(&quot;%c&quot;,&amp;aa);
+</code></pre>
+<p>getchar的不定组输入</p>
+<p>xxxx</p>
+<h3 id="已学的输入输出函数">已学的输入输出函数</h3>
+<pre><code class="language-c">//通用型
+scanf(&quot;xx&quot;,xxx);
+printf(&quot;xx&quot;,xxx);
+//用于字符
+a=getchar();
+putchar(a);
+//用于字符串
+//暂时未学
+</code></pre>
+<h1 id="g-橡木蛋糕卷"><code>G</code> 橡木蛋糕卷</h1>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+    int n;int a,b;
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;b);
+    while ((scanf(&quot;%d&quot;,&amp;a))!=EOF)
+    {
+        n-=a;
+    }
+    if (n&gt;=b)
+    {
+        printf(&quot;Yes\n%d&quot;,n-b);
+    }
+    else
+    {
+        printf(&quot;N0\n%d&quot;,n);
+    }
+}
+</code></pre>
+<h2 id="题解-6">题解</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+int main()
+{
+    int a,b,c;
+    scanf(&quot;%d%d%d&quot;,&amp;a,&amp;b,&amp;c);
+    if (a==0)
+    {
+        if (b==0)
+        {
+            if (c==0)
+                printf(&quot;infinite solutions&quot;);
+            else
+                printf(&quot;No real root&quot;);
+        }
+        else
+            printf(&quot;%.2f&quot;,-c/(1.0*b));
+        return 0;
+    }
+    double delta=b*b-4*a*c;
+    if (delta&lt;0)
+        printf(&quot;No real root&quot;);
+    else if (delta==0)
+        printf(&quot;%.2f&quot;,-b/(2.0*a));
+    else
+    {
+        double x1=(-b+sqrt(delta))/(2.0*a);
+        double x2=(-b-sqrt(delta))/(2.0*a);
+        if (x1&gt;x2)
+            printf(&quot;%.2f %.2f&quot;,x2,x1);
+        else
+            printf(&quot;%.2f %.2f&quot;,x1,x2);
+    }
+}
+</code></pre>
+<img src="http://cos.pansis.site/202403071330185.png/abc123" alt="image-20240307133047077" style="zoom:50%;" /><br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/24hc/" class="article-info">
+                                                        23航C
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://github.pansis.site/post/0.1 绪论/">
+                                                    <h3 class="post-title">
+                                                        0.1 绪论
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

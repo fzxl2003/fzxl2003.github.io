@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>3.2 球面三角基础知识 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="如果没有特别说明，所讨论的球面都是单位球面
+一、基本概念
+1、大圆：半径为球体半径的圆
+2、球面直线：过球面上两点A、B的大圆叫做过A、B两点的球面直线
+3、球面距离：以A、B为端点的大圆劣弧的长度
+4、对径点：与球心同一直线的两个点（特殊..." />
+        <meta name="keywords" content="组合导航原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="3.2 球面三角基础知识" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="如果没有特别说明，所讨论的球面都是单位球面
+一、基本概念
+1、大圆：半径为球体半径的圆
+2、球面直线：过球面上两点A、B的大圆叫做过A、B两点的球面直线
+3、球面距离：以A、B为端点的大圆劣弧的长度
+4、对径点：与球心同一直线的两个点（特殊...">
+        <meta property="og:url" content="https://github.pansis.site/post/3.2 球面三角基础知识/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-10-28">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="3.2 球面三角基础知识">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="3.2 球面三角基础知识">
+        <meta name="twitter:description" content="如果没有特别说明，所讨论的球面都是单位球面
+一、基本概念
+1、大圆：半径为球体半径的圆
+2、球面直线：过球面上两点A、B的大圆叫做过A、B两点的球面直线
+3、球面距离：以A、B为端点的大圆劣弧的长度
+4、对径点：与球心同一直线的两个点（特殊...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    3.2 球面三角基础知识
+                                </h2>
+                                <span class="article-info">
+                                    2023-10-28, 633 words, 3 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <p>如果没有特别说明，所讨论的球面都是单位球面</p>
+<h2 id="一-基本概念">一、基本概念</h2>
+<p>1、大圆：半径为球体半径的圆</p>
+<p>2、球面直线：过球面上两点A、B的大圆叫做过A、B两点的球面直线</p>
+<p>3、球面距离：以A、B为端点的大圆劣弧的长度</p>
+<p>4、对径点：与球心同一直线的两个点（特殊的对径点：极点、极线）</p>
+<p>5、球面角：从球面上A点出发的两个大圆半弧所构成的图形</p>
+<p>6、球面角大小：根据边的二面角的大小度量，等于顶点的极线夹在两边之间的弧长PQ，即球心角<em>∠POQ</em>的值或两圆弧在顶点处的两切线所夹的角度∠<em>DAE</em>。</p>
+<img src="http://cos.pansis.site/202310280133462.png/abc123" alt="image-20231028013338357" style="zoom:50%;" />
+<p>7、球面三角形：球面上不在同一大圆上的三个点<em>A</em>、<em>B</em>、<em>C</em>，任两个都不是对径点，由连接<em>A</em>、<em>B</em>、<em>C</em>的三条大圆劣弧组成的图形。</p>
+<img src="http://cos.pansis.site/202310280137481.png/abc123" alt="image-20231028013757444" style="zoom:50%;" />
+<p>8、导航三角形：由地球表面上的北极点pa、观测者位置A和天体投影点b作为顶点，相应大圆劣弧作为其边，构成导航三角形<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>A</mi><msub><mi>p</mi><mi>n</mi></msub><mi>b</mi></mrow><annotation encoding="application/x-tex">ΔAp_nb</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">Δ</span><span class="mord mathdefault">A</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">b</span></span></span></span></p>
+<p>9、天文三角形：由天球表面上天北极<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">P_N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，天体的求新投影点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>和天顶<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mi>A</mi></msub></mrow><annotation encoding="application/x-tex">Z_A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>作为顶点，和相应大圆劣弧构成的图形，称为天文三角形$Δ Z_AP_NB $</p>
+<img src="http://cos.pansis.site/202311051921041.png/abc123" alt="image-20231105192121815" style="zoom: 33%;" />
+<h2 id="二-球面三角形的性质">二、球面三角形的性质</h2>
+<p>如果没有特别说明，所讨论的球面都是单位球面</p>
+<p>边为a,b,c（用角度来表示），角为A,B,C</p>
+<h4 id="1-边的基本性质">1、边的基本性质</h4>
+<ul>
+<li>球面三角形的三边之和 $ 0&lt; s&lt;2\pi $ （<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>π</mi></mrow><annotation encoding="application/x-tex">2\pi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span></span></span></span>是三点位于同一球面直线上时）</li>
+<li>两边之和大于第三边,两边之差小于第三边。</li>
+</ul>
+<h4 id="2-角的基本性质">2、角的基本性质</h4>
+<ul>
+<li>
+<p>三角之和 $ \pi&lt; s&lt;3\pi $  （<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mi>π</mi></mrow><annotation encoding="application/x-tex">3\pi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span></span></span></span>是三点位于同一球面直线上时）</p>
+</li>
+<li>
+<p>球面三角形两角之和减去第三角小于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>π</mi></mrow><annotation encoding="application/x-tex">π</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span></span></span></span></p>
+</li>
+</ul>
+<h4 id="3-球面三角形的公式">3、球面三角形的公式</h4>
+<p>1、正弦公式：<img src="http://cos.pansis.site/202310280143298.png/abc123" alt="image-20231028014303246" style="zoom:33%;" /></p>
+<p>2、边的余弦式：<img src="http://cos.pansis.site/202310280145968.png/abc123" alt="image-20231028014525927" style="zoom:33%;" /></p>
+<p>3、角的余弦公式：<img src="http://cos.pansis.site/202310280145456.png/abc123" alt="image-20231028014535413" style="zoom:33%;" /></p>
+<p>4、边的五元素公式：<img src="http://cos.pansis.site/202310280146165.png/abc123" alt="image-20231028014639124" style="zoom:33%;" /></p>
+<p>5、角的五元素公式：<img src="http://cos.pansis.site/202310280146115.png/abc123" alt="image-20231028014642083" style="zoom:33%;" /></p>
+<p>6、球面直角三角形，设C为直角，</p>
+<img src="http://cos.pansis.site/202310280149545.png/abc123" alt="image-20231028014948504" style="zoom:50%;" />
+<img src="http://cos.pansis.site/202310280158436.png/abc123" alt="image-20231028015656144" style="zoom:33%;" />
+<img src="http://cos.pansis.site/202310280158415.png/abc123" alt="image-20231028015702252" style="zoom:33%;" />
+<p>1、导航三角形、天文三角形定义</p>
+<p>2、球面三角形的三边三角之和范围</p>
+<p>3、球面三角形的公式</p>
+<p><strong>正弦公式、边的余弦公式、角的余弦公式、边的五元素公式、角的五元素公式、球面直角三角形，设C为直角</strong></p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/zhdhyl/" class="article-info">
+                                                        组合导航原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

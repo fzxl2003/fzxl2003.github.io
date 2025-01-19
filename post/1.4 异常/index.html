@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>1.4 异常 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、异常
+1、概念
+只要正常的程序流被暂时中止，处理器就进入异常模式
+2、异常优先级
+当多个异常同时发生时，一个固定的优先级系统决定它们被处理的顺序
+
+3、进入异常
+
+在适当的LR中保存下一条指令的地址，当异常入口来自：
+
+ARM状态，那么..." />
+        <meta name="keywords" content="嵌入式系统" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="1.4 异常" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、异常
+1、概念
+只要正常的程序流被暂时中止，处理器就进入异常模式
+2、异常优先级
+当多个异常同时发生时，一个固定的优先级系统决定它们被处理的顺序
+
+3、进入异常
+
+在适当的LR中保存下一条指令的地址，当异常入口来自：
+
+ARM状态，那么...">
+        <meta property="og:url" content="https://github.pansis.site/post/1.4 异常/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-09-24">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="1.4 异常">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="1.4 异常">
+        <meta name="twitter:description" content="一、异常
+1、概念
+只要正常的程序流被暂时中止，处理器就进入异常模式
+2、异常优先级
+当多个异常同时发生时，一个固定的优先级系统决定它们被处理的顺序
+
+3、进入异常
+
+在适当的LR中保存下一条指令的地址，当异常入口来自：
+
+ARM状态，那么...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    1.4 异常
+                                </h2>
+                                <span class="article-info">
+                                    2024-09-24, 1281 words, 5 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-异常">一、异常</h2>
+<h4 id="1-概念">1、概念</h4>
+<p>只要正常的程序流被暂时中止，处理器就进入异常模式</p>
+<h4 id="2-异常优先级">2、异常优先级</h4>
+<p>当多个异常同时发生时，一个固定的优先级系统决定它们被处理的顺序</p>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/image-20240924204824494.png?abc123" alt="image-20240924204824494" loading="lazy"></figure>
+<h4 id="3-进入异常">3、进入异常</h4>
+<ol>
+<li>在适当的LR中保存下一条指令的地址，当异常入口来自：
+<ul>
+<li>ARM状态，那么ARM将当前指令地址加4或加8复制（取决于异常的类型）到LR中；</li>
+<li>Thumb状态，那么ARM将当前指令地址加2、4或加8 （取决于异常的类型）复制到LR中；异常处理器程序不必确定状态。</li>
+</ul>
+</li>
+<li>将CPSR复制到适当的SPSR中；</li>
+<li>将CPSR模式位强制设置为与异常类型相对应的值；
+<ul>
+<li>在中断异常时置位中断禁止标志，这样可以防止不受控制的异常嵌套。</li>
+<li>若处于Thumb状态，清零T位，进入ARM状态</li>
+</ul>
+</li>
+<li>强制PC从相关的异常向量处取指。</li>
+</ol>
+<h4 id="4-退出异常">4、退出异常</h4>
+<ol>
+<li>将LR（ R14 ）中的值减去偏移量后存入PC，偏移量根据异常的类型而有所不同；</li>
+<li>将SPSR的值复制回CPSR（将T、F和I位自动恢复为异常发生前的值）</li>
+<li>清零在入口置位的中断禁止标志。</li>
+</ol>
+<h2 id="二-不同异常的程序">二、不同异常的程序</h2>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/image-20240924211700095.png?abc123" alt="image-20240924211700095" loading="lazy"></figure>
+<h4 id="1-复位异常">1、复位异常</h4>
+<p>1、触发条件：当nRESET信号被拉低时（一般外部复位引脚电平的变化和芯片的其它复位源会改变这个内核信号），ARM处理器放弃正在执行的指令</p>
+<p>2、复位异常程序</p>
+<p>当nRESET信号再次变为高电平时，ARM处理器执行下列操作</p>
+<figure data-type="image" tabindex="3"><img src="http://cos.pansis.site/image-20240924210140016.png?abc123" alt="image-20240924210140016" loading="lazy"></figure>
+<ul>
+<li>强制CPSR中的M[4:0]变为b10011（管理模式）；</li>
+<li>置位CPSR中的I和F位；</li>
+<li>清零CPSR中的T位；</li>
+<li>强制PC从地址0x00开始对下一条指令进行取指；</li>
+<li>返回到ARM状态并恢复执行 。</li>
+<li>在复位后，除PC和CPSR之外的所有寄存器的值都不确定。</li>
+</ul>
+<h4 id="2-未定义指令异常">2、未定义指令异常</h4>
+<p>1、触发条件</p>
+<ul>
+<li>当ARM处理器遇到一条自己和系统内任何协处理器都无法处理的指令时，ARM内核执行未定义指令陷阱。</li>
+<li>软件可使用这一机制通过模拟未定义的协处理器指令来扩展ARM指令集。</li>
+</ul>
+<p>2、程序</p>
+<figure data-type="image" tabindex="4"><img src="http://cos.pansis.site/image-20240924210209934.png?abc123" alt="image-20240924210209934" loading="lazy"></figure>
+<p>3、异常返回<br>
+<strong>SUBS  PC,R14_irq,#4</strong></p>
+<h4 id="3-软件中断异常">3、软件中断异常</h4>
+<p>1、触发条件：软件中断(SWI)指令可以进入管理模式，通常用于请求一个特定的管理函数</p>
+<p>2、程序</p>
+<figure data-type="image" tabindex="5"><img src="http://cos.pansis.site/image-20240924210234375.png?abc123" alt="image-20240924210234375" loading="lazy"></figure>
+<p>3、异常返回：<strong>SUBS  PC,R14_irq,#4</strong></p>
+<p>4、SWI指令</p>
+<img src="http://cos.pansis.site/image-20240924211519396.png?abc123" alt="image-20240924211519396" style="zoom:50%;" />
+<p>表中的I和F表示不对该位有影响，保留原来的值</p>
+<h4 id="4-预取中止异常">4、预取中止异常</h4>
+<p>1、程序</p>
+<figure data-type="image" tabindex="6"><img src="http://cos.pansis.site/image-20240924210321485.png?abc123" alt="image-20240924210321485" loading="lazy"></figure>
+<h4 id="5-数据中止异常">5、数据中止异常</h4>
+<p>1、程序</p>
+<figure data-type="image" tabindex="7"><img src="http://cos.pansis.site/image-20240924210347392.png?abc123" alt="image-20240924210347392" loading="lazy"></figure>
+<p>2、触发方式：由ABORT输入信号触发（高电平），在存储器访问周期末处理器检查该信号</p>
+<p>3、中止意味着对当前存储器的访问不能完成</p>
+<p>4、分类：预取中止  发生在指令预取过程中</p>
+<p>​		  数据中止  发生在对数据访问时</p>
+<p>5、预取中止</p>
+<ul>
+<li>当发生预取中止时，ARM内核将预取的指令标记为无效，但在指令到达流水线的执行阶段时才进入异常</li>
+<li>如果指令在流水线中因为发生分支而没有被执行，中止将不会发生。</li>
+<li>中止返回：在处理中止的原因之后，不管处于哪种处理器操作状态，处理程序都会执行下面的指令恢复PC和CPSR并重试被中止的指令</li>
+</ul>
+<pre><code>SUBS    PC,R14_abt,#8
+</code></pre>
+<p>6、 数据中止</p>
+<ul>
+<li>
+<p>当发生数据中止后，根据产生数据中止的指令类型作出不同的处理</p>
+<ul>
+<li>数据转移指令（LDR、STR）回写到被修改的基址寄存器</li>
+</ul>
+<p>中止处理程序必须处理这一细节。？？？？？？？？？</p>
+<p>P102</p>
+<ul>
+<li>交换指令（SWP）中止好像没有被执行过一样（中止发生在SWP指令进行读访问时）</li>
+</ul>
+<p>？？？？？</p>
+</li>
+<li>
+<p>中止返回：不管处于哪种处理器操作状态，处理程序都必须执行下面的返回指令，重试被中止的指令</p>
+<pre><code>SUBS    PC,R14_abt,#8
+</code></pre>
+</li>
+</ul>
+<h4 id="6-外部中断异常">6、外部中断异常</h4>
+<p>1、定义：一个由nIRQ输入端的低电平所产生的正常中断</p>
+<p>2、程序</p>
+<figure data-type="image" tabindex="8"><img src="http://cos.pansis.site/image-20240924210410879.png?abc123" alt="image-20240924210410879" loading="lazy"></figure>
+<p>3、任何时候在一个特权模式下，都可通过置位CPSR中的I 位来禁止IRQ。</p>
+<p>4、中断返回：不管异常入口是来自ARM状态还是Thumb状态，IRQ处理程序都会通过执行下面的指令从中断返回：</p>
+<pre><code>SUBS  PC,R14_irq,#4
+</code></pre>
+<h4 id="7-快速中断异常">7、快速中断异常</h4>
+<p>1、程序</p>
+<figure data-type="image" tabindex="9"><img src="http://cos.pansis.site/image-20240924210435535.png?abc123" alt="image-20240924210435535" loading="lazy"></figure>
+<p>2、快速中断请求</p>
+<ul>
+<li>在一个特权模式中，可以通过置位CPSR中的F位来禁止FIQ异常</li>
+<li>若F位清零，则ARM在执行完当前指令后时检查FIQ输入引脚nFIQ，该引脚可控制是否进入FIQ异常</li>
+</ul>
+<p>3、中断返回</p>
+<p>不管异常入口是来自ARM状态还是Thumb状态，IRQ处理程序都会通过执行下面的指令从中断返回</p>
+<pre><code>SUBS  PC,R14_irq,#4
+</code></pre>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/AVw14AAoK/" class="article-info">
+                                                        嵌入式系统
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

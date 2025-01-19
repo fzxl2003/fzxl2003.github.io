@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>3.4 陀螺仪误差的标定 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、陀螺仪误差
+1、分类
+系统误差：系统误差由陀螺仪本身的质量不平衡、结构变形等确定性因素引起的，具有一定的规律性。
+随机误差：由陀螺仪内部温度或陀螺自身结构受随机振动等随机因素引起的，具有不确定性
+二、陀螺仪系统误差的标定
+1、方法
+标定..." />
+        <meta name="keywords" content="惯性导航基础" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="3.4 陀螺仪误差的标定" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、陀螺仪误差
+1、分类
+系统误差：系统误差由陀螺仪本身的质量不平衡、结构变形等确定性因素引起的，具有一定的规律性。
+随机误差：由陀螺仪内部温度或陀螺自身结构受随机振动等随机因素引起的，具有不确定性
+二、陀螺仪系统误差的标定
+1、方法
+标定...">
+        <meta property="og:url" content="https://github.pansis.site/post/3.4 陀螺仪误差的标定/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-10-28">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="3.4 陀螺仪误差的标定">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="3.4 陀螺仪误差的标定">
+        <meta name="twitter:description" content="一、陀螺仪误差
+1、分类
+系统误差：系统误差由陀螺仪本身的质量不平衡、结构变形等确定性因素引起的，具有一定的规律性。
+随机误差：由陀螺仪内部温度或陀螺自身结构受随机振动等随机因素引起的，具有不确定性
+二、陀螺仪系统误差的标定
+1、方法
+标定...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    3.4 陀螺仪误差的标定
+                                </h2>
+                                <span class="article-info">
+                                    2023-10-28, 1162 words, 5 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-陀螺仪误差">一、陀螺仪误差</h2>
+<h4 id="1-分类">1、分类</h4>
+<p>系统误差：系统误差由陀螺仪本身的质量不平衡、结构变形等<strong>确定性因素</strong>引起的，<strong>具有一定的规律性</strong>。</p>
+<p>随机误差：由陀螺仪内部温度或陀螺自身结构受随机振动等<strong>随机因素</strong>引起的，<strong>具有不确定性</strong></p>
+<h2 id="二-陀螺仪系统误差的标定">二、陀螺仪系统误差的标定</h2>
+<h4 id="1-方法">1、方法</h4>
+<p>标定实验</p>
+<p>由于陀螺仪系统误差<strong>具有一定的规律性</strong>，因此可以通过陀螺仪 标定试验进行建模与补偿</p>
+<h4 id="2-输出误差模型">2、输出误差模型</h4>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202310261349717.png/abc123" alt="image-20231026134943605" loading="lazy"></figure>
+<h4 id="3-标定实验">3、标定实验</h4>
+<ol>
+<li>
+<p>输入：在实际标定过程中，三轴转台的内框、中框、外框分别以不同角速度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ω</mi><mrow><mi>x</mi><mi>i</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ω</mi><mrow><mi>y</mi><mi>i</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ω</mi><mrow><mi>z</mi><mi>i</mi></mrow></msub><mi mathvariant="normal">，</mi><mi>i</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">ω_{xi}, ω_{yi}, ω_{zi}，i =1,2,…,n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9456279999999999em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.04398em;">z</span><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">，</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span></span></span></span>进行旋转</p>
+</li>
+<li>
+<p>输出：陀螺仪输出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">Y_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>
+<p>待测量：<img src="http://cos.pansis.site/202310261352398.png/abc123" alt="image-20231026135227356" style="zoom:50%;" /></p>
+</li>
+<li>
+<p>矩阵方程：<img src="http://cos.pansis.site/202310261353724.png/abc123" alt="image-20231026135335630" loading="lazy"></p>
+</li>
+<li>
+<p>最小二乘法解：<img src="http://cos.pansis.site/202310261356263.png/abc123" alt="image-20231026135632234" style="zoom:33%;" /></p>
+</li>
+</ol>
+<h2 id="三-陀螺仪随机误差的标定方法">三、陀螺仪随机误差的标定方法</h2>
+<h4 id="1-方法-2">1、方法</h4>
+<ul>
+<li>通常将通过测试得到的陀螺仪随机误差数据视为<strong>随机时间序列</strong>。</li>
+<li>采用<strong>时间序列分析法</strong>建立时间序列模型，用来描述随机误差。</li>
+<li>进而利用<strong>卡尔曼滤波</strong>进行估计与补偿</li>
+</ul>
+<h4 id="2-时间序列建模过程">2、时间序列建模过程</h4>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/202310261359338.png/abc123" alt="image-20231026135915262" loading="lazy"></figure>
+<h2 id="四-模型识别">四、模型识别</h2>
+<h4 id="1-定义">1、定义</h4>
+<p>模型识别是指<strong>确定</strong>与<strong>随机误差序列</strong>最相符<strong>时间序列模型的类型</strong></p>
+<h4 id="2-类型">2、类型</h4>
+<p>AR模型、MA模型和ARMA模型</p>
+<h4 id="3-p阶自回归模型ar模型">3、p阶自回归模型（AR模型）</h4>
+<ul>
+<li>定义：当前时刻的序列值是前p个时刻序列值和当前时刻白噪声的线性组合。</li>
+<li>公式：<img src="http://cos.pansis.site/202310261403958.png/abc123" alt="image-20231026140317915" style="zoom:33%;" /></li>
+</ul>
+<h4 id="4-q阶滑动平均模型ma模型">4、q阶滑动平均模型（MA模型）</h4>
+<ul>
+<li>定义：当前时刻的序列值是前q个时刻白噪声 和当前时刻白噪声的线性组合。</li>
+<li>公式：<img src="http://cos.pansis.site/202310261404113.png/abc123" alt="image-20231026140416079" style="zoom:33%;" /></li>
+</ul>
+<h4 id="5-自回归滑动平均模型arma模型">5、自回归滑动平均模型（ARMA模型）</h4>
+<ul>
+<li>定义：当前时刻序列值 不仅与前p个时刻序列值 具有线性关系，还与前q个时刻白噪声 具有 线性关系。</li>
+<li>公式：<img src="http://cos.pansis.site/202310261405783.png/abc123" alt="image-20231026140518749" style="zoom:33%;" /></li>
+</ul>
+<h4 id="6-模型的统计特性">6、模型的统计特性</h4>
+<p>1、拖尾性和截尾性</p>
+<ul>
+<li>
+<p>拖尾性：始终有非零取值， 不会在延迟步长大于某个常数后就恒等于零（或在零附近随 机波动）</p>
+</li>
+<li>
+<p>截尾性：在延迟步长大于 某个常数后就恒等于零（或在零附近随机波动）。</p>
+<p><img src="http://cos.pansis.site/202310261410003.png/abc123" alt="image-20231026141050952" style="zoom:33%;" /><img src="http://cos.pansis.site/202310261411175.png/abc123" alt="image-20231026141110115" style="zoom:33%;" /></p>
+</li>
+</ul>
+<p>2、时间序列模型的自相关系数 （ACF）和偏自相关系数（ PACF）的统计特性</p>
+<img src="http://cos.pansis.site/202310261411200.png/abc123" alt="image-20231026141132160" style="zoom:33%;" />
+<h4 id="7-模型识别">7、模型识别</h4>
+<p>方法流程：</p>
+<p>对于采集得到的一组随机误差实测序列<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>(</mo><mn>1</mn><mo>)</mo><mo separator="true">,</mo><mi>x</mi><mo>(</mo><mn>2</mn><mo>)</mo><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><mi>x</mi><mo>(</mo><mi>N</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">x(1),x(2),…, x(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">x</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mopen">(</span><span class="mord">2</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>， 可以计算该序列的自相关系数和偏自相关系数</p>
+<figure data-type="image" tabindex="3"><img src="http://cos.pansis.site/202310261415475.png/abc123" alt="image-20231026141544419" loading="lazy"></figure>
+<p>由上图可知，该序列的<strong>自相关系数呈拖尾性</strong>，<strong>偏自相关系数呈截尾性</strong>.</p>
+<p>AR模型与随机误差实测序列最相符，因此选择AR模型进行建模</p>
+<h2 id="五-模型定阶">五、模型定阶</h2>
+<h4 id="1-定义-2">1、定义</h4>
+<p>确定所选时间序列模型的阶数</p>
+<h4 id="2-方法">2、方法</h4>
+<p>赤池信息准则（AIC）</p>
+<h4 id="3-aic信息准则函数">3、AIC信息准则函数</h4>
+<p>1、公式</p>
+<img src="http://cos.pansis.site/202310261418490.png/abc123" alt="image-20231026141846365" style="zoom: 25%;" />
+<p>2、公式解释：</p>
+<img src="http://cos.pansis.site/202310261419808.png/abc123" alt="image-20231026141946667" style="zoom:33%;" />
+<img src="http://cos.pansis.site/202310261419850.png/abc123" alt="image-20231026141956764" style="zoom:33%;" />
+<h2 id="六-参数辨识">六、参数辨识</h2>
+<h4 id="1-方法-3">1、方法</h4>
+<p>最小二乘法</p>
+<p><strong>以AR模型为例</strong></p>
+<p>1、AR模型方程：<img src="http://cos.pansis.site/202310261424619.png/abc123" alt="image-20231026142424508" style="zoom:33%;" /></p>
+<p>2、将陀螺仪输出的随机误差实测序列<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>(</mo><mn>1</mn><mo>)</mo><mo separator="true">,</mo><mi>x</mi><mo>(</mo><mn>2</mn><mo>)</mo><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><mi>x</mi><mo>(</mo><mi>N</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">x(1),x(2),…, x(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">x</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mopen">(</span><span class="mord">2</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>代 入<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>R</mi><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">AR(p)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mopen">(</span><span class="mord mathdefault">p</span><span class="mclose">)</span></span></span></span>模型中，可以得到以下线性方程和矩阵方程</p>
+<img src="http://cos.pansis.site/202310261425217.png/abc123" alt="image-20231026142541107" style="zoom:33%;" />
+<img src="http://cos.pansis.site/202310261426607.png/abc123" alt="image-20231026142611331" style="zoom:33%;" />
+<p>最小二乘法可得</p>
+<img src="http://cos.pansis.site/202310261427429.png/abc123" alt="image-20231026142716387" style="zoom:33%;" />
+<h2 id="七-卡尔曼滤波法补偿">七、卡尔曼滤波法补偿</h2>
+<h4 id="1-方法-4">1、方法</h4>
+<p>卡尔曼滤波</p>
+<h4 id="2-流程">2、流程：</h4>
+<p>1、根据随机误差时序模型建立状态模型</p>
+<img src="http://cos.pansis.site/202310261431297.png/abc123" alt="image-20231026143111091" style="zoom:50%;" />
+<p>2、建立量测模型</p>
+<img src="http://cos.pansis.site/202310261432080.png/abc123" alt="image-20231026143201946" style="zoom:33%;" />
+<p>3、根据所建立的状态模型和量测模型，利用卡尔曼滤波对系统状态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">X_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 进行估计。（利用卡尔曼滤波补 偿随机误差的效果更好）</p>
+<p>1、陀螺仪误差分类<br>
+2、系统误差由陀螺仪本身的质量不平衡、结构变形等————引起的，具有一定的————。<br>
+3、随机误差由陀螺仪内部温度或陀螺自身结构受随机振动等————引起的，具有————。<br>
+4、陀螺仪系统误差的标定方法、输出误差模型的矩阵方程、最小二乘法的解<br>
+5、陀螺仪随机误差的标定方法（三步）<br>
+6、时间序列建模三步<br>
+7、模型识别定义、方法流程<br>
+8、三种时间序列模型的类型、公式和统计特性<br>
+9、模型定阶方法、准则函数公式<br>
+10、参数辨识的计算公式、解的公式</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/gxdhjc/" class="article-info">
+                                                        惯性导航基础
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

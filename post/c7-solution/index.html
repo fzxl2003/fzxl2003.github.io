@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>C7 - Solution | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="A 我怎可将你与夏日比拟
+
+
+
+难度
+考点
+
+
+
+
+1
+二维数组，字符串
+
+
+
+题目分析
+建立二维字符数组，初始化每行为对应字符串，每组数据输出对应的字符串即可。
+示例代码
+#include &lt;stdio.h&gt;
+char s[1..." />
+        <meta name="keywords" content="比赛" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="C7 - Solution" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="A 我怎可将你与夏日比拟
+
+
+
+难度
+考点
+
+
+
+
+1
+二维数组，字符串
+
+
+
+题目分析
+建立二维字符数组，初始化每行为对应字符串，每组数据输出对应的字符串即可。
+示例代码
+#include &amp;lt;stdio.h&amp;gt;
+char s[1...">
+        <meta property="og:url" content="https://github.pansis.site/post/c7-solution/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-11-12">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="C7 - Solution">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="C7 - Solution">
+        <meta name="twitter:description" content="A 我怎可将你与夏日比拟
+
+
+
+难度
+考点
+
+
+
+
+1
+二维数组，字符串
+
+
+
+题目分析
+建立二维字符数组，初始化每行为对应字符串，每组数据输出对应的字符串即可。
+示例代码
+#include &amp;lt;stdio.h&amp;gt;
+char s[1...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    C7 - Solution
+                                </h2>
+                                <span class="article-info">
+                                    2023-11-12, 5396 words, 28 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="a-我怎可将你与夏日比拟"><code>A</code> 我怎可将你与夏日比拟</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>二维数组，字符串</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析">题目分析</h3>
+<p>建立二维字符数组，初始化每行为对应字符串，每组数据输出对应的字符串即可。</p>
+<h3 id="示例代码">示例代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+char s[14][100] =
+{
+	&quot;Shall I compare thee to a summer's day?&quot;,
+	&quot;Thou art more lovely and more temperate:&quot;,
+	&quot;Rough winds do shake the darling buds of May,&quot;,
+	&quot;And summer's lease hath all too short a date;&quot;,
+	&quot;Sometime too hot the eye of heaven shines,&quot;,
+	&quot;And often is his gold complexion dimm'd;&quot;,
+	&quot;And every fair from fair sometime declines,&quot;,
+	&quot;By chance or nature's changing course untrimm'd;&quot;,
+	&quot;But thy eternal summer shall not fade,&quot;,
+	&quot;Nor lose possession of that fair thou ow'st;&quot;,
+	&quot;Nor shall death brag thou wander'st in his shade,&quot;,
+	&quot;When in eternal lines to time thou grow'st:&quot;,
+	&quot;    So long as men can breathe or eyes can see,&quot;,
+	&quot;    So long lives this, and this gives life to thee.&quot;
+};
+int main()
+{
+	int n;
+	while(~scanf(&quot;%d&quot;, &amp;n))
+		puts(s[n - 1]);
+	return 0;
+}
+</code></pre>
+<h3 id="示例代码-2">示例代码 - 2</h3>
+<p>利用指针数组实现。区别在于该方法指针指向的字符串为常量，不可修改。</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+char *s[14] =
+{
+	&quot;Shall I compare thee to a summer's day?&quot;,
+	&quot;Thou art more lovely and more temperate:&quot;,
+	&quot;Rough winds do shake the darling buds of May,&quot;,
+	&quot;And summer's lease hath all too short a date;&quot;,
+	&quot;Sometime too hot the eye of heaven shines,&quot;,
+	&quot;And often is his gold complexion dimm'd;&quot;,
+	&quot;And every fair from fair sometime declines,&quot;,
+	&quot;By chance or nature's changing course untrimm'd;&quot;,
+	&quot;But thy eternal summer shall not fade,&quot;,
+	&quot;Nor lose possession of that fair thou ow'st;&quot;,
+	&quot;Nor shall death brag thou wander'st in his shade,&quot;,
+	&quot;When in eternal lines to time thou grow'st:&quot;,
+	&quot;    So long as men can breathe or eyes can see,&quot;,
+	&quot;    So long lives this, and this gives life to thee.&quot;
+};
+int main()
+{
+	int n;
+	while(~scanf(&quot;%d&quot;, &amp;n))
+		puts(s[n - 1]);
+	return 0;
+}
+</code></pre>
+<h2 id="b-小亮学矩阵加减法">B 小亮学矩阵加减法</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>二维数组 循环</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-2">题目分析</h3>
+<p>矩阵的加减法是两个矩阵对应元素的加减法。</p>
+<p>需要注意的是计算结果可能会超出 <code>int</code> 范围，需要保证计算范围和输出数组都需要在 <code>long long</code> 范围内。</p>
+<h3 id="示例代码-2">示例代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a[50][50]={0};
+    int b[50][50]={0};
+    long long c[50][50]={0};
+    int m,n,k;int s;
+    scanf(&quot;%d%d%d&quot;,&amp;m,&amp;n,&amp;s);
+    for (int i = 0; i &lt; m; ++i) {//矩阵A
+        for (int j = 0; j &lt; n; ++j) {
+            scanf(&quot;%d&quot;, &amp;a[i][j]);
+        }
+    }
+    for (int i = 0; i &lt; m; ++i) {//矩阵B
+        for (int j = 0; j &lt; n; ++j) {
+            scanf(&quot;%d&quot;, &amp;b[i][j]);
+        }
+    }
+
+    for (int i = 0; i &lt; m; ++i) {
+        for (int j = 0; j &lt; n; ++j) {
+            if (s==1) c[i][j]=1ll*a[i][j]+b[i][j];//矩阵相加，注意1ll
+            else c[i][j]=1ll*a[i][j]-b[i][j];//矩阵相减，注意1ll
+        }
+    }
+    for (int i = 0; i &lt; m; ++i) {
+        for (int j = 0; j &lt; n; ++j) {
+            printf(&quot;%lld &quot;,c[i][j]);
+        }
+        printf(&quot;\n&quot;);
+    }
+    return 0;
+}
+</code></pre>
+<h2 id="c-寻找字符"><code>C</code> 寻找字符</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>指针，字符串函数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-3">题目分析</h3>
+<p>利用 <code>strchr</code> 和 <code>strrchr</code> 函数搜索字符串 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span> 中字符 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 第一次出现和最后一次出现的位置。代码如下：</p>
+<pre><code class="language-c">char *p = strchr(s, c)；
+char *q = strrchr(s, c);
+</code></pre>
+<p>根据指针 <code>p, q</code> 的值进行判断：</p>
+<ul>
+<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span> 中未出现，则 <code>p, q</code> 均为空；</li>
+<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span> 中恰好出现一次，则 <code>p, q</code> 相等，均指向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span> 中唯一出现的位置，<code>p - s</code> 的值就是答案；</li>
+<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span> 中出现不止一次，则 <code>p, q</code> 分别指向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span> 中第一次出现的位置和最后一次出现的位置，<code>q - p</code> 就是答案。</li>
+</ul>
+<p>分类讨论即可。</p>
+<h3 id="示例代码-3">示例代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+char s[100005], c;
+int main()
+{
+	gets(s);
+	while(~(c = getchar()))
+	{
+		char *p = strchr(s, c), *q = strrchr(s, c);
+		if(p == NULL)
+			printf(&quot;-1\n&quot;);
+		else if(p == q)
+			printf(&quot;%d\n&quot;, p - s);
+		else
+			printf(&quot;%d\n&quot;, q - p);
+	}
+	return 0;
+}
+</code></pre>
+<h2 id="d-one-last-kiss">D One Last Kiss</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2~3</td>
+<td>子串查找函数<code>strstr</code>的使用，英文字符大小写转换</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-4">题目分析</h3>
+<p>根据题目要求，需要使用不定组输入语句读入多组字符串。对每组输入的字符串<code>str</code>，要在忽略大小写的条件下，寻找字符串<code>str</code>中<code>kiss</code>子串的出现次数，与最后一次出现时子串首字母在原字符串中的位置下标</p>
+<p>题目要求忽略大小写，因此我们可以直接在读入字符串<code>str</code>后，把所有字符转成小写，然后直接使用<code>strstr</code>函数在字符串<code>str</code>中查找全小写的<code>kiss</code>子串的首地址值。</p>
+<p>如果查找操作返回地址值为<code>NULL</code>说明目标子串不存在，如果返回地址值不为<code>NULL</code>，说明目标子串存在，记录本次查找到的子串首地址，同时将计数变量自增 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，然后从这次查到的位置的<strong>后一个位置</strong>开始，继续循环执行查找、计数累加、记录首地址的操作，直到查找失败返回<code>NULL</code>，此时记录下的最后一个地址就是<code>str</code>字符串中最后一个目标子串的首地址</p>
+<p>因为一个数组在内存中是连续存储的，而数组首地址指向的是数组中下标为<code>0</code>的元素的位置，将数组中某个指定位置的地址值与数组首地址作差后，得到的结果就是两个位置的下标差，即指定位置在数组中的下标。所以将前面查到的目标子串最后一次出现位置的首地址减去<code>str</code>数组首地址，就得到了目标子串首字母在<code>str</code>数组中的位置下标。保险起见，推荐使用强制类型转换将结果类型转换为<code>int</code>再输出</p>
+<h3 id="示例代码-4">示例代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char str[1001] = {};
+    while (scanf(&quot;%s&quot;, str) != EOF) {	//因为输入字符串中不包含空格，所以可以使用scanf读入每组的字符串
+        //也可以使用while (gets(str) != NULL) {}
+        int cnt = 0;
+        for (int i = 0; str[i] != '\0'; ++i) {
+            //使用ctype.h库中的tolower函数，当传入大写字母时返回小写字母的ASCII值，否则返回传入字符的原ASCII值
+            str[i] = (char) tolower(str[i]);
+            //也可以使用如下代码，利用ASCII值之差实现大小写转换
+            //if ('A' &lt;= str[i] &amp;&amp; str[i] &lt;= 'Z') {
+            //    str[i] = (char) (str[i] - 'A' + 'a');
+            //}
+        }
+        char *aim = NULL, *tmp = strstr(str, &quot;kiss&quot;);
+        while (tmp != NULL) {	//当找到目标子串时，累加计数并把该目标子串的首地址赋给指针变量aim
+            cnt++;
+            aim = tmp;
+            tmp = strstr(aim + 1, &quot;kiss&quot;);	//从成功匹配位置的下一个位置开始，再次查找目标子串
+        }
+        if (cnt &gt; 0) {
+            printf(&quot;%d %d\n&quot;, cnt, (int) (aim - str));
+        } else {
+            printf(&quot;0 -1\n&quot;);
+        }
+    }
+
+    return 0;
+}
+</code></pre>
+<h2 id="e-面壁计划"><code>E</code> 面壁计划</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">3~4</td>
+<td>字符串函数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-5">题目分析</h3>
+<p>主要考察对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>t</mi><mi>r</mi><mi>l</mi><mi>e</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">strlen</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span></span></span></span> , $ strcpy$ , <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>t</mi><mi>r</mi><mi>c</mi><mi>m</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">strcmp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80952em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">c</span><span class="mord mathdefault">m</span><span class="mord mathdefault">p</span></span></span></span>  的函数运用。</p>
+<p>本题的思路非常清晰，按照所给的步骤一步一步模拟即可。实现时，有一些细节需要注意，例如不要用变量定义数组的长度，记得字符串是以<code>'\0'</code> 结尾的。</p>
+<h3 id="示例代码-5">示例代码</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;ctype.h&gt;
+#define mlen 1005
+
+// 函数：将字符串进行逆序
+void reverseStringAndAlphabets(char* str) {
+    int start = 0;
+    int end = strlen(str) - 1;
+    // 首字符逆序
+    while (start &lt; end) {
+        char temp = str[start];
+        str[start] = str[end];
+        str[end] = temp;
+        start++;
+        end--;
+    }
+}
+
+// 函数：进行字符串加密
+void encryptString(char* str) {
+    int len = strlen(str);
+    char copy1[mlen  + 1]; // 存储逆序后的字符串
+    char newStr[mlen + 1]; // 存储新的长度为n的字符串
+    char copy[2 * mlen + 1];//存储逆序后的字符串和源字符串
+    char jc[mlen + 1];//奇串
+    char oc[mlen + 1];//偶串
+    strcpy(copy1, str); // 复制字符串
+    reverseStringAndAlphabets(copy1); // 逆序后的字符串
+    strcpy(copy, str);
+    strcat(copy, copy1);//存放整体的字符串
+    copy[len * 2] = '\0';
+    for (int i = 0; i &lt; strlen(copy); i++) {//奇串和偶串
+        if (i % 2 == 0) {
+            jc[i/2] = copy[i];
+        }
+        else {
+            oc[(i-1)/2] = copy[i];
+        }
+    }
+    jc[len] = '\0';
+    oc[len] = '\0';
+    if (strcmp(jc, oc) &lt; 0)
+    {
+        strcpy(newStr, jc);
+    }
+    else
+    {
+        strcpy(newStr, oc);
+    }
+    strcpy(str, newStr); // 更新原始字符串内容
+}
+int main() {
+    char s[1005];
+    gets(s);
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    while (n--)
+    {
+        encryptString(s);
+
+    }
+    printf(&quot;%s&quot;, s);
+    return 0;
+}
+</code></pre>
+<h3 id="示例代码-2-2">示例代码 - 2</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+	char s[2001];
+	int n;
+	scanf(&quot;%s%d&quot;, s, &amp;n);
+	int len = strlen(s);
+	while(n--)
+	{
+		for(int i = 0; i &lt; len; ++i)
+			s[2 * len - 1 - i] = s[i];
+		char e[1001], o[1001];
+		for(int i = 0; i &lt; len; ++i)
+		{
+			e[i] = s[2 * i];
+			o[i] = s[2 * i + 1];
+		}
+		e[len] = o[len] = '\0';
+		strcpy(s, strcmp(e, o) &gt; 0 ? o : e);
+	}
+	puts(s);
+	return 0;
+}
+</code></pre>
+<h2 id="f-生成扫雷地图"><code>F</code> 生成扫雷地图</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3~4</td>
+<td>二维数组</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-6">题目分析</h3>
+<p>本题思路较简单，代码只需要输入、处理、输出三部分即可完成目标。三部分代码均有多种实现方式，思路多种多样，以下为三部分代码的部分实现方式：</p>
+<h4 id="0-代码开始部分">0. 代码开始部分</h4>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+char a[103][103];
+int b[10][3] = {{1, 1}, {1, 0}, {1, -1}, {0, -1}, {-1, -1}, {-1, 0}, {-1, 1}, {0, 1}};
+//b用来简化读取周围8个空格的过程，利用8个if也可实现，形式不唯一
+int n, m;
+</code></pre>
+<h4 id="1-输入部分">1. 输入部分</h4>
+<p><strong>1.逐字符地输入</strong></p>
+<p>从“二维字符数组”出发，逐个读入字符的处理方式，注意处理掉换行符。</p>
+<pre><code class="language-c">void input() {
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+	getchar();
+	for (int i = 1; i &lt;= n; i++) {
+		for (int j = 1; j &lt;= m; j++) {
+			scanf(&quot;%c&quot;, &amp;a[i][j]);
+		}
+		getchar();
+	}
+}
+</code></pre>
+<p><strong>2.利用gets</strong></p>
+<p>一次读取一行，注意处理掉 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n,m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span></span></span></span> 之后的换行符，以及注意字符串要从角标为 1 的部分开始存储。</p>
+<pre><code class="language-c">void input() {
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+	getchar();
+	for (int i = 1; i &lt;= n; i++) {
+		gets(a[i] + 1);
+	}
+}
+</code></pre>
+<p><strong>3.利用%s</strong></p>
+<p>一次读取一行，注意字符串要从角标为 1 的部分开始存储，无需考虑换行符。</p>
+<pre><code class="language-c">void input() {
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+	for (int i = 1; i &lt;= n; i++) {
+		scanf(&quot;%s&quot;, a[i] + 1);
+	}
+}
+</code></pre>
+<h4 id="2-处理部分">2. 处理部分</h4>
+<p>本题的所产生的数字均不会大于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>8</mn></mrow><annotation encoding="application/x-tex">8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span></span></span></span> 。由于 <code>'0'</code> 到 <code>'8'</code> 在 ASCII 码中是连续的，所以在本题中直接对 <code>char</code> 类型的字符递增加一即可。</p>
+<p><strong>1.从每个空格出发，考虑这个空格会怎么样地受到周围的雷的影响</strong></p>
+<p>遍历二维数组。当读到雷的位置的时候跳过，当读到空格的位置时，找寻周围有几个雷。</p>
+<pre><code class="language-c">void process() {
+	for (int i = 1; i &lt;= n; i++) {
+		for (int j = 1; j &lt;= m; j++) {
+			if (a[i][j] != 'M') {
+				for (int k = 0; k &lt;= 7; k++) {
+					if (a[i + b[k][0]][j + b[k][1]] == 'M') {
+						a[i][j] += 1;
+					}
+				}
+			}
+		}
+	}
+}
+</code></pre>
+<p><strong>2.从每个雷出发，考虑这个雷会怎么样地对周围的空格产生影响</strong></p>
+<p>遍历二维数组。当读到空格的位置的时候跳过，当读到雷的位置时，给周围所有不是雷的空格的计数加一。</p>
+<pre><code class="language-c">void process() {
+	for (int i = 1; i &lt;= n; i++) {
+		for (int j = 1; j &lt;= m; j++) {
+			if (a[i][j] == 'M') {
+				for (int k = 0; k &lt;= 7; k++) {
+					if (a[i + b[k][0]][j + b[k][1]] != 'M') {
+						a[i + b[k][0]][j + b[k][1]] += 1;
+					}
+				}
+			}
+		}
+	}
+}
+</code></pre>
+<h4 id="3输出部分">3.输出部分</h4>
+<p><strong>1.逐字符地输出</strong></p>
+<pre><code class="language-c">void output() {
+	for (int i = 1; i &lt;= n; i++) {
+		for (int j = 1; j &lt;= m; j++) {
+			printf(&quot;%c&quot;, a[i][j]);
+		}
+		printf(&quot;\n&quot;);
+	}
+}
+</code></pre>
+<p><strong>2.整体地输出字符串</strong></p>
+<p>参照前面的输入部分，注意要从 <code>a[i]+1</code> 开始输出，否则会产生问题。</p>
+<pre><code class="language-c">void output() {
+	for (int i = 1; i &lt;= n; i++) {
+		printf(&quot;%s\n&quot;,a[i]+1);
+	}
+}
+</code></pre>
+<h3 id="示例代码-6">示例代码</h3>
+<p>组装上面三部分的代码，每部分代码任选一种实现方式即可。题解为了使结构清晰使用了函数来实现，也可不使用函数。</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+char a[103][103];
+int b[10][3] = {{1, 1}, {1, 0}, {1, -1}, {0, -1}, {-1, -1}, {-1, 0}, {-1, 1}, {0, 1}};
+int n, m;
+void input() {
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+	getchar();
+	for (int i = 1; i &lt;= n; i++) {
+		for (int j = 1; j &lt;= m; j++) {
+			scanf(&quot;%c&quot;, &amp;a[i][j]);
+		}
+		getchar();
+	}
+}//输入
+void process() {
+	for (int i = 1; i &lt;= n; i++) {
+		for (int j = 1; j &lt;= m; j++) {
+			if (a[i][j] != 'M') {
+				for (int k = 0; k &lt;= 7; k++) {
+					if (a[i + b[k][0]][j + b[k][1]] == 'M') {
+						a[i][j] += 1;
+					}
+				}
+			}
+		}
+	}
+}//处理
+void output() {
+	for (int i = 1; i &lt;= n; i++) {
+		for (int j = 1; j &lt;= m; j++) {
+			printf(&quot;%c&quot;, a[i][j]);
+		}
+		printf(&quot;\n&quot;);
+	}
+}//输出
+int main() {
+	input();
+	process();
+	output();
+	return 0;
+}//主程序，依次调用三部分
+</code></pre>
+<h2 id="g-ex-gcd"><code>G</code> Ex-GCD</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3~4</td>
+<td>指针，递归</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-7">题目分析</h3>
+<p>按照伪代码和Hint写出递归函数即可。</p>
+<h3 id="示例代码-1">示例代码 - 1</h3>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+void ExGCD(int a, int b, int *d, int *x, int *y)
+{
+    if(b == 0)
+    {
+        *d = a, *x = 1, *y = 0;
+        return;
+    }
+    int dd, xx, yy;
+    ExGCD(b, a % b, &amp;dd, &amp;xx, &amp;yy);
+    *d = dd, *x = yy, *y = xx - a / b * yy;
+}
+int main()
+{
+    int a, b, d, x, y;
+    scanf(&quot;%d%d&quot;, &amp;a, &amp;b);
+    ExGCD(a, b, &amp;d, &amp;x, &amp;y);
+    printf(&quot;%d = %d*(%d) + %d*(%d)&quot;, d, a, x, b, y);
+    return 0;
+}
+</code></pre>
+<h3 id="示例代码-2-3">示例代码 - 2</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+void Exgcd(int a, int b, int *d, int *x, int *y)
+{
+	if(b == 0) *d = a, *x = 1, *y = 0;
+	else Exgcd(b, a % b, d, y, x), *y -= a / b * *x;
+}
+int main()
+{
+	int a, b, d, x, y;
+	scanf(&quot;%d%d&quot;, &amp;a, &amp;b);
+	Exgcd(a, b, &amp;d, &amp;x, &amp;y);
+	printf(&quot;%d = %d*(%d) + %d*(%d)\n&quot;, d, a, x, b, y);
+	return 0;
+}
+</code></pre>
+<h3 id="示例代码-3">示例代码 - 3</h3>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int ExGCD(int a, int b, int *x, int *y)
+{
+	if(b == 0)
+	{
+		*x = 1;
+        *y = 0;
+		return a;
+	}
+	else
+	{
+		int d = ExGCD(b, a % b, y, x);
+		*y -= a / b * *x;
+		return d;
+	}
+}
+int main()
+{
+    int a, b, x, y;
+    scanf(&quot;%d%d&quot;, &amp;a, &amp;b);
+    int d = ExGCD(a, b, &amp;x, &amp;y);
+    printf(&quot;%d = %d*(%d) + %d*(%d)&quot;, d, a, x, b, y);
+    return 0;
+}
+</code></pre>
+<h2 id="h-cirno-的完美函数教室"><code>H</code> Cirno 的完美函数教室</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>递归，剪枝</td>
+</tr>
+</tbody>
+</table>
+<h3 id="问题分析">问题分析</h3>
+<p>本题如果使用递归，需要剪枝，存储计算过的函数值，否则递归次数过多会导致 TLE。</p>
+<p>当然，也可以使用递推，要注意递推的关系式和更新的顺序。</p>
+<h3 id="参考代码-1">参考代码 #1</h3>
+<pre><code class="language-C">#include &lt;stdio.h&gt;
+
+int f[30][30][30];
+
+int B(int a, int b, int c)
+{
+	if (a &lt;= 0 || b &lt;= 0 || c &lt;= 0)
+		return 1;
+	else if (a &gt; 25 || b &gt; 25 || c &gt; 25)
+		return B(25, 25, 25);
+	else
+	{
+		if (f[a][b][c])
+			return f[a][b][c];
+		else if (a &lt; b &amp;&amp; b &lt; c)
+			f[a][b][c] = B(a, b, c - 1) + B(a, b - 1, c - 1) - B(a, b - 1, c);
+		else
+			f[a][b][c] = B(a - 1, b, c) + B(a - 1, b - 1, c) + B(a - 1, b, c - 1) - B(a - 1, b - 1, c - 1);
+	}
+	return f[a][b][c];
+}
+
+int main()
+{
+	int T, a, b, c;
+	scanf(&quot;%d&quot;, &amp;T);
+	while (T--)
+	{
+		scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);
+		printf(&quot;%d\n&quot;, B(a, b, c));
+	}
+	return 0;
+}
+</code></pre>
+<h3 id="参考代码-2">参考代码 #2</h3>
+<pre><code class="language-C">#include &lt;stdio.h&gt;
+
+int main() {
+    int B[26][26][26];
+    for (int i = 0; i &lt; 26; ++i) {
+        for (int j = 0; j &lt; 26; ++j) {
+            for (int k = 0; k &lt; 26; ++k) {
+                if (i == 0 || j == 0 || k == 0) {
+                    B[i][j][k] = 1;
+                } else {
+                    if (i &lt; j &amp;&amp; j &lt; k) {
+                        B[i][j][k] = B[i][j][k - 1] + B[i][j - 1][k - 1] - B[i][j - 1][k];
+                    } else {
+                        B[i][j][k] = B[i - 1][j][k] + B[i - 1][j - 1][k] + B[i - 1][j][k - 1] - B[i - 1][j - 1][k - 1];
+                    }
+                }
+            }
+        }
+    }
+    int T, a, b, c;
+    scanf(&quot;%d&quot;, &amp;T);
+    for (int i = 0; i &lt; T; ++i) {
+        scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);
+        if (a &lt;= 0 || b &lt;= 0 || c &lt;= 0) {
+            a = b = c = 0;
+        } else if (a &gt; 25 || b &gt; 25 || c &gt; 25) {
+            a = b = c = 25;
+        }
+        printf(&quot;%d\n&quot;, B[a][b][c]);
+    }
+
+    return 0;
+}
+</code></pre>
+<h2 id="i-拔刀"><code>I</code> 拔刀</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>二维数组，递归</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-8">题目分析</h3>
+<p>本题是一个相对标准的递归问题，递归中，若当前位置为1，则进入其相邻四个元素判断（需要考虑向上的情况），否则返回当前行序号。</p>
+<h3 id="示例代码-7">示例代码</h3>
+<pre><code class="language-c">int graph[1005][1005];
+int used[1005][1005];
+int m, n;
+int max=-1;
+void dfs(int i, int j);
+int main(void)
+{
+    int i, j;
+    scanf(&quot;%d%d&quot;, &amp;m, &amp;n);
+    for (i = 0; i &lt; m; i++)
+    {
+        for (j = 0; j &lt; n; j++)
+        {
+            scanf(&quot;%d&quot;, &amp;graph[i][j]);
+        }
+    }
+    for (i = 0; i &lt; n; i++)
+    {
+    	if(graph[0][i]==1) 
+        	dfs(0, i);
+    }
+    printf(&quot;%d&quot;, max + 1);
+    return 0;
+}
+void dfs(int i, int j)
+{
+    if (i &lt; 0 || j &lt; 0 || i &gt;= m || j &gt;= n || used[i][j] || graph[i][j] == 0)
+        return;
+    used[i][j] = 1;
+    dfs(i, j + 1);
+    dfs(i, j - 1);
+    dfs(i + 1, j);
+    dfs(i - 1, j);
+    max = MAX(max, i);
+}
+</code></pre>
+<h3 id="示例代码-2-4">示例代码 - 2</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int a[1005][1005], ans;
+void f(int i, int j)
+{
+	if(!a[i][j]) return;
+	a[i][j] = 0;
+	if(i &gt; ans) ans = i;
+	f(i - 1, j);
+	f(i + 1, j);
+	f(i, j - 1);
+	f(i, j + 1);
+}
+int main()
+{
+	int h, w;
+	scanf(&quot;%d%d&quot;, &amp;h, &amp;w);
+	for(int i = 1; i &lt;= h; ++i)
+		for(int j = 1; j &lt;= w; ++j)
+			scanf(&quot;%d&quot;, &amp;a[i][j]);
+	for(int j = 1; j &lt;= w; ++j) f(1, j);
+	printf(&quot;%d&quot;, ans);
+	return 0;
+}
+</code></pre>
+<h2 id="j-de想成为六边形站侍"><code>J</code> De想成为六边形站侍</h2>
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>二维数组，差分</td>
+</tr>
+</tbody>
+</table>
+<h3 id="题目分析-9">题目分析</h3>
+<p>​	首先，我们基本可以确定这道题需要使用差分，对于有规则的平面图形，我们打算使用二维差分，尝试将一个六边形的整体加法用一个差分数组表示</p>
+<p>​	具体方法（其中一种方法）如下：</p>
+<figure data-type="image" tabindex="1"><img src="https://s2.loli.net/2023/11/02/oDfzTdpIiXVeMAO.png" alt="_8D459740-5B83-43bf-803E-11AAED259ADE_.png" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://s2.loli.net/2023/11/02/x4cEkgmGeY573Vz.png" alt="p1.png" loading="lazy"></figure>
+<p>​	我们将一个正六边形分为三个部分，如图中红黄蓝部分，那么易知对于其中一块，我们可以以其边所平行的两个轴来将整个图形及平面移为“平面直角坐标系”，并且每个点表示方法唯一</p>
+<p>​	比如对于黄色区域如果我们要 <code>+1</code> ，那么相当于是二维差分中修改：</p>
+<p>​	<code>c[-2][1]++, c[1][1]--, c[-2][3]--, c[1][3]++</code>（表示方法依个人实现方式不同而不尽相同）</p>
+<p>​	<strong>因此，我们只需要维护三个二位差分即可，另外，注意一下超出边界的点不需要管</strong></p>
+<ul>
+<li>
+<p>中心块我们单独处理</p>
+</li>
+<li>
+<p>黄色区域轴 <code>x - y</code></p>
+</li>
+<li>
+<p>红色区域轴 <code>y - z</code></p>
+</li>
+<li>
+<p>蓝色区域轴 <code>x - z</code></p>
+</li>
+</ul>
+<h3 id="示例代码-8">示例代码</h3>
+<p><s>（有点长，大家的实现肯定有非常短的）</s></p>
+<pre><code class="language-c">#include &lt;math.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define ll long long
+#define max(a, b) ((a) &gt; (b) ? (a) : (b))
+#define min(a, b) ((a) &lt; (b) ? (a) : (b))
+#define rep(i, a, b) for(int i = a; i &lt;= b; i++)
+#define per(i, a, b) for(int i = a; i &gt;= b; i--)
+
+#define maxn 805
+
+int pre[3][maxn &lt;&lt; 1][maxn &lt;&lt; 1], node[maxn &lt;&lt; 1][maxn &lt;&lt; 1];
+int n, test, lim;
+int X, Y, Z, r, k;
+
+void update(int X, int Y, int Z, int r, int k) {
+	pre[0][min(lim, X - Z + n + 1)][min(lim, (Y + 1) - Z + n + 1)] += k;
+	pre[0][min(lim, (X + r) - Z + n + 1)][min(lim, (Y + 1) - Z + n + 1)] -= k;
+	pre[0][min(lim, X - Z + n + 1)][min(lim, (Y + r) - Z + n + 1)] -= k;
+	pre[0][min(lim, (X + r) - Z + n + 1)][min(lim, (Y + r) - Z + n + 1)] += k;
+
+	pre[1][min(lim, (X + 1) - Y + n + 1)][min(lim, Z - Y + n + 1)] += k;
+	pre[1][min(lim, (X + r) - Y + n + 1)][min(lim, Z - Y + n + 1)] -= k;
+	pre[1][min(lim, (X + 1) - Y + n + 1)][min(lim, (Z + r) - Y + n + 1)] -= k;
+	pre[1][min(lim, (X + r) - Y + n + 1)][min(lim, (Z + r) - Y + n + 1)] += k;
+ 
+	pre[2][min(lim, Y - X + n + 1)][min(lim, (Z + 1) - X + n + 1)] += k;
+	pre[2][min(lim, Y - X + n + 1)][min(lim, (Z + r) - X + n + 1)] -= k;
+	pre[2][min(lim, (Y + r) - X + n + 1)][min(lim, (Z + 1) - X + n + 1)] -= k;
+	pre[2][min(lim, (Y + r) - X + n + 1)][min(lim, (Z + r) - X + n + 1)] += k;
+}
+
+void push_up() {
+	rep(i, 1, lim)
+		rep(j, 1, lim) {
+			pre[0][i][j] += pre[0][i - 1][j] + pre[0][i][j - 1] - pre[0][i - 1][j - 1];
+			pre[1][i][j] += pre[1][i - 1][j] + pre[1][i][j - 1] - pre[1][i - 1][j - 1];
+			pre[2][i][j] += pre[2][i - 1][j] + pre[2][i][j - 1] - pre[2][i - 1][j - 1];
+		}
+}
+
+int get(int X, int Y, int Z) {
+	return node[X - Z + n + 1][Y - Z + n + 1] +
+		pre[0][X - Z + n + 1][Y - Z + n + 1] +
+		pre[1][X - Y + n + 1][Z - Y + n + 1] + 
+		pre[2][Y - X + n + 1][Z - X + n + 1];
+}
+
+int main() {
+	scanf(&quot;%d %d&quot;, &amp;n, &amp;test);
+	lim = (n &lt;&lt; 1 | 1);
+	while(test--) {
+		scanf(&quot;%d %d %d %d %d&quot;, &amp;X, &amp;Y, &amp;Z, &amp;r, &amp;k);
+		node[X - Z + n + 1][Y - Z + n + 1] += k;
+		update(X, Y, Z, r, k);
+	}
+	push_up();
+
+	per(i, n - 1, 0)
+		per(j, n - 1, 1 + i - n)
+			printf(&quot;%d &quot;, get(0, j, i));
+	per(i, -1, 1 - n) 
+		per(j, n - 1 + i, 1 - n) 
+			printf(&quot;%d &quot;, get(0, j, i));
+	// system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre>
+<h3 id="示例代码-2-5">示例代码 - 2</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#define max(a,b) ((a)&gt;(b)?(a):(b))
+#define min(a,b) ((a)&lt;(b)?(a):(b))
+int xy[1601][1601], yz[1601][1601], zx[1601][1601];
+int (*A)[1601] = (int(*)[1601])&amp;xy[800][800]; //偏移中心点，实现负数下标
+int (*B)[1601] = (int(*)[1601])&amp;yz[800][800];
+int (*C)[1601] = (int(*)[1601])&amp;zx[800][800];
+int main()
+{
+	int n, m;
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+    //维护差分数组
+	while(m--)
+	{
+		int x, y, z, r, k, i, j;
+		scanf(&quot;%d%d%d%d%d&quot;, &amp;x, &amp;y, &amp;z, &amp;r, &amp;k);
+		if(z == 0)
+			i = x, j = y;
+		else if(x == 0)
+			i = -z, j = y - z;
+		else
+			i = x - z, j = -z;
+		A[i][j] += k;
+        A[min(i + r, n)][j] -= k;
+        A[i][min(j + r, n)] -= k;
+        A[min(i + r, n)][min(j + r, n)] += k;
+		if(x == 0)
+			i = y, j = z;
+		else if(y == 0)
+			i = -x, j = z - x;
+		else
+			i = y - x, j = -x;
+		B[i][j + 1] += k;
+        B[min(i + r, n)][j + 1] -= k;
+        B[i][min(j + r, n)] -= k;
+        B[min(i + r, n)][min(j + r, n)] += k;
+		if(y == 0)
+			i = z, j = x;
+		else if(z == 0)
+			i = -y, j = x - y;
+		else
+			i = z - y, j = -y;
+		C[i + 1][j + 1] += k;
+        C[min(i + r, n)][j + 1] -= k;
+        C[i + 1][min(j + r, n)] -= k;
+        C[min(i + r, n)][min(j + r, n)] += k;
+	}
+    //计算二维前缀和
+	for(int i = -n + 1; i &lt;= n; ++i)
+	{
+		for(int j = -n + 1; j &lt;= n; ++j)
+		{
+			A[i][j] += A[i][j - 1] + A[i - 1][j] - A[i - 1][j - 1];
+			B[i][j] += B[i][j - 1] + B[i - 1][j] - B[i - 1][j - 1];
+			C[i][j] += C[i][j - 1] + C[i - 1][j] - C[i - 1][j - 1];
+		}
+	}
+    //输出结果
+	for(int i = -n + 1; i &lt; n; ++i)
+		for(int j = -n + 1 + max(i, 0); j &lt; n + min(i, 0); ++j)
+			printf(&quot;%d &quot;, A[i][i - j] + B[-j][-i] + C[j - i][j]);
+	return 0;
+}
+</code></pre>
+<h1 id="-end-">- End -</h1>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/0kvGbp_AE/" class="article-info">
+                                                        比赛
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

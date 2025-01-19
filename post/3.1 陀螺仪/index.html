@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>3.1 陀螺仪 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、陀螺仪基本概念
+1、陀螺
+1、定义：绕自身对称轴高速旋转的刚体
+2、高速旋转的陀螺具有定轴性，定轴性容易被破坏
+3、干扰因素：外来非对称干扰力矩、旋转受到的摩擦力
+2、陀螺仪
+1、定义：利用动量矩敏感壳体相对惯性空间绕正交于自转轴的一个..." />
+        <meta name="keywords" content="惯性导航基础" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="3.1 陀螺仪" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、陀螺仪基本概念
+1、陀螺
+1、定义：绕自身对称轴高速旋转的刚体
+2、高速旋转的陀螺具有定轴性，定轴性容易被破坏
+3、干扰因素：外来非对称干扰力矩、旋转受到的摩擦力
+2、陀螺仪
+1、定义：利用动量矩敏感壳体相对惯性空间绕正交于自转轴的一个...">
+        <meta property="og:url" content="https://github.pansis.site/post/3.1 陀螺仪/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-10-16">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="3.1 陀螺仪">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="3.1 陀螺仪">
+        <meta name="twitter:description" content="一、陀螺仪基本概念
+1、陀螺
+1、定义：绕自身对称轴高速旋转的刚体
+2、高速旋转的陀螺具有定轴性，定轴性容易被破坏
+3、干扰因素：外来非对称干扰力矩、旋转受到的摩擦力
+2、陀螺仪
+1、定义：利用动量矩敏感壳体相对惯性空间绕正交于自转轴的一个...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    3.1 陀螺仪
+                                </h2>
+                                <span class="article-info">
+                                    2023-10-16, 817 words, 3 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-陀螺仪基本概念">一、陀螺仪基本概念</h2>
+<h4 id="1-陀螺">1、陀螺</h4>
+<p>1、定义：绕自身对称轴高速旋转的刚体</p>
+<p>2、高速旋转的陀螺具有定轴性，定轴性容易被破坏</p>
+<p>3、干扰因素：外来非对称干扰力矩、旋转受到的摩擦力</p>
+<h4 id="2-陀螺仪">2、陀螺仪</h4>
+<p>1、定义：利用动量矩敏感壳体相对惯性空间绕正交于自转轴的一个或两个角运动的装置</p>
+<p>2、陀螺仪是运载体控制系统、导航系统和制导系统的核心元件</p>
+<p>3、核心部分：一个绕自转轴高速旋转的对称刚体转子</p>
+<p>4、陀螺仪自由度数目：自转轴可绕其自由旋转的正交轴数目</p>
+<p>5、根据自由度划分分为：二自由度陀螺仪、单自由度陀螺仪</p>
+<p>6、结构名称</p>
+<p>二自由度陀螺仪</p>
+<img src="http://cos.pansis.site/202310130756302.png/abc123" alt="image-20231013075649046" style="zoom:33%;" />
+<p>单自由度陀螺仪</p>
+<img src="http://cos.pansis.site/202310130757382.png/abc123" alt="image-20231013075714127" style="zoom:28%;" />
+<h4 id="3-陀螺仪动量矩">3、陀螺仪动量矩</h4>
+<p>动量矩H、力矩M  略</p>
+<h2 id="二-二自由度陀螺仪的基本特性">二、二自由度陀螺仪的基本特性</h2>
+<h4 id="1-转子不旋转情况">1、转子不旋转情况</h4>
+<p>其产生的运动与其他物体一样。</p>
+<p>如果绕外枢轴（或内框轴）施加外力矩，则转子自转轴的旋转方向和外力矩的方向一致。</p>
+<h4 id="2-旋转特性">2、旋转特性</h4>
+<p>1、进动性：施加外力矩M，会引起陀螺动量矩矢量H相对惯性空间转动的特性</p>
+<p>2、定轴性</p>
+<h2 id="三-进动性">三、进动性</h2>
+<h4 id="1-定义">1、定义</h4>
+<p>施加外力矩M，会引起陀螺动量矩矢量H相对惯性空间转动的特性</p>
+<h4 id="2-进动">2、进动</h4>
+<p>1、将陀螺仪绕着与外力矩矢量相垂直方向的转动叫做进动。2、产生机理：</p>
+<p>​         动量矩定理表明，在外力矩作用下，动量矩在惯性空间中将出现变化率。绕内框轴或外框轴作用在陀螺仪上的外力矩 ， 由于框架的结构特点，不会绕自转轴传递到转子上使它的 转速发生变化，因而不会引起动量矩 的大小发生改变。</p>
+<p>​        既然动量矩 的大小保持不变，那么动量矩 在惯性空间中的方向就必然要发生变化</p>
+<h4 id="3-进动角速度">3、进动角速度</h4>
+<p>1、进动轴：将陀螺仪进动所绕的轴叫做进动轴</p>
+<p>2、进动角速度方向：转子转动的动量矩<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>H</mi><mo stretchy="true">→</mo></mover></mrow><annotation encoding="application/x-tex">\overrightarrow{H}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.20533em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.20533em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span></span></span><span class="svg-align" style="top:-3.6833299999999998em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="height:0.522em;min-width:0.888em;"><svg width='400em' height='0.522em' viewBox='0 0 400000 522' preserveAspectRatio='xMaxYMin slice'><path d='M0 241v40h399891c-47.3 35.3-84 78-110 128
+-16.7 32-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20
+ 11 8 0 13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7
+ 39-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85
+-40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+ 151.7 139 205zm0 0v40h399900v-40z'/></svg></span></span></span></span></span></span></span></span></span>和外力矩<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>M</mi><mo stretchy="true">→</mo></mover></mrow><annotation encoding="application/x-tex">\overrightarrow{M}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.20533em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.20533em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">M</span></span></span><span class="svg-align" style="top:-3.6833299999999998em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="height:0.522em;min-width:0.888em;"><svg width='400em' height='0.522em' viewBox='0 0 400000 522' preserveAspectRatio='xMaxYMin slice'><path d='M0 241v40h399891c-47.3 35.3-84 78-110 128
+-16.7 32-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20
+ 11 8 0 13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7
+ 39-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85
+-40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+ 151.7 139 205zm0 0v40h399900v-40z'/></svg></span></span></span></span></span></span></span></span></span>的叉乘方向</p>
+<img src="http://cos.pansis.site/202310161526622.png/abc123" alt="image-20231016152631546" style="zoom:33%;" />
+<p>3、进动角速度大小：</p>
+<img src="http://cos.pansis.site/202310161526411.png/abc123" alt="image-20231016152659368" style="zoom:33%;" />
+<h4 id="4-产生进动的条件">4、产生进动的条件</h4>
+<p>内因：转子的高速自转及动量矩的存在</p>
+<p>外因：外力矩的作用</p>
+<h4 id="5-陀螺仪的进动是相对惯性空间而言的">5、陀螺仪的进动是相对惯性空间而言的。</h4>
+<h2 id="四-定轴性">四、定轴性</h2>
+<h4 id="1-定义-2">1、定义</h4>
+<p>高速转动的陀螺仪，如果不受外力矩作用，自转轴将相对惯性空间保持方向不变。</p>
+<p>陀螺自转轴具有方向稳定性</p>
+<h4 id="2-转动惯量">2、转动惯量</h4>
+<p>物体在转动时所具有的保 持其转动状态不变的惯性，被称之为转动惯量</p>
+<h4 id="3-漂移角速率">3、漂移角速率</h4>
+<p>1、漂移定义：在工作过程中，始终会有一定量 值的干扰力矩作用在陀螺仪上，从而产生进动，使自转轴在惯性空间中逐渐偏离原来的方位</p>
+<p>2、漂移角速度</p>
+<img src="http://cos.pansis.site/202310161540390.png/abc123" alt="image-20231016154010322" style="zoom:33%;" /><br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/gxdhjc/" class="article-info">
+                                                        惯性导航基础
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

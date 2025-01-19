@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>常用函数2-24航c | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="二分法解方程
+//所解方程在选定区间内必须单调
+#include &lt;stdio.h&gt;
+
+double f(double x) {
+    return x * x;//函数表达式,此处f(x)=x*x
+}
+
+double sol..." />
+        <meta name="keywords" content="24航C" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="常用函数2-24航c" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="二分法解方程
+//所解方程在选定区间内必须单调
+#include &amp;lt;stdio.h&amp;gt;
+
+double f(double x) {
+    return x * x;//函数表达式,此处f(x)=x*x
+}
+
+double sol...">
+        <meta property="og:url" content="https://github.pansis.site/post/常用函数2-24航c/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-10-30">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="常用函数2-24航c">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="常用函数2-24航c">
+        <meta name="twitter:description" content="二分法解方程
+//所解方程在选定区间内必须单调
+#include &amp;lt;stdio.h&amp;gt;
+
+double f(double x) {
+    return x * x;//函数表达式,此处f(x)=x*x
+}
+
+double sol...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    常用函数2-24航c
+                                </h2>
+                                <span class="article-info">
+                                    2024-10-30, 1562 words, 7 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="二分法解方程">二分法解方程</h2>
+<pre><code class="language-c">//所解方程在选定区间内必须单调
+#include &lt;stdio.h&gt;
+
+double f(double x) {
+    return x * x;//函数表达式,此处f(x)=x*x
+}
+
+double solve(double low, double high, double eps, double fx)  //eps为误差范围  fx为所求函数值  //适用于单增函数
+{
+    double mid;
+    while (high - low &gt; eps) {
+        mid = (high + low) / 2;
+        if (f(mid) &gt; fx)   //若为单减函数，仅需改变不等号（此处适用于单增函数）
+        { high = mid; }
+        else low = mid;
+    }
+    return low;
+}
+
+int main() {
+    printf(&quot;%f&quot;, solve(0, 2, 0.00001, 2));//计算f(x)=2的解(x在0~2范围内)
+}
+</code></pre>
+<h2 id="冒泡排序">冒泡排序</h2>
+<pre><code class="language-c">/*冒泡排序法
+
+ */
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+
+void maopao(int a[],int n)  //升序
+{int temp,aa=0;
+    for (int i = 0; i &lt; n-1; ++i) {
+        aa=0;
+        for (int j = 0; j &lt; n-1-i; ++j) {
+            if (a[j]&gt;a[j+1])
+            {temp=a[j+1];
+                aa=1;
+                a[j+1]=a[j];
+                a[j]=temp;
+            }
+        }
+        if (aa==0) break;
+    }
+}
+
+void maopao1(int a[],int n)  //降序
+{int temp,aa=0;
+    for (int i = 0; i &lt; n-1; ++i) {
+        aa=0;
+        for (int j = 0; j &lt; n-1-i; ++j) {
+            if (a[j]&lt;a[j+1])
+            {temp=a[j+1];
+                aa=1;
+                a[j+1]=a[j];
+                a[j]=temp;
+            }
+        }
+        if (aa==0) break;
+    }
+}
+
+int main()
+{
+    int n;int a[1002]={0};int i;
+    scanf(&quot;%d&quot;,&amp;n);
+    for (i = 0; i &lt;n ; ++i) {
+        scanf(&quot;%d&quot;,&amp;a[i]);
+    }
+    maopao(a,i);
+    for (i = 0; i &lt;n ; ++i) {
+        printf(&quot;%d&quot;,a[i]);
+    }
+
+}
+</code></pre>
+<h2 id="二分查找">二分查找</h2>
+<h4 id="1-升序数组中找第一个大于等于某个数的值">1、升序数组中找第一个大于等于某个数的值</h4>
+<p>1.条件：数组升序排列</p>
+<p>2.返回值：数组中从左到右第一个大于等于某值的下标</p>
+<p>3.代码：</p>
+<pre><code class="language-c">    //下界二分查找
+    //a: 要查找的有序数组, 默认是从小到大排序
+    //lo, hi: 要查找的范围是从a[lo]到a[hi]之间(包含a[lo]和a[hi])
+    //val: 要查找的值
+    //返回的值: 找到的元素在数组a中的下标
+    //如果所有数都小于val,则返回hi+1
+int lower_bound(int a[], int lo, int hi, int val) {
+    if (val &gt; a[hi]) return hi + 1;
+    int mi = 0;
+    while (lo &lt; hi) {
+    mi = (lo + hi) &gt;&gt; 1;
+    if (a[mi] &lt; val) lo = mi + 1;
+        else hi = mi;
+        }
+    return lo;}
+
+</code></pre>
+<p>4.具体例子如下:<br>
+假如说我们要查找的有序数列为{1,2,2,2,3,5} 此时假定数组第一个元素的下标为0<br>
+在查找2的时候，那么我们此时返回的下标就是1 (注意：只需要找到第一个)<br>
+在查找3的时候，那么我们此时返回的下标就是4<br>
+在查找4的时候，那么我们此时返回的下标就是5<br>
+在查找6的时候，那么我们此时返回的下标就是6</p>
+<h4 id="2-升序数组中找第一个大于某个数的值">2、升序数组中找第一个大于某个数的值</h4>
+<p>1.条件：数组升序排列<br>
+2.返回值：数组中从左到右第一个严格大于某值的数值的数组下标<br>
+3.代码：</p>
+<pre><code class="language-c">  //上界二分查找
+    //a: 要查找的有序数组, 默认是从小到大排序
+    //lo, hi: 要查找的范围是从a[lo]到a[hi]之间(包含a[lo]和a[hi])
+    //val: 要查找的值
+    //返回的值: 找到的元素在数组a中的下标
+    //如果所有数都小于等于val,则返回hi+1
+int upper_bound(int a[], int lo, int hi, int val) {
+        if (val &gt;= a[hi]) return hi + 1;
+        int mi = 0;
+        while (lo &lt; hi) {
+            mi = (lo + hi) &gt;&gt; 1;
+            if (a[mi] &lt;= val) lo = mi + 1;
+            else hi = mi;}
+        return lo;}
+</code></pre>
+<p>4.具体例子如下:<br>
+假如说我们要查找的有序数列为{1,2,2,2,3,5} 此时假定数组第一个元素的下标为0<br>
+在查找1 的时候，那么我们此时返回的下标就是1 (注意：这里要找的是第一个严格大于的)<br>
+在查找3 的时候，那么我们此时返回的下标就是5<br>
+在查找5 的时候，那么我们此时返回的下标就是6<br>
+(这个下标不存在，他反应的就是数列里的所有数都不大于5 ，返回的是下标，所以也不需要担心数<br>
+组越界)</p>
+<h4 id="3-降序数组中找第一个小于某个数的值">3、 降序数组中找第一个小于某个数的值</h4>
+<p>upper_bound 在一个有序的序列中，找到第一个严格小于某个数的值<br>
+1.条件：数组降序排列<br>
+2.返回值：数组中从左到右第一个严格小于某值的数值的数组下标<br>
+3.代码：</p>
+<pre><code class="language-c">    //a: 要查找的有序数组, 默认是从大到小排序
+    //lo, hi: 要查找的范围是从a[lo]到a[hi]之间(包含a[lo]和a[hi])
+    //val: 要查找的值
+    //返回的值: 找到的元素在数组a中的下标
+    //如果所有数都大于等于val,则返回hi+1
+
+int upper_bound(int a[], int lo, int hi, int val) {
+        if (val &lt;= a[hi]) return hi + 1;
+        int mi = 0;
+        while (lo &lt; hi) {
+            mi = (lo + hi) &gt;&gt; 1;
+            if (a[mi] &gt;= val) lo = mi + 1;
+            else hi = mi;}
+        return lo;}
+</code></pre>
+<h4 id="4-降序数组中找第一个小于等于某个数的值">4、降序数组中找第一个小于等于某个数的值</h4>
+<p>upper_bound 在一个有序的序列中，找到第一个小于等于某个数的值<br>
+1.条件：数组降序排列<br>
+2.返回值：数组中从左到右第一个小于等于某值的数值的数组下标<br>
+3.代码：</p>
+<pre><code class="language-c">//a: 要查找的有序数组, 默认是从大到小排序
+    //lo, hi: 要查找的范围是从a[lo]到a[hi]之间(包含a[lo]和a[hi])
+    //val: 要查找的值
+    //返回的值: 找到的元素在数组a中的下标
+    //如果所有数都大于val,则返回hi+1
+int upper_bound(int a[], int lo, int hi, int val) {
+        if (val &lt; a[hi]) return hi + 1;
+        int mi = 0;
+        while (lo &lt; hi) {
+            mi = (lo + hi) &gt;&gt; 1;
+            if (a[mi] &gt; val) lo = mi + 1;
+            else hi = mi;}
+        return lo;}
+</code></pre>
+<h4 id="5-tips">5、Tips</h4>
+<p>1、需要注意的是，上述几个二分查找并不会去判定该值是否存在于数组当中，因此上述函数返回的下标对应的值可能并不是我们要查找的值。要判断该值是否存在于数组中，则需要用if去判断一下返回的下标对应的值是不是我们要查找的值，如果不相等，则说明该值不存在于数组中。</p>
+<p>（之所以不设置不存在于数组中函数返回-1，是为了函数的通用性着想）</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/24hangc/" class="article-info">
+                                                        24航C
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://github.pansis.site/post/常见函数-24航c/">
+                                                    <h3 class="post-title">
+                                                        常见函数-24航c
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

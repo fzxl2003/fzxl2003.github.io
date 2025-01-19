@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>C2讲解-24航C | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="A 可靠性估计
+题解
+#include &lt;stdio.h&gt;
+
+int main() {
+    int  n,a;
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;a);
+    printf(&q..." />
+        <meta name="keywords" content="24航C" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="C2讲解-24航C" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="A 可靠性估计
+题解
+#include &amp;lt;stdio.h&amp;gt;
+
+int main() {
+    int  n,a;
+    scanf(&amp;quot;%d%d&amp;quot;,&amp;amp;n,&amp;amp;a);
+    printf(&amp;q...">
+        <meta property="og:url" content="https://github.pansis.site/post/C2讲解-24航C/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-09-26">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="C2讲解-24航C">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="C2讲解-24航C">
+        <meta name="twitter:description" content="A 可靠性估计
+题解
+#include &amp;lt;stdio.h&amp;gt;
+
+int main() {
+    int  n,a;
+    scanf(&amp;quot;%d%d&amp;quot;,&amp;amp;n,&amp;amp;a);
+    printf(&amp;q...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    C2讲解-24航C
+                                </h2>
+                                <span class="article-info">
+                                    2024-09-26, 1353 words, 7 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h1 id="a-可靠性估计"><code>A</code> 可靠性估计</h1>
+<h4 id="题解">题解</h4>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int  n,a;
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;a);
+    printf(&quot;Result: %.2f%% of the parts are defective.&quot;,100*(1-1.0*a/n));
+}
+</code></pre>
+<h3 id="printf">printf</h3>
+<p>1.库： #include &lt;stdio.h&gt;</p>
+<p>2、用法： printf(&quot;格式说明字符串&quot;,...,...,...);<br>
+....为参数表，与字符串中的%一一对应</p>
+<p>3、转义字符</p>
+<ul>
+<li>\n   换行符</li>
+<li>\\   反斜线</li>
+<li>?   问号</li>
+<li>\'   单引号</li>
+<li>\&quot;   双引号</li>
+<li>%%   %号   （仅限于scanf和printf中会转义）</li>
+</ul>
+<p>4.printf()常用字段类型说明符</p>
+<ul>
+<li>%d： － 以十进制方式输出带标记整数（正数默认不输出标记）； int 十进制  //////////////////////////////</li>
+<li>%u： － 以十进制方式输出无标记整数；                   unsigned int 十进制 /////////////////////</li>
+<li>%x   — 以十六进制方式输出整数                        int 十六进制</li>
+<li>%o： － 以八进制方式输出整数                         int 八进制</li>
+<li>%lf： － 以小数方式输出单、双精度实数；                 double 小数方式 /////////////////////</li>
+<li>%e： － 以指数方式输出单、双精度实数；                 double 科学计数法</li>
+<li>%g： － 以%f，%e中较短的输出宽度输出单、双精度实数；     double</li>
+<li>%c： － 输出单个字符；                              char  ////////////////////////////////////</li>
+<li>%s： － 输出字符串。                                char*  ///////////////////////</li>
+<li>%lld  -以十进制方式输入长整型 （linux系统）    long long ///////////////////////////</li>
+<li>%llu  以十进制方式输出unsigned long long        unsigned long long /////////////////////////</li>
+</ul>
+<p>4.完整的字段说明序列<br>
+%[flags] [width] [.precision] type<br>
+flags 格式标志 width字段宽度 .precision精度 type类型(必填)<br>
+5.flags 格式标志<br>
+标志                  意义                                  缺省</p>
+<ul>
+<li>
+<pre><code>              结果左对齐，右边填空格                    结果右对齐
+</code></pre>
+</li>
+</ul>
+<ul>
+<li>
+<pre><code>              在有符号的数据前输出标记(正号或负号)        只对负数加符号
+              0                   数据在字段宽度内加前导0                   不加前导0
+              \#                   对八进制和十六进制数（o,x,X）显现前缀O,Ox   不加前缀
+                                对类型符e,f,g强制输出小数点               只在有小数值时输出小数点
+</code></pre>
+</li>
+</ul>
+<p>6.width字段宽度<br>
+在%与字母之间  插入  整数  代表该字段的最小宽度<br>
+7.precision精度<br>
+在%与字母之间  插入  小数  代表要保留的小数位数   <strong>%.1f  //输出保留一位小数   %.2f  //输出保留二位小数</strong>   (位数不足以零补位)</p>
+<h4 id="明确计算范围">明确计算范围</h4>
+<p>只取决于计算符两侧的变量或常量类型，与其他范围完全无关。</p>
+<ul>
+<li>计算符两侧均为整数时，若均为int类型，则计算范围为int</li>
+<li>计算符两侧均为整数时，若存在long long类型，则计算范围为long long</li>
+<li>计算符两侧存在double，则计算范围为double</li>
+</ul>
+<p>Tips：1、计算范围与赋值范围无关</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int main()
+{
+   long long c;
+   int a=1000000,b=1000000;
+   c=a*b;
+    printf(&quot;%lld&quot;,c);
+}
+</code></pre>
+<p>2、int两数运算变为long long运算</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int main()
+{
+   long long c;
+   int a=1000000,b=1000000;
+   c=1ll*a*b;
+   c=(long long)a*b;
+    printf(&quot;%lld&quot;,c);
+
+}
+</code></pre>
+<img src="http://cos.pansis.site/202405231102108.png/abc123" alt="image-20240523110255960" style="zoom:35%;" />
+<p>3、两个整数执行除法</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int main()
+{
+   double c;
+   int a=1,b=3;
+   c=1.0*a/b;
+   c=(double)a/b;
+}
+</code></pre>
+<h4 id="强制类型转换">强制类型转换</h4>
+<p>区分下面两个写法的区别</p>
+<pre><code>(double) 7/5   //得到1.4
+(double) (7/5)  //得到1.0
+</code></pre>
+<h1 id="b-a-计划"><code>B</code> A 计划</h1>
+<h4 id="不定组输入">不定组输入</h4>
+<p>1、理解scanf的返回值</p>
+<p>很多函数都会有返回值，类似于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y=f(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span> ，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 就是函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span></span></span></span> 的返回值。</p>
+<p>scanf的返回值代表它成功赋值的变量个数。</p>
+<p>当scanf遇到输入结束（可以理解为Ctrl+Z），返回-1.（EOF=-1）</p>
+<p>2、不定组输入的模板</p>
+<pre><code class="language-c">while ((scanf(&quot;xxx&quot;,xxx))!=EOF) {
+        
+}
+</code></pre>
+<h4 id="题解-2">题解</h4>
+<pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a,b;
+    while ((scanf(&quot;%d%d&quot;,&amp;a,&amp;b))!=EOF) {
+        printf(&quot;%lld\n&quot;,1ll*a+b);
+    }
+}
+</code></pre>
+<h1 id="c-firefly小姐的大小写转换"><code>C</code> Firefly小姐的大小写转换</h1>
+<h4 id="char变量类型">char变量类型</h4>
+<p>本质就是数字，可以进行计算、比较，存储的值对应字符的ASCII</p>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/u=1875191478,3851070770&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?abc123" alt="img" loading="lazy"></figure>
+<h4 id="题解-3">题解</h4>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    char c;
+    while (scanf(&quot;%c&quot;,&amp;c)!=EOF) {
+        if (c&gt;='a' &amp;&amp; c&lt;='z')
+            c=c-'a'+'A';
+        else if (c&gt;='A' &amp;&amp; c&lt;='Z')
+            c=c-'A'+'a';
+        printf(&quot;%c&quot;,c);
+
+    }
+}
+</code></pre>
+<h1 id="d-浮点平均数的计算"><code>D</code> 浮点平均数的计算</h1>
+<h4 id="题解-4">题解</h4>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    double a[2004];//绝对禁止开double a[n]
+    double sum=0;
+    for (int i = 0; i &lt; n; ++i) {
+        scanf(&quot;%lf&quot;,&amp;a[i]);
+        sum+=a[i];
+    }
+    double avg=sum/n;
+    printf(&quot;%.3f\n&quot;,avg);
+    for (int i = 0; i &lt; n; ++i) {
+        if (a[i]&gt;=avg)
+            printf(&quot;%.3f &quot;,a[i]);
+    }
+    
+}
+</code></pre>
+<h1 id="e-s7h想过生日"><code>E</code> s7h想过生日 !</h1>
+<pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int t,n;
+    scanf(&quot;%d%d&quot;,&amp;t,&amp;n);
+    t++;
+    while (n!=0) {
+        if ((t%100==0 &amp;&amp;t%400==0)||(t%100!=0 &amp;&amp;t%4==0))
+            n--;
+        t++;
+    }
+    t--;
+    printf(&quot;%d&quot;,t);
+
+}
+</code></pre>
+<h1 id="f-学院路停车费"><code>F</code> 学院路停车费</h1>
+<pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int h1,m1,h2,m2;
+    while (scanf(&quot;%d:%d-%d:%d&quot;,&amp;h1,&amp;m1,&amp;h2,&amp;m2)!=EOF) {
+        int min=m2-m1+(h2-h1)*60;
+        int min15=min/15;
+        if (min15&lt;=12) {
+            if (min15%2==0)
+                printf(&quot;%d\n&quot;,min15/2*5);//不能写成min15*2.5
+            else
+                printf(&quot;%.1f\n&quot;,min15*2.5);
+        }
+        else {
+            printf(&quot;%d\n&quot;,30+(min15-12)*5);
+        }
+    }
+
+
+}
+</code></pre>
+<h1 id="h-简单的一元二次方程"><code>H</code> 简单的一元!二次?方程</h1>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main() {
+    int a,b,c;
+    scanf(&quot;%d%d%d&quot;,&amp;a,&amp;b,&amp;c);
+    if (a==0) {
+        if (b==0) {
+            if (c==0)
+                printf(&quot;infinite solutions&quot;);
+            else
+                printf(&quot;No real root&quot;);
+        }
+        else {
+            printf(&quot;%.2f&quot;,-1.0*c/b);
+        }
+    }
+    else {
+        double delta=b*b-4*a*c;
+        if (delta==0)
+            printf(&quot;%.2f&quot;,-1.0*b/(2*a));
+        else if (delta&lt;0)
+            printf(&quot;No real root&quot;);
+        else {
+            double x1=(-b+sqrt(delta))/(2*a);
+            double x2=(-b-sqrt(delta))/(2*a);
+            if (x1&gt;x2)
+                printf(&quot;%.2f %.2f&quot;,x2,x1);
+            else
+                printf(&quot;%.2f %.2f&quot;,x1,x2);
+
+
+        }
+    }
+
+
+
+}
+</code></pre>
+<img src="http://cos.pansis.site/202403071330185.png/abc123" alt="image-20240307133047077" style="zoom:50%;" /><br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/24hangc/" class="article-info">
+                                                        24航C
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://github.pansis.site/post/1.1 ARM/">
+                                                    <h3 class="post-title">
+                                                        1.1 ARM
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

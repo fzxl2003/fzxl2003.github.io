@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>2.4 指令集 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、读写主存
+1、读字节 lb lbu
+1、功能：从主存中读取一个字节（8bit）并将该字节写入指定的寄存器（容量32bit）
+2、格式：lb rt,offset(base)
+rt,base 寄存器编号（如$v1等）
+offset 立即数，..." />
+        <meta name="keywords" content="计算机组成原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="2.4 指令集" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、读写主存
+1、读字节 lb lbu
+1、功能：从主存中读取一个字节（8bit）并将该字节写入指定的寄存器（容量32bit）
+2、格式：lb rt,offset(base)
+rt,base 寄存器编号（如$v1等）
+offset 立即数，...">
+        <meta property="og:url" content="https://github.pansis.site/post/2.4 指令集/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-04-05">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="2.4 指令集">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="2.4 指令集">
+        <meta name="twitter:description" content="一、读写主存
+1、读字节 lb lbu
+1、功能：从主存中读取一个字节（8bit）并将该字节写入指定的寄存器（容量32bit）
+2、格式：lb rt,offset(base)
+rt,base 寄存器编号（如$v1等）
+offset 立即数，...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    2.4 指令集
+                                </h2>
+                                <span class="article-info">
+                                    2024-04-05, 3967 words, 17 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-读写主存">一、读写主存</h2>
+<h4 id="1-读字节-lb-lbu">1、读字节 lb lbu</h4>
+<p>1、功能：从主存中读取一个字节（8bit）并将该字节写入指定的寄存器（容量32bit）</p>
+<p>2、格式：lb rt,offset(base)</p>
+<p>rt,base 寄存器编号（如$v1等）</p>
+<p>offset 立即数，表示偏移量，范围只能是正负0~31    偏移量的单位为字节（8bit）</p>
+<p>3、描述：R[rt] $\longleftarrow $ memory [ R[base] + offset ]</p>
+<p>4、例子</p>
+<p><code>lb $v1,3($s0)  </code></p>
+<p>将主存地址为$s0偏移 3 字节位的字（32bit）读取出来，抛弃掉高位的24bit，根据正负补充这24bit（符号位为0的补0，符号位为1的补1），然后将这32bit数据存入寄存器$v1中。</p>
+<p><code>lbu $v1,3($s0)  </code></p>
+<p>不根据正负补充24bit，一律补0</p>
+<h4 id="2-读半字-lh-lhu">2、读半字 lh lhu</h4>
+<p>1、功能：从主存中读取两个字节、半个字（16bit）并将其写入指定的寄存器（容量32bit）</p>
+<p>2、格式：lh rt,offset(base)</p>
+<p>rt,base 寄存器编号（如$v1等）</p>
+<p>offset 立即数，表示偏移量，范围只能是正负0~31，且为偶数   偏移量的单位为字节（8bit）</p>
+<p>3、例子：略</p>
+<h4 id="3-读字-lw">3、读字 lw</h4>
+<p>1、功能：从主存中读取一个字（32bit）并将该字写入指定的寄存器（容量32bit）</p>
+<p>2、格式：lw rt,offset(base)</p>
+<p>rt,base 寄存器编号（如$v1等）</p>
+<p>offset 立即数，表示偏移量（必须为4的倍数）（保证是32bit为单位）偏移量的单位为字节（8bit）</p>
+<p>3、注意：不存在lwu，因为lw写入寄存器的是32bit，无需补位</p>
+<h4 id="4-写存储器-sb-sh-sw">4、写存储器 sb、sh、sw</h4>
+<p>1、功能：将指定寄存器的值，存入主存中</p>
+<p>2、格式：sx rt,offset(base)</p>
+<p>取寄存器低位的值写入内存</p>
+<p>3、不存在u的命令</p>
+<h2 id="二-寄存器加载立即数">二、寄存器加载立即数</h2>
+<h4 id="1-寄存器加载立即数高位-lui">1、寄存器加载立即数高位 lui</h4>
+<p>1、功能：指令的16位立即数被复制到&quot;寄存器的高16位,寄存器的低16位则为0</p>
+<p>2、格式：lu rt,immediate</p>
+<p>rt为存入的寄存器编号</p>
+<p>immediate为立即数</p>
+<p>3、例子：</p>
+<p><code>lui $s1，0x55AA</code></p>
+<p>$s1的值为0x55AA_0000</p>
+<h4 id="2-寄存器加载32bit的两个立即数">2、寄存器加载32bit的两个立即数</h4>
+<p>1、lui和ori配合加载32bit常数</p>
+<p>lui $s1，0x55AA</p>
+<p>ori $s7,$s7,0x1234</p>
+<p>$s1的值为0x55AA_1234</p>
+<h2 id="三-常用伪指令">三、 常用伪指令</h2>
+<h4 id="0-伪指令">0、伪指令</h4>
+<ul>
+<li>伪指令不是真正的指令</li>
+<li>伪指令只是增加了可读性</li>
+<li>伪指令要被转换为实际指令</li>
+</ul>
+<h4 id="1-move-寄存器间赋值">1、move 寄存器间赋值</h4>
+<p>1、功能：将一个寄存器的值复制到另一个寄存器。</p>
+<p>2、例子：<code>move $t0, $t1</code> 这条指令会将寄存器 <code>$t1</code> 的值复制到寄存器 <code>$t0</code> 中。</p>
+<p>3、上述例子的等价指令： <code>addu $t0, $t1, $zero</code>。</p>
+<h4 id="2-li-加载立即数到寄存器">2、li 加载立即数到寄存器</h4>
+<p>1、功能：用于将一个立即数（即常数）加载到一个寄存器中。</p>
+<p>2、例子：<code>li $t0, 10</code> 这条指令会将常数 10 加载到寄存器 <code>$t0</code> 中。</p>
+<p>3、等价指令：</p>
+<ul>
+<li>
+<p>加载小于16位的立即数</p>
+<p><code>li $t0, 10</code> 等价于 <code>addiu $t0, $zero, 10</code>。</p>
+</li>
+<li>
+<p>加载大于16位的立即数</p>
+</li>
+<li>
+<p><code>li $t0, 0x12345678</code> 这条指令会被转换为以下两条指令：</p>
+</li>
+<li>
+<pre><code>lui $t0, 0x1234
+ori $t0, $t0, 0x5678
+</code></pre>
+</li>
+</ul>
+<h4 id="3-la-将内存变量名对应的内存地址加载至寄存器">3、la 将内存变量名对应的内存地址加载至寄存器</h4>
+<p>1、功能：将内存变量名对应的内存地址加载至寄存器</p>
+<p>2、全称： &quot;Load Address&quot;</p>
+<p>3、例如，<code>la $t0, label</code> 这条指令会将标签 <code>label</code> 对应的地址加载到寄存器 <code>$t0</code> 中。</p>
+<p>4、等价指令</p>
+<p>假设我们有一个标签 <code>label</code>，其地址为 <code>0x12345678</code>，那么 <code>la $t0, label</code> 这条指令的等价指令如下：</p>
+<pre><code class="language-assembly">lui $t0, 0x1234
+ori $t0, $t0, 0x5678
+</code></pre>
+<h2 id="四-算术运算">四、算术运算</h2>
+<h4 id="1-加法-add-addu">1、加法 add、addu</h4>
+<p>1、功能：将两个寄存器的值相加，存入另外一个寄存器中</p>
+<p>2、格式：add rd,rs,rt</p>
+<p>3、描述：R[rd] $\longleftarrow $  R[rs] + R[rt]</p>
+<p>4、例子：add $s1,$s2,$s3</p>
+<p>将$s2,$s3寄存器的值相加，存入$s1中</p>
+<p>5、addu与add区别</p>
+<p>加法运算时可能会产生溢出，add会产生算术溢出异常，addu将忽略溢出。</p>
+<p>由于C语言通常是忽略异常的,因此大多数C语言编译器在生成MIPS指令时会<strong>选择无符号算术指令</strong>。</p>
+<h4 id="2-减法-sub-subu">2、减法 sub、subu</h4>
+<p>1、格式：sub rd,rs,rt</p>
+<p>2、描述：R[rd] $\longleftarrow $  R[rs] - R[rt]</p>
+<p>3、其他略</p>
+<h4 id="3-立即数加法-addi-addiu">3、立即数加法 addi、addiu</h4>
+<p>1、功能：将一个寄存器的值与立即数相加，存入另外一个寄存器中</p>
+<p>2、格式：add rd,rs,imm</p>
+<p>3、描述：R[rd] $\longleftarrow $  R[rs] + imm</p>
+<p>4、例子：<code>addi $s2,$s2,-1</code></p>
+<p>将$s2寄存器的值自减1</p>
+<h4 id="4-乘法-mult-multu">4、乘法 mult、multu</h4>
+<p>1、功能：将两个寄存器的值相乘，高32位存入hi寄存器，低32位存入lo寄存器</p>
+<p>2、格式：mult rs,rt</p>
+<p>3、描述：(hi,lo) $\longleftarrow $ R[rs]×R[rt]</p>
+<p>4、例子：<code>mult $s1,$s2</code></p>
+<p>将两个寄存器$s1,$s2的值相乘，高32位存入hi寄存器，低32位存入lo寄存器</p>
+<p>5、mult、multu区别</p>
+<p>一个是有符号乘法，一个是无符号乘法</p>
+<h4 id="5-除法-div-divu">5、除法 div、divu</h4>
+<p>1、功能：将两个寄存器的值相除，hi寄存器保存余数，lo寄存器保存商</p>
+<p>2、格式：div rs,rt</p>
+<p>3、描述：(hi,lo) $\longleftarrow $ R[rs]/R[rt]</p>
+<p>4、如果rt为0，则结果不可预知</p>
+<h4 id="6-读取hi-lo寄存器-mfhi-mflo">6、读取hi、lo寄存器 mfhi、mflo</h4>
+<p>1、功能：读取hi或lo寄存器的值，存入指定寄存器中</p>
+<p>2、格式：mfhi rd</p>
+<p>​                  mflo  rd</p>
+<p>3、例子：<code>mfhi $s1</code></p>
+<h4 id="7-写入hi-lo寄存器-mthi-mtlo">7、写入hi、lo寄存器 mthi、mtlo</h4>
+<p>1、功能：将指定寄存器的值存入hi或lo寄存器</p>
+<p>2、注意：一般不用</p>
+<h2 id="五-逻辑运算">五、逻辑运算</h2>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>功能</th>
+<th>格式</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>and</td>
+<td>与</td>
+<td>and rd,rs,rt</td>
+<td>R[rd]  $\longleftarrow $ R[rs] &amp; R[rt]</td>
+<td>and $t0, $s0,$s1</td>
+</tr>
+<tr>
+<td>andi</td>
+<td>与立即数</td>
+<td>andi rt,rs,imm16</td>
+<td>R[rt]  $\longleftarrow $ R[rs] &amp; zero_ext(imm16)</td>
+<td>andi $t0,$s0,0x5A</td>
+</tr>
+<tr>
+<td>or</td>
+<td>或</td>
+<td>or rd,rs,rt</td>
+<td>R[rd]  $\longleftarrow $ R[rs] | R[rt]</td>
+<td>or $t0,$s0,$s1</td>
+</tr>
+<tr>
+<td>ori</td>
+<td>或立即数</td>
+<td>ori rt,rs,imm16</td>
+<td>R[rt]  $\longleftarrow $ R[rs] | zero_ext(imm16)</td>
+<td>ori $t0，$s0,0xAA</td>
+</tr>
+<tr>
+<td>xor</td>
+<td>异或</td>
+<td>xor rd,rs,rt</td>
+<td>R[rd] <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟵</mo></mrow><annotation encoding="application/x-tex">\longleftarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.522em;vertical-align:-0.011em;"></span><span class="mrel">⟵</span></span></span></span>  R[rs] ^ R[rt]</td>
+<td>xor $t0，$s0,$s1</td>
+</tr>
+<tr>
+<td>xori</td>
+<td>异或立即数</td>
+<td>xori rt,rs,imm16</td>
+<td>R[rt] <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟵</mo></mrow><annotation encoding="application/x-tex">\longleftarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.522em;vertical-align:-0.011em;"></span><span class="mrel">⟵</span></span></span></span>  R[rs] ^ zero_ext(imm16)</td>
+<td>xori $t0,$s0,0x5a</td>
+</tr>
+<tr>
+<td>nor</td>
+<td>或非</td>
+<td>nor rd,rs,rt</td>
+<td>R[rd] <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟵</mo></mrow><annotation encoding="application/x-tex">\longleftarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.522em;vertical-align:-0.011em;"></span><span class="mrel">⟵</span></span></span></span> ~(R[rs] | R[rt])</td>
+<td>nor $t0,$s0,$s1</td>
+</tr>
+</tbody>
+</table>
+<p>1、其他逻辑运算</p>
+<ul>
+<li>非：nor $t0,$s0,$0 将寄存器s0取非存入t0</li>
+</ul>
+<p>2、addu、oru、xoru、noru均略</p>
+<h2 id="六-移位指令">六、移位指令</h2>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>功能</th>
+<th>格式</th>
+<th>操作语义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sll</td>
+<td>逻辑左移</td>
+<td>sll rd,rt,s</td>
+<td>R[rd]&lt;- R[rt]&lt;&lt; s</td>
+<td>sll $t0,$s0,16</td>
+</tr>
+<tr>
+<td>srl</td>
+<td>逻辑右移</td>
+<td>srl rd,rt,s</td>
+<td>R[rd]&lt;- R[rt]&gt;&gt;s</td>
+<td>srl $t0,$s0,16</td>
+</tr>
+<tr>
+<td>sra</td>
+<td>算术右移</td>
+<td>sra rd,rt,s</td>
+<td>R[rd]&lt;- R[rt]&gt;&gt;s</td>
+<td>sra $t0,$s0,16</td>
+</tr>
+<tr>
+<td>sllv</td>
+<td>逻辑可变左移</td>
+<td>sllv rd,rt,rs</td>
+<td>R[rd]&lt;- R[rt]&lt;&lt; R[rs]</td>
+<td>sllv $t0，$s0,$s1</td>
+</tr>
+<tr>
+<td>srlv</td>
+<td>逻辑可变右移</td>
+<td>srlv rd,rt,rs</td>
+<td>R[rd] &lt;- R[rt]&gt;&gt; R[rs]</td>
+<td>srlv $t0, $s0, $s1</td>
+</tr>
+<tr>
+<td>srav</td>
+<td>算术可变右移</td>
+<td>srav rd,rt,rs</td>
+<td>R[rd] &lt;- R[rt]&gt;&gt; R[rs]</td>
+<td>srav $t0, $s0,$s1</td>
+</tr>
+</tbody>
+</table>
+<p>1、逻辑与算术</p>
+<ul>
+<li>右移时，存在补0还是补1的区别。如果永远补0，则是逻辑右移。如果补符号位，则为算术右移。</li>
+<li>左移时，低位一定补0，因此不存在算术左移</li>
+</ul>
+<p>2、可变与非可变</p>
+<p>移位存在移位量，移位量范围为0~31。无论是立即数还是寄存器的值，只会看低5位的值来确定移位量。</p>
+<p>3、例子</p>
+<h2 id="七-比较运算">七、比较运算</h2>
+<h4 id="1-slt-slti-有符号小于">1、slt slti 有符号小于</h4>
+<p>1、全称： &quot;Set on Less Than&quot; 和 &quot;Set on Less Than Immediate&quot;。</p>
+<p>2、功能：（有符号比较）<code>slt</code> 指令用于比较两个寄存器的值，如果第一个寄存器的值小于第二个寄存器的值，那么就将结果寄存器的值设置为 1，否则设置为 0。</p>
+<p><code>slti</code> 指令用于比较一个寄存器的值和一个立即数（即常数），如果寄存器的值小于立即数，那么就将结果寄存器的值设置为 1，否则设置为 0。</p>
+<p>3、例子</p>
+<p><code>slt $t0, $t1, $t2</code> 这条指令会比较寄存器 <code>$t1</code> 和 <code>$t2</code> 的值，如果 <code>$t1</code> 的值小于 <code>$t2</code> 的值，那么就将寄存器 <code>$t0</code> 的值设置为 1，否则设置为 0。</p>
+<p><code>slti $t0, $t1, 10</code> 这条指令会比较寄存器 <code>$t1</code> 的值和常数 10，如果 <code>$t1</code> 的值小于 10，那么就将寄存器 <code>$t0</code> 的值设置为 1，否则设置为 0。</p>
+<p>4、其他比较运算的组合</p>
+<ul>
+<li>a&lt;b 直接调用slt即可</li>
+<li>a&gt;b 等价于b&lt;a</li>
+<li>a&gt;=b 等价于a&lt;b取反</li>
+<li>a&lt;=b 等价于a&gt;b取反</li>
+</ul>
+<h4 id="2-sltu-sltiu-无符号小于">2、sltu sltiu 无符号小于</h4>
+<p>1、功能：（无符号比较）<code>slt</code> 指令用于比较两个寄存器的值，如果第一个寄存器的值小于第二个寄存器的值，那么就将结果寄存器的值设置为 1，否则设置为 0。</p>
+<p>2、例子</p>
+<p><code>sltu $t0, $t1, $t2</code> 这条指令会比较寄存器 <code>$t1</code> 和 <code>$t2</code> 的值（以无符号形式解释），如果 <code>$t1</code> 的值小于 <code>$t2</code> 的值，那么就将寄存器 <code>$t0</code> 的值设置为 1，否则设置为 0。</p>
+<p><code>sltiu $t0, $t1, 10</code> 这条指令会比较寄存器 <code>$t1</code> 的值（以无符号形式解释）和常数 10，如果 <code>$t1</code> 的值小于 10，那么就将寄存器 <code>$t0</code> 的值设置为 1，否则设置为 0。</p>
+<h2 id="八-分支指令">八、分支指令</h2>
+<p>说明：</p>
+<ul>
+<li>汇编语言中label在编译时会自动转换成offset或者target。</li>
+<li>汇编语言中也可以将label直接写成offset或target（不建议），下面不再做区分，但在指令编码时必须转换成offset或target。</li>
+<li>label到offset的转换，详见beq指令</li>
+<li>label到target的转换，详见j指令。</li>
+</ul>
+<h4 id="1-beq-相等跳转">1、beq  相等跳转</h4>
+<p>1、全称： Branch if Equal</p>
+<p>2、功能：用于比较两个寄存器的值，如果它们的值相等，那么就跳转到指定的地址。</p>
+<p>3、汇编格式：<code>beq rs, rt, label</code></p>
+<ul>
+<li><code>beq $t0, $t1, label</code> ：这条指令会比较寄存器 <code>$t0</code> 和 <code>$t1</code> 的值，如果它们的值相等，那么就跳转到标签 <code>label</code> 指向的地址。</li>
+</ul>
+<p>4、编码格式：beq rs, rt, offset</p>
+<ul>
+<li>offset为偏移量：跳转的地址是相对于<strong>下一条指令的地址偏移</strong>。<strong>单位为字（即一条指令）</strong>。</li>
+<li>转移范围 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>±</mo><mn>128</mn><mi>M</mi><mi>B</mi></mrow><annotation encoding="application/x-tex">\pm 128MB</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord">±</span><span class="mord">1</span><span class="mord">2</span><span class="mord">8</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>     <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>±</mo><msup><mn>2</mn><mn>15</mn></msup></mrow><annotation encoding="application/x-tex">\pm 2^{15}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord">±</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></span> 条指令</li>
+</ul>
+<p>例：</p>
+<pre><code> Loop:
+ beq $9,$0,End
+ addu $8, $8, $10
+ addiu$9, $9, -1
+ beq $9,$0,Loop
+ j     Loop
+ End:
+ addiu$9, $9, -1
+</code></pre>
+<p><code> beq $9,$0,End</code> 中标签End的值为 3。</p>
+<p><code>beq $9,$0,Loop</code> 中标签Loop的值为 -4。</p>
+<h4 id="2-bne-不相等跳转">2、bne 不相等跳转</h4>
+<p>1、全称：Branch if Not Equal</p>
+<p>2、功能：用于比较两个寄存器的值，如果它们的值不相等，那么就跳转到指定的地址。</p>
+<p>3、例子：<code>bne $t0, $t1, label</code></p>
+<p>这条指令会比较寄存器 <code>$t0</code> 和 <code>$t1</code> 的值，如果它们的值不相等，那么就跳转到标签 <code>label</code> 指向的地址。</p>
+<h4 id="3-j-无条件跳转">3、 j 无条件跳转</h4>
+<p>1、全称：Jump</p>
+<p>2、功能：用于无条件跳转到指定的地址,可跳转的范围为256MB</p>
+<p>3、格式：<code>j label</code></p>
+<ul>
+<li>这条指令会无条件跳转到标签 <code>label</code> 指向的地址。</li>
+<li><code>label</code> 会转换为instr_index(26bit)，执行时会组合成绝对地址target，完成跳转。</li>
+</ul>
+<p>4、绝对地址target(32bit)</p>
+<ul>
+<li>内存地址为32bit。j跳转的地址 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>C</mi><mo>=</mo><mi>P</mi><msub><mi>C</mi><mn>31...28</mn></msub><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mi>i</mi><mi>n</mi><mi>s</mi><mi>t</mi><mi>r</mi><mi mathvariant="normal">_</mi><mi>i</mi><mi>n</mi><mi>d</mi><mi>e</mi><mi>x</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mn>00</mn></mrow><annotation encoding="application/x-tex">PC=PC_{31...28} ||instr\_index||00</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.06em;vertical-align:-0.31em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">1</span><span class="mord mtight">.</span><span class="mord mtight">.</span><span class="mord mtight">.</span><span class="mord mtight">2</span><span class="mord mtight">8</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∣</span><span class="mord">∣</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mord mathdefault">x</span><span class="mord">∣</span><span class="mord">∣</span><span class="mord">0</span><span class="mord">0</span></span></span></span></li>
+<li>内存地址以字节为单位，一条指令4字节，因此计算绝对地址时，每条指令要乘4</li>
+</ul>
+<p>5、只有jr可以跳转到4GB内任意地址</p>
+<h4 id="4-jal-函数跳转">4、 jal 函数跳转</h4>
+<p>1、功能：函数指令，跳转至指定函数位置标签</p>
+<p>2、格式：<code>jal label</code></p>
+<ul>
+<li>可跳转的范围为256MB</li>
+</ul>
+<p>3、具体操作：PC转向被调用函数label，同时将当前PC+4保存在R[31]中。</p>
+<p>4、只有jalr可以跳转到4GB内任意地址</p>
+<h4 id="5-jr-跳转至寄存器">5、jr 跳转至寄存器</h4>
+<p>1、格式： jr rs</p>
+<p>2、描述：jr 指令是函数指令,PC转向R[rs]保存的地址中</p>
+<p>3、 jr $31</p>
+<p>​      一般情况下，jr与jal/jalr 配套使用。jal/jalr 用于调用函数，jr用于函数返回</p>
+<h4 id="6-其他跳转指令">6、其他跳转指令</h4>
+<ul>
+<li>
+<p>bgtz 大于0时转移</p>
+<ul>
+<li>格式：bgtz rs,offset</li>
+<li>描述：if (R[rs]&gt;0) then 转移</li>
+</ul>
+</li>
+<li>
+<p>blez 小于等于0时转移</p>
+<ul>
+<li>格式：ble rs,offset</li>
+<li>描述：if (R[rs]&lt;=0) then 转移</li>
+</ul>
+</li>
+<li>
+<p>bltz 大于0时转移</p>
+<ul>
+<li>格式：bltz rs,offset</li>
+<li>描述：if (R[rs]&lt;0) then 转移</li>
+</ul>
+</li>
+<li>
+<p>beqz 等于0时转移</p>
+<ul>
+<li>
+<p>格式：beqz rs,offset</p>
+</li>
+<li>
+<p>描述：if (R[rs]==0) then 转移</p>
+</li>
+</ul>
+</li>
+<li>
+<p>bnez</p>
+<ul>
+<li>
+<p>格式：bnez rs,offset</p>
+</li>
+<li>
+<p>描述：if (R[rs]!=0) then 转移</p>
+</li>
+</ul>
+</li>
+<li>
+<p>jalr 跳转并链接</p>
+<ul>
+<li>
+<p>格式： jalr rd,rs</p>
+</li>
+<li>
+<p>描述：jalr 指令是函数指令,PC转向被调用函数（函数入口地址保存在R[rs]中），同时将当前PC+4保存在R[rd]中</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="7-跳转指令的pc值计算">7、跳转指令的PC值计算</h4>
+<p>1、PC寻址方式：绝对地址寻址与相对寻址</p>
+<p>2、下一条指令的PC值的计算方法</p>
+<ul>
+<li>
+<p>不跳转：PC = PC + 4 （相对地址寻址）</p>
+</li>
+<li>
+<p>非j型跳转：PC = (PC+4) + (immediate*4) （相对地址寻址）</p>
+</li>
+<li>
+<p>j型跳转：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>C</mi><mo>=</mo><mrow><mi>P</mi><msub><mi>C</mi><mrow><mn>31</mn><mo separator="true">,</mo><mn>30</mn><mo separator="true">,</mo><mn>29</mn><mo separator="true">,</mo><mn>28</mn></mrow></msub><mo separator="true">,</mo><mi>i</mi><mi>m</mi><mi>m</mi><mn>26</mn><mo separator="true">,</mo><mn>00</mn></mrow></mrow><annotation encoding="application/x-tex">PC={PC_{31,30,29,28},imm26,00}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mtight">3</span><span class="mord mtight">0</span><span class="mpunct mtight">,</span><span class="mord mtight">2</span><span class="mord mtight">9</span><span class="mpunct mtight">,</span><span class="mord mtight">2</span><span class="mord mtight">8</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">m</span><span class="mord mathdefault">m</span><span class="mord">2</span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span></span></span></span></span>（绝对地址寻址）</p>
+</li>
+</ul>
+<p>3、为什么immediate乘以4？<br>
+存储器是以字节为单位的,指令都是32位长，且指令是字对齐，这意味着最低2位恒为0.immediate没有必要记录最低2位，乘以4后就得到了对应字节地址</p>
+<h4 id="7-if-结构">7、if 结构</h4>
+<p>1、C语言下的if-else语句：</p>
+<pre><code class="language-c">if (i==j){
+    // 这里是 if 语句的主体
+}
+else{
+    // 这里是 else 语句的主体
+}
+//这里是 if-else 语句之后的代码
+</code></pre>
+<ol>
+<li>使用 <code>beq</code> 指令构造 <code>if-else</code> 语句：</li>
+</ol>
+<pre><code class="language-assembly"># 如果 $t0 和 $t1 的值相等，那么执行 if_body，否则执行 else_body
+beq $t0, $t1, if_body
+j else_body
+
+if_body:
+# 这里是 if 语句的主体
+...
+j end_if_else
+
+else_body:
+# 这里是 else 语句的主体
+...
+
+end_if_else:
+# 这里是 if-else 语句之后的代码
+...
+</code></pre>
+<ol start="2">
+<li>使用 <code>bne</code> 指令构造 <code>if-else</code> 语句：</li>
+</ol>
+<pre><code class="language-assembly"># 如果 $t0 和 $t1 的值不相等，那么执行 else_body，否则执行 if_body
+bne $t0, $t1, else_body
+# 这里是 if 语句的主体
+...
+j end_if_else
+else_body:
+# 这里是 else 语句的主体
+...
+end_if_else:
+# 这里是 if-else 语句之后的代码
+...
+</code></pre>
+<h4 id="8-while结构">8、while结构</h4>
+<p>单条件结构</p>
+<pre><code class="language-c">// 假设 a 和 b 是我们要比较的变量
+int a, b;
+while(a != b) {
+    // 这里是 while 循环的主体
+    ...
+}
+
+// 这里是 while 循环之后的代码
+...
+</code></pre>
+<pre><code class="language-assembly"># 假设 $t0 和 $t1 是我们要比较的寄存器
+while_loop:
+# 如果 $t0 和 $t1 的值不相等，那么跳出循环
+beq $t0, $t1, end_loop
+# 这里是 while 循环的主体
+...
+# 跳回循环的开始
+j while_loop
+end_loop:
+# 这里是 while 循环之后的代码
+...
+</code></pre>
+<p>多条件结构</p>
+<pre><code class="language-c">// 假设 a, b, c, d 是我们要比较的变量
+int a, b, c, d;
+
+while(a != b &amp;&amp; c != d) {
+    // 这里是 while 循环的主体
+    ...
+}
+
+// 这里是 while 循环之后的代码
+...
+</code></pre>
+<pre><code class="language-assembly"># 假设 $t0, $t1, $t2, $t3 是我们要比较的寄存器
+while_loop:
+# 如果 $t0 和 $t1 的值相等，那么跳出循环
+beq $t0, $t1, end_loop
+# 如果 $t2 和 $t3 的值相等，那么跳出循环
+beq $t2, $t3, end_loop
+# 这里是 while 循环的主体
+...
+# 跳回循环的开始
+j while_loop
+end_loop:
+# 这里是 while 循环之后的代码
+...
+</code></pre>
+<h4 id="9-for结构">9、for结构</h4>
+<p><code>for(i=0:i&lt;100:i++)</code></p>
+<pre><code class="language-assembly"># 初始化循环变量 i
+li $t7, 0
+for_loop:
+# 如果 i &gt;= 100，那么跳出循环
+slti $t6, $t7, 100
+beq $t6, $zero, end_loop
+# 这里是 for 循环的主体
+...
+# 更新循环变量 i
+addiu $t7, $t7, 1
+# 跳回循环的开始
+j for_loop
+
+end_loop:
+# 这里是 for 循环之后的代码
+...
+</code></pre>
+<h4 id="10-tch-case">10、tch-case</h4>
+<pre><code class="language-assembly"># 假设 $t0 是我们要检查的变量
+# 假设 $t1 是我们用来比较的临时变量
+
+# case 0:
+li $t1, 0
+beq $t0, $t1, case_0
+j end_case_0
+case_0:
+# 这里是 case 0 的代码
+...
+end_case_0:
+
+# case 1:
+li $t1, 1
+beq $t0, $t1, case_1
+j end_case_1
+case_1:
+# 这里是 case 1 的代码
+...
+end_case_1:
+
+# default:
+# 这里是 default 的代码
+...
+</code></pre>
+<h2 id="九-nop-空指令">九、 nop 空指令</h2>
+<p>1、用法：nop</p>
+<p>2、等价指令：sll $0,$0,0</p>
+<p>3、作用：在本课程里，NOP主要用于解决流水线冲突</p>
+<h2 id="十-异常指令">十、异常指令</h2>
+<h4 id="1-break">1、break</h4>
+<p>产生断点异常</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/jsjzcyl/" class="article-info">
+                                                        计算机组成原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

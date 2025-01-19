@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>C3讲解-23航c | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="A czx 的柠檬可乐
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+int main(){
+    int a,b,k;
+    while (scanf(&quot;%d%d%d&qu..." />
+        <meta name="keywords" content="23航C" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="C3讲解-23航c" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="A czx 的柠檬可乐
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;math.h&amp;gt;
+int main(){
+    int a,b,k;
+    while (scanf(&amp;quot;%d%d%d&amp;qu...">
+        <meta property="og:url" content="https://github.pansis.site/post/c3-jiang-jie-23-hang-c/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-03-22">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="C3讲解-23航c">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="C3讲解-23航c">
+        <meta name="twitter:description" content="A czx 的柠檬可乐
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;math.h&amp;gt;
+int main(){
+    int a,b,k;
+    while (scanf(&amp;quot;%d%d%d&amp;qu...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    C3讲解-23航c
+                                </h2>
+                                <span class="article-info">
+                                    2024-03-22, 838 words, 6 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h1 id="a-czx-的柠檬可乐"><code>A</code> czx 的柠檬可乐</h1>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+int main(){
+    int a,b,k;
+    while (scanf(&quot;%d%d%d&quot;,&amp;a,&amp;b,&amp;k)!=EOF)
+    {
+        if (a&gt;=k*b)
+            printf(&quot;g00d\n&quot;);
+        else
+            printf(&quot;bad\n&quot;);
+    }
+
+}
+</code></pre>
+<h1 id="b-从十进制数到8421码"><code>B</code> 从十进制数到8421码</h1>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int main()
+{
+	int n;
+	while(~scanf(&quot;%1d&quot;, &amp;n))
+		printf(&quot;%d%d%d%d&quot;, n &gt;&gt; 3 &amp; 1, n &gt;&gt; 2 &amp; 1, n &gt;&gt; 1 &amp; 1, n &amp; 1);
+	return 0;
+}
+</code></pre>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+int main(){
+    char c;
+    while ((scanf(&quot;%c&quot;,&amp;c))!=EOF)
+    {
+        switch (c) {
+            case '0':
+            {
+                printf(&quot;0000&quot;);
+                break;
+            }
+            case '1':
+            {
+                printf(&quot;0001&quot;);
+                break;
+            }
+            case '2':
+            {
+                printf(&quot;0010&quot;);
+                break;
+            }
+            case '3': {
+                printf(&quot;0011&quot;);
+                break;
+            }
+            case '4':
+            {
+                printf(&quot;0100&quot;);
+                break;
+            }
+            case '5':
+            {
+                printf(&quot;0101&quot;);
+                break;
+            }
+            case '6':
+            {
+                printf(&quot;0110&quot;);
+                break;
+            }
+            case '7':
+            {
+                printf(&quot;0111&quot;);
+                break;
+            }case '8':
+            {
+                printf(&quot;1000&quot;);
+                break;
+            }
+            case '9':
+            {
+                printf(&quot;1001&quot;);
+                break;
+            }
+
+        }
+    }
+}
+</code></pre>
+<h1 id="c-小蓝蓝吃蛋糕"><code>C</code> 小蓝蓝吃蛋糕</h1>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+int main(){
+    int n,t,s;
+    scanf(&quot;%d%d%d&quot;,&amp;n,&amp;t,&amp;s);
+    if (t==0)
+    {
+        printf(&quot;0&quot;);
+        return 0;
+    }
+    if (s%t==0)
+    {
+        n-=(s/t);
+    }
+    else
+        n-=(s/t+1);
+    if (n&lt;0)
+        printf(&quot;0&quot;);
+    else
+        printf(&quot;%d&quot;,n);
+}
+</code></pre>
+<h1 id="d-判断互质2024"><code>D</code> 判断互质2024</h1>
+<img src="http://cos.pansis.site/202403202203308.png/abc123" alt="image-20240320220310199" style="zoom:50%;" />
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+long long mian123(long long a,long long b)
+{
+    if (b==0) return (a&gt;0)?a:-a;
+    return mian123(b,a%b);
+}
+int main(){
+    long long l,r,x;
+    scanf(&quot;%lld%lld%lld&quot;,&amp;l,&amp;r,&amp;x);
+    int num=0;
+    for (long long i = l; i &lt;=r ; ++i) {
+        if (mian123(i,x)==1)
+            num++;
+    }
+    printf(&quot;%d&quot;,num);
+}
+</code></pre>
+<h1 id="e-伪随机码生成"><code>E</code> 伪随机码生成</h1>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+    int t;
+    scanf(&quot;%d&quot;,&amp;t);
+    int a[10]={0};
+    for (int i = 0; i &lt; 4; ++i) {
+        scanf(&quot;%d&quot;,&amp;a[i]);
+    }
+    while (t--)
+    {
+        int f=a[1]^a[3];
+        printf(&quot;%d&quot;,a[3]);
+        a[3]=a[2];
+        a[2]=a[1];
+        a[1]=a[0];
+        a[0]=f;
+    }
+}
+</code></pre>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main(){
+    int t;
+    scanf(&quot;%d&quot;,&amp;t);
+    int a=0,b;
+    for (int i = 0; i &lt; 4; ++i) {
+        scanf(&quot;%d&quot;,&amp;b);
+        a|=(b&lt;&lt;i);
+    }
+    while (t--)
+    {
+        int f=((a&gt;&gt;1)&amp;1)^((a&gt;&gt;3)&amp;1);
+        printf(&quot;%d&quot;,(a&gt;&gt;3)&amp;1);
+        a&lt;&lt;=1;
+        a|=f;
+    }
+}
+</code></pre>
+<h1 id="f-哦夏天"><code>F</code> 哦，夏天！</h1>
+<pre><code class="language-c">
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main() {
+    int n;
+    double t[105];
+    while ((scanf(&quot;%d&quot;,&amp;n))!=EOF)
+    {
+        int flag=0;
+        for (int i = 0; i &lt; n; ++i) {
+            scanf(&quot;%lf&quot;,&amp;t[i]);
+        }
+        int big_day_num=0;
+        for (int i = 4; i &lt; n; ++i) {
+            double sum=0;
+            for (int j = 0  ; j &lt; 5; ++j) {
+                sum+=t[i-j];
+            }
+            if (sum&gt;22*5)
+                big_day_num++;
+            else
+                big_day_num=0;
+            if (big_day_num==5)
+            {
+                for (int j = i-8; j &lt;n ; ++j) {
+                    if (t[j]&gt;22)
+                    {
+                        printf(&quot;Success %d\n&quot;,j+1);
+                        flag=1;
+                        break;
+                    }
+
+                }
+            }
+            if (flag==1)
+                break;
+
+        }
+        if (flag==0)
+            printf(&quot;Failure\n&quot;);
+    }
+}
+</code></pre>
+<h1 id="g-firefly小姐的彩灯"><code>G</code> Firefly小姐的彩灯</h1>
+<pre><code class="language-c">/* 
+ Author: 潘宇恒(49720)
+ Result: AC	Submission_id: 6047449
+ Created at: Tue Mar 19 2024 22:34:35 GMT+0800 (China Standard Time)
+ Problem: 7693	Time: 5	Memory: 1628
+*/
+
+//sit=0 从未亮过
+//1 正在亮，且下一轮还亮
+//-1 正在亮，但马上熄灭的
+//2 没亮，但马上亮的
+//-2  亮过且熄灭的
+#include&lt;stdio.h&gt;
+int main() {
+    int n;
+    int s[105]={0};
+    int sit[105]={0};
+    int k;
+    scanf(&quot;%d&quot;,&amp;n);
+    for (int i = 1; i &lt;= n; ++i) {
+        scanf(&quot;%d&quot;,&amp;s[i]);
+    }
+    scanf(&quot;%d&quot;,&amp;k);
+    int liang_num=1;
+    sit[k]=1;
+    s[k]++;
+    while (liang_num!=0)
+    {
+        for (int i = 1; i &lt;=n ; ++i) {
+            if (sit[i]==1)
+            {
+                s[i]--;
+                if (s[i]==0)
+                {
+                    sit[i]=-1;
+                    liang_num--;
+                }
+                else
+                    printf(&quot;%d &quot;,i);
+            }
+            if (sit[i]==0)
+            {
+                if (sit[i-1]==1 ||sit[i-1]==-1||sit[i+1]==1)
+                {
+                    if (s[i]!=0)
+                    {
+                        sit[i]=2;
+                        liang_num++;
+                        printf(&quot;%d &quot;,i);
+                    }
+
+
+                }
+            }
+        }
+        for (int i = 1; i &lt;=n ; ++i) {
+            if (sit[i]==-1)
+                sit[i]=-2;
+            if (sit[i]==2)
+                sit[i]=1;
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+</code></pre>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/24hc/" class="article-info">
+                                                        23航C
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://github.pansis.site/post/c3-solution-23-hang-c/">
+                                                    <h3 class="post-title">
+                                                        C3 - Solution-23航c
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

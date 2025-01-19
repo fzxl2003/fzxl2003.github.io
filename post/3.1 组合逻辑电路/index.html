@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>3.1 组合逻辑电路 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、组合逻辑电路
+1、定义
+电路任一时刻的输出状态只取决于该时刻各输入状态的组合，而与电路的原状态无关的电路
+2、特点
+功能上无记忆，结构上无反馈
+
+3、电路分析
+
+
+
+4、电路设计
+
+（1）定义输入、输出逻辑变量，并给输入、输出逻辑变量赋..." />
+        <meta name="keywords" content="vlsi" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="3.1 组合逻辑电路" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、组合逻辑电路
+1、定义
+电路任一时刻的输出状态只取决于该时刻各输入状态的组合，而与电路的原状态无关的电路
+2、特点
+功能上无记忆，结构上无反馈
+
+3、电路分析
+
+
+
+4、电路设计
+
+（1）定义输入、输出逻辑变量，并给输入、输出逻辑变量赋...">
+        <meta property="og:url" content="https://github.pansis.site/post/3.1 组合逻辑电路/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-10-20">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="3.1 组合逻辑电路">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="3.1 组合逻辑电路">
+        <meta name="twitter:description" content="一、组合逻辑电路
+1、定义
+电路任一时刻的输出状态只取决于该时刻各输入状态的组合，而与电路的原状态无关的电路
+2、特点
+功能上无记忆，结构上无反馈
+
+3、电路分析
+
+
+
+4、电路设计
+
+（1）定义输入、输出逻辑变量，并给输入、输出逻辑变量赋...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    3.1 组合逻辑电路
+                                </h2>
+                                <span class="article-info">
+                                    2023-10-20, 1316 words, 6 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-组合逻辑电路">一、组合逻辑电路</h2>
+<h4 id="1-定义">1、定义</h4>
+<p>电路任一时刻的输出状态只取决于该时刻各输入状态的组合，而与电路的原状态无关的电路</p>
+<h4 id="2-特点">2、特点</h4>
+<p>功能上无记忆，结构上无反馈</p>
+<img src="http://cos.pansis.site/202310191646108.png/abc123" alt="image-20231019164634997" style="zoom:33%;" />
+<h4 id="3-电路分析">3、电路分析</h4>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202310191647858.png/abc123" alt="image-20231019164737805" loading="lazy"></figure>
+<img src="http://cos.pansis.site/202310192309653.png/abc123" alt="image-20231019230938552" style="zoom:33%;" />
+<img src="http://cos.pansis.site/202310192310613.png/abc123" alt="image-20231019231009557" style="zoom: 50%;" />
+<h4 id="4-电路设计">4、电路设计</h4>
+<img src="http://cos.pansis.site/202310192311088.png/abc123" alt="image-20231019231150055" style="zoom:50%;" />
+<p>（1）定义输入、输出逻辑变量，并给输入、输出逻辑变量赋值；</p>
+<p>（2）列出真值表；</p>
+<p>（3）由真值表写出逻辑函数表达式；</p>
+<p>（4）化简或变换逻辑函数表达式；</p>
+<p>（5）画出逻辑图；</p>
+<p>例题：</p>
+<img src="http://cos.pansis.site/202310192312934.png/abc123" alt="image-20231019231249872" style="zoom:50%;" />
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/202310192313912.png/abc123" alt="image-20231019231321847" loading="lazy"></figure>
+<h2 id="二-编码器">二、编码器</h2>
+<p><strong>1、输入：</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">2^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.664392em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span> 个  任何时刻，只有一个输入端有有效信号</p>
+<p><strong>2、输出：</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个</p>
+<p>3、</p>
+<img src="http://cos.pansis.site/202310192316004.png/abc123" alt="image-20231019231603969" style="zoom: 50%;" />
+<img src="http://cos.pansis.site/202310192316170.png/abc123" alt="image-20231019231646113" style="zoom:50%;" />
+<p><strong>4、优先编码器</strong></p>
+<p>允许同时输入两个及以上的有效信号，输入信号规定了优先顺序。</p>
+<p>当多个有效信号同时出现时，只对优先级最高的信号进行编码</p>
+<p>74HC148（高位优先级高）</p>
+<img src="http://cos.pansis.site/202310192318345.png/abc123" alt="image-20231019231813305" style="zoom: 50%;" />
+<p>真值表</p>
+<figure data-type="image" tabindex="3"><img src="http://cos.pansis.site/202310192327929.png/abc123" alt="image-20231019232736874" loading="lazy"></figure>
+<h4 id="5-74hc148-扩展">5、74HC148 扩展</h4>
+<img src="http://cos.pansis.site/202311021612291.png/abc123" alt="image-20231102161236896" style="zoom:50%;" />
+<ul>
+<li>第一片为高优先权，只有(1)无编码输入时，(2)才允许工作</li>
+<li>低3位输出应是两片的输出的“或”</li>
+<li>第(2)片 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>Y</mi><mi>S</mi><mi mathvariant="normal">′</mi></msubsup></mrow><annotation encoding="application/x-tex">Y_S^ ′</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.027223em;vertical-align:-0.275331em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-2.424669em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">S</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">′</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.275331em;"><span></span></span></span></span></span></span></span></span></span> 代表有无输入</li>
+<li>红线的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>Y</mi><mrow><mi>E</mi><mi>X</mi></mrow><mo mathvariant="normal">′</mo></msubsup></mrow><annotation encoding="application/x-tex">Y_{EX}&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.027223em;vertical-align:-0.275331em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-2.424669em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">E</span><span class="mord mathdefault mtight" style="margin-right:0.07847em;">X</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.275331em;"><span></span></span></span></span></span></span></span></span></span>是整体的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>Y</mi><mrow><mi>E</mi><mi>X</mi></mrow><mo mathvariant="normal">′</mo></msubsup></mrow><annotation encoding="application/x-tex">Y_{EX}&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.027223em;vertical-align:-0.275331em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-2.424669em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">E</span><span class="mord mathdefault mtight" style="margin-right:0.07847em;">X</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.275331em;"><span></span></span></span></span></span></span></span></span></span>输出，代表是否工作。</li>
+</ul>
+<h2 id="三-译码器">三、译码器</h2>
+<h4 id="1-译码">1、译码</h4>
+<p>译码是编码的逆过程，即将某个二进制码翻译成特定的状态，即某个输出端有有效信号</p>
+<h4 id="2-74hc138-集成译码器-3-8">2、74HC138 集成译码器 3-8</h4>
+<p>低电平有效，三个控制必须全为1才能工作</p>
+<img src="http://cos.pansis.site/202310192331677.png/abc123" alt="image-20231019233133651" style="zoom:70%;" />
+<figure data-type="image" tabindex="4"><img src="http://cos.pansis.site/202310192332844.png/abc123" alt="image-20231019233208787" loading="lazy"></figure>
+<h4 id="3-74hc138-集成译码器扩展">3、74HC138 集成译码器扩展</h4>
+<p><strong>1、3-8转4-16线</strong></p>
+<img src="http://cos.pansis.site/202311021621674.png/abc123" alt="image-20231102162105405" style="zoom:33%;" />
+<p>最高位输入<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>D</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">D_3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>起选片的作用。</p>
+<p><strong>2、2-4转4-16</strong></p>
+<img src="http://cos.pansis.site/202311021623074.png/abc123" alt="image-20231102162351730" style="zoom:33%;" />
+<h4 id="3-7442集成译码器-4-10">3、7442集成译码器 4-10</h4>
+<p>低电平有效</p>
+<figure data-type="image" tabindex="5"><img src="http://cos.pansis.site/202310192334450.png/abc123" alt="image-20231019233439387" loading="lazy"></figure>
+<h4 id="4-七段显示译码器-7448">4、七段显示译码器 7448</h4>
+<p>1、显示器布局</p>
+<img src="http://cos.pansis.site/202310192337800.png/abc123" alt="image-20231019233703757" style="zoom:60%;" />
+<p>2、芯片布局</p>
+<img src="http://cos.pansis.site/202310192337843.png/abc123" alt="image-20231019233755810" style="zoom:50%;" />
+<p>3、控制接口</p>
+<p>灯测试输入 LT      低电平有效   LT=0时，显示8</p>
+<p>灭零输入     RBI     低电平有效  RBI=0时，当显示0时，会灭</p>
+<p>灭灯输出     RBO   低电平有效   当灭灯时，发出0.</p>
+<p>4、有灭零控制的8位数码显示系统</p>
+<figure data-type="image" tabindex="6"><img src="http://cos.pansis.site/202310192341360.png/abc123" alt="image-20231019234117293" loading="lazy"></figure>
+<h2 id="四-数据选择器">四、数据选择器</h2>
+<h4 id="1-4选1数据选择器">1、4选1数据选择器</h4>
+<img src="http://cos.pansis.site/202310192346962.png/abc123" alt="image-20231019234656911" style="zoom:50%;" />
+<p>真值表</p>
+<img src="http://cos.pansis.site/202310192347652.png/abc123" alt="image-20231019234737603" style="zoom: 50%;" />
+<h4 id="2-八选一数据选择器">2、八选一数据选择器</h4>
+<img src="http://cos.pansis.site/202310192348374.png/abc123" alt="image-20231019234857295" style="zoom:50%;" />
+<h4 id="3-8选1数据选择器扩展">3、8选1数据选择器扩展</h4>
+<p>1、位的扩展</p>
+<p>位指数据的位数。</p>
+<img src="http://cos.pansis.site/202311021649696.png/abc123" alt="image-20231102164941472" style="zoom:33%;" />
+<p>2、字的扩展</p>
+<p>8选1扩展成16选1</p>
+<img src="http://cos.pansis.site/202311021650727.png/abc123" alt="image-20231102165042478" style="zoom:33%;" />
+<h4 id="4-数据选择器内部逻辑">4、数据选择器内部逻辑</h4>
+<img src="http://cos.pansis.site/202311021706577.png/abc123" alt="image-20231102170646244" style="zoom:33%;" />
+<h2 id="五-加法器">五、加法器</h2>
+<h4 id="1-分类">1、分类</h4>
+<p>半加器：不考虑低位来的进位</p>
+<p>全加器：考虑低位来的进位</p>
+<img src="http://cos.pansis.site/202310192357417.png/abc123" alt="image-20231019235723374" style="zoom:50%;" />
+<h4 id="2-半加器">2、半加器</h4>
+<img src="http://cos.pansis.site/202310192357825.png/abc123" alt="image-20231019235751783" style="zoom:50%;" />
+<h4 id="3-全加器">3、全加器</h4>
+<p>全加器能进行加数、被加数和低位来的进位信号 相加，并根据求和结果给 出该位的进位信号</p>
+<p><strong>真值表</strong></p>
+<table>
+<thead>
+<tr>
+<th>Ai</th>
+<th>Bi</th>
+<th>Ci</th>
+<th>Si</th>
+<th>C0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为被加数，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">B_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为加数，相邻低位来的进位数为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">C_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，输出本位和为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">S_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>。向相邻高位进位数为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">C_o</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+<p>逻辑函数为:</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mi>i</mi></msub><mo>=</mo><msub><mi>A</mi><mi>i</mi></msub><mo>⊕</mo><msub><mi>B</mi><mi>i</mi></msub><mo>⊕</mo><msub><mi>C</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">S_i=A_i\oplus B_i\oplus C_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>o</mi></msub><mo>=</mo><msub><mi>A</mi><mi>i</mi></msub><msub><mi>B</mi><mi>i</mi></msub><mo>+</mo><msub><mi>C</mi><mi>i</mi></msub><mo>(</mo><msub><mi>A</mi><mi>i</mi></msub><mo>⊕</mo><msub><mi>B</mi><mi>i</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">C_o=A_iB_i+C_i(A_i\oplus B_i)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
+<p><strong>两个半加器构成一个全加器</strong></p>
+<img src="http://cos.pansis.site/202310200001237.png/abc123" alt="image-20231020000151197" style="zoom:50%;" />
+<h4 id="4-多位数加法器">4、多位数加法器</h4>
+<p>1、串行进位加法器</p>
+<figure data-type="image" tabindex="7"><img src="http://cos.pansis.site/202310200003744.png/abc123" alt="image-20231020000326704" loading="lazy"></figure>
+<p>实现 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mn>3</mn></msub><msub><mi>A</mi><mn>2</mn></msub><msub><mi>A</mi><mn>1</mn></msub><msub><mi>A</mi><mn>0</mn></msub><mo>+</mo><msub><mi>B</mi><mn>3</mn></msub><msub><mi>B</mi><mn>2</mn></msub><msub><mi>B</mi><mn>1</mn></msub><msub><mi>B</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">A_3A_2A_1A_0+B_3B_2B_1B_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 两个四位二进制数相加.</p>
+<p>•低位的进位信号送给邻近高位作为输入信号，任一位的加法 运算必须在低一位的运算完成之后才能进行。</p>
+<p>•串行进位加法器运算速度不高。</p>
+<p>2、超前进位加法器</p>
+<p>特点：进位输入是由专门的“进位门”综合所有低位的加数、被加数及最低位进位输入后来提供，而无需等待与低位的进位信号。</p>
+<figure data-type="image" tabindex="8"><img src="http://cos.pansis.site/202310200008741.png/abc123" alt="image-20231020000841694" loading="lazy"></figure>
+<h4 id="5-加法器扩展">5、加法器扩展</h4>
+<p>构造8位加法器</p>
+<img src="http://cos.pansis.site/202310200010915.png/abc123" alt="image-20231020001019866" style="zoom:50%;" />
+<h2 id="六-数值比较器">六、数值比较器</h2>
+<h4 id="1-1位数值比较器">1、1位数值比较器</h4>
+<img src="http://cos.pansis.site/202310200012943.png/abc123" alt="image-20231020001236902" style="zoom:50%;" />
+<p>$F_{A&gt;B}=A\overline{B} $</p>
+<p>$F_{A&lt;B}=\overline{A}B $</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mrow><mi>A</mi><mo>=</mo><mi>B</mi></mrow></msub><mo>=</mo><mover accent="true"><mi>A</mi><mo stretchy="true">‾</mo></mover><mover accent="true"><mi>B</mi><mo stretchy="true">‾</mo></mover><mo>+</mo><mi>A</mi><mi>B</mi></mrow><annotation encoding="application/x-tex">F_{A=B}=\overline{A}\overline{B} +AB</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">A</span><span class="mrel mtight">=</span><span class="mord mathdefault mtight" style="margin-right:0.05017em;">B</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.9666600000000001em;vertical-align:-0.08333em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">A</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span></p>
+<h4 id="2-二位数值比较器">2、二位数值比较器</h4>
+<img src="http://cos.pansis.site/202310200023236.png/abc123" alt="image-20231020002301178" style="zoom:75%;" />
+<p>逻辑表达式</p>
+<img src="http://cos.pansis.site/202310200025072.png/abc123" alt="image-20231020002551031" style="zoom:33%;" />
+<img src="http://cos.pansis.site/202310200024852.png/abc123" alt="image-20231020002417813" style="zoom:50%;" />
+<h4 id="3-高位数值比较器设计原则">3、高位数值比较器设计原则</h4>
+<ul>
+<li>先从高位比起,高位不等时，数值的大小由高位确定。</li>
+<li>若高位相等,则再比较低位数,比较结果由 低位的比较结果决定。</li>
+</ul>
+<h4 id="4-集成数值比较器74ls85-4位">4、集成数值比较器74LS85 4位</h4>
+<img src="http://cos.pansis.site/202310200028228.png/abc123" alt="image-20231020002815186" style="zoom:75%;" />
+<figure data-type="image" tabindex="9"><img src="http://cos.pansis.site/202310200028202.png/abc123" alt="image-20231020002840095" loading="lazy"></figure>
+<h4 id="5-集成比较器扩展">5、集成比较器扩展</h4>
+<p>1、串联扩展</p>
+<img src="http://cos.pansis.site/202311021526858.png/abc123" alt="image-20231102152646737" style="zoom:50%;" />
+<p>2、并联扩展</p>
+<img src="http://cos.pansis.site/202311021528226.png/abc123" alt="image-20231102152824103" style="zoom:50%;" />
+<p>1、编码器的输入输出个数<br>
+2、优先编码器中Y'_S Y'_EX和工作状态的关系<br>
+3、优先编码器如何进行扩展<br>
+4、译码器控制端与工作状态的关系<br>
+5、译码器扩展的两种方式<br>
+6、七段显示译码器的三个控制接口<br>
+7、有灭零控制的8位数码显示系统的控制接口连接方法<br>
+8、数字选择器的逻辑表达式、位的扩展、字的扩展<br>
+9、全加器逻辑表达式si co<br>
+10、多位加法器的两种方式<br>
+11、一位数值比较器逻辑表达式、二位数值比较器逻辑表达式<br>
+12、集成数值比较器的控制输入<br>
+13、集成比较器串联扩展、并联扩展</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/vlsi/" class="article-info">
+                                                        vlsi
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

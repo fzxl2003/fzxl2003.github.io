@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>5.1 GNC硬件系统总体概述 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、GNC硬件系统
+1、三大核心硬件
+
+感知：陀螺仪和加速度计
+计算：飞控计算机
+执行：执行机构
+
+2、硬件系统对制导控制软件的影响
+
+
+导航硬件系统
+
+早期的V2火箭依靠加速度计的积分信号直接产生制导指令，由加速度计的导航误差产生的落点误..." />
+        <meta name="keywords" content="制导与控制原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="5.1 GNC硬件系统总体概述" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、GNC硬件系统
+1、三大核心硬件
+
+感知：陀螺仪和加速度计
+计算：飞控计算机
+执行：执行机构
+
+2、硬件系统对制导控制软件的影响
+
+
+导航硬件系统
+
+早期的V2火箭依靠加速度计的积分信号直接产生制导指令，由加速度计的导航误差产生的落点误...">
+        <meta property="og:url" content="https://github.pansis.site/post/5.1 GNC硬件系统总体概述/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-04-21">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="5.1 GNC硬件系统总体概述">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="5.1 GNC硬件系统总体概述">
+        <meta name="twitter:description" content="一、GNC硬件系统
+1、三大核心硬件
+
+感知：陀螺仪和加速度计
+计算：飞控计算机
+执行：执行机构
+
+2、硬件系统对制导控制软件的影响
+
+
+导航硬件系统
+
+早期的V2火箭依靠加速度计的积分信号直接产生制导指令，由加速度计的导航误差产生的落点误...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    5.1 GNC硬件系统总体概述
+                                </h2>
+                                <span class="article-info">
+                                    2024-04-21, 2101 words, 8 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-gnc硬件系统">一、GNC硬件系统</h2>
+<h4 id="1-三大核心硬件">1、三大核心硬件</h4>
+<ul>
+<li>感知：陀螺仪和加速度计</li>
+<li>计算：飞控计算机</li>
+<li>执行：执行机构</li>
+</ul>
+<h4 id="2-硬件系统对制导控制软件的影响">2、硬件系统对制导控制软件的影响</h4>
+<ol>
+<li>
+<p>导航硬件系统</p>
+<ul>
+<li>早期的V2火箭依靠加速度计的积分信号直接产生制导指令，由加速度计的导航误差产生的落点误差极大</li>
+<li>随着导航硬件性能的提升，目前加速度计精度已经可以达到 𝝁g 数量级，导航误差在制导误差中比例越来越小。</li>
+</ul>
+</li>
+<li>
+<p>飞控计算机</p>
+<ul>
+<li>在数字计算机之前，火箭的制导控制算法全部或大部分<strong>依赖模拟电路搭接而成</strong>， 因此计算复杂度是制导控制算法设计的首要考虑。</li>
+<li>箭载计算机主频和内存的提升，目前已经能够允许<strong>制导控制算法的数值迭代求解</strong>。</li>
+</ul>
+</li>
+<li>
+<p>执行机构</p>
+<ul>
+<li>火箭发动机推力调节从<strong>早期的不可调节</strong>，到如今<strong>部分发动机最低40%的调节比例</strong></li>
+<li>意义：使得运载火箭可以完成回收 着陆、最优过载控制等更加复杂的制导控制目标。</li>
+</ul>
+</li>
+</ol>
+<h2 id="二-运载火箭gnc硬件系统发展">二、运载火箭GNC硬件系统发展</h2>
+<h4 id="1-阶段">1、阶段</h4>
+<ul>
+<li>早期运载火箭GNC硬件系统（二战前后）</li>
+<li>中期运载火箭GNC硬件系统（上世纪6/70年代）</li>
+<li>后期运载火箭GNC硬件系统（2000年前后）</li>
+<li>新一代运载火箭GNC硬件系统（2010年至今）</li>
+</ul>
+<h4 id="2-早期运载火箭gnc硬件系统">2、早期运载火箭GNC硬件系统</h4>
+<p>1、需求：近程对地导弹，在射面内实现给定射程下的飞行</p>
+<p>2、硬件背景：</p>
+<ul>
+<li>V2 火箭研制成功</li>
+<li>数字计算机尚不具备箭上应用能力</li>
+<li>早期机械式的陀螺仪和加速度计已研制成功</li>
+</ul>
+<p>3、硬件系统</p>
+<ul>
+<li>陀螺仪和加速度计：早期<strong>机械式结构，精度低，各自独立工作</strong>，陀螺仪输出直接作为姿控电路反馈，加速度计输出直接积分判断关机</li>
+<li>执行机构： 执行机构为<strong>舵面控制</strong></li>
+<li>飞控计算机： 无数字飞控计算机，<strong>纯模拟</strong></li>
+<li>硬件系统： 硬件环节少，各环节由<strong>模拟电路</strong>直接建立联系。</li>
+</ul>
+<p>4、制导控制算法特点</p>
+<ul>
+<li>受制于模拟电路的实现复杂度，只能采用按纵向速度关机、横向导引、误差反馈等简单制导控 制算法。</li>
+<li><strong>导航制导和控制并没有明显的分界</strong>。</li>
+</ul>
+<h4 id="3-中期运载火箭gnc硬件系统">3、中期运载火箭GNC硬件系统</h4>
+<p>1、需求：高长细比的运载火箭、远程导弹或载荷入轨</p>
+<p>2、硬件背景：</p>
+<ul>
+<li>低摩擦的气浮、液浮支撑件研制成功</li>
+<li>由于推进剂晃动，导致沿用早期GNC硬件系统的导弹多次试射失败</li>
+<li>针对特定任务定制的数字计算机能够实现小型化应用</li>
+<li>使用大推力火箭时，燃气舵效率低、烧蚀严重</li>
+</ul>
+<p>3、硬件系统</p>
+<ul>
+<li>陀螺仪和加速度计： 出现稳定惯性平台，精度进一步提高，陀螺仪和加速度计开始作为整体来使用，出现速率陀螺。</li>
+<li>执行机构： 采用控制更高效，控制能力更大的摆动喷管作为执行机构。</li>
+<li>飞控计算机： 可使用数字计算机，完成复杂算法的在线计算。</li>
+<li>硬件系统：环节明显增多，各环节连接关系复杂，需要单独的仪器单元集成。 使用数据适配器传输数据，实现了软硬件隔离，并且能够支持小规模的在线迭代计算。</li>
+</ul>
+<h4 id="4-后期运载火箭gnc硬件系统">4、后期运载火箭GNC硬件系统</h4>
+<p>1、需求：高可靠性的载人航天、更轻更小的GNC硬件系统</p>
+<p>2、硬件背景：</p>
+<ul>
+<li>卫星导航、遥测技术发展成熟</li>
+<li>激光陀螺具备导航级精度</li>
+<li>二级、三级的入轨对接任务需要更高精度的执行机构</li>
+<li>数字计算机向更小、更快方向发展</li>
+</ul>
+<p>3、硬件系统</p>
+<ul>
+<li>陀螺仪和加速度计： 惯性测量单元高精度、轻量化，安装方式重新变为捷联并成为主流。 采用冗余配置（惯性测量元件和导航信息源的冗余）</li>
+<li>执行机构： 追求更高控制精度，将RCS与摆动喷管配合使用。</li>
+<li>飞控计算机：数字计算机成为GNC硬件系统的核心。</li>
+<li>硬件系统： 开始采用冗余设计保证可靠性。</li>
+</ul>
+<h4 id="5-新一代运载火箭gnc硬件系统">5、新一代运载火箭GNC硬件系统</h4>
+<p>1、需求：运载火箭发射开始追求高频次、高可靠、低成本</p>
+<p>2、硬件背景：</p>
+<ul>
+<li>先进的光纤陀螺、石英振梁加速度计等惯性导航设备投入使用</li>
+<li>针对运载火箭回收场景发展了可调推力发动机、栅格舵等技术</li>
+<li>以飞控计算机为核心的集中式布局导致布线困难、维护成本高</li>
+</ul>
+<p>3、硬件系统</p>
+<ul>
+<li>陀螺仪和加速度计： 惯性测量单元精度进一步提升</li>
+<li>执行机构： 针对可重复使用等场景，开始出现大推力调节比发动机和栅格舵控制。</li>
+<li>飞控计算机： 模块化、分布式</li>
+<li>GNC硬件系统： 向可靠、模块化、低成本方向发展。</li>
+</ul>
+<h4 id="6-其他">6、其他</h4>
+<p>1、惯性测量元件的冗余配置</p>
+<p>三冗余惯性测量单元：配置三套相同的惯性测量单元，使用时通过对三套测量单元输出的信息进行<strong>多数表决</strong>。</p>
+<p>多表斜置：在单个惯性测量单元中配置大于三套陀螺仪和加速度计， 非正交斜置安装，利用冗余轴信息相互校验。</p>
+<p>2、导航信息源的冗余配置原因</p>
+<p>由于惯性器件漂移的存在，其误差随时间发散，在高精度、远程、长航时任务中会不可避免地带来导航误差，为提高导航系统 的可靠性，开始将天文导航、卫星导航等技术中的一个或几个与惯 性导航相组合的组合导航</p>
+<p>3、弹体振动会导致导弹姿控出现问题原因</p>
+<p>弹性和推进剂晃动会导致姿态陀螺产生瞬时偏差，通过微分电路后，会产生较大的瞬时角速度误差，将其引入姿控回路会使执行机构瞬间接近饱和。</p>
+<p>4、惯性测量单元由什么组成，为什么需要冗余配置?</p>
+<p>陀螺仪和加速度计</p>
+<p>冗余配置包括惯性测量元件的冗余配置和导航信息源的冗余配置。</p>
+<p>惯性测量元件的冗余配置原因：</p>
+<p>当前的惯性测量单元体积小，有充足的空间实现惯性测量元件的冗余，以提高可靠性。</p>
+<p>导航信息源的冗余配置的原因：</p>
+<p>惯性测量单元存在惯性期间漂移，误差随时间发散。必须通过其他导航方式，如天文导航、卫星导航等来修正惯性导航误差。</p>
+<p>5、说明纵向加速度计、横向加速度计、陀螺仪、执行机构与飞控等硬件的主要功能。任取硬件进行组合，并写出你认为这一组合具有哪些能力或者功能</p>
+<ul>
+<li>纵向加速度计：测量箭体纵轴加速度。</li>
+<li>横向加速度计：测量箭体横向加速度。</li>
+<li>陀螺仪：水平陀螺仪测量偏航和滚转角。垂直陀螺仪测量俯仰角。</li>
+<li>执行机构：根据指令完成火箭的俯仰、滚转、偏航控制。</li>
+<li>飞控：汇集测量元件的信息，根据设计好的算法，计算并输出操纵指令。</li>
+</ul>
+<p>纵向加速度计、横向加速度计、垂直陀螺仪组合：三者的输出信息通过计算可获得横向速度。</p>
+<p>加速度计和陀螺仪组合：组成惯性测量单元，可输出姿态、位置、速度、角速度、加速度、角加速度等导航信息。</p>
+<p>执行机构和飞控组合：根据导航信息调整发动机姿态和推力大小。</p>
+<p>6、尝试画出GNC硬件系统工作的关系图。</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/zdykzyl/" class="article-info">
+                                                        制导与控制原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

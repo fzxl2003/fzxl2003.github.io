@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>4.2 存储系统 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、存储系统
+1、存储器分类
+
+按介质分类：半导体存储器、磁介质存储器、光盘存储器
+按访问方式分类：随机访问存储器 RAM、只读存储器 ROM、顺序访问存储器（Tape）、直接访问存储器 （Disk）
+按功能分类：高速缓冲存储器、主存储器、..." />
+        <meta name="keywords" content="计算机组成原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="4.2 存储系统" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、存储系统
+1、存储器分类
+
+按介质分类：半导体存储器、磁介质存储器、光盘存储器
+按访问方式分类：随机访问存储器 RAM、只读存储器 ROM、顺序访问存储器（Tape）、直接访问存储器 （Disk）
+按功能分类：高速缓冲存储器、主存储器、...">
+        <meta property="og:url" content="https://github.pansis.site/post/4.2 存储系统/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-05-29">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="4.2 存储系统">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="4.2 存储系统">
+        <meta name="twitter:description" content="一、存储系统
+1、存储器分类
+
+按介质分类：半导体存储器、磁介质存储器、光盘存储器
+按访问方式分类：随机访问存储器 RAM、只读存储器 ROM、顺序访问存储器（Tape）、直接访问存储器 （Disk）
+按功能分类：高速缓冲存储器、主存储器、...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    4.2 存储系统
+                                </h2>
+                                <span class="article-info">
+                                    2024-05-29, 2141 words, 8 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-存储系统">一、存储系统</h2>
+<h4 id="1-存储器分类">1、存储器分类</h4>
+<ul>
+<li>按介质分类：半导体存储器、磁介质存储器、光盘存储器</li>
+<li>按访问方式分类：随机访问存储器 RAM、只读存储器 ROM、顺序访问存储器（Tape）、直接访问存储器 （Disk）</li>
+<li>按功能分类：高速缓冲存储器、主存储器、辅助存储器、控制存储器</li>
+</ul>
+<h4 id="2-存储器层次结构">2、存储器层次结构</h4>
+<p>二级存储系统：高速缓冲存储器（Cache）＋主存储器</p>
+<h4 id="3-半导体存储器">3、半导体存储器</h4>
+<ul>
+<li>随机存取存储器RAM
+<ul>
+<li>静态随机存取存储器SRAM
+<ul>
+<li>每个存储单元由6个晶体管组成，集成度低</li>
+<li>无需刷新即可保持数据</li>
+<li>抗干扰能力较强</li>
+<li>比DRAM快且贵</li>
+<li>常用作Cache存储器</li>
+</ul>
+</li>
+<li>动态随机存取存储器DRAM
+<ul>
+<li>每个存储单元由一个电容和一个晶体管组成，集成度高</li>
+<li>每隔一段时间必须刷新一次</li>
+<li>抗干扰能力差</li>
+<li>比SRAM慢，便宜</li>
+<li>目前主流的DRAM：DDR、DDR2、DDR3......</li>
+<li>常用于主存储器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>只读存储器ROM
+<ul>
+<li>固定掩膜（Masks）ROM</li>
+<li>PROM：一次性可编程</li>
+<li>EPROM：可擦除可编程（紫外线擦除）</li>
+<li>EEPROM：电擦除</li>
+<li>Flash Memory：闪存，本质上属于电擦除可编程ROM，如SM卡、CF卡，MMC卡、SD卡</li>
+</ul>
+</li>
+</ul>
+<h2 id="二-存储单元电路">二、存储单元电路</h2>
+<h4 id="1-电路要求">1、电路要求</h4>
+<ul>
+<li>具有两种稳定（或半稳定）状态，用来表示二进制的 1 和 0 ；</li>
+<li>可以实现状态写入、读取</li>
+</ul>
+<h4 id="2-sram存储单元电路六管单元电路">2、SRAM存储单元电路（六管单元电路）</h4>
+<p>1、电路结构</p>
+<img src="http://cos.pansis.site/202405271721956.png/abc123" alt="image-20240527172117714" style="zoom:43%;" />
+<ul>
+<li>工作管：T1、T2</li>
+<li>负载管：T3、T4</li>
+<li>门控管：T5、T6</li>
+</ul>
+<p>2、稳定状态</p>
+<ul>
+<li>“1”：T1 截止，T2 导通</li>
+<li>“0”：T2 截止，T1 导通</li>
+</ul>
+<p>3、保持、读取、写入</p>
+<ul>
+<li>保持
+<ul>
+<li>字选线低电平，T5 和 T6截止，内部保持稳定。</li>
+</ul>
+</li>
+<li>读出
+<ul>
+<li>字选线高电平，T5和T6导通，如果存储单元原来保存信息是 “1”，D线则“读出”了内部状态（A点电平）则为高，否则为低</li>
+</ul>
+</li>
+<li>写入
+<ul>
+<li>写 1：D线高电平，D 线低电平，字选线高电平，T5 和 T6 导通，T1截止，T2导通，写入 1。</li>
+<li>写 0：D线低电平，D 线高电平，字选线高电平，T5 和 T6 导通，T2截止，T1导通，写入 0</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-sram存储单元电路单管单元电路">3、SRAM存储单元电路（单管单元电路）</h4>
+<p>1、电路结构</p>
+<img src="http://cos.pansis.site/202405271726810.png/abc123" alt="image-20240527172640753" style="zoom:33%;" />
+<p>其中，Cs电容 &lt;&lt;Cd电容</p>
+<p>2、稳定状态</p>
+<ul>
+<li>“1”：Cs上有电荷</li>
+<li>“0”：Cs上无电荷</li>
+</ul>
+<p>3、读出、写入</p>
+<ul>
+<li>读出
+<ul>
+<li>D 线先预充电到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mrow><mi>p</mi><mi>r</mi><mi>e</mi></mrow></msub><mo>=</mo><mn>2.5</mn><mi>V</mi></mrow><annotation encoding="application/x-tex">V_{pre}=2.5V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">p</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">.</span><span class="mord">5</span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span>，然后字选线高电平，T导通，根据数据线上电流的方向可判断单元电路保存的是 1还是 0。</li>
+<li>若电路保存信息1，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mrow><mi>c</mi><mi>s</mi></mrow></msub><mo>=</mo><mn>3.5</mn><mi>V</mi></mrow><annotation encoding="application/x-tex">V_{cs}=3.5V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">.</span><span class="mord">5</span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span>，电流方向从单元电路内部向外；</li>
+<li>若电路保存信息 0，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mrow><mi>c</mi><mi>s</mi></mrow></msub><mo>=</mo><mn>0.0</mn><mi>V</mi></mrow><annotation encoding="application/x-tex">V_{cs}=0.0V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span>，电流方向从外向单元电路内部；</li>
+</ul>
+</li>
+<li>写入
+<ul>
+<li>D 线加高电平（1）或低电平（0），字选择线置高电平，T导通；</li>
+<li>写1时，D线高电平，对Cs充电；</li>
+<li>写0时，D线低电平，Cs放电</li>
+</ul>
+</li>
+</ul>
+<p>4、读出过程实际上是Cs与Cd上的电荷重新分配的过程，也是Cs与Cd上的<br>
+电压重新调整的过程。<br>
+5、DRAM必须定期刷新的原因</p>
+<p>Cs存在漏电流，Cs上的电荷会逐渐消息，状态不能长久保持 ，在电荷泄漏到<br>
+威胁所保存的数据性质之前，需要补充所泄漏的电荷，以保持数据性质不变</p>
+<h4 id="4-固定掩膜rom单元电路">4、固定掩膜ROM单元电路</h4>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202405271737648.png/abc123" alt="image-20240527173759549" loading="lazy"></figure>
+<p>1、可编程的PROM单元电路</p>
+<ul>
+<li>出厂时所有位均为1。</li>
+<li>编程时（写入数据），对写0的单元加入特定的大电流，熔丝被烧断，变为另一种表示0的状态，且不可恢复</li>
+</ul>
+<p>2、紫外线擦除可编程的EPROM单元电路</p>
+<img src="http://cos.pansis.site/202405271739585.png/abc123" alt="image-20240527173912545" style="zoom:33%;" />
+<ul>
+<li>出厂时所有位均为 1，FAMOS的G极无电荷，处于截止状态。</li>
+<li>编程时（写入数据），对写0的单元加入特定的电压，FAMOS上的G极与D极被瞬时击穿，大量电子聚集到G极上，FAMOS导通，表示0。</li>
+<li>工作时，加入正常电压，FAMOS的状态维持不变。</li>
+<li>擦除时，用紫外线照射，FAMOS聚集在G极上的电子获得能量，越过隔离层泄漏，FAMOS恢复截止状态。</li>
+</ul>
+<p>3、EEPROM单元电路</p>
+<img src="http://cos.pansis.site/202405271740877.png/abc123" alt="image-20240527174040822" style="zoom:50%;" />
+<ul>
+<li>和紫外线擦除可编程的EPROM单元电路的区别在于编程的区别。</li>
+<li>编程写入：若VG为正电压，第一浮空栅极与漏极之间产生隧道效应，使电子注<br>
+入第一浮空栅极</li>
+<li>擦除：若使VG为负电压，强使第一级浮空栅极的电子散失，即擦除。擦除后可重新写入。</li>
+</ul>
+<h2 id="三-存储器芯片结构-重点">三、存储器芯片结构  重点</h2>
+<h4 id="0-存储器芯片参数">0、存储器芯片参数</h4>
+<p>1、存储位元</p>
+<p>一个存储位元存储1bit</p>
+<p>2、字单元</p>
+<p>一个字单元存储一个字，一个字由字宽个bit构成。</p>
+<h4 id="1-一维地址结构">1、一维地址结构</h4>
+<img src="http://cos.pansis.site/202405271742109.png/abc123" alt="image-20240527174256044" style="zoom:50%;" />
+<p>地址：A0~A9</p>
+<h4 id="2-二维地址结构sram">2、二维地址结构（SRAM）</h4>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/202405271745806.png/abc123" alt="image-20240527174552662" loading="lazy"></figure>
+<h4 id="3-二维地址结构dram">3、二维地址结构（DRAM）</h4>
+<p>行列非分时复用</p>
+<img src="http://cos.pansis.site/202405271747632.png/abc123" alt="image-20240527174755407" style="zoom:43%;" />
+<p>行列分时复用（含刷新电路）</p>
+<figure data-type="image" tabindex="3"><img src="http://cos.pansis.site/202405311736155.png/abc123" alt="image-20240531173610901" loading="lazy"></figure>
+<ul>
+<li>行地址线数=列地址线数=地址线位数行/列地址：分时复用共享地址线</li>
+<li>刷新就是读，按行刷新，每次刷新1行</li>
+<li>刷新地址计数器位数 =行地址位数</li>
+</ul>
+<h2 id="四-存储器扩展-重点">四、存储器扩展 重点</h2>
+<p>1、位扩展</p>
+<figure data-type="image" tabindex="4"><img src="http://cos.pansis.site/202405271753874.png/abc123" alt="image-20240527175356713" loading="lazy"></figure>
+<p>2、字扩展</p>
+<figure data-type="image" tabindex="5"><img src="http://cos.pansis.site/202405271754763.png/abc123" alt="image-20240527175418460" loading="lazy"></figure>
+<p>3、混合扩展</p>
+<figure data-type="image" tabindex="6"><img src="http://cos.pansis.site/202405271754194.png/abc123" alt="image-20240527175441874" loading="lazy"></figure>
+<p>4、示例</p>
+<figure data-type="image" tabindex="7"><img src="http://cos.pansis.site/202405271755307.png/abc123" alt="image-20240527175532809" loading="lazy"></figure>
+<h2 id="五-dram刷新">五、DRAM刷新</h2>
+<h4 id="1-没有感应放大器时">1、没有感应放大器时</h4>
+<p>读出操作是一种破坏性操作，读1时，Cs放电；读0时，Cs充电；</p>
+<p>所以读出操作后，原保存在Cs上的数据（电荷）被破坏，应该立即进行恢复</p>
+<h4 id="2-有感应放大器时">2、有感应放大器时</h4>
+<img src="http://cos.pansis.site/202405271946876.png/abc123" alt="image-20240527194609809" style="zoom:53%;" />
+<figure data-type="image" tabindex="8"><img src="http://cos.pansis.site/202405271949597.png/abc123" alt="image-20240527194911466" loading="lazy"></figure>
+<p>读取的过程就是刷新的过程</p>
+<h4 id="3-dram刷新方式">3、DRAM刷新方式</h4>
+<p>1、种类：集中刷新方式、分散刷新方式、异步刷新方式</p>
+<p>2、集中刷新方式</p>
+<ul>
+<li>将刷新周期分成两部分，在一个时间段内刷新存储器所有行，另一个时间段CPU访问内存，刷新电路不工作。</li>
+<li>缺陷：集中刷新时间长，此时存储器不能正常读写（访存死区）。很少使用该方法。</li>
+<li>集中刷新间隔 = 刷新周期</li>
+<li><img src="http://cos.pansis.site/202405271956331.png/abc123" alt="image-20240527195646272" loading="lazy"></li>
+</ul>
+<p>3、分散刷新方式</p>
+<ul>
+<li>一个存储周期分为两段: 前一段用于正常读写，后一段用于刷新操作。</li>
+<li>一个存储周期刷新1行，下一存储周期刷新另一行，直至最后1行后，又开始刷新第1行。</li>
+<li>缺陷：存储周期加长，效率降低，很少使用。</li>
+<li>分散刷新间隔 = 刷新行数×存储周期 ≤ 刷新周期</li>
+<li><img src="http://cos.pansis.site/202405271957894.png/abc123" alt="image-20240527195756850" loading="lazy"></li>
+</ul>
+<p>4、异步刷新方式</p>
+<ul>
+<li>异步刷新间隔 = 刷新周期</li>
+<li>以128行为例，在2ms时间内必须轮流对每一行刷新一次，即每隔2ms/128=15.5μs刷新一行。</li>
+<li>这时假定读/写与刷新操作时间都为0.5μs，则可用前15μs进行正常读/写操作，最后0.5μs完成刷新操作。</li>
+</ul>
+<figure data-type="image" tabindex="11"><img src="http://cos.pansis.site/202405272008406.png/abc123" alt="image-20240527200822348" loading="lazy"></figure>
+<h2 id="六-外部存储器">六、外部存储器</h2>
+<h4 id="1-评价记录方式的主要指标">1、评价记录方式的主要指标</h4>
+<ul>
+<li>可靠性</li>
+<li>编码效率：用记录一位信息的最大磁化翻转次数表示；</li>
+<li>自同步能力：能否直接从读出的信号中提取同步信号；</li>
+</ul>
+<h4 id="2-硬磁盘">2、硬磁盘</h4>
+<p>1、存储结构</p>
+<p>盘面：一个磁盘包含若干盘片，每盘片分上下两个盘面，每个盘面由一磁头负责读写<br>
+磁道：磁盘表面的同心圆环<br>
+扇区(Sector)：每个磁道包含若干扇区，扇区是磁盘数据读写的最小单位，默认每个磁道包含的扇区数是相同）</p>
+<h4 id="3-其他存储器">3、其他存储器</h4>
+<p>软盘、IDE硬盘、SCSI硬盘、光盘存储器（CD-ROM、CD-R、CD-RW、DVD）</p>
+<h4 id="4-raid">4、RAID</h4>
+<p>1、全称：独立冗余磁盘阵列</p>
+<p>2、RAID由多个物理构成，但被操作系统当成一个逻辑磁盘。</p>
+<p>数据分布在不同的物理磁盘上，冗余磁盘用于保存数据校验信息，校验信息保证在出现磁盘损坏时能够有效的恢复数据</p>
+<p>3、RAID特点</p>
+<ul>
+<li>通过把多个磁盘组织在一起作为一个逻辑卷提供磁盘跨越功能</li>
+<li>通过把数据分成多个数据块（Block）并行写入/读出多个磁盘以提高访问磁盘的速度</li>
+<li>通过镜像或校验操作提供容错能力</li>
+</ul>
+<p>4、RAID的六种模式</p>
+<p>RAID 0, RAID1, RAID2，RAID3,RAID4和RAID 5。</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/jsjzcyl/" class="article-info">
+                                                        计算机组成原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

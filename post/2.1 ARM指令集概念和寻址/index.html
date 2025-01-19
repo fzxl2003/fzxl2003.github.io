@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>2.1 ARM指令集概念和寻址 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、ARM指令集
+1、指令长度
+
+32 bits 长 (ARM状态)
+16 bits 长 (Thumb 状态)
+
+2、支持的数据长度
+字节 (8-bit)、半字 (16-bit)、字 (32-bit)
+双字 (64-bit)、四字 (128..." />
+        <meta name="keywords" content="嵌入式系统" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="2.1 ARM指令集概念和寻址" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、ARM指令集
+1、指令长度
+
+32 bits 长 (ARM状态)
+16 bits 长 (Thumb 状态)
+
+2、支持的数据长度
+字节 (8-bit)、半字 (16-bit)、字 (32-bit)
+双字 (64-bit)、四字 (128...">
+        <meta property="og:url" content="https://github.pansis.site/post/2.1 ARM指令集概念和寻址/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-10-26">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="2.1 ARM指令集概念和寻址">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="2.1 ARM指令集概念和寻址">
+        <meta name="twitter:description" content="一、ARM指令集
+1、指令长度
+
+32 bits 长 (ARM状态)
+16 bits 长 (Thumb 状态)
+
+2、支持的数据长度
+字节 (8-bit)、半字 (16-bit)、字 (32-bit)
+双字 (64-bit)、四字 (128...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    2.1 ARM指令集概念和寻址
+                                </h2>
+                                <span class="article-info">
+                                    2024-10-26, 1229 words, 5 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-arm指令集">一、ARM指令集</h2>
+<h4 id="1-指令长度">1、指令长度</h4>
+<ul>
+<li>32 bits 长 (ARM状态)</li>
+<li>16 bits 长 (Thumb 状态)</li>
+</ul>
+<h4 id="2-支持的数据长度">2、支持的数据长度</h4>
+<p>字节 (8-bit)、半字 (16-bit)、字 (32-bit)</p>
+<p>双字 (64-bit)、四字 (128-bit)</p>
+<ul>
+<li>字必须被排成4个字节边界对齐,半字必须被排列成2个字节边界对齐</li>
+</ul>
+<h4 id="3-arm指令集与thumb指令集的关系">3、ARM指令集与Thumb指令集的关系</h4>
+<ul>
+<li>ARM指令集支持ARM核所有的特性，具有高效、快速的特点</li>
+<li>Thumb指令集具有灵活、小巧的特点</li>
+</ul>
+<h2 id="二-thumb指令集">二、Thumb指令集</h2>
+<ol>
+<li>Thumb 是16-bit 指令集
+<ul>
+<li>代码密度优化 （总代码大小约为ARM指令的65%）</li>
+<li>使用窄总线存储器时可以大大提高性能。</li>
+<li>是 ARM 指令集的一个子集。</li>
+</ul>
+</li>
+<li>核存在一个执行状态 – Thumb状态
+<ul>
+<li>ARM和Thumb之间切换使用BX 指令</li>
+</ul>
+</li>
+</ol>
+<h2 id="二-arm寻址方式">二、ARM寻址方式</h2>
+<h4 id="1-方式">1、方式</h4>
+<p>寄存器寻址、立即寻址、寄存器移位寻址、寄存器间接寻址、基址寻址、多寄存器寻址；</p>
+<p>栈寻址、块拷贝寻址、相对寻址</p>
+<h4 id="2-寄存器寻址">2、寄存器寻址</h4>
+<p><strong>SUB R0,R1,R2</strong>  ;将R1的值减去R2的值，结果保存到R0</p>
+<h4 id="3-立即数寻址">3、立即数寻址</h4>
+<p><strong>SUBS R0,R0,#1</strong>   ;R0减1，结果放入R0，并且影响标志位</p>
+<p><strong>MOV R0,#0xFF000</strong> ;将立即数0xFF000装入R0寄存器</p>
+<h4 id="4-寄存器移位寻址">4、寄存器移位寻址</h4>
+<p><strong>MOV R0,R2,LSL #3</strong>   ;R2的值左移3位，结果放入R0</p>
+<h4 id="5-寄存器间接寻址">5、寄存器间接寻址</h4>
+<p><strong>LDR R1,[R2]</strong>    ;将R2指向的存储单元的数据读出，保存在R1中</p>
+<h4 id="6-基址变址寻址">6、基址(变址)寻址</h4>
+<p>1、方式：将基址寄存器的内容与指令中给出的偏移量（&lt;4K）相加/减，形成操作数的有效地址</p>
+<p>基址寻址包括**基址加偏移(立即数)<strong>和</strong>基址加索引(寄存器)**两种寻址方式</p>
+<p><strong>LDR R2,[R3,#0x0C]</strong>  ;读取R3+0x0C地址上的存储单元的内容，放入R2</p>
+<p>2、前、后索引（注意[]的位置和寄存器的值变化）</p>
+<p>前索引基址寻址：LDR R0,[R1,#4]!   ;R1=[R1＋4]，R0＝[R1]</p>
+<p>​			    LDR R0,[R1,#4]   ;R0＝[R1+4]</p>
+<p>​			   LDR R1,[R0,R2]  ; R1&lt;-[R0+R2]</p>
+<p>​         		      LDR R1,[R0,-R2] ; R1&lt;-[R0-R2]</p>
+<p>（前索引寻址加!代表改变寻址寄存器的值，而后索引寻址一定改变寻址寄存器的值）</p>
+<p>（偏移量为寄存器时，可以加位移常数，如 LDR R1,[R0,R2,LSL #2]! ;R1&lt;-[R0+R2*4] R0=R0+R2*4 R2=R2）</p>
+<p>后索引基址寻址：<strong>LDR R0,[R1],#4</strong>  ;R0=[R1]，R1＝R1＋4</p>
+<p>后索引变址寻址：<strong>LDR  R0,[R1],R2</strong>  ;R0=[R1]，R1=R1+R2基址加索引寻址,</p>
+<h4 id="7-多寄存器寻址">7、多寄存器寻址</h4>
+<p>1、允许一条指令传送16个寄存器的任何子集或所有寄存器</p>
+<p><strong>LDMIA R1,{R2-R4,R6}</strong>   将R1寄存器指向的内存地址，导入到R2、R3、R4、R6</p>
+<p><img src="http://cos.pansis.site/image-20241009111901478.png?abc123" alt="image-20241009111901478" style="zoom:20%;" /><img src="http://cos.pansis.site/image-20241009111916651.png?abc123" alt="image-20241009111916651" style="zoom:20%;" /></p>
+<p>IA：Increment After 存取后加4（字节）     IB： Increment Before 加4 （字节）后再存取<br>
+DA：Decrement After 存取后减4（字节）   DB： Decrement Before 减4（字节）后再存取</p>
+<p>加减指的是寻址寄存器，即上面的R1，而且指令执行完，寄存器的值的改变会被保存</p>
+<ul>
+<li><strong>LDMIA R0!,{R1-R7}</strong> ;将R0指向的数据保存到R1～R7中。</li>
+<li><strong>STMIA R1!,{R1-R7}</strong> ;将R1～R7的数据保存到R1指向的存储器中。存储指针R1在保存第一个值之后增加，增长方向为向上增长（空递增）。</li>
+<li><strong>STMIB R0!,{R1-R7}</strong> ;将R1～R7的数据保存到存储器中。存储指针R0在保存第一个值之前增加，增长方向为向上增长（满递增）。</li>
+</ul>
+<h4 id="8-栈寻址">8、栈寻址</h4>
+<p>1、概念</p>
+<ol>
+<li>满栈：栈指针指向最后压入的栈的有效数据项，称为满栈</li>
+<li>空栈：栈指针指向下一个待压入数据的空位置，称为空栈。</li>
+<li>递增栈：栈指针向高地址方向生长，称为递增栈</li>
+<li>递减栈：栈指针向低地址方向生长，称为递减栈</li>
+</ol>
+<p>2、分类</p>
+<p>&lt;递增，递减&gt;，&lt;满栈，空栈&gt;可以组合出四种类型的栈方式：</p>
+<ul>
+<li>满递增FA：栈向上增长，栈指针指向内含有效数据项的最高地址。指令如LDMFA、STMFA等；</li>
+<li>空递增EA：栈向上增长，栈指针指向栈上的第一个空位置。指令如LDMEA、STMEA等；</li>
+<li>满递减FD：栈向下增长，栈指针指向内含有效数据项的最低地址。指令如LDMFD、STMFD等；</li>
+<li>空递减ED：栈向下增长，栈指针向栈下的第一个空位置。指令如LDMED、STMED等。</li>
+</ul>
+<p>对于存储</p>
+<ul>
+<li>EA：存储后加1</li>
+<li>FA：加1后再存储</li>
+<li>ED：存储后减1</li>
+<li>FD：减1后再存储</li>
+</ul>
+<p>对于读取</p>
+<ul>
+<li>FD：读取后加1</li>
+<li>ED：加1后再读取</li>
+<li>FA： 读取后减1</li>
+<li>EA：减1后再读取</li>
+</ul>
+<h4 id="9-相对寻址">9、相对寻址</h4>
+<ul>
+<li>由程序计数器PC提供基准地址，指令中的地址码字段作为偏移量，两者相加后得到的地址即为操作数的有效地址。</li>
+<li>主要用于Ｂ指令</li>
+</ul>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/AVw14AAoK/" class="article-info">
+                                                        嵌入式系统
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

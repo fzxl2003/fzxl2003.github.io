@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>2.2 MIPS | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、MIPS基本概念
+1、指令的表示
+
+机器表示：二进制代码形式
+符号化表示：助记符，如 MOV AX，BX
+
+2、操作数地址的数目
+
+三地址： Des = (Sur1) OP (Sur2)
+双地址： Des = (Sur) OP (Des..." />
+        <meta name="keywords" content="计算机组成原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="2.2 MIPS" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、MIPS基本概念
+1、指令的表示
+
+机器表示：二进制代码形式
+符号化表示：助记符，如 MOV AX，BX
+
+2、操作数地址的数目
+
+三地址： Des = (Sur1) OP (Sur2)
+双地址： Des = (Sur) OP (Des...">
+        <meta property="og:url" content="https://github.pansis.site/post/2.2 MIPS/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-04-05">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="2.2 MIPS">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="2.2 MIPS">
+        <meta name="twitter:description" content="一、MIPS基本概念
+1、指令的表示
+
+机器表示：二进制代码形式
+符号化表示：助记符，如 MOV AX，BX
+
+2、操作数地址的数目
+
+三地址： Des = (Sur1) OP (Sur2)
+双地址： Des = (Sur) OP (Des...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    2.2 MIPS
+                                </h2>
+                                <span class="article-info">
+                                    2024-04-05, 859 words, 4 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-mips基本概念">一、MIPS基本概念</h2>
+<h4 id="1-指令的表示">1、指令的表示</h4>
+<ul>
+<li>机器表示：二进制代码形式</li>
+<li>符号化表示：助记符，如 MOV AX，BX</li>
+</ul>
+<h4 id="2-操作数地址的数目">2、操作数地址的数目</h4>
+<ul>
+<li>三地址： Des = (Sur1) OP (Sur2)</li>
+<li>双地址： Des = (Sur) OP (Des)</li>
+<li>单地址：累加器作为默认操作数的双操作数型，或单操作数型</li>
+<li>无地址：隐含操作数型，或无操作数型</li>
+</ul>
+<h4 id="3-cpu字长">3、CPU字长</h4>
+<p>1、CPU字长一般是指CPU一条指令可以计算的数据的宽度</p>
+<p>2、MIPS的字长是32位，即单条MIPS指令可以计算的数据为32位</p>
+<h2 id="二-mips寄存器">二、MIPS寄存器</h2>
+<h4 id="1-mips寄存器基本特征">1、MIPS寄存器基本特征</h4>
+<ol>
+<li>MIPS寄存器数量：32</li>
+<li>寄存器的宽度：32位</li>
+<li>寄存器没有类型（即无正负） 根据指令的功能来解读寄存器值的正负</li>
+</ol>
+<h4 id="2-mips寄存器人为规定类别">2、MIPS寄存器人为规定类别</h4>
+<p>见 操作数.md</p>
+<h2 id="三-mips指令">三、MIPS指令</h2>
+<h4 id="1-基本指令">1、基本指令</h4>
+<p>略，见指令集.md</p>
+<h4 id="2-mal和tal">2、MAL和TAL</h4>
+<p>1、 True Assembly Language (TAL)</p>
+<p>真实指令，计算机能够理解和执行的</p>
+<p>2、MIPS Assembly Language (MAL)</p>
+<p>提供给汇编程序员使用的指令（包含伪指令）</p>
+<p>每条MAL指令对应1条或多条TAL指令</p>
+<p>3、MAL包含TAL</p>
+<h4 id="3-mips支持的运算">3、MIPS支持的运算</h4>
+<p>寄存器—寄存器：寄存器与寄存器运算，结果写入寄存器<br>
+寄存器—立即数：寄存器与立即数运算，结果写入寄存器</p>
+<p>4、在MIPS中，主存单元仅能与寄存器进行数据交换的好处：为了便于设计流水线CPU。</p>
+<h4 id="5-mips指令类型">5、MIPS指令类型</h4>
+<ul>
+<li>取数/存储指令
+<ul>
+<li>I型指令  lw sw lb lbu ......</li>
+</ul>
+</li>
+<li>算术、逻辑、移位指令
+<ul>
+<li>R型指令：addu、subu、、、</li>
+<li>I型指令：addiu、andi、、、</li>
+</ul>
+</li>
+<li>条件分支指令
+<ul>
+<li>跳转指令
+<ul>
+<li>J型指令：j</li>
+<li>R型指令 ：jr</li>
+</ul>
+</li>
+<li>转移指令
+<ul>
+<li>I型指令：beq、bne、bgtz、blez、bltz、、、、</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>函数调用指令
+<ul>
+<li>R型指令：jal、jalr、jr</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-mips中的signed与unsigned">6、MIPS中的Signed与Unsigned</h4>
+<p>三种含义</p>
+<ul>
+<li>符号位扩展：lb、lbu等</li>
+<li>溢出检测：add、addu等</li>
+<li>符号数（ALU最高位的符号位扩展）：slt、slti、sltu、sltiu</li>
+</ul>
+<h2 id="四-主存">四、主存</h2>
+<h4 id="1-主存模型">1、主存模型</h4>
+<p>1、基本单元：字节</p>
+<p>2、内存地址：主存单元的编号，内存地址，字节编号</p>
+<ul>
+<li>4GB主存共有4G个字节，即有4G个存储单元</li>
+<li>4G个存储单元对应的地址位数为32位</li>
+<li>地址范围：0000_0000h至FFFF_FFFFh</li>
+</ul>
+<img src="http://cos.pansis.site/202404011448279.png/abc123" alt="image-20240401144833172" style="zoom:43%;" />
+<h4 id="2-字地址">2、字地址</h4>
+<p>1、定义：某字第0列单元的字节地址</p>
+<p>2、例子：字2的第0列单元的地址为 0000_0008，故字2的字地址为0000_0008</p>
+<h4 id="3-地址的表示方式">3、地址的表示方式</h4>
+<p>1、方法：绝对地址、相对地址</p>
+<p>2、绝对地址</p>
+<ul>
+<li>主存单元的地址直接用具体数值表示</li>
+<li>示例：直接给出黄色单元的地址P=FFFF_FFF9</li>
+</ul>
+<p>3、相对地址</p>
+<p>主存单元的地址采用“基地址+偏移”的表示方式</p>
+<ul>
+<li>示例1：以B1为基地址，以1为偏移，即𝑷=𝑩𝟏+𝟏</li>
+<li>示例2：以B2为基地址，以-2为偏移，即𝑷=𝑩𝟐+(−𝟐)</li>
+</ul>
+<p>4、寻址方式：根据形式地址计算到操作数的有效地址的方式（算法）</p>
+<ul>
+<li>立即寻址</li>
+<li>寄存器直接寻址</li>
+<li>基址寻址</li>
+<li>相对寻址：基址寻址的特例，程序计数器PC作为基址寄存器</li>
+<li>堆栈寻址</li>
+</ul>
+<p>5、形式地址与有效地址</p>
+<ul>
+<li>形式地址：指令中直接给出的地址编码</li>
+<li>有效地址：根据形式地址和寻址方式计算出来的操作数在内存单元中的地址</li>
+</ul>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/jsjzcyl/" class="article-info">
+                                                        计算机组成原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>3.2  数据通路基础部件 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、MIPS 单周期CPU
+1、CPU功能
+CPU支持以下指令
+addu、subu、ori、lw、sw、sltu、beq、jal、jr、lui、j、addiu、and、bne、or
+2、数据通路
+
+二、基本部件
+1、PC
+1、模块代码
+mo..." />
+        <meta name="keywords" content="计算机组成原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="3.2  数据通路基础部件" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、MIPS 单周期CPU
+1、CPU功能
+CPU支持以下指令
+addu、subu、ori、lw、sw、sltu、beq、jal、jr、lui、j、addiu、and、bne、or
+2、数据通路
+
+二、基本部件
+1、PC
+1、模块代码
+mo...">
+        <meta property="og:url" content="https://github.pansis.site/post/3.2  数据通路基础部件/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-04-05">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="3.2  数据通路基础部件">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="3.2  数据通路基础部件">
+        <meta name="twitter:description" content="一、MIPS 单周期CPU
+1、CPU功能
+CPU支持以下指令
+addu、subu、ori、lw、sw、sltu、beq、jal、jr、lui、j、addiu、and、bne、or
+2、数据通路
+
+二、基本部件
+1、PC
+1、模块代码
+mo...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    3.2  数据通路基础部件
+                                </h2>
+                                <span class="article-info">
+                                    2024-04-05, 2748 words, 14 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-mips-单周期cpu">一、MIPS 单周期CPU</h2>
+<h4 id="1-cpu功能">1、CPU功能</h4>
+<p>CPU支持以下指令</p>
+<p><code>addu</code>、<code>subu</code>、<code>ori</code>、<code>lw</code>、<code>sw</code>、<code>sltu</code>、<code>beq</code>、<code>jal</code>、<code>jr</code>、<code>lui</code>、<code>j</code>、<code>addiu</code>、<code>and</code>、<code>bne</code>、<code>or</code></p>
+<h4 id="2-数据通路">2、数据通路</h4>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202404231100337.png/abc123" alt="MIPS" loading="lazy"></figure>
+<h2 id="二-基本部件">二、基本部件</h2>
+<h4 id="1-pc">1、PC</h4>
+<p>1、模块代码</p>
+<pre><code class="language-verilog">module PC(
+    input Clk, //clk振荡
+    input Reset,//重置信号
+    input [31:0] DI,//新的PC值
+    output reg [31:0] DO//输出的PC值
+);
+    //always @(posedge Clk or posedge Reset) begin
+    always @(posedge Clk) begin
+        if(Reset) begin
+            // DO &lt;= 32'b0; //提交
+            DO&lt;=32'h00003000; //提交
+        end
+        else begin
+            DO &lt;= DI;
+        end
+    end
+endmodule
+</code></pre>
+<p>2、功能</p>
+<p>在每个clk上升沿时，如果重置信号为高电位，则 <code>DO</code> 重置为初始值 <code>32'h00003000</code>，反之<code>DO &lt;= DI</code></p>
+<h4 id="2-npc">2、NPC</h4>
+<p>1、模块代码</p>
+<pre><code class="language-verilog">
+module NPC(
+    input [31:0] PC,//当前的PC地址
+    input [25:0]IMM,//26位立即数(beq,bne指令为16位,jal指令为26位)
+    input [31:0] RA,//jal指令的目标地址
+    input [2:0]NPCOp,//NPC的选择信号
+    input Zero,//beq,bne指令的比较结果
+    output [31:0] NPC,//下一个PC地址
+    output [31:0] PC4//PC+4
+    );
+    assign PC4 = PC + 4;
+    wire [31:0] IMM_ext;
+    //符号扩展
+    EXT18 ext18(
+        .imm({IMM[15:0],2'b0}),
+        .F(1'b1),
+        .imm_ext(IMM_ext)
+    );
+    assign NPC = (NPCOp==3'b001)?(Zero)?PC4 + IMM_ext:PC4:((NPCOp==3'b010)?{PC[31:28],IMM,2'b00}:((NPCOp==3'b011)?RA:((NPCOp==3'b100)?(Zero)?PC4:PC4 + IMM_ext:PC4)));
+    // always @(*) begin
+    //     case(NPCOp)
+    //         3'b001: NPC = (Zero)?PC4 + IMM_ext:PC4;//beq指令
+    //         3'b010: NPC = {PC[31:28],IMM,2'b00};//jal指令
+    //         3'b011: NPC = RA;//jr指令
+    //         3'b100: NPC = (Zero)?PC4:PC4 + IMM_ext;//bne指令
+    //         default: NPC = PC4;//顺序执行指令
+    //     endcase
+    // end
+endmodule
+</code></pre>
+<p>2、功能</p>
+<ul>
+<li><code>PC4</code> 始终等于 <code>PC+4</code>，表示下一个顺序指令地址</li>
+<li><code>NPC</code> 的取值取决于 <code>NPCOp</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>NPCOp</th>
+<th>NPC</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3b'000</td>
+<td>PC4</td>
+<td>顺序执行</td>
+</tr>
+<tr>
+<td>3b'001</td>
+<td>(Zero)?PC4 + IMM_ext:PC4</td>
+<td>beq指令</td>
+</tr>
+<tr>
+<td>3b'010</td>
+<td>{PC[31:28],IMM,2'b00}</td>
+<td>jal，j指令</td>
+</tr>
+<tr>
+<td>3b'011</td>
+<td>RA</td>
+<td>jr指令</td>
+</tr>
+<tr>
+<td>3b'100</td>
+<td>(Zero)?PC4:PC4 + IMM_ext</td>
+<td>bne指令</td>
+</tr>
+</tbody>
+</table>
+<p>其中， <code>IMM_ext</code> 为26位或16位立即数的32位有符号扩展</p>
+<h4 id="3-rf">3、RF</h4>
+<p>1、模块接口</p>
+<pre><code class="language-verilog">module RF(
+    input [4:0] A1,A2,A3,//A1,A2为读地址，A3为写地址
+    output [31:0] RD1,RD2 ,//RD1,RD2为从地址为A1,A2的寄存器中读出的数据
+    input [31:0] WD,//写入地址为A3的数据
+    input Wr,//写使能
+    input CLK//时钟
+
+);
+   reg [31:0] rf[31:1];//31个32位寄存器(0号寄存器不用)
+   always @(posedge CLK) begin
+    if (Wr)//写使能有效时，写入数据
+        rf[A3]&lt;=WD;
+   end
+   assign RD1=(A1==0)? 32'b0:rf[A1];//读取数据A1
+   assign RD2=(A2==0)? 32'b0:rf[A2];//读取数据A2
+
+//初始化寄存器数据，从文件中读取
+   parameter RF_FILE = &quot;RF.txt&quot;;  //文件名
+    initial
+    begin: file 
+    $readmemh(RF_FILE,rf);
+    end
+
+//调试信息
+
+
+endmodule
+</code></pre>
+<p>2、功能</p>
+<ul>
+<li>
+<p>存储</p>
+<p>共32个寄存器，每个寄存器容量32bit</p>
+</li>
+<li>
+<p>写入</p>
+<p>在每个clk上升沿时，如果重置信号为高电位，则32个寄存器全部初始化为0.</p>
+<p>反之重置信号为低电位且 <code>Wr</code> 为高电位，则写入寄存器 <code>rf[A3]&lt;=WD</code></p>
+</li>
+<li>
+<p>读取</p>
+<p>0号寄存器需要始终输出0.</p>
+<pre><code class="language-c">assign RD1=(A1==0)? 32'b0:rf[A1];//读取数据A1
+assign RD2=(A2==0)? 32'b0:rf[A2];//读取数据A2
+</code></pre>
+</li>
+</ul>
+<h4 id="4-im">4、IM</h4>
+<p>1、模块代码</p>
+<pre><code class="language-verilog">module IM(
+    input [31:0] A,//要读取的指令地址
+    output [31:0] RD//读取的指令 
+);
+    //初始化指令存储器
+    parameter IM_FILE = &quot;code.txt&quot;;  //文件名
+    initial
+    begin: file 
+    $readmemh(IM_FILE,mem);
+    end
+    wire [31:0]real_A;
+    assign real_A = A-32'h00003000;
+    reg [31:0] mem[4096:0];//指令存储器
+    assign RD=mem[real_A/4];  ////////////////////////与课本有出入
+endmodule
+</code></pre>
+<p>2、功能</p>
+<ul>
+<li>寄存器 <code>reg [31:0] mem[4096:0]</code> 存储指令，容量 <code>16KiB（4097 × 32bit）</code></li>
+<li><code>RD</code> 始终等于 <code>mem[A&lt;&lt;2]</code>，表示读取的指令</li>
+</ul>
+<p>3、仿真</p>
+<p>仿真时，指令直接从 <code>code.txt</code> 中读取初始化。</p>
+<p>同时，这样的指令地址是从 0 开始，而非 PC 模块中的初始值 <code>32'h00003000</code>，为了保证指令读取成功，仿真代码中<code>RD=mem[real_A&lt;&lt;2]</code>，其中<code>real_A = A-32'h00003000</code></p>
+<pre><code class="language-verilog">//初始化指令存储器
+parameter IM_FILE = &quot;code.txt&quot;;  //文件名
+initial
+begin: file 
+$readmemh(IM_FILE,mem);
+end
+</code></pre>
+<h4 id="5-dm">5、DM</h4>
+<p>1、模块代码</p>
+<pre><code class="language-verilog">module DM(
+    input [31:0] A,//要读取的数据地址
+    output [31:0] RD,//读取的数据
+    input [31:0] WD,//写入的数据
+    input wr,//写入使能
+    input clk,//时钟
+    input rst //重置
+);
+integer i;
+    reg [31:0] mem[3072:0];//数据存储器
+    always@(posedge clk) begin
+        if (rst) begin
+            //全部置0 //提交
+            for(i=0;i&lt;=3072;i=i+1)
+                mem[i]&lt;=32'h00000000;
+        end
+        else if (wr)//写入
+            mem[A/4]&lt;=WD;
+    end
+    assign RD=mem[A/4];//读取
+
+//初始化数据存储器 //提交
+    // parameter DM_FILE = &quot;DM.txt&quot;;  //文件名
+    // initial
+    // begin: file 
+    // $readmemh(DM_FILE,mem);
+    // end
+
+endmodule
+</code></pre>
+<p>2、功能</p>
+<ul>
+<li>
+<p>存储</p>
+<p>容量12KiB（3072 × 32bit）</p>
+</li>
+<li>
+<p>写入</p>
+<p>在每个clk上升沿时，如果重置信号为高电位，则32个寄存器全部初始化为0.</p>
+<p>反之重置信号为低电位且 <code>Wr</code> 为高电位，则写入寄存器 <code>mem[A&lt;&lt;2]&lt;=WD</code></p>
+</li>
+<li>
+<p>读取</p>
+<p><code>RD=mem[A&lt;&lt;2]</code></p>
+</li>
+</ul>
+<h4 id="6-alu">6、ALU</h4>
+<ul>
+<li>
+<p>1、模块接口</p>
+<pre><code class="language-c">module ALU(
+    input [31:0] A,//第一个32位操作数
+    input [31:0] B,//第二个32位操作数
+    input [2:0] F,//功能选择信号
+    output [31:0] C,//输出C,32位
+    output Z//输出Zero,1位，用于判断C是否为0
+);
+</code></pre>
+<p>2、功能图</p>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/202404231101658.png/abc123" alt="ALU" loading="lazy"></figure>
+<ul>
+<li>
+<p>扩展模块：expandA、expandA</p>
+<p>将输入的A、B有无符号扩展至33位</p>
+</li>
+<li>
+<p>OR模块：OR</p>
+<p>计算输入的A、B的或值</p>
+</li>
+<li>
+<p>LUI模块：LUI</p>
+<p>将输入的B左移16位</p>
+</li>
+<li>
+<p>AND模块：AND</p>
+<p>计算输入的A、B的与值</p>
+</li>
+<li>
+<p>取反选择模块：adder_inputB</p>
+<p>若M1Sel=1，则输出为33位B的取反值，反之为33位B.</p>
+</li>
+<li>
+<p>加法器：adder</p>
+<p>计算进位为Cin的a、b加法值。</p>
+</li>
+<li>
+<p>ALU输出选择模块：ALU_out</p>
+<p>根据M2Sel的值，选择不同的输出。</p>
+</li>
+</ul>
+<p>3、控制模块</p>
+<ul>
+<li>指令与F(ALUOp)的对应表</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>F[2:0]</th>
+<th>控制器输出</th>
+<th>功能</th>
+<th>对应的指令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>000</td>
+<td>1 0 0 0</td>
+<td>A+B</td>
+<td>addu lw sw</td>
+</tr>
+<tr>
+<td>001</td>
+<td>1 1 1 0</td>
+<td>A-B</td>
+<td>subu beq bne</td>
+</tr>
+<tr>
+<td>010</td>
+<td>0 1 1 1</td>
+<td>SLT</td>
+<td>sltu</td>
+</tr>
+<tr>
+<td>011</td>
+<td>x x x 2</td>
+<td>OR</td>
+<td>or ori</td>
+</tr>
+<tr>
+<td>100</td>
+<td>x x x 3</td>
+<td>AND</td>
+<td>and</td>
+</tr>
+<tr>
+<td>101</td>
+<td>x x x 4</td>
+<td>暂无</td>
+<td>暂无</td>
+</tr>
+<tr>
+<td>110</td>
+<td>x x x 5</td>
+<td>左移6位</td>
+<td>lui</td>
+</tr>
+</tbody>
+</table>
+<p>​       1、SExt=0 无符号扩展  SExt=1 有符号扩展</p>
+<p>​       2、控制器输出分别对应 SExt, M1Sel,Cin,[2:0]M2Sel</p>
+<p>4、ALU输出模块</p>
+<table>
+<thead>
+<tr>
+<th>F[2:0]</th>
+<th>M2Sel</th>
+<th>指令</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>000/001</td>
+<td>0</td>
+<td>addu lw sw subu beq bne</td>
+<td>adder计算结果</td>
+</tr>
+<tr>
+<td>010</td>
+<td>1</td>
+<td>sltu</td>
+<td>adder计算结果最高位0扩展</td>
+</tr>
+<tr>
+<td>011</td>
+<td>2</td>
+<td>or ori</td>
+<td>orin</td>
+</tr>
+<tr>
+<td>100</td>
+<td>3</td>
+<td>and</td>
+<td>andin</td>
+</tr>
+<tr>
+<td>101</td>
+<td>4</td>
+<td>暂无</td>
+<td>暂无</td>
+</tr>
+<tr>
+<td>110</td>
+<td>5</td>
+<td>lui</td>
+<td>luiin</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>zero=(in[31:0]==32'b0)</li>
+</ol>
+</li>
+</ul>
+<h4 id="7-ext">7、EXT</h4>
+<p>1、模块接口</p>
+<pre><code class="language-c">module EXT#(parameter N=16 )
+(
+    input [N-1:0] imm,
+    input F,
+    output [31:0] imm_ext
+);
+</code></pre>
+<p>2、功能</p>
+<p>16位立即数有/无符号扩展至32位</p>
+<h4 id="8-m1-m2-m3">8、M1 M2 M3</h4>
+<p>1、M1</p>
+<p>选择写入寄存器的编号</p>
+<table>
+<thead>
+<tr>
+<th>M1Sel</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>A3=IM.RD[15:11]   //无立即数指令的寄存器写回</td>
+</tr>
+<tr>
+<td>1</td>
+<td>A3=IM.RD[20:16]  //立即数指令的寄存器写回</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A3=0x1F //jal跳转，将PC+4写入31号寄存器</td>
+</tr>
+<tr>
+<td>x</td>
+<td>用不到寄存器写回</td>
+</tr>
+</tbody>
+</table>
+<p>2、M2</p>
+<p>选择写入寄存器的数据</p>
+<table>
+<thead>
+<tr>
+<th>M2Sel</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>RFWD=ALU.C  //向寄存器写入ALU计算结果</td>
+</tr>
+<tr>
+<td>1</td>
+<td>RFWD=DM.RD  //向寄存器写入读入的内存结果</td>
+</tr>
+<tr>
+<td>2</td>
+<td>RFWD=PC+4   //将PC+4写入31号寄存器</td>
+</tr>
+<tr>
+<td>x</td>
+<td>用不到寄存器写回</td>
+</tr>
+</tbody>
+</table>
+<p>3、M3</p>
+<p>选择ALU的B输入</p>
+<table>
+<thead>
+<tr>
+<th>M3Sel</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>ALU的第二个操作数来自寄存器</td>
+</tr>
+<tr>
+<td>1</td>
+<td>ALU的第二个操作数来自立即数</td>
+</tr>
+<tr>
+<td>x</td>
+<td>用不到ALU计算</td>
+</tr>
+</tbody>
+</table>
+<h4 id="9-ctrl">9、CTRL</h4>
+<p>整合控制模块</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>NPCOp</th>
+<th>RFWr</th>
+<th>EXTOp</th>
+<th>ALUOp</th>
+<th>DMWr</th>
+<th>M1Sel</th>
+<th>M2Sel</th>
+<th>M3Sel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>addu</td>
+<td>000</td>
+<td>1</td>
+<td>x</td>
+<td>000</td>
+<td>0</td>
+<td>00</td>
+<td>00</td>
+<td>0</td>
+</tr>
+<tr>
+<td>subu</td>
+<td>000</td>
+<td>1</td>
+<td>x</td>
+<td>001</td>
+<td>0</td>
+<td>00</td>
+<td>00</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ori</td>
+<td>000</td>
+<td>1</td>
+<td>0</td>
+<td>011</td>
+<td>0</td>
+<td>01</td>
+<td>00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>lw</td>
+<td>000</td>
+<td>1</td>
+<td>1</td>
+<td>000</td>
+<td>0</td>
+<td>01</td>
+<td>01</td>
+<td>1</td>
+</tr>
+<tr>
+<td>sw</td>
+<td>000</td>
+<td>0</td>
+<td>1</td>
+<td>000</td>
+<td>1</td>
+<td>x</td>
+<td>x</td>
+<td>1</td>
+</tr>
+<tr>
+<td>sltu</td>
+<td>000</td>
+<td>1</td>
+<td>x</td>
+<td>010</td>
+<td>0</td>
+<td>00</td>
+<td>00</td>
+<td>0</td>
+</tr>
+<tr>
+<td>beq</td>
+<td>001</td>
+<td>0</td>
+<td>x</td>
+<td>001</td>
+<td>0</td>
+<td>x</td>
+<td>x</td>
+<td>0</td>
+</tr>
+<tr>
+<td>jal</td>
+<td>010</td>
+<td>1</td>
+<td>x</td>
+<td>x</td>
+<td>0</td>
+<td>10</td>
+<td>10</td>
+<td>x</td>
+</tr>
+<tr>
+<td>jr</td>
+<td>011</td>
+<td>0</td>
+<td>x</td>
+<td>x</td>
+<td>0</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>j</td>
+<td>010</td>
+<td>0</td>
+<td>x</td>
+<td>x</td>
+<td>0</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>addiu</td>
+<td>000</td>
+<td>1</td>
+<td>0</td>
+<td>000</td>
+<td>0</td>
+<td>01</td>
+<td>00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>and</td>
+<td>000</td>
+<td>1</td>
+<td>x</td>
+<td>100</td>
+<td>0</td>
+<td>00</td>
+<td>00</td>
+<td>0</td>
+</tr>
+<tr>
+<td>bne</td>
+<td>100</td>
+<td>0</td>
+<td>x</td>
+<td>001</td>
+<td>0</td>
+<td>x</td>
+<td>x</td>
+<td>0</td>
+</tr>
+<tr>
+<td>or</td>
+<td>000</td>
+<td>1</td>
+<td>0</td>
+<td>011</td>
+<td>0</td>
+<td>0</td>
+<td>00</td>
+<td>0</td>
+</tr>
+<tr>
+<td>lui</td>
+<td>000</td>
+<td>1</td>
+<td>0</td>
+<td>110</td>
+<td>0</td>
+<td>1</td>
+<td>00</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>NPCOp</th>
+<th>NPC</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3b'000</td>
+<td>PC4</td>
+<td>顺序执行</td>
+</tr>
+<tr>
+<td>3b'001</td>
+<td>(Zero)?PC4 + IMM_ext:PC4</td>
+<td>beq指令</td>
+</tr>
+<tr>
+<td>3b'010</td>
+<td>{PC[31:28],IMM,2'b00}</td>
+<td>jal指令</td>
+</tr>
+<tr>
+<td>3b'011</td>
+<td>RA</td>
+<td>jr指令</td>
+</tr>
+<tr>
+<td>3b'100</td>
+<td>(Zero)?PC4:PC4 + IMM_ext</td>
+<td>bne指令</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>RFWr/DMWr</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>寄存器A3/对应内存  不可被写入</td>
+</tr>
+<tr>
+<td>1</td>
+<td>寄存器A3/对应内存   可被写入</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>EXTOp</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>无符号扩展</td>
+</tr>
+<tr>
+<td>1</td>
+<td>有符号扩展</td>
+</tr>
+<tr>
+<td>x</td>
+<td>用不到扩展</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>M1Sel</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>A3=IM.RD[15:11]   //无立即数指令的寄存器写回</td>
+</tr>
+<tr>
+<td>1</td>
+<td>A3=IM.RD[20:16]  //立即数指令的寄存器写回</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A3=0x1F //jal跳转，将PC+4写入31号寄存器</td>
+</tr>
+<tr>
+<td>x</td>
+<td>用不到寄存器写回</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>M2Sel</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>RFWD=ALU.C  //向寄存器写入ALU计算结果</td>
+</tr>
+<tr>
+<td>1</td>
+<td>RFWD=DM.RD  //向寄存器写入读入的内存结果</td>
+</tr>
+<tr>
+<td>2</td>
+<td>RFWD=PC+4   //将PC+4写入31号寄存器</td>
+</tr>
+<tr>
+<td>x</td>
+<td>用不到寄存器写回</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>M3Sel</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>ALU的第二个操作数来自寄存器</td>
+</tr>
+<tr>
+<td>1</td>
+<td>ALU的第二个操作数来自立即数</td>
+</tr>
+<tr>
+<td>x</td>
+<td>用不到ALU计算</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-verilog">module CTRL(
+    input [5:0] opcode,//指令的opcode
+    input [5:0] funct,//指令的funct
+    input  Zero,//ALU的输出是否为0
+    output [2:0] NPCOp,//NPC的选择信号
+    output  RFWr,//是否写寄存器
+    output EXTOp,//是否扩展立即数
+    output [2:0]ALUOp,//ALU的选择信号
+    output DMWr,//是否写数据存储器
+    output [1:0]M1Sel,//M1的选择信号
+    output [1:0] M2Sel,//M2的选择信号
+    output M3Sel//M3的选择信号
+);
+wire RTypre;
+assign RTypre = (opcode == 6'b000000);
+wire addu,subu,ori,lw,sw,sltu,beq,jal,jr;
+assign addu = RTypre&amp;(funct == 6'b100001);//
+assign subu = RTypre&amp;(funct == 6'b100011);//
+assign add= RTypre&amp;(funct == 6'b100000);//
+assign sub= RTypre&amp;(funct == 6'b100010);//
+assign ori = (opcode == 6'b001101);//
+assign lw = (opcode == 6'b100011);//
+assign sw = (opcode == 6'b101011);//
+assign beq = (opcode == 6'b000100);
+assign sltu = RTypre&amp;(funct == 6'b101011);//
+assign jal = (opcode == 6'b000011);//
+assign jr = RTypre&amp;(funct == 6'b001000);//
+assign j= (opcode == 6'b000010);
+assign addiu= (opcode == 6'b001001);
+assign andand= RTypre&amp;(funct == 6'b100100);
+assign bne= (opcode == 6'b000101);
+assign oror= RTypre&amp;(funct == 6'b100101);
+assign lui= (opcode == 6'b001111);
+
+
+
+
+assign NPCOp = (beq)?3'b001:((jal|j)?3'b010:((jr)?3'b011:(bne)?3'b100:3'b000));
+// always @(*)begin
+//     //NPCOp
+//     beq: NPCOp = 3'b001;
+//     jal: NPCOp = 3'b010;
+//     j: NPCOp = 3'b010;
+//     jr: NPCOp = 3'b011;
+//     bne: NPCOp = 3'b100;
+//     default: NPCOp = 3'b000;
+// end
+assign RFWr = addu|subu|add|sub|ori|lw|sltu|jal|addiu|andand|oror|lui;
+// always @(*)begin
+//     addu: RFWr = 1;
+//     subu: RFWr = 1;
+//     add: RFWr = 1;
+//     sub: RFWr = 1;
+//     ori: RFWr = 1;
+//     lw: RFWr = 1;
+//     sltu: RFWr = 1;
+//     jal: RFWr = 1;
+//     addiu: RFWr = 1;
+//     andand: RFWr = 1;
+//     oror: RFWr = 1;
+//     lui: RFWr = 1;
+//     default: RFWr = 0;
+// end
+assign EXTOp = lw|sw;
+// always @(*)begin
+//     lw: EXTOp = 1;
+//     sw: EXTOp = 1;
+//     default: EXTOp = 0;
+// end
+assign ALUOp = (subu|sub|beq|bne)?3'b001:((ori|oror)?3'b011:(sltu)?3'b010:(andand)?3'b100:(lui)?3'b110:3'b000);
+// always @(*)begin
+//     subu: ALUOp = 3'b001;
+//     sub: ALUOp = 3'b001;
+//     beq: ALUOp = 3'b001;
+//     bne: ALUOp = 3'b001;
+//     ori: ALUOp = 3'b011;
+//     oror: ALUOp = 3'b011;
+//     sltu: ALUOp = 3'b010;
+//     andand: ALUOp = 3'b100;
+//     lui: ALUOp = 3'b110;
+//     default: ALUOp = 3'b000;
+// end
+assign DMWr = sw;
+// always @(*)begin
+//     sw: DMWr = 1;
+//     default: DMWr = 0;
+// end
+assign M1Sel = (ori|lw|addiu|lui)?2'b01:(jal?2'b10:2'b00);
+// always @(*)begin
+//     ori: M1Sel = 2'b01;
+//     lw: M1Sel = 2'b01;
+//     addiu: M1Sel = 2'b01;
+//     lui: M1Sel = 2'b01;
+//     jal: M1Sel = 2'b10;
+//     default: M1Sel = 2'b00;
+// end
+assign M2Sel = (addu|add|subu|sub|ori|sltu|addiu|andand|oror|lui)?2'b00:(lw?2'b01:(jal?2'b10:2'b11));
+// always @(*)begin
+//     addu: M2Sel = 2'b00;
+//     add: M2Sel = 2'b00;
+//     subu: M2Sel = 2'b00;
+//     sub: M2Sel = 2'b00;
+//     ori: M2Sel = 2'b00;
+//     sltu: M2Sel = 2'b00;
+//     addiu: M2Sel = 2'b00;
+//     andand: M2Sel = 2'b00;
+//     oror: M2Sel = 2'b00;
+//     lui: M2Sel = 2'b00;
+//     lw: M2Sel = 2'b01;
+//     jal: M2Sel = 2'b10;
+//     default: M2Sel = 2'b11;
+// end
+assign M3Sel = ori|lw|sw|addiu|lui;
+// always @(*)begin
+//     ori: M3Sel = 1;
+//     lw: M3Sel = 1;
+//     sw: M3Sel = 1;
+//     addiu: M3Sel = 1;
+//     lui: M3Sel = 1;
+//     default: M3Sel = 0;
+// end
+
+
+endmodule
+</code></pre>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/jsjzcyl/" class="article-info">
+                                                        计算机组成原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

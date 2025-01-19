@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>2.9 汇编指令表 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="目录
+[TOC]
+寄存器序号
+
+
+
+编号
+名称
+用途
+编号
+名称
+编号
+名称
+
+
+
+
+0
+$0
+常数0
+8
+$t0
+16
+$s0
+
+
+1
+$at
+汇编器保留变量
+9
+$t1
+17
+$s1
+
+
+2
+$v0
+函数返回值
+10
+$t2
+18
+$s..." />
+        <meta name="keywords" content="计算机组成原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="2.9 汇编指令表" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="目录
+[TOC]
+寄存器序号
+
+
+
+编号
+名称
+用途
+编号
+名称
+编号
+名称
+
+
+
+
+0
+$0
+常数0
+8
+$t0
+16
+$s0
+
+
+1
+$at
+汇编器保留变量
+9
+$t1
+17
+$s1
+
+
+2
+$v0
+函数返回值
+10
+$t2
+18
+$s...">
+        <meta property="og:url" content="https://github.pansis.site/post/2.9 汇编指令表/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-04-05">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="2.9 汇编指令表">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="2.9 汇编指令表">
+        <meta name="twitter:description" content="目录
+[TOC]
+寄存器序号
+
+
+
+编号
+名称
+用途
+编号
+名称
+编号
+名称
+
+
+
+
+0
+$0
+常数0
+8
+$t0
+16
+$s0
+
+
+1
+$at
+汇编器保留变量
+9
+$t1
+17
+$s1
+
+
+2
+$v0
+函数返回值
+10
+$t2
+18
+$s...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    2.9 汇编指令表
+                                </h2>
+                                <span class="article-info">
+                                    2024-04-05, 478 words, 2 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h4 id="目录">目录</h4>
+<p>[TOC]</p>
+<h4 id="寄存器序号">寄存器序号</h4>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>名称</th>
+<th>用途</th>
+<th>编号</th>
+<th>名称</th>
+<th>编号</th>
+<th>名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>$0</td>
+<td>常数0</td>
+<td>8</td>
+<td>$t0</td>
+<td>16</td>
+<td>$s0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>$at</td>
+<td>汇编器保留变量</td>
+<td>9</td>
+<td>$t1</td>
+<td>17</td>
+<td>$s1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>$v0</td>
+<td>函数返回值</td>
+<td>10</td>
+<td>$t2</td>
+<td>18</td>
+<td>$s2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>$v1</td>
+<td>函数返回值</td>
+<td>11</td>
+<td>$t3</td>
+<td>19</td>
+<td>$s3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>$a0</td>
+<td>函数参数</td>
+<td>12</td>
+<td>$t4</td>
+<td>20</td>
+<td>$s4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>$a1</td>
+<td>函数参数</td>
+<td>13</td>
+<td>$t5</td>
+<td>21</td>
+<td>$s5</td>
+</tr>
+<tr>
+<td>6</td>
+<td>$a2</td>
+<td>函数参数</td>
+<td>14</td>
+<td>$t6</td>
+<td>22</td>
+<td>$s6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>$a3</td>
+<td>函数参数</td>
+<td>15</td>
+<td>$t7</td>
+<td>23</td>
+<td>$s7</td>
+</tr>
+<tr>
+<td>26</td>
+<td>$k0</td>
+<td>操作系统临时变量</td>
+<td>24</td>
+<td>$t8</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>27</td>
+<td>$k1</td>
+<td>操作系统临时变量</td>
+<td>25</td>
+<td>$t9</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>28</td>
+<td>$gp</td>
+<td>全局指针</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>29</td>
+<td>$sp</td>
+<td>堆栈指针</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30</td>
+<td>$fp</td>
+<td>帧框架指针</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>31</td>
+<td>$ra</td>
+<td>函数返回指针</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="add符号加">add：符号加</h4>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202404051349865.png/abc123" alt="image-20240405134930657" loading="lazy"></figure>
+<h4 id="addi符号加立即数">addi：符号加立即数</h4>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/202404051350338.png/abc123" alt="image-20240405135000101" loading="lazy"></figure>
+<h4 id="addiu无符号加立即数">addiu：无符号加立即数</h4>
+<figure data-type="image" tabindex="3"><img src="http://cos.pansis.site/202404051415753.png/abc123" alt="image-20240405141529671" loading="lazy"></figure>
+<h4 id="andi与立即数">andi：与立即数</h4>
+<figure data-type="image" tabindex="4"><img src="http://cos.pansis.site/202404051415290.png/abc123" alt="image-20240405141524218" loading="lazy"></figure>
+<h4 id="addu无符号加">addu：无符号加</h4>
+<figure data-type="image" tabindex="5"><img src="http://cos.pansis.site/202404051415038.png/abc123" alt="image-20240405141516945" loading="lazy"></figure>
+<h4 id="and与">and：与</h4>
+<figure data-type="image" tabindex="6"><img src="http://cos.pansis.site/202404051415242.png/abc123" alt="image-20240405141512150" loading="lazy"></figure>
+<h4 id="beq相等时转移">beq：相等时转移</h4>
+<figure data-type="image" tabindex="7"><img src="http://cos.pansis.site/202404051415888.png/abc123" alt="image-20240405141504780" loading="lazy"></figure>
+<h4 id="bgez大于等于0时转移">bgez：大于等于0时转移</h4>
+<figure data-type="image" tabindex="8"><img src="http://cos.pansis.site/202404051414273.png/abc123" alt="image-20240405141459167" loading="lazy"></figure>
+<h4 id="bgtz大于0时转移">bgtz：大于0时转移</h4>
+<figure data-type="image" tabindex="9"><img src="http://cos.pansis.site/202404051414927.png/abc123" alt="image-20240405141452840" loading="lazy"></figure>
+<h4 id="blez小于等于0时转移">blez：小于等于0时转移</h4>
+<figure data-type="image" tabindex="10"><img src="http://cos.pansis.site/202404051414735.png/abc123" alt="image-20240405141445662" loading="lazy"></figure>
+<h4 id="bltz小于0时转移">bltz：小于0时转移</h4>
+<figure data-type="image" tabindex="11"><img src="http://cos.pansis.site/202404051414308.png/abc123" alt="image-20240405141439200" loading="lazy"></figure>
+<h4 id="bne不等于时转移">bne：不等于时转移</h4>
+<figure data-type="image" tabindex="12"><img src="http://cos.pansis.site/202404051414986.png/abc123" alt="image-20240405141433917" loading="lazy"></figure>
+<h4 id="break断点">break：断点</h4>
+<figure data-type="image" tabindex="13"><img src="http://cos.pansis.site/202404051412589.png/abc123" alt="image-20240405141242499" loading="lazy"></figure>
+<h4 id="div符号除">div：符号除</h4>
+<figure data-type="image" tabindex="14"><img src="http://cos.pansis.site/202404051412717.png/abc123" alt="image-20240405141236611" loading="lazy"></figure>
+<h4 id="divu无符号除">divu：无符号除</h4>
+<figure data-type="image" tabindex="15"><img src="http://cos.pansis.site/202404051412182.png/abc123" alt="image-20240405141231083" loading="lazy"></figure>
+<h4 id="eret异常返回">eret：异常返回</h4>
+<figure data-type="image" tabindex="16"><img src="http://cos.pansis.site/202404051412517.png/abc123" alt="image-20240405141221430" loading="lazy"></figure>
+<h4 id="j跳转">j：跳转</h4>
+<figure data-type="image" tabindex="17"><img src="http://cos.pansis.site/202404051411762.png/abc123" alt="image-20240405141154667" loading="lazy"></figure>
+<h4 id="jal跳转并链接">jal：跳转并链接</h4>
+<figure data-type="image" tabindex="18"><img src="http://cos.pansis.site/202404051411590.png/abc123" alt="image-20240405141149447" loading="lazy"></figure>
+<h4 id="jalr跳转并链接">jalr：跳转并链接</h4>
+<figure data-type="image" tabindex="19"><img src="http://cos.pansis.site/202404051411104.png/abc123" alt="image-20240405141144016" loading="lazy"></figure>
+<h4 id="jr跳转至寄存器">jr：跳转至寄存器</h4>
+<figure data-type="image" tabindex="20"><img src="http://cos.pansis.site/202404051411134.png/abc123" alt="image-20240405141138053" loading="lazy"></figure>
+<h4 id="lb加载字节">lb：加载字节</h4>
+<figure data-type="image" tabindex="21"><img src="http://cos.pansis.site/202404051411200.png/abc123" alt="image-20240405141131102" loading="lazy"></figure>
+<h4 id="lbu加载无符号字节">lbu：加载无符号字节</h4>
+<figure data-type="image" tabindex="22"><img src="http://cos.pansis.site/202404051411580.png/abc123" alt="image-20240405141125490" loading="lazy"></figure>
+<h4 id="lh加载半字">lh：加载半字</h4>
+<figure data-type="image" tabindex="23"><img src="http://cos.pansis.site/202404051411112.png/abc123" alt="image-20240405141120007" loading="lazy"></figure>
+<h4 id="lhu加载无符号半字">lhu：加载无符号半字</h4>
+<figure data-type="image" tabindex="24"><img src="http://cos.pansis.site/202404051411434.png/abc123" alt="image-20240405141114337" loading="lazy"></figure>
+<h4 id="lui立即数加载至高位">lui：立即数加载至高位</h4>
+<figure data-type="image" tabindex="25"><img src="http://cos.pansis.site/202404051411604.png/abc123" alt="image-20240405141108528" loading="lazy"></figure>
+<h4 id="lw加载字">lw：加载字</h4>
+<figure data-type="image" tabindex="26"><img src="http://cos.pansis.site/202404051410257.png/abc123" alt="image-20240405141030182" loading="lazy"></figure>
+<h4 id="mfc0读cp0寄存器">mfc0：读CP0寄存器</h4>
+<figure data-type="image" tabindex="27"><img src="http://cos.pansis.site/202404051410597.png/abc123" alt="image-20240405141024508" loading="lazy"></figure>
+<h4 id="mfhi读hi寄存器">mfhi：读HI寄存器</h4>
+<figure data-type="image" tabindex="28"><img src="http://cos.pansis.site/202404051410333.png/abc123" alt="image-20240405141019246" loading="lazy"></figure>
+<h4 id="mflo读lo寄存器">mflo：读LO寄存器</h4>
+<figure data-type="image" tabindex="29"><img src="http://cos.pansis.site/202404051410238.png/abc123" alt="image-20240405141013152" loading="lazy"></figure>
+<h4 id="mtc0写cp0寄存器">mtc0：写CP0寄存器</h4>
+<figure data-type="image" tabindex="30"><img src="http://cos.pansis.site/202404051410340.png/abc123" alt="image-20240405141007264" loading="lazy"></figure>
+<h4 id="mthi写hi寄存器">mthi：写HI寄存器</h4>
+<figure data-type="image" tabindex="31"><img src="http://cos.pansis.site/202404051410089.png/abc123" alt="image-20240405141000979" loading="lazy"></figure>
+<h4 id="mtlo写lo寄存器">mtlo：写LO寄存器</h4>
+<figure data-type="image" tabindex="32"><img src="http://cos.pansis.site/202404051409472.png/abc123" alt="image-20240405140955383" loading="lazy"></figure>
+<h4 id="mult符号乘">mult：符号乘</h4>
+<figure data-type="image" tabindex="33"><img src="http://cos.pansis.site/202404051409593.png/abc123" alt="image-20240405140949491" loading="lazy"></figure>
+<h4 id="multu无符号乘">multu：无符号乘</h4>
+<figure data-type="image" tabindex="34"><img src="http://cos.pansis.site/202404051409286.png/abc123" alt="image-20240405140941194" loading="lazy"></figure>
+<h4 id="nor或非">nor：或非</h4>
+<figure data-type="image" tabindex="35"><img src="http://cos.pansis.site/202404051409813.png/abc123" alt="image-20240405140932725" loading="lazy"></figure>
+<h4 id="or或">or：或</h4>
+<figure data-type="image" tabindex="36"><img src="http://cos.pansis.site/202404051409951.png/abc123" alt="image-20240405140926880" loading="lazy"></figure>
+<h4 id="ori或立即数">ori：或立即数</h4>
+<figure data-type="image" tabindex="37"><img src="http://cos.pansis.site/202404051409610.png/abc123" alt="image-20240405140905532" loading="lazy"></figure>
+<h4 id="sb存储字节">sb：存储字节</h4>
+<figure data-type="image" tabindex="38"><img src="http://cos.pansis.site/202404051408837.png/abc123" alt="image-20240405140858749" loading="lazy"></figure>
+<h4 id="sh存储半字节">sh：存储半字节</h4>
+<figure data-type="image" tabindex="39"><img src="http://cos.pansis.site/202404051408806.png/abc123" alt="image-20240405140851707" loading="lazy"></figure>
+<h4 id="sll逻辑左移">sll：逻辑左移</h4>
+<figure data-type="image" tabindex="40"><img src="http://cos.pansis.site/202404051408935.png/abc123" alt="image-20240405140844846" loading="lazy"></figure>
+<h4 id="sllv逻辑可变左移">sllv：逻辑可变左移</h4>
+<figure data-type="image" tabindex="41"><img src="http://cos.pansis.site/202404051408423.png/abc123" alt="image-20240405140833327" loading="lazy"></figure>
+<h4 id="slt小于置1有符号">slt：小于置1（有符号）</h4>
+<figure data-type="image" tabindex="42"><img src="http://cos.pansis.site/202404051408044.png/abc123" alt="image-20240405140827959" loading="lazy"></figure>
+<h4 id="slti小于立即数置1有符号">slti：小于立即数置1（有符号）</h4>
+<figure data-type="image" tabindex="43"><img src="http://cos.pansis.site/202404051408922.png/abc123" alt="image-20240405140817844" loading="lazy"></figure>
+<h4 id="sltiu小于立即数置1无符号">sltiu：小于立即数置1（无符号）</h4>
+<figure data-type="image" tabindex="44"><img src="http://cos.pansis.site/202404051408832.png/abc123" alt="image-20240405140811738" loading="lazy"></figure>
+<h4 id="sltu小于置1无符号">sltu：小于置1（无符号）</h4>
+<figure data-type="image" tabindex="45"><img src="http://cos.pansis.site/202404051408624.png/abc123" alt="image-20240405140806538" loading="lazy"></figure>
+<h4 id="sra算术右移">sra：算术右移</h4>
+<figure data-type="image" tabindex="46"><img src="http://cos.pansis.site/202404051408376.png/abc123" alt="image-20240405140800295" loading="lazy"></figure>
+<h4 id="srav算术可变右移">srav：算术可变右移</h4>
+<figure data-type="image" tabindex="47"><img src="http://cos.pansis.site/202404051407036.png/abc123" alt="image-20240405140753955" loading="lazy"></figure>
+<h4 id="srl逻辑左移">srl：逻辑左移</h4>
+<figure data-type="image" tabindex="48"><img src="http://cos.pansis.site/202404051407065.png/abc123" alt="image-20240405140747964" loading="lazy"></figure>
+<h4 id="srlv逻辑可变右移">srlv：逻辑可变右移</h4>
+<figure data-type="image" tabindex="49"><img src="http://cos.pansis.site/202404051407470.png/abc123" alt="image-20240405140741359" loading="lazy"></figure>
+<h4 id="sub符号减">sub：符号减</h4>
+<figure data-type="image" tabindex="50"><img src="http://cos.pansis.site/202404051407348.png/abc123" alt="image-20240405140734229" loading="lazy"></figure>
+<h4 id="subu无符号减">subu：无符号减</h4>
+<figure data-type="image" tabindex="51"><img src="http://cos.pansis.site/202404051407140.png/abc123" alt="image-20240405140728060" loading="lazy"></figure>
+<h4 id="sw存储字">sw：存储字</h4>
+<figure data-type="image" tabindex="52"><img src="http://cos.pansis.site/202404051407179.png/abc123" alt="image-20240405140721089" loading="lazy"></figure>
+<h4 id="syscall系统调用">syscall：系统调用</h4>
+<figure data-type="image" tabindex="53"><img src="http://cos.pansis.site/202404051407520.png/abc123" alt="image-20240405140714434" loading="lazy"></figure>
+<h4 id="xor异或">xor：异或</h4>
+<figure data-type="image" tabindex="54"><img src="http://cos.pansis.site/202404051407769.png/abc123" alt="image-20240405140706673" loading="lazy"></figure>
+<h4 id="xori异或立即数">xori：异或立即数</h4>
+<figure data-type="image" tabindex="55"><img src="http://cos.pansis.site/202404051407525.png/abc123" alt="image-20240405140700424" loading="lazy"></figure>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/jsjzcyl/" class="article-info">
+                                                        计算机组成原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

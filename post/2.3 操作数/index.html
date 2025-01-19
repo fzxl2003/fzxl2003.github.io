@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>2.3 操作数 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、操作数
+1、寄存器操作数
+1、类别
+
+
+
+编号
+名称
+用途
+编号
+名称
+用途
+
+
+
+
+0
+$0
+常数0
+28
+$gp
+全局指针
+
+
+1
+$at
+汇编器保留变量
+29
+$sp
+堆栈指针
+
+
+2~3
+$v0~v1
+函数返回值
+30
+$fp
+..." />
+        <meta name="keywords" content="计算机组成原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="2.3 操作数" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、操作数
+1、寄存器操作数
+1、类别
+
+
+
+编号
+名称
+用途
+编号
+名称
+用途
+
+
+
+
+0
+$0
+常数0
+28
+$gp
+全局指针
+
+
+1
+$at
+汇编器保留变量
+29
+$sp
+堆栈指针
+
+
+2~3
+$v0~v1
+函数返回值
+30
+$fp
+...">
+        <meta property="og:url" content="https://github.pansis.site/post/2.3 操作数/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-04-05">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="2.3 操作数">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="2.3 操作数">
+        <meta name="twitter:description" content="一、操作数
+1、寄存器操作数
+1、类别
+
+
+
+编号
+名称
+用途
+编号
+名称
+用途
+
+
+
+
+0
+$0
+常数0
+28
+$gp
+全局指针
+
+
+1
+$at
+汇编器保留变量
+29
+$sp
+堆栈指针
+
+
+2~3
+$v0~v1
+函数返回值
+30
+$fp
+...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    2.3 操作数
+                                </h2>
+                                <span class="article-info">
+                                    2024-04-05, 588 words, 3 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-操作数">一、操作数</h2>
+<h4 id="1-寄存器操作数">1、寄存器操作数</h4>
+<p>1、类别</p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>名称</th>
+<th>用途</th>
+<th>编号</th>
+<th>名称</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>$0</td>
+<td>常数0</td>
+<td>28</td>
+<td>$gp</td>
+<td>全局指针</td>
+</tr>
+<tr>
+<td>1</td>
+<td>$at</td>
+<td>汇编器保留变量</td>
+<td>29</td>
+<td>$sp</td>
+<td>堆栈指针</td>
+</tr>
+<tr>
+<td>2~3</td>
+<td>$v0~v1</td>
+<td>函数返回值</td>
+<td>30</td>
+<td>$fp</td>
+<td>帧框架指针</td>
+</tr>
+<tr>
+<td>4~7</td>
+<td>$a0~a3</td>
+<td>函数参数</td>
+<td>31</td>
+<td>$ra</td>
+<td>函数返回指针</td>
+</tr>
+<tr>
+<td>8~15</td>
+<td>$t0~t7</td>
+<td>临时变量</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16~23</td>
+<td>$s0~s7</td>
+<td>程序员变量</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>24~25</td>
+<td>$t8~t9</td>
+<td>临时变量</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>26~27</td>
+<td>$k0~k1</td>
+<td>操作系统临时变量</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>2、 $0</p>
+<p>寄存器的值恒为0，不可改变</p>
+<ul>
+<li>0寄存器存在的意义：0的使用频率很高</li>
+</ul>
+<p>3、$s0~s7</p>
+<p>C语言中显式定义的变量的寄存器位置</p>
+<p>4、 $t0~t9</p>
+<p>C语言中用于计算过程中的中间变量的寄存器位置，未显式定义。</p>
+<p>5、 $at</p>
+<p>使用汇编伪指令时，汇编器可能会用到的寄存器，请勿使用。</p>
+<p>解决的问题：汇编器把一条伪指令转换为真实指令时，可<br>
+能需要多条真实指令，这些指令会用的额外的寄存器来存储临时值，将$at设置为专用寄存器，可避免汇编器误写可能性。</p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>名称</th>
+<th>用途</th>
+<th>编号</th>
+<th>名称</th>
+<th>编号</th>
+<th>名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>$0</td>
+<td>常数0</td>
+<td>8</td>
+<td>$t0</td>
+<td>16</td>
+<td>$s0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>$at</td>
+<td>汇编器保留变量</td>
+<td>9</td>
+<td>$t1</td>
+<td>17</td>
+<td>$s1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>$v0</td>
+<td>函数返回值</td>
+<td>10</td>
+<td>$t2</td>
+<td>18</td>
+<td>$s2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>$v1</td>
+<td>函数返回值</td>
+<td>11</td>
+<td>$t3</td>
+<td>19</td>
+<td>$s3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>$a0</td>
+<td>函数参数</td>
+<td>12</td>
+<td>$t4</td>
+<td>20</td>
+<td>$s4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>$a1</td>
+<td>函数参数</td>
+<td>13</td>
+<td>$t5</td>
+<td>21</td>
+<td>$s5</td>
+</tr>
+<tr>
+<td>6</td>
+<td>$a2</td>
+<td>函数参数</td>
+<td>14</td>
+<td>$t6</td>
+<td>22</td>
+<td>$s6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>$a3</td>
+<td>函数参数</td>
+<td>15</td>
+<td>$t7</td>
+<td>23</td>
+<td>$s7</td>
+</tr>
+<tr>
+<td>26</td>
+<td>$k0</td>
+<td>操作系统临时变量</td>
+<td>24</td>
+<td>$t8</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>27</td>
+<td>$k1</td>
+<td>操作系统临时变量</td>
+<td>25</td>
+<td>$t9</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>28</td>
+<td>$gp</td>
+<td>全局指针</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>29</td>
+<td>$sp</td>
+<td>堆栈指针</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30</td>
+<td>$fp</td>
+<td>帧框架指针</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>31</td>
+<td>$ra</td>
+<td>函数返回指针</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-操作数的位置">2、操作数的位置</h4>
+<ul>
+<li>存储器（存储器地址）</li>
+<li>寄存器（寄存器地址）</li>
+<li>输入输出端口（输入输出端口地址）</li>
+</ul>
+<h2 id="二-立即数">二 、立即数</h2>
+<ul>
+<li>立即数为16bit</li>
+<li>移位指令中也存在着常数，但仅有5位，不认为是立即数。</li>
+</ul>
+<h2 id="三-主存单元">三、主存单元</h2>
+<ul>
+<li>只有专用的读/写存储器类指令可实现主存单元与寄存器间的数据交换。</li>
+<li>主存单元是不能直接参与运算。</li>
+<li>解决的问题：有限的寄存器无法满足无限的变量需求</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202402272002757.png/abc123" alt="image-20240227200257577" loading="lazy"></figure>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/jsjzcyl/" class="article-info">
+                                                        计算机组成原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

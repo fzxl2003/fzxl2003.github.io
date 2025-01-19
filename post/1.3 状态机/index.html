@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>1.3 状态机 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、状态机
+1、定义
+表示有限个状态以及 这些状态之间的转移和动作等行为的离散数学模型
+
+用途：常用于设计数字系统的控制模块
+特点：结构简单、逻辑清晰、可靠性高
+
+2、相关定义
+1、状态：电路所处的特定工作阶段，每个状态对应一个编码值
+2、..." />
+        <meta name="keywords" content="计算机组成原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="1.3 状态机" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、状态机
+1、定义
+表示有限个状态以及 这些状态之间的转移和动作等行为的离散数学模型
+
+用途：常用于设计数字系统的控制模块
+特点：结构简单、逻辑清晰、可靠性高
+
+2、相关定义
+1、状态：电路所处的特定工作阶段，每个状态对应一个编码值
+2、...">
+        <meta property="og:url" content="https://github.pansis.site/post/1.3 状态机/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-03-11">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="1.3 状态机">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="1.3 状态机">
+        <meta name="twitter:description" content="一、状态机
+1、定义
+表示有限个状态以及 这些状态之间的转移和动作等行为的离散数学模型
+
+用途：常用于设计数字系统的控制模块
+特点：结构简单、逻辑清晰、可靠性高
+
+2、相关定义
+1、状态：电路所处的特定工作阶段，每个状态对应一个编码值
+2、...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    1.3 状态机
+                                </h2>
+                                <span class="article-info">
+                                    2024-03-11, 1195 words, 5 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-状态机">一、状态机</h2>
+<h4 id="1-定义">1、定义</h4>
+<p>表示有限个状态以及 这些状态之间的转移和动作等行为的离散数学模型</p>
+<ul>
+<li>用途：常用于设计数字系统的控制模块</li>
+<li>特点：结构简单、逻辑清晰、可靠性高</li>
+</ul>
+<h4 id="2-相关定义">2、相关定义</h4>
+<p>1、状态：电路所处的特定工作阶段，每个状态对应一个编码值</p>
+<p>2、状态寄存器：若干个触发器，其0/1输出的编码组合值就是状态。</p>
+<ul>
+<li>状态寄存器的触发器个数，取决于状态数量和编码方案</li>
+</ul>
+<p>3、次态逻辑：根据输入和当前状态编码值，计算下一个状态编码值</p>
+<ul>
+<li>状态寄存器的值：取决于次态逻辑的输出（即寄存器的输入）</li>
+</ul>
+<p>4、输出逻辑：根据状态及输入，计算该状态下的输出值</p>
+<ul>
+<li>状态机的输出通常作为控制信号</li>
+</ul>
+<h4 id="3-表示方法">3、表示方法</h4>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202403111938565.png/abc123" alt="image-20240311193751337" loading="lazy"></figure>
+<h4 id="4-状态机分类">4、状态机分类</h4>
+<p>Moore型状态机  Meely型状态机</p>
+<ul>
+<li>Moore型状态机：输出信号仅为状态的函数，与输入信号无关</li>
+</ul>
+<img src="http://cos.pansis.site/202403111940350.png/abc123" alt="image-20240311194015303" style="zoom:50%;" />
+<ul>
+<li>Meely型状态机：输出信号是状态与输入信号的函数</li>
+</ul>
+<img src="http://cos.pansis.site/202403111940927.png/abc123" alt="image-20240311194040889" style="zoom:50%;" />
+<h2 id="二-状态机设计">二、状态机设计</h2>
+<h4 id="1-基本步骤">1、基本步骤</h4>
+<p>1、规划状态总数 （不能存在有疏漏的状态 ）</p>
+<p>2、构造状态图</p>
+<ul>
+<li>每个状态的转移条件必须是完备的，否则会存在设计缺陷！</li>
+</ul>
+<img src="http://cos.pansis.site/202403111942410.png/abc123" alt="image-20240311194201361" style="zoom:50%;" />
+<p>3、构造每个寄存器的D输入信号的门电路</p>
+<p>4、根据设计需求决定在当前状态输出应该取何值</p>
+<h4 id="2-实例">2、实例</h4>
+<img src="http://cos.pansis.site/202403111944763.png/abc123" alt="image-20240311194404704" style="zoom:50%;" />
+<h5 id="第一步状态规划">第一步：状态规划</h5>
+<img src="http://cos.pansis.site/202403111944557.png/abc123" alt="image-20240311194440499" style="zoom:50%;" />
+<h5 id="第二步确定状态转换">第二步：确定状态转换</h5>
+<img src="http://cos.pansis.site/202403111945746.png/abc123" alt="image-20240311194506692" style="zoom:50%;" />
+<h5 id="第三步处理所有其他可能转移">第三步：处理所有其他可能转移</h5>
+<img src="http://cos.pansis.site/202403111950271.png/abc123" alt="image-20240311195052214" style="zoom:50%;" />
+<h5 id="第四步增加复位reset信号">第四步：增加复位（reset）信号</h5>
+<ul>
+<li>复位的作用：确保所有数字电路在初始化阶段能被有效初始化，从而全系统能严格同步</li>
+<li>初始化阶段：大多数为上电后的短暂时间，一般以ms为单位</li>
+<li>Reset产生机制 某个系统级部件产生或某个控制器</li>
+<li>Reset电平规划
+<ul>
+<li>高电平H(1)or 低电平L(0)均可</li>
+<li>芯片外部输入：一般为L有效</li>
+<li>芯片内部使用：一般用H有效</li>
+</ul>
+</li>
+</ul>
+<img src="http://cos.pansis.site/202403111954241.png/abc123" alt="image-20240311195433180" style="zoom:50%;" />
+<h5 id="第五步状态编码">第五步：状态编码</h5>
+<p>假设采用2进制编码方式，故需要3个寄存器，即R2、R1、R0</p>
+<p>S0=000，S1=001，S2=010，S3=011，S4=100</p>
+<h5 id="第六步构造次态逻辑的门电路">第六步：构造次态逻辑的门电路</h5>
+<ul>
+<li>采用真值表，来构造</li>
+</ul>
+<img src="http://cos.pansis.site/202403111957590.png/abc123" alt="image-20240311195723526" style="zoom:50%;" />
+<ul>
+<li>
+<p>可靠性设计：所有的未定义状态，都强制转移至初态（S0）</p>
+<ul>
+<li>
+<p>状态图通常不建模从非法状态转移至初始状态（非法状态可能太多！）</p>
+</li>
+<li>
+<p>但在状态表及后面的VerilogHDL中必须建模上述转移关系</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="第七步产生输出信号">第七步：产生输出信号</h5>
+<p>根据要求，给出输出信号。</p>
+<p>涉及采用Moore型输 出还是Meely型输出</p>
+<p>◆Moore：输出晚；有效时间仅与状态相关，以cycle为单位</p>
+<p>◆Meely：可以早；有效时间是输入与状态的AND</p>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/202403112002779.png/abc123" alt="image-20240311200220711" loading="lazy"></figure>
+<h5 id="第八步编写verilog代码">第八步：编写Verilog代码</h5>
+<img src="http://cos.pansis.site/202403112003383.png/abc123" alt="image-20240311200345309" style="zoom:50%;" />
+<p>default：可靠性设计，确保状 态机即使因某种特殊原因进入 非法状态，也必然最终能退出。</p>
+<h4 id="3-其他注意事项">3、其他注意事项</h4>
+<p>1、同步复位和异步复位</p>
+<ul>
+<li>同步复位：复位信号有效且时钟上升沿时才能复位寄存器</li>
+<li>异步复位：复位信号有效，则寄存器就立即被复位，与时钟无关</li>
+<li>Verilog代码的区别</li>
+</ul>
+<img src="http://cos.pansis.site/202403112005123.png/abc123" alt="image-20240311200503078" style="zoom:50%;" />
+<p>2、初始状态</p>
+<p>状态机必须指定一个初始状态，以确保系统在上电后处于确定的状态</p>
+<p>3、复位信号</p>
+<p>将状态机强制初始化为初始状态</p>
+<p>4、状态编码方式</p>
+<ul>
+<li>二进制编码：log2𝑁个触发器表示N个状态
+<ul>
+<li>节省逻辑资源，但可能产生毛刺</li>
+</ul>
+</li>
+<li>格雷编码：log2𝑁个触发器表示N个状态，但相邻状态编码值只有1位不同
+<ul>
+<li>节省逻辑资源；又避免产生毛刺（状态顺序的转换中有效）</li>
+</ul>
+</li>
+<li>一位热码编码（One-Hot Encoding）：N个触发器表示这N个状态
+<ul>
+<li>资源消耗多，但无毛刺</li>
+<li>降低次态逻辑和输出逻辑复杂度，有利于提高时钟频率</li>
+<li>一般用于组合逻辑输出的异步操作（防止出现因为一个毛刺，直接发出异步reset信号等情况）</li>
+</ul>
+</li>
+</ul>
+<p>例，四个状态</p>
+<ul>
+<li>二进制编码 $Q_1Q_0=$00 01 10 11  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><msub><mi>Q</mi><mn>1</mn></msub><msub><mi>Q</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">F=Q_1Q_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+<li>独热编码    $Q_3Q_2Q_1Q_0=$0001 0010 0100 1000  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><msub><mi>Q</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">F=Q_3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+</ul>
+<p>​        两者等价</p>
+<p>毛刺的解释：由于寄存器存在细微的性能差距，会导致两个寄存器值改变时会存在时间差，进而导致输出结果出现极小的毛刺凸起。</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/jsjzcyl/" class="article-info">
+                                                        计算机组成原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

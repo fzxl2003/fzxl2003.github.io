@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>3.11 相对地球定位方法 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、相关概念
+
+方法：直接敏感地平和 间接敏感地平
+地球卫星的轨道动力学模型为二体问题，系统模型最简单。
+影响测量精度的最主要因素是量测模型的地平敏感精度。
+观测量获取方法：获取载体坐标系中的星光矢量和地心矢量，合成获取地球惯性坐标系下的坐..." />
+        <meta name="keywords" content="组合导航原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="3.11 相对地球定位方法" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、相关概念
+
+方法：直接敏感地平和 间接敏感地平
+地球卫星的轨道动力学模型为二体问题，系统模型最简单。
+影响测量精度的最主要因素是量测模型的地平敏感精度。
+观测量获取方法：获取载体坐标系中的星光矢量和地心矢量，合成获取地球惯性坐标系下的坐...">
+        <meta property="og:url" content="https://github.pansis.site/post/3.11 相对地球定位方法/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-11-25">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="3.11 相对地球定位方法">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="3.11 相对地球定位方法">
+        <meta name="twitter:description" content="一、相关概念
+
+方法：直接敏感地平和 间接敏感地平
+地球卫星的轨道动力学模型为二体问题，系统模型最简单。
+影响测量精度的最主要因素是量测模型的地平敏感精度。
+观测量获取方法：获取载体坐标系中的星光矢量和地心矢量，合成获取地球惯性坐标系下的坐...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    3.11 相对地球定位方法
+                                </h2>
+                                <span class="article-info">
+                                    2023-11-25, 784 words, 3 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-相关概念">一、相关概念</h2>
+<ol>
+<li>方法：直接敏感地平和 间接敏感地平</li>
+<li>地球卫星的轨道动力学模型为<strong>二体问题</strong>，系统模型最简单。</li>
+<li>影响测量精度的最主要因素是<strong>量测模型的地平敏感精度</strong>。</li>
+<li>观测量获取方法：获取载体坐标系中的星光矢量和地心矢量，合成获取地球惯性坐标系下的坐标</li>
+</ol>
+<img src="http://cos.pansis.site/202311251012413.png/abc123" alt="image-20231125101152713" style="zoom:40%;" />
+<h2 id="二-直接敏感地平">二、直接敏感地平</h2>
+<h4 id="1-观测量">1、观测量</h4>
+<ul>
+<li>星光角距：从航天器上观测到的导航恒星<strong>星光的矢量方向</strong>与<strong>地心矢量方向之间的夹角</strong></li>
+<li>星光仰角：由航天器上观测到的恒星与地球边缘的切线之间的夹角</li>
+<li>日－地－月信息</li>
+<li>地心距和地心方向</li>
+</ul>
+<h4 id="2-星光角距">2、星光角距</h4>
+<ul>
+<li>计算公式：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mi>c</mi><mi>o</mi><msup><mi>s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>(</mo><mo>−</mo><mfrac><mrow><mover accent="true"><mi>r</mi><mo>⃗</mo></mover><mo>⋅</mo><mover accent="true"><mi>s</mi><mo>⃗</mo></mover></mrow><mi>r</mi></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\alpha=cos^{-1}(-\frac{\vec{r}\cdot\vec{s}}{r})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.2388em;vertical-align:-0.345em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord">−</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8937999999999999em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord accent mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-2.714em;"><span class="pstrut" style="height:2.714em;"></span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span></span></span><span style="top:-2.714em;"><span class="pstrut" style="height:2.714em;"></span><span class="accent-body" style="left:-0.17994em;"><span class="overlay mtight" style="height:0.714em;width:0.471em;"><svg width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mbin mtight">⋅</span><span class="mord accent mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-2.714em;"><span class="pstrut" style="height:2.714em;"></span><span class="mord mtight"><span class="mord mathdefault mtight">s</span></span></span><span style="top:-2.714em;"><span class="pstrut" style="height:2.714em;"></span><span class="accent-body" style="left:-0.17994em;"><span class="overlay mtight" style="height:0.714em;width:0.471em;"><svg width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span></li>
+<li>量测方程：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi><mo>(</mo><mi>k</mi><mo>)</mo><mo>=</mo><mi>α</mi><mo>+</mo><msub><mi>ν</mi><mi>α</mi></msub><mo>=</mo><msup><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>(</mo><mo>−</mo><mfrac><mrow><mover accent="true"><mi>r</mi><mo>⃗</mo></mover><mo>⋅</mo><mover accent="true"><mi>s</mi><mo>⃗</mo></mover></mrow><mi>r</mi></mfrac><mo>)</mo><mo>+</mo><msub><mi>ν</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">Z(k)={\alpha}+{\nu}_{\alpha}=\mathrm{cos}^{-1}(-\frac{\vec{r}\cdot\vec{s}}{r})+{\nu}_{\alpha}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.0037em;">α</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.06366em;">ν</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.0037em;">α</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.2388em;vertical-align:-0.345em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">c</span><span class="mord mathrm">o</span><span class="mord mathrm">s</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord">−</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8937999999999999em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord accent mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-2.714em;"><span class="pstrut" style="height:2.714em;"></span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span></span></span><span style="top:-2.714em;"><span class="pstrut" style="height:2.714em;"></span><span class="accent-body" style="left:-0.17994em;"><span class="overlay mtight" style="height:0.714em;width:0.471em;"><svg width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mbin mtight">⋅</span><span class="mord accent mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-2.714em;"><span class="pstrut" style="height:2.714em;"></span><span class="mord mtight"><span class="mord mathdefault mtight">s</span></span></span><span style="top:-2.714em;"><span class="pstrut" style="height:2.714em;"></span><span class="accent-body" style="left:-0.17994em;"><span class="overlay mtight" style="height:0.714em;width:0.471em;"><svg width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.06366em;">ν</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.0037em;">α</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+</ul>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 是航天器在地心惯性坐标系中的位置矢量，其方向由地平敏感器获得</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span> 是导航星星光单位方向矢量，由星敏感器识别后获得。</p>
+<h4 id="3-星光仰角">3、星光仰角</h4>
+<img src="http://cos.pansis.site/202311251030281.png/abc123" alt="image-20231125103044178" style="zoom:40%;" />
+<h2 id="三-间接敏感地平">三、间接敏感地平</h2>
+<h4 id="1-相关概念">1、相关概念</h4>
+<p>1、定义：星光折射间接敏感地平是利用高精度星敏感器敏感<strong>折射星光</strong>，并通过<strong>大气对星光折射的数学模型</strong>及<strong>误差补偿方法</strong>来精确敏感<strong>地平</strong> ，实现地球卫星的高精度定位导航。</p>
+<p>2、间接敏感地平方法不能提供连续的观测信息，原因：<strong>参与折射的星的个数有限</strong></p>
+<p>3、直接敏感地平虽然精度较低，但系统稳定，技术成熟。</p>
+<p>4、量测方程的建立思路</p>
+<img src="http://cos.pansis.site/202311251035043.png/abc123" alt="image-20231125103531997" style="zoom:50%;" />
+<h4 id="2-折射角">2、折射角</h4>
+<p>1、有效折射星：在星图中平流层映射为一个窄的条带，成像位置在平流层条带中的星作为有效折射星。</p>
+<ul>
+<li>高于平流层的星其折射程度小到几乎没有折射</li>
+</ul>
+<p>2、星敏本体高精度姿态确定方式：</p>
+<ul>
+<li>利用同一视场内高于平流层的非折射星星像实现匹配和定姿</li>
+<li>利用飞行器中另一台星敏实现定姿，利用转移矩阵获得折射星光观测星敏感器的姿态</li>
+</ul>
+<h2 id="四-其他量测方法">四、其他量测方法</h2>
+<h4 id="1-行星的视角">1、行星的视角</h4>
+<p>行星的视角：D为行星直径，行星视角A为行星视边缘的最大张角，视半径为A/2。</p>
+<p>量测方程：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>sin</mi><mo>⁡</mo><mfrac><mi>A</mi><mn>2</mn></mfrac><mo>=</mo><mfrac><mi>D</mi><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">r\sin{\frac{A}{2}}={\frac{D}{2}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">A</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<img src="http://cos.pansis.site/202311251051407.png/abc123" alt="image-20231125105120261" style="zoom:20%;" />
+<h4 id="2-掩星观测">2、掩星观测</h4>
+<p>1、方法：当从探测器上观测到某颗恒星被行星遮挡住时，在看得见到看不见的瞬间可确定一个圆柱位置面。</p>
+<p>2、量测方程：<img src="http://cos.pansis.site/202311251053506.png" alt="image-20231125105314458" style="zoom:50%;" /></p>
+<ul>
+<li>$ i_p$ 为探测器指向恒星渐隐于行星边缘处的单位矢量；</li>
+<li>$ i_s$ 恒星星光的单位矢量。</li>
+</ul>
+<img src="http://cos.pansis.site/202311251053095.png/abc123" alt="image-20231125105357038" style="zoom:33%;" />
+<h4 id="3-两个近天体到航天器的夹角太阳与地球为例">3、两个近天体到航天器的夹角（太阳与地球为例）</h4>
+<img src="http://cos.pansis.site/202311251101057.png/abc123" alt="image-20231125110125969" style="zoom:33%;" /><br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/zhdhyl/" class="article-info">
+                                                        组合导航原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

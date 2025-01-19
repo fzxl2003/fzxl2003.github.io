@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>1.3 ARM寄存器 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、寄存器
+1、类别
+31个通用寄存器和6个状态寄存器，共37个寄存器
+通用寄存器
+状态寄存器
+二、通用寄存器
+1、不同模式下的寄存器
+
+1、R0~R13：用于保存数据或地址的通用寄存器。
+
+R0~R7：未分组寄存器，对于任何处理器模式，对..." />
+        <meta name="keywords" content="嵌入式系统" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="1.3 ARM寄存器" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、寄存器
+1、类别
+31个通用寄存器和6个状态寄存器，共37个寄存器
+通用寄存器
+状态寄存器
+二、通用寄存器
+1、不同模式下的寄存器
+
+1、R0~R13：用于保存数据或地址的通用寄存器。
+
+R0~R7：未分组寄存器，对于任何处理器模式，对...">
+        <meta property="og:url" content="https://github.pansis.site/post/1.3 ARM寄存器/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-09-24">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="1.3 ARM寄存器">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="1.3 ARM寄存器">
+        <meta name="twitter:description" content="一、寄存器
+1、类别
+31个通用寄存器和6个状态寄存器，共37个寄存器
+通用寄存器
+状态寄存器
+二、通用寄存器
+1、不同模式下的寄存器
+
+1、R0~R13：用于保存数据或地址的通用寄存器。
+
+R0~R7：未分组寄存器，对于任何处理器模式，对...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    1.3 ARM寄存器
+                                </h2>
+                                <span class="article-info">
+                                    2024-09-24, 1272 words, 5 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-寄存器">一、寄存器</h2>
+<h4 id="1-类别">1、类别</h4>
+<p>31个通用寄存器和6个状态寄存器，共37个寄存器</p>
+<p>通用寄存器</p>
+<p>状态寄存器</p>
+<h2 id="二-通用寄存器">二、通用寄存器</h2>
+<h4 id="1-不同模式下的寄存器">1、不同模式下的寄存器</h4>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/image-20240924200140029.png?abc123" alt="image-20240924200140029" loading="lazy"></figure>
+<p>1、R0~R13：用于保存数据或地址的通用寄存器。</p>
+<ul>
+<li>R0~R7：未分组寄存器，对于任何处理器模式，对应的物理寄存器相同。</li>
+<li>R8~R14：分组寄存器，它们所对应的物理寄存器取决于当前的处理器模式。（几乎所有允许使用通用寄存器的指令都允许使用分组寄存器）
+<ul>
+<li>R8~R12分成两组的作用：加速FIQ的处理速度</li>
+<li>R9（SB）的作用：static Base，静态基址寄存器</li>
+<li>R10（SL）的作用：stack limit，堆栈限制寄存器</li>
+<li>R11（FP）的作用：Frame Pointer，栈帧指针寄存器</li>
+<li>R12(IP)的作用：intermediate procedure，过程调用中间临时寄存器</li>
+<li>R13（SP）的作用：堆栈指针。</li>
+<li>R14（LR）的作用：在每种模式下，模式自身的R14用于保存子程序返回地址。当发生异常时，将R14对应的异常模式版本设置为异常返回地址（有些异常有一个小的固定偏移量）</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-r14lr寄存器">2、R14（LR）寄存器</h4>
+<p>1、子程序调用</p>
+<p>操作流程：</p>
+<ul>
+<li>程序A执行过程中调用程序B</li>
+<li>程序跳转至标号Lable，执行程序B。同时硬件将“BL Lable”指令的下一条指令所在地址存入R14（LR）；</li>
+<li>程序B执行最后，将R14寄存器的内容放入PC，返回程序A；</li>
+</ul>
+<p>2、异常发生</p>
+<p>异常发生时，程序要跳转至异常服务程序，对返回地址的处理与子程序调用类似，区别在于有些异常有一个小常量的偏移(4或者8)</p>
+<p>异常冲突？？？？？？？？？？？？？？？？？</p>
+<h4 id="3-r15pc程序计数器">3、R15（PC）程序计数器</h4>
+<p>1、作用：指向正在取指的地址，即当前正在执行指令的地址加上8个字节（两条ARM指令的长度）</p>
+<img src="http://cos.pansis.site/image-20240924201647677.png?abc123" alt="image-20240924201647677" style="zoom:30%;" />
+<p>2、R15的限制：由于ARM指令总是以字为单位，所以R15寄存器的最低两位总是为0</p>
+<p>3、写R15的作用：无条件跳转（写入时保证最低位为0）</p>
+<h2 id="三-状态寄存器">三、状态寄存器</h2>
+<figure data-type="image" tabindex="2"><img src="http://cos.pansis.site/image-20240924201839059.png?abc123" alt="image-20240924201839059" loading="lazy"></figure>
+<h4 id="1-分类">1、分类</h4>
+<p>1个CPSR和5个供异常处理程序使用的SPSR</p>
+<p>CPSR反映了当前处理器的状态。</p>
+<p>每种异常都有自己的SPSR，在进入异常时它保存CPSR的当前值，异常退出时可通过它恢复CPSR</p>
+<h4 id="2-cpsr格式">2、CPSR格式</h4>
+<figure data-type="image" tabindex="3"><img src="http://cos.pansis.site/image-20240924202836402.png?abc123" alt="image-20240924202836402" loading="lazy"></figure>
+<p>1、条件代码标志</p>
+<ul>
+<li>
+<p>大多数“数值处理指令”可以选择是否影响条件代码标志位。</p>
+</li>
+<li>
+<p>通常如果指令带S后缀，则该指令的执行会影响条件代码标志</p>
+</li>
+<li>
+<p>有一些指令的执行总是会影响条件代码标志。</p>
+</li>
+<li>
+<p>算术操作、逻辑操作、MSR或者LDM指令可以对这些位进行设置。</p>
+</li>
+<li>
+<p>所有ARM指令都可按条件来执行，而Thumb指令中只有分支指令可按条件执行。</p>
+</li>
+<li>
+<p>N</p>
+<p>运算结果的最高位反映在该标志位。</p>
+<p>对于有符号二进制补码，结果为负数时N=1，结果为正数或零时N=0；</p>
+</li>
+<li>
+<p>Z</p>
+<p>指令结果为0时Z=1（通常表示比较结果“相等”），否则Z=0</p>
+</li>
+<li>
+<p>C</p>
+<ul>
+<li>当进行加法运算(包括CMN指令)，并且最高位产生进位时C=1，否则C=0.</li>
+<li>当无符号数进行减法运算(包括CMP 指令)，并且最高位产生借位时C=0，否则C=1。</li>
+<li>对于结合移位操作的非加法/减法指令，C为从最高位最后移出的值，其它指令C不变；</li>
+</ul>
+</li>
+<li>
+<p>V</p>
+<ul>
+<li>当有符号数进行加法/减法运算，并且发生有符号溢出时V=1，否则V=0，其它指令V通常不变。</li>
+</ul>
+</li>
+</ul>
+<p>2、控制位</p>
+<ul>
+<li>
+<p>当发生异常时，这些位被硬件改变。当处理器处于一个特权模式时，可用软件操作这些位。</p>
+</li>
+<li>
+<p>当I位置位为1时，IRQ中断被禁止</p>
+</li>
+<li>
+<p>当F位置位为1时，FIQ中断被禁止</p>
+</li>
+<li>
+<p>T位反映了正在操作的状态</p>
+<p>当T位为1时，处理器运行在Thumb状态；</p>
+<p>当T位清零时，处理器运行在ARM状态。</p>
+<p>不要使用MSR指令改变T位，否则处理器状态不可预测</p>
+<p>（MRS加载特殊寄存器的值到通用寄存器，MSR存储通用寄存器的值到特殊寄存器）</p>
+</li>
+<li>
+<p>模式位</p>
+<ul>
+<li>包括M4、M3、M2、M1和M0，这些位决定处理器的操作模式</li>
+<li>不是所有模式位的组合都定义了有效的处理器模式，如果使用了错误的设置，将引起一个无法恢复的错误</li>
+<li><img src="http://cos.pansis.site/image-20240924204525106.png?abc123" alt="image-20240924204525106" loading="lazy"></li>
+</ul>
+</li>
+<li>
+<p>保留位</p>
+<ul>
+<li>
+<p>CPSR中的保留位被保留将来使用。</p>
+</li>
+<li>
+<p>为了提高程序的可移植性，当改变CPSR标志和控制位时，请不要改变这些保留位</p>
+</li>
+<li>
+<p>请确保程序的运行不受保留位的值影响，因为将来的处理器可能会将这些位设置为1或者0。</p>
+</li>
+</ul>
+</li>
+</ul>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/AVw14AAoK/" class="article-info">
+                                                        嵌入式系统
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

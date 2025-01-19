@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>2.6 汇编代码 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、基本结构
+程序由指令和数据构成
+.data
+   str: .word 0:23   #定义了标签为str的内存区域，大小为24个字
+.text
+   #汇编代码区
+
+二、数据区域 .data
+1、功能
+存储程序中全局变量的一块内存区域..." />
+        <meta name="keywords" content="计算机组成原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="2.6 汇编代码" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、基本结构
+程序由指令和数据构成
+.data
+   str: .word 0:23   #定义了标签为str的内存区域，大小为24个字
+.text
+   #汇编代码区
+
+二、数据区域 .data
+1、功能
+存储程序中全局变量的一块内存区域...">
+        <meta property="og:url" content="https://github.pansis.site/post/2.6 汇编代码/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2024-04-05">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="2.6 汇编代码">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="2.6 汇编代码">
+        <meta name="twitter:description" content="一、基本结构
+程序由指令和数据构成
+.data
+   str: .word 0:23   #定义了标签为str的内存区域，大小为24个字
+.text
+   #汇编代码区
+
+二、数据区域 .data
+1、功能
+存储程序中全局变量的一块内存区域...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    2.6 汇编代码
+                                </h2>
+                                <span class="article-info">
+                                    2024-04-05, 580 words, 3 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-基本结构">一、基本结构</h2>
+<p>程序由指令和数据构成</p>
+<pre><code class="language-assembly">.data
+   str: .word 0:23   #定义了标签为str的内存区域，大小为24个字
+.text
+   #汇编代码区
+</code></pre>
+<h2 id="二-数据区域-data">二、数据区域 .data</h2>
+<h4 id="1-功能">1、功能</h4>
+<p>存储程序中全局变量的一块内存区域</p>
+<p>空间大小在程序运行前就已确定</p>
+<p>可读可写</p>
+<h4 id="2-格式">2、格式</h4>
+<p><code>&lt;lable&gt;:.&lt;type&gt;  &lt;space/初值&gt;</code></p>
+<p><code>&lt;lable&gt;</code> 变量名</p>
+<p><code>&lt;type&gt;</code> 空间类型</p>
+<h4 id="3-空间类型">3、空间类型</h4>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>基本用途</th>
+<th>数组形式</th>
+<th>初始化形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.byte</td>
+<td>声明8位变量</td>
+<td>a:.byte 0:127</td>
+<td>a:.byte 4</td>
+</tr>
+<tr>
+<td>.half</td>
+<td>声明16位变量</td>
+<td>同上</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>.word</td>
+<td>声明32位变量</td>
+<td>同上</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>.ascii</td>
+<td>声明字符串，结尾无'\0'</td>
+<td>不可定义空间大小</td>
+<td>a:.ascii &quot;123&quot;</td>
+</tr>
+<tr>
+<td>.asciiz</td>
+<td>声明字符串，结尾有'\0'</td>
+<td></td>
+<td>a:.asciiz &quot;123&quot;</td>
+</tr>
+<tr>
+<td>.space</td>
+<td>为一个变量预留指定的字节数</td>
+<td></td>
+<td>array:.space 100</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>汇编语言关注的是变量的存储类型：一个变量需要占用多少字节</li>
+<li>汇编语言的变量类型都是无符号的</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202403281517158.png/abc123" alt="image-20240328151544580" loading="lazy"></figure>
+<h4 id="4-读取写入操作">4、读取写入操作</h4>
+<p>1、基本指令：lb sb lh sh lw sw （具体用法见指令集）</p>
+<p>2、示例 n*n的二维矩阵写入与读取</p>
+<p><strong>见xxxxx</strong></p>
+<h2 id="三-代码区域-text">三、代码区域 .text</h2>
+<h4 id="1-功能-2">1、功能</h4>
+<p>存放程序中指令序列的一块内存区域</p>
+<p>空间大小在程序运行前就已确定</p>
+<p>只读（某些CPU允许代码段为可写）</p>
+<h4 id="2-mars模拟的相关指令-syscall">2、MARS模拟的相关指令 syscall</h4>
+<p>1、操作步骤</p>
+<ul>
+<li>在寄存器 $v0 中加载服务号。</li>
+<li>按照指定在 $a0、$a1、$a2或$f12中加载参数值（如果有）。</li>
+<li>发出SYSCALL指令。</li>
+<li>按照指定从结果寄存器中检索返回值（如果有）。</li>
+</ul>
+<p>2、例子</p>
+<pre><code class="language-assembly">#显示存储在t0中的int数字 
+li  $v0, 1           # service 1 is print integer
+add $a0, $t0, $zero  
+syscall
+</code></pre>
+<p>3、表格</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>$v0 编码</th>
+<th>参数</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>打印int变量</td>
+<td>1</td>
+<td>$a0 = integer to print</td>
+<td></td>
+</tr>
+<tr>
+<td>打印float变量</td>
+<td>2</td>
+<td>$f12 = float to print</td>
+<td></td>
+</tr>
+<tr>
+<td>打印double变量</td>
+<td>3</td>
+<td>$f12 = double to print</td>
+<td></td>
+</tr>
+<tr>
+<td>打印字符串</td>
+<td>4</td>
+<td>$a0 = address of null-terminated string to print</td>
+<td></td>
+</tr>
+<tr>
+<td>打印字符</td>
+<td>11</td>
+<td>$a0 = character to print</td>
+<td></td>
+</tr>
+<tr>
+<td>读int变量</td>
+<td>5</td>
+<td>$v0 contains integer read</td>
+<td></td>
+</tr>
+<tr>
+<td>读float变量</td>
+<td>6</td>
+<td>$f0 contains float read</td>
+<td></td>
+</tr>
+<tr>
+<td>读double变量</td>
+<td>7</td>
+<td>$f0 contains double read</td>
+<td></td>
+</tr>
+<tr>
+<td>读字符串</td>
+<td>8</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>读字符</td>
+<td>12</td>
+<td>$v0 contains character read</td>
+<td></td>
+</tr>
+<tr>
+<td>退出程序</td>
+<td>10</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>其他详见mars help</p>
+<h4 id="2-常用代码">2、常用代码</h4>
+<p>略，见xxx</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/jsjzcyl/" class="article-info">
+                                                        计算机组成原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>2.6 GPS误差 | pansis.io</title>
+<link rel="shortcut icon" href="https://github.pansis.site/favicon.ico">
+<link href="https://github.pansis.site/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/c/font_1678829_b85ccgkdqkr.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="pansis.io » Feed" href="https://github.pansis.site/atom.xml">
+        <meta name="description" content="一、GPS误差分析
+1、误差来源与影响
+自身误差：GPS卫星、信号传播、GPS接收机
+外部因素：地球潮汐、负荷潮、相对论效应等
+
+
+2、等效距离误差
+1、定义：为了便于理解，通常均把各种误差的影响投影到站星距离上，以相应的距离误差表示。
+2..." />
+        <meta name="keywords" content="组合导航原理" />
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="2.6 GPS误差" />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="一、GPS误差分析
+1、误差来源与影响
+自身误差：GPS卫星、信号传播、GPS接收机
+外部因素：地球潮汐、负荷潮、相对论效应等
+
+
+2、等效距离误差
+1、定义：为了便于理解，通常均把各种误差的影响投影到站星距离上，以相应的距离误差表示。
+2...">
+        <meta property="og:url" content="https://github.pansis.site/post/2.6 GPS误差/" />
+        <meta property="og:site_name" content="pansis.io">
+        <meta property="og:updated_time" content="2023-10-16">
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="">
+        <meta property="og:image:alt" content="2.6 GPS误差">
+        <!-- Twitter (post.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="2.6 GPS误差">
+        <meta name="twitter:description" content="一、GPS误差分析
+1、误差来源与影响
+自身误差：GPS卫星、信号传播、GPS接收机
+外部因素：地球潮汐、负荷潮、相对论效应等
+
+
+2、等效距离误差
+1、定义：为了便于理解，通常均把各种误差的影响投影到站星距离上，以相应的距离误差表示。
+2...">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="">
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://github.pansis.site">pansis.io</a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <a href="https://github.pansis.site/atom.xml" title="rss" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/tag/GWAaV2nvk/" class="menu">程序设计课程</a>
+            
+        
+            
+                <a href="/tag/24hangc" class="menu">比赛</a>
+            
+        
+            
+                <a href="/tag/L7r9STb75/" class="menu">Python教程</a>
+            
+        
+            
+                <a href="/tags" class="menu">分类</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://github.pansis.site/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>
+                                    2.6 GPS误差
+                                </h2>
+                                <span class="article-info">
+                                    2023-10-16, 1807 words, 7 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h2 id="一-gps误差分析">一、GPS误差分析</h2>
+<h4 id="1-误差来源与影响">1、误差来源与影响</h4>
+<p>自身误差：GPS卫星、信号传播、GPS接收机</p>
+<p>外部因素：地球潮汐、负荷潮、相对论效应等</p>
+<figure data-type="image" tabindex="1"><img src="http://cos.pansis.site/202310160932395.png/abc123" alt="" loading="lazy"></figure>
+<img src="http://cos.pansis.site/202310161522623.png/abc123" alt="image-20231016152217514" style="zoom:33%;" />
+<h4 id="2-等效距离误差">2、等效距离误差</h4>
+<p>1、定义：为了便于理解，通常均把各种误差的影响投影到站星距离上，以相应的距离误差表示。</p>
+<p>2、测码伪距的等效距离误差：P码的误差小于C/A码的误差</p>
+<h4 id="3-根据误差的性质分类">3、根据误差的性质分类</h4>
+<p><strong>1、系统误差</strong></p>
+<p>主要包括卫星的轨道误差、卫星钟差、接收机钟差、以及大气折射的误差等。</p>
+<p>修正方法：</p>
+<ul>
+<li>
+<p>引入相应的未知参数，在数据处理中联同其它未知参数一并求解。</p>
+</li>
+<li>
+<p>建立系统误差模型，对观测量加以修正。</p>
+</li>
+<li>
+<p>将不同观测站，对相同卫星的同步观测值求差，以减弱和消除系统误差的影响。</p>
+</li>
+<li>
+<p>简单地忽略某些系统误差的影响。</p>
+</li>
+</ul>
+<p><strong>2、偶然误差</strong></p>
+<p>包括多路径效应误差和观测误差等。</p>
+<p>修正方法：</p>
+<ul>
+<li>选用较好的硬件和观测条件</li>
+<li>延长观测时间</li>
+</ul>
+<h2 id="二-卫星钟差">二、卫星钟差</h2>
+<h4 id="1-卫星钟差产生原因">1、卫星钟差产生原因</h4>
+<ul>
+<li>GPS观测量均以<strong>精密测时</strong>为依据。</li>
+<li>GPS定位中，无论码相位观测还是载波相位观测，都要求卫星钟与接收机钟保持<strong>严格同步</strong>。</li>
+<li>尽管卫星上设有高精度的原子钟，仍不可避免地存在<strong>钟差和漂移</strong>。</li>
+</ul>
+<h4 id="2-修正和钟差模型">2、修正和钟差模型</h4>
+<p>钟差参数由主控站测 定，通过卫星的导航电文提供给用户</p>
+<img src="http://cos.pansis.site/202310160945718.png/abc123" alt="image-20231016094547634" style="zoom:33%;" />
+<h4 id="3-修正效果">3、修正效果</h4>
+<p>各卫星钟之间的同步差保持在<strong>5~10ns</strong>以内， 引起的等效距离偏差不超过<strong>3m</strong>。</p>
+<p>通过精密星历可获得精确的卫星钟差值 <strong>（ 0.1ns ）</strong></p>
+<h4 id="4">4、</h4>
+<p>卫星钟经过改正的残差，在<strong>相对定位</strong>中，可通过观测量<strong>求差 （差分）方法</strong>消除</p>
+<h2 id="三-星历误差卫星轨道偏差">三、星历误差（卫星轨道偏差）</h2>
+<h4 id="1-处理轨道误差的方法">1、处理轨道误差的方法</h4>
+<p>1、直接忽略：广泛用于实时单点定位</p>
+<p>2、采用精密星历</p>
+<p>3、同步观测值求差：由于同一卫星的位置误差对不同观测站同步观测量的影响具有系统性。利用两个或多个观测站上 对同一卫星的同步观测值求差，可减弱轨道误差影响。当基线较短时，有效性尤其明显</p>
+<p>4、采用轨道改进法处理观测数据</p>
+<h4 id="2-卫星星历">2、卫星星历</h4>
+<p>1、定义：卫星星历是描述卫星运动轨道的信息，是一组对应某一时 刻的轨道根数及其变化率。</p>
+<p>2、根据卫星星历可以计算出任一时刻的卫星位置及其速度</p>
+<p>3、精密的轨道信息是<strong>精密定位</strong>的基础</p>
+<p>4、分类：预报星历（广播星历）、后处理星历（精密星历）</p>
+<h4 id="3-预报星历">3、预报星历</h4>
+<p>1、定义：通过卫星发射的含有轨道信息的导航电文，传递 给用户，经解码获得所需的卫星星历</p>
+<p>2、广播星历都属于预报星历</p>
+<p>3、星历内容：开普勒轨道参数、轨道摄动改正参数、参考星历</p>
+<p>4、参考星历：参考历元的卫星开普勒轨道参数称为参考星历</p>
+<p>​                           根据GPS监测站约1周的监测资料推算的</p>
+<p>5、精度：10m左右</p>
+<h4 id="4-精密星历">4、精密星历</h4>
+<p>1、定义：由各国部门观测后得到的精密星历</p>
+<p>2、分类：超快速预报星历、快速预报星历、事后精密星历</p>
+<p>3、精密星历的精度可达厘米级（5cm以内）</p>
+<h4 id="5-总结">5、总结</h4>
+<p>1、卫星轨道误差的估计和处理一般较困难</p>
+<p>​       卫星在运动中受多种<strong>摄动力</strong>的复杂影响，而通过地面监测站又难以可靠地测定这些作用力并掌握其作用规律。</p>
+<p>2、通过<strong>导航电文</strong>所得的卫星轨道信息，相应的位置误差约10m左右</p>
+<p>3、卫星的轨道误差是当前GPS定位的重要误差来源之一</p>
+<ul>
+<li>卫星轨道偏差对<strong>绝对定位</strong>的影响可达<strong>几十米到一百米</strong></li>
+<li>卫星轨道偏差对相对定位的影响远远低于对绝对定位的影响
+<ul>
+<li>原因：在相对定位中，相邻测站星历误差具有很强的相关 性</li>
+<li>随着<strong>基线距离的增加</strong>，卫星轨道偏差引起的基线误 差将<strong>不断加大</strong>，卫星轨道误差也将成为影响定位精度的主要因素。</li>
+<li>公式：<img src="http://cos.pansis.site/202310161446291.png/abc123" alt="image-20231016144620139" style="zoom:33%;" /></li>
+</ul>
+</li>
+</ul>
+<h2 id="四-电离层修正">四、电离层修正</h2>
+<h4 id="1-电离层相关概念">1、电离层相关概念</h4>
+<p>1、弥散介质：根据大气物理学，如果电磁波在某种介质中的传 播速度与频率有关，则该介质成为弥散介质</p>
+<p>2、群波：把具有不同频率的多种波叠加，所形成的复合波 称为群波</p>
+<p>3、在具有速度弥散现象的介质中，单一频率正弦波的传播与群 波的传播是不同的</p>
+<h4 id="2-电离层的影响">2、电离层的影响</h4>
+<p>1、当电磁波沿天顶方向通过电离层时，由于<strong>折射率的变化</strong>而引起的传播路径<strong>距离差和相位延迟</strong></p>
+<p>2、<strong>载波相位测量</strong>与<strong>伪距测量</strong>的电离层改正<strong>大小相等、符号相反</strong></p>
+<p>3、电离层产生的<strong>各延迟量</strong>与<strong>信号频率</strong>和<strong>电子总量</strong>有关</p>
+<h4 id="3-电离层修正方法">3、电离层修正方法</h4>
+<ul>
+<li>利用双频观测（有效率不低于95%）</li>
+<li>利用电离层模型加以改正</li>
+<li>利用同步观测值求差（利用观测站观测，效果最好）</li>
+</ul>
+<h2 id="五-对流层修正">五、对流层修正</h2>
+<h4 id="1-对流层相关概念">1、对流层相关概念</h4>
+<p>1、对流层的折射率与大气压力、温度和湿度关系密切</p>
+<p>2、在对流层中，折射率略大于1，随着高度的增加逐渐减小：</p>
+<h4 id="2-对流层影响">2、对流层影响</h4>
+<ul>
+<li>干分量：主要与<strong>大气温度</strong>和<strong>压力</strong>有关</li>
+<li>湿分量：主要与<strong>信号传播路径上的大气湿度和高度</strong>有关</li>
+</ul>
+<p>​            湿分量的影响尚无法准确确定。</p>
+<h4 id="3-对流层修正方法">3、对流层修正方法</h4>
+<ul>
+<li>定位精度要求不高时，忽略不计</li>
+<li>采用对流层模型加以改正</li>
+<li>引入描述对流层的附加待估参数，在数据处理中求解</li>
+<li>观测量求差</li>
+</ul>
+<h2 id="六-多路径效应多路径误差">六、多路径效应（多路径误差）</h2>
+<h4 id="1-产生原因">1、产生原因</h4>
+<p>接收机天线除直接收到卫星发射的信号外，还可能收到经天线周围地 物一次或多次反射的卫星信号。</p>
+<img src="http://cos.pansis.site/202310161513357.png/abc123" alt="image-20231016151304299" style="zoom:33%;" />
+<h4 id="2-修正方法">2、修正方法</h4>
+<ul>
+<li>观测上选择合适的测站，避开易产生多路径的环境</li>
+<li>硬件上采用抗多路径误差的仪器设备，延长观测时间，改善接收机电路设计</li>
+</ul>
+<h2 id="七-观测误差">七、观测误差</h2>
+<h4 id="1-分类">1、分类</h4>
+<p>分辨误差、安置误差、天线相位中心位置偏差、载波相位观测的整周未知数</p>
+<h4 id="2-分辨误差">2、分辨误差</h4>
+<p>一般认为是信号波长的1%</p>
+<img src="http://cos.pansis.site/202310161520297.png/abc123" alt="image-20231016152026206" style="zoom:33%;" />
+<h4 id="3-安置误差">3、安置误差</h4>
+<p>天线放置位置和天线相位中心高度有关</p>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                    <div class="meta">
+                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://github.pansis.site/tag/zhdhyl/" class="article-info">
+                                                        组合导航原理
+                                                    </a>
+                                                    
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                            </div>
+                        </div>
+                        
+                            
+                                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '9d5eba33618472c44a07',
+        clientSecret: '065a85ed04333ceebfc4f01d7ca1674175730339',
+        repo: 'fzxl2003.github.io',
+        owner: 'fzxl2003',
+        admin: ['fzxl2003'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+                                    
+                                        
+                                                    
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer">
+    
+    <div class="powered_by">
+        <a href="https://codeberg.org/kytrun/gridea-theme-one" target="_blank">Theme One,</a>
+        <a href="https://open.gridea.dev/" target="_blank">Powered by Gridea&#65281;</a>
+    </div>
+    
+    
+        <div class="footer_slogan">
+            Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+    
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://github.pansis.site/media/scripts/util.js"></script>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+</body>
+
+</html>
